@@ -14,3 +14,7 @@ FVD
 HABER GELDİ Mİ USMAN
 <<<<<<< Updated upstream
 oldu mu oldu mu
+=======
+merhaba ben 
+zxkchkhzcklhzxjkchzlxıjclzjcoızxpj
+>>>>>>> Stashed changes
