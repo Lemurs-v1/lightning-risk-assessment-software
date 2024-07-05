@@ -12,3 +12,4 @@ FVD
 
 
 HABER GELDİ Mİ USMAN
+oldu mu oldu mu
