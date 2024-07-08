@@ -1,4 +1,5 @@
-from LightningRiskCalculator_Ra import LightningRiskCalculator_R_A
-value = LightningRiskCalculator_R_A()
-R_A = value.r_a_belirler()
-print(R_A)
+from LightningRiskCalculator_Rc import LightningRiskCalculator_R_C
+value = LightningRiskCalculator_R_C()
+R_c = value.r_c_belirle()
+print(R_c)
+
