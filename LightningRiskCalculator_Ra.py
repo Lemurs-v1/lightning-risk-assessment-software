@@ -143,6 +143,15 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
         else:
             print("geçerli ifade gir")
         return n_z_bölü_n_t
+    def t_z_bölü_8760_belirle(self):#eror function yazılabilir bilmiyorum dışı bir sey girilmesi adına fakat seçimli yapacagımız için pek bir onemi yok
+        cevap = input("kişiler bölgede yılda kaç saat bulunmakta (saat/bilmiyorum) ")
+        if cevap == "bilmiyorum":
+            cevap_son = 1
+        else:
+            cevap_son = float(cevap)/8760
+        t_z_bölü_8760 = cevap_son
+
+        return t_z_bölü_8760
 ##############################################################################
 class LightningRiskCalculator_R_A:
     def __init__(self):
