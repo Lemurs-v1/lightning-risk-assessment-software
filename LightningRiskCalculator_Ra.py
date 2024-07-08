@@ -131,6 +131,19 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
         
         L_A = r_t*L_T*n_z_bölü_n_t*t_z_bölü_8760
         return L_A
+##############################################################################çekilnler
+    def n_z_bölü_n_t_belirle(self):
+        oran = input("yapıdaki ve bölgedeki kişi sayısı eşit mi: ")
+        if oran == "evet":
+            n_z_bölü_n_t = 1
+        elif oran == "hayır":
+            n_z = float(input("bölgedeki kişi sayısı nedir: "))
+            n_t = float(input("yapıdaki kişi sayısı nedir: "))
+            n_z_bölü_n_t = n_z/n_t
+        else:
+            print("geçerli ifade gir")
+        return n_z_bölü_n_t
+##############################################################################
 class LightningRiskCalculator_R_A:
     def __init__(self):
         self.P_A = None

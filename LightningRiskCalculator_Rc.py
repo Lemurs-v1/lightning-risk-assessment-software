@@ -1,4 +1,5 @@
 from LightningRiskCalculator_Ra import LightningRiskCalculator_N_D
+from LightningRiskCalculator_Ra import 
 import pandas as pd
 def n_d_belirle(self):
     x = LightningRiskCalculator_N_D()
@@ -42,10 +43,10 @@ class LightningRiskCalculator_P_C:
             seçim = input("Dış hat tipi ve Girişte bağlantı olarak ne kullanılıyor:  ")
             C_LD = C_LD_DF.loc[C_LD_DF["Dış hat tipi ve Girişte bağlantı"] == seçim, "C_LD"].values[0]
             return C_LD
-        P_SPD = p_spd_belirle()
+        P_SPD = p_spd_belirle(NA)
         C_LD = c_ld_belirle()
         P_C = P_SPD*C_LD
         return P_C
-x = LightningRiskCalculator_P_C()
-PC = x.p_c_belirle()
-print (PC)
+class LightningRiskCalculator_L_C:
+    def __init__ (self):
+        self.L_O = None
