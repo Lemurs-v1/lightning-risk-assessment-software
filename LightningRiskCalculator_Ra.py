@@ -131,5 +131,14 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
         
         L_A = r_t*L_T*n_z_bölü_n_t*n_t_bölü_8760
         return L_A
-
-
+class LightningRiskCalculator_R_A:
+    def __init__(self):
+        self.P_A = None
+        self.L_A= None
+        self.N_D = None
+    def r_a_belirler(self):
+        P_A = LightningRiskCalculator_P_A().p_a_belirle()
+        N_D = LightningRiskCalculator_N_D().n_d_belirle()
+        L_A = LightningRiskCalculator_L_A().l_a_belirle()
+        R_A = P_A*L_A*N_D
+        return R_A
