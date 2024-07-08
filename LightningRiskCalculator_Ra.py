@@ -86,7 +86,7 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
         self.r_t = None
         self.L_T = None
         self.n_z_bölü_n_t = None
-        self.n_t_bölü_8760 = None
+        self.t_z_bölü_8760 = None
     def l_a_belirle(self):
         def r_t_belirle():
             data ={ "yapı tipi": [
@@ -115,21 +115,21 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
             else:
                 print("geçerli ifade gir")
             return n_z_bölü_n_t
-        def n_t_bölü_8760_belirle():#eror function yazılabilir bilmiyorum dışı bir sey girilmesi adına fakat seçimli yapacagımız için pek bir onemi yok
+        def t_z_bölü_8760_belirle():#eror function yazılabilir bilmiyorum dışı bir sey girilmesi adına fakat seçimli yapacagımız için pek bir onemi yok
             cevap = input("kişiler bölgede yılda kaç saat bulunmakta (saat/bilmiyorum) ")
             if cevap == "bilmiyorum":
                 cevap_son = 1
             else:
                 cevap_son = float(cevap)/8760
-            n_t_bölü_8760 = cevap_son
+            t_z_bölü_8760 = cevap_son
 
-            return n_t_bölü_8760
+            return t_z_bölü_8760
         r_t = r_t_belirle()
         L_T = l_t_belirle()
         n_z_bölü_n_t = n_z_bölü_n_t_belirle()
-        n_t_bölü_8760= n_t_bölü_8760_belirle()
+        t_z_bölü_8760= t_z_bölü_8760_belirle()
         
-        L_A = r_t*L_T*n_z_bölü_n_t*n_t_bölü_8760
+        L_A = r_t*L_T*n_z_bölü_n_t*t_z_bölü_8760
         return L_A
 class LightningRiskCalculator_R_A:
     def __init__(self):
