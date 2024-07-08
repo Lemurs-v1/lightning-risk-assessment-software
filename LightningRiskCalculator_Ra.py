@@ -179,3 +179,5 @@ class LightningRiskCalculator_R_A:
         L_A = LightningRiskCalculator_L_A().l_a_belirle()
         R_A = P_A*L_A*N_D
         return R_A
+
+# SON SON SON
