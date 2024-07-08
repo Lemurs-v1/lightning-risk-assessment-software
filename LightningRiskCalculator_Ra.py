@@ -15,8 +15,11 @@ class LightningRiskCalculator_N_D:
             return float(N_G)
 
         def a_d_belirle():
-            A_D = float(input("Yapı alanını giriniz: "))  # Genişlik ve uzunluk ayrı ayrı alınabilir
-            return A_D
+            A_D_genişlik = float(input("Yapı genişliğini giriniz: "))  
+            A_D_uzunluk = float(input("Yapı uzunluğunu giriniz giriniz: "))  
+            A_D = A_D_uzunluk*A_D_genişlik
+            veri_A_D = [A_D,A_D_uzunluk,A_D_genişlik]
+            return veri_A_D
 
         def c_d_belirle():
             data = {
@@ -34,10 +37,20 @@ class LightningRiskCalculator_N_D:
             return C_D
 
         N_G = n_g_belirle()
-        A_D = a_d_belirle()
+        A_D_veri = a_d_belirle()
+        A_D = A_D_veri[0]
         C_D = c_d_belirle()
         N_D = N_G * A_D * C_D
         return N_D
+    ######################################################################3
+    def n_g_belirle(self):
+        N_G = input("Toprağa yıldırım düşme yoğunluğunu giriniz: ")  # TÜRKİYE HARİTASINDAN ÇEKİLECEK
+        if not N_G:
+            T_D = float(input("Fırtınalı gün sayısını giriniz: "))
+            N_G = 0.1 * T_D
+        return float(N_G)
+    #########################################################
+
     
 
 
@@ -131,6 +144,7 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
         
         L_A = r_t*L_T*n_z_bölü_n_t*t_z_bölü_8760
         return L_A
+    
 ##############################################################################çekilnler
     def n_z_bölü_n_t_belirle(self):
         oran = input("yapıdaki ve bölgedeki kişi sayısı eşit mi: ")
@@ -152,6 +166,7 @@ class LightningRiskCalculator_L_A:#test edilmeli pro bir şekilde
         t_z_bölü_8760 = cevap_son
 
         return t_z_bölü_8760
+
 ##############################################################################
 class LightningRiskCalculator_R_A:
     def __init__(self):
