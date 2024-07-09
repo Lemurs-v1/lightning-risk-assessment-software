@@ -1,19 +1,19 @@
 import pandas as pd
 from output_value import LightningRiskCalculator_output_value
 
-choose = LightningRiskCalculator_output_value()
-N_G_C = choose.n_g_bul()
-A_D_genişlik_C = choose.a_d_genişlik_bul()
-A_D_uzunluk_C = choose.a_d_uzunluk_bul()
-C_D_C = choose.c_d_bul()
-P_TA_C = choose.p_ta_bul()
-P_B_C = choose.p_b_bul()
-r_t_C = choose.r_t_bul()
-n_z_bölü_n_t_C = choose.n_z_bölü_n_t_bul()
-t_z_bölü_8760_C = choose.tz_8760_bul()
-P_SPD_C = choose.p_spd_bul()
-C_LD_C = choose.c_ld_bul()
-L_O_C = choose.l_o_bul()
+output = LightningRiskCalculator_output_value()
+N_G_C = output.n_g_bul()
+A_D_genişlik_C = output.a_d_genişlik_bul()
+A_D_uzunluk_C = output.a_d_uzunluk_bul()
+C_D_C = output.c_d_bul()
+P_TA_C = output.p_ta_bul()
+P_B_C = output.p_b_bul()
+r_t_C = output.r_t_bul()
+n_z_bölü_n_t_C = output.n_z_bölü_n_t_bul()
+t_z_bölü_8760_C = output.tz_8760_bul()
+P_SPD_C = output.p_spd_bul()
+C_LD_C = output.c_ld_bul()
+L_O_C = output.l_o_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
