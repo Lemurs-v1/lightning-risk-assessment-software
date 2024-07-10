@@ -15,6 +15,7 @@ t_z_bölü_8760_C = output.tz_8760_bul()
 P_SPD_C = output.p_spd_bul()
 C_LD_C = output.c_ld_bul()
 L_O_C = output.l_o_bul()
+P_MS_C = output.p_ms_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -31,6 +32,7 @@ class LightningRiskCalculator_min_values:
         self.C_LD = None
         self.L_O = None
         self.A_M =None
+        self.P_MS =None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -165,3 +167,7 @@ class LightningRiskCalculator_min_values:
     def a_m_belirle(self):
         self.A_M = 2*500*(self.A_D_AUY[1]+self.A_D_AUY[2])*pi*500**2
         return self.A_M
+    def p_ms_belirle(self):
+        self.P_MS = P_MS_C
+        return self.P_MS
+        
