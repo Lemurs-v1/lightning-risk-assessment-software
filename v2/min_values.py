@@ -1,6 +1,7 @@
 import pandas as pd
 from output_value import LightningRiskCalculator_output_value
-
+import math
+pi =math.pi
 output = LightningRiskCalculator_output_value()
 N_G_C = output.n_g_bul()
 A_D_genişlik_C = output.a_d_genişlik_bul()
@@ -29,6 +30,7 @@ class LightningRiskCalculator_min_values:
         self.P_SPD = None
         self.C_LD = None
         self.L_O = None
+        self.A_M =None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -160,3 +162,6 @@ class LightningRiskCalculator_min_values:
         L_O_DF = pd.DataFrame(data)
         self.L_O = L_O_DF.loc[L_O_DF["Tipik kayıp değeri"] == L_O_C, "L_O"].values[0]
         return self.L_O
+    def a_m_belirle(self):
+        self.A_M = 2*500*(self.A_D_AUY[1]+self.A_D_AUY[2])*pi*500**2
+        return self.A_M
