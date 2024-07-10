@@ -1,8 +1,10 @@
+import pandas as pd
 class LightningRiskCalculator_output_value:
     def __init__(self):
         self.N_G = None
         self.A_D_genişlik = None
         self.A_D_uzunluk = None
+        self.A_D_yükseklik = None
         self.C_D = None
         self.P_TA = None
         self.P_B = None
@@ -12,6 +14,11 @@ class LightningRiskCalculator_output_value:
         self.P_SPD = None
         self.C_LD = None
         self.L_O = None
+        self.P_MS = None
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
 
     def n_g_bul(self):
         N_G = input("Yıldırım yoğunluğunu giriniz (sayı/bilmiyorum): ")
@@ -77,3 +84,57 @@ class LightningRiskCalculator_output_value:
     def l_o_bul(self):
         L_O = input("Yapı tipi nedir (tipik kayıp değeri için): ")
         return L_O
+    def p_ms_bul (self):
+        P_MS_soru = input("Sargılar arasında topraklı ekrana sahip ayırma transformatörleri veya fiber optik kablolar veya optik kuplörden meydana gelen ayırma ara yüzleri ile birlikte sağlanan donanım kullanılıyor mu ? :")
+        if P_MS_soru == "evet":
+            KS1 = 0 
+            KS2 = 0
+        elif P_MS_soru == "hayır":
+            P_MS_soru2 = input("Kalınlıkları 0,1 mm’den fazla sürekli metal zırhlar mevcut mu ")
+            if P_MS_soru2 =="hayır":
+                KS1 = 10**-4
+                KS2 = 10**-4
+            elif P_MS_soru2 == "evet":
+                WM1 = float(input(" ızgara benzeri uzaysal zırhlar veya ekran tipi LPS indirme iletkenlerinin ızgara gözenek genişliklerini giriniz(W_M_1)"))
+                WM2 = float(input(" ızgara benzeri uzaysal zırhlar veya ekran tipi LPS indirme iletkenlerinin ızgara gözenek genişliklerini giriniz(W_M_2)"))
+                KS1 = WM1*0.12
+                KS2 = WM2*0.12
+        P_MS_soru3 = input("İç kablaj tipi nedir")
+        data = {
+            "iç kablaj tipi": [
+                "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a",
+                "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b ",
+                "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var c",
+                "Zırhlanmış kablolar e metal kanal içinde serili kablolar  d",
+            ],
+            "K_S3": [1,0.2,0.01,0.0001]
+        }
+        K_S3_DF = pd.DataFrame(data)
+        KS3 = K_S3_DF.loc[K_S3_DF["iç kablaj tipi"] == P_MS_soru3, "K_S3"].values[0]
+
+        P_MS_soru4 = float(input(" korunan sistemin anma darbe dayanımı gerilimi nedir"))
+        KS4 = (1/P_MS_soru4)
+        self.P_MS = (KS1*KS2*KS3*KS4)**2
+<<<<<<< Updated upstream
+        return self.P_MS
+=======
+        return self.P_MS
+    """
+    def r_p_bul(self):
+        r_p =input("Yangın tedbiri sonucu kayıp azaltma faktörü nedir ?")
+        return r_p
+    
+    def r_f_bul():
+        r_f =input("Yangın riskine bağlı azalma faktörü nedir")
+        return r_f
+        
+    def h_z_bul():
+        H_Z = input("Özel tehlike olması halinde bağıl kayıp miktarını arttıran hz faktörü:")
+        return H_Z
+        
+    def l_f_bul():
+        L_F = input("Yapıda fiziksel hasarla ilgili tipik yüzde kayıp :")
+        return L_F
+"""
+
+>>>>>>> Stashed changes
