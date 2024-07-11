@@ -6,6 +6,8 @@ output = LightningRiskCalculator_output_value()
 N_G_C = output.n_g_bul()
 A_D_genişlik_C = output.a_d_genişlik_bul()
 A_D_uzunluk_C = output.a_d_uzunluk_bul()
+A_D_denklem_C = output.a_d_denklem()
+A_D_yükseklik_C = output.a_d_yükseklik_bul()
 C_D_C = output.c_d_bul()
 P_TA_C = output.p_ta_bul()
 P_B_C = output.p_b_bul()
@@ -16,6 +18,10 @@ P_SPD_C = output.p_spd_bul()
 C_LD_C = output.c_ld_bul()
 L_O_C = output.l_o_bul()
 P_MS_C = output.p_ms_bul()
+r_p_C = output.r_p_bul()
+r_f_C = output.r_f_bul() 
+H_Z_C = output.h_z_bul()
+L_F_C = output.l_f_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -33,14 +39,26 @@ class LightningRiskCalculator_min_values:
         self.L_O = None
         self.A_M =None
         self.P_MS =None
+        self.r_p = None
+        self.r_f = None
+        self.H_Z = None
+        self.L_F = None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
         return self.N_G
+
+    
     
     def a_d_belirle(self):
-        A_D = A_D_uzunluk_C * A_D_genişlik_C
-        self.A_D_AUY = [A_D, A_D_uzunluk_C, A_D_genişlik_C]
+        self.A_D_AUY = [A_D, A_D_uzunluk_C, A_D_genişlik_C,A_D_yükseklik_C,A_D_denklem_C]
+        if self.A_D_AUY[4] == "evet":
+            self.HMAX = float(input("düzensiz yapının max yükseklik nedir: "))
+            A_D= pi*(3*self.HMAX)**2
+
+        elif self.A_D_AUY[4]=="hayır":
+            A_D = (A_D_uzunluk_C * A_D_genişlik_C)+(2*3*A_D_yükseklik_C)*(A_D_uzunluk_C+A_D_genişlik_C)+(3*pi(3*A_D_yükseklik_C)**2)
+        
         return self.A_D_AUY
         
     def c_d_belirle(self):
@@ -170,4 +188,67 @@ class LightningRiskCalculator_min_values:
     def p_ms_belirle(self):
         self.P_MS = P_MS_C
         return self.P_MS
+    def r_p_belirle(self):
+                
+        data = {
+            "yangın tedbirleri": [
+                "Patlama riski var",
+                "Tedbir yok ",
+                "Aşağıdaki tedbirlerden biri: Yangın söndürücüler, elle çalıştırılan sabit yangın söndürme tesisleri, elle çalıştırılan alarm tesisleri, hidrantlar, yangına karşı korunmalı bölmeler, kaçış güzergâhları.",
+                "Aşağıdaki tedbirlerden biri:Otomatik sabit yangın söndürme tesisleri, otomatik alarm tesisleri bulunuyorsa (itfayiye 10 dkdan az sürede gelebiliyorsa ve aşırı gerilim gibi hasarlardan korunuyorsa)",
+            ],
+            "r_p": [1,1,0.5,0.2]
+        }
+        r_p_DF = pd.DataFrame(data)
+        self.r_p = r_p_DF[r_p_DF["yangın tedbirleri"] == r_p_C, "r_p"].values[0]
+        return self.r_p
+    def r_f_belirle(self):
+        data = {
+            "risk tutarı" :
+            ["Patlama : Bölgeler 0, 20 ve katı patlayıcı",
+                "Patlama : Bölgeler 1, 21",
+                "Patlama : Bölgeler 2, 22",
+                "Yangın : Yüksek",
+                "Yangın : Normal",
+                "Yangın : Düşük",
+                "Patlama ve Yangın : Yok "
+                ],
+                "r_f" : [1,0.1,0.001,0.1,0.01,0.001,0]
+        }
+        r_f_DF = pd.DataFrame(data)
+       
+        self.r_f = r_f_DF.loc[r_f_DF["risk tutarı"]==r_f_C,"r_f"].values[0]
+        return self.r_f
+    def h_z_belirle(self):
+        data ={
+            "özel tehlike cinsi" : 
+            ["Özel tehlike yok",
+                "Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)",
+                "Orta panik seviyesi (yapının kültür veya spor faaliyetlerine tahsis edilmesi ve katılan insan sayısının 100 ile 1000 arasında olması gibi)",
+                "Tahliye zorluğu (örneğin, hareket edemeyen kişiler, hastaneler)",
+                "Yüksek panik seviyesi (örneğin, yapının kültür veya spor faaliyetlerine tahsis edilmesi ve katılan insan sayısının 1000’den fazla olması gibi)"
+            ],
+            "h_z" : [1,2,5,5,10]
+        }
+        h_z_DF = pd.DataFrame(data)
+        secim = input("Özel tehlike olması halinde bağıl kayıp miktarını arttıran hz faktörü:")
+        self.H_Z = h_z_DF.loc[h_z_DF["özel tehlike cinsi"]==H_Z_C,"h_z"].values[0]
+        return self.H_Z
+    def L_f_belirle(self):
+        data = { "yüzde kayıp" : 
+                [
+                    "Patlama riski",
+                    "Hastane, otel, okul, kamu binası"
+                    "Halka açık eğlence yeri, ibadethane, müze"
+                    "Sanayi, ticari"
+                    "Diğerleri"
+                ],
+                "L_z" : [0.1,0.1,0.05,0.02,0.01]
+        }
+        L_f_DF = pd.DataFrame(data)
         
+        self.L_f = L_f_DF.loc[L_f_DF["yüzde kayıp"]==L_F_C,"L_f"].values[0]
+        return self.L_f
+
+
+    

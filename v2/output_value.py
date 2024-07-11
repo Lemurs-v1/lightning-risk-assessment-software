@@ -14,6 +14,7 @@ class LightningRiskCalculator_output_value:
         self.C_LD = None
         self.L_O = None
         self.P_MS = None
+        self.A_D_yükseklik = None
 
     def n_g_bul(self):
         N_G = input("Yıldırım yoğunluğunu giriniz (sayı/bilmiyorum): ")
@@ -23,7 +24,12 @@ class LightningRiskCalculator_output_value:
         else:
             N_G = float(N_G)
         return N_G
-
+    def a_d_denklem(self):
+        A_D_denklem = input("yapı karmaşık yapıda mı: (evet/hayır)")
+        return A_D_denklem
+    def a_d_yükseklik_bul(self):
+        A_D_yükseklik = float (input("yapı yüksekliğini giriniz: "))
+        return A_D_yükseklik
     def a_d_genişlik_bul(self):
         A_D_genişlik = float(input("Yapı genişliğini giriniz: "))
         return A_D_genişlik
@@ -31,6 +37,7 @@ class LightningRiskCalculator_output_value:
     def a_d_uzunluk_bul(self):
         A_D_uzunluk = float(input("Yapı uzunluğunu giriniz: "))
         return A_D_uzunluk
+    
 
     def c_d_bul(self):
         C_D = input("Bağıl konumu nedir: ")
@@ -111,3 +118,17 @@ class LightningRiskCalculator_output_value:
         KS4 = (1/P_MS_soru4)
         self.P_MS = (KS1*KS2*KS3*KS4)**2
         return self.P_MS
+    def r_p_bul(self):
+        r_p =input("Yangın tedbiri sonucu kayıp azaltma faktörü nedir ?")
+        return r_p
+    def r_f_bul():
+        r_f =input("Yangın riskine bağlı azalma faktörü nedir")
+        return r_f
+    def h_z_bul():
+        H_Z = input("Özel tehlike olması halinde bağıl kayıp miktarını arttıran hz faktörü:")
+        return H_Z
+    def l_f_bul():
+        L_F = input("Yapıda fiziksel hasarla ilgili tipik yüzde kayıp :")
+        return L_F
+
+
