@@ -3,6 +3,10 @@ import pandas as pd
 class N_l():
     def __init__(self) -> None:
         pass
+    
+    def N_g_belirle(self):
+        pass
+    
     def A_l_belirle(self):
         self.A_l = 40* self.L_l
         self.L_l = input("Hat kısmının uzunluğu :")
@@ -48,9 +52,16 @@ class N_l():
     
 
 
-class N_dt():
+class N_dj():
     def __init__(self) -> None:
         pass
+    def N_g_belirlee(self):# 2tane e ile bitiyor çünkü yukarda tanımlı bir daha tanımlamak istemedim.
+        pass
+    def A_dj_belirle(self): #A_d bitişik yapının toplama alanı. anlayan, anlamayana anlatsın amk.
+        pass
+    def C_dj_belirlee(self): #C_dj aslında C_T ile aynı tabloyu kullanıyor incelenebilir. 
+        pass
+
 class P_w():
     def __init__(self) -> None:
         pass
@@ -65,7 +76,8 @@ class P_w():
         P_SPD = P_spd_DF.loc[P_spd_DF["korunma tedbiri"]== seçim,"P_spd"].values[0]
         return P_SPD
     
-    def P_lb_belirle(self):
+    def P_ld_belirle(self):
+        pass
         
     def C_ld_belirle(self):
         pass
