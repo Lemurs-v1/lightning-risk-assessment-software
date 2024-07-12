@@ -18,12 +18,16 @@ P_SPD_C = output.p_spd_bul()
 C_LD_C = output.c_ld_bul()
 L_O_C = output.l_o_bul()
 P_MS_C = output.p_ms_bul()
-"""
+
 r_p_C = output.r_p_bul()
+
 r_f_C = output.r_f_bul() 
+
 H_Z_C = output.h_z_bul()
+
+
 L_F_C = output.l_f_bul()
-"""
+
 class LightningRiskCalculator_min_values:
     def __init__(self):
         self.N_G = None
@@ -45,12 +49,15 @@ class LightningRiskCalculator_min_values:
         self.A_M =None
         self.P_MS =None
         
-        """
+        
         self.r_p = None
+        
         self.r_f = None
+        
         self.H_Z = None
+        
         self.L_F = None
-"""
+
     def n_g_belirle(self):
         self.N_G = N_G_C
         return self.N_G
@@ -195,21 +202,27 @@ class LightningRiskCalculator_min_values:
     def p_ms_belirle(self):
         self.P_MS = P_MS_C
         return self.P_MS
-    """
+    
     def r_p_belirle(self):
-                
         data = {
             "yangın tedbirleri": [
                 "Patlama riski var",
-                "Tedbir yok ",
+                "Tedbir yok",
                 "Aşağıdaki tedbirlerden biri: Yangın söndürücüler, elle çalıştırılan sabit yangın söndürme tesisleri, elle çalıştırılan alarm tesisleri, hidrantlar, yangına karşı korunmalı bölmeler, kaçış güzergâhları.",
                 "Aşağıdaki tedbirlerden biri:Otomatik sabit yangın söndürme tesisleri, otomatik alarm tesisleri bulunuyorsa (itfayiye 10 dkdan az sürede gelebiliyorsa ve aşırı gerilim gibi hasarlardan korunuyorsa)",
             ],
-            "r_p": [1,1,0.5,0.2]
+            "r_p": [1, 1, 0.5, 0.2]
         }
+
         r_p_DF = pd.DataFrame(data)
-        self.r_p = r_p_DF[r_p_DF["yangın tedbirleri"] == r_p_C, "r_p"].values[0]
-        return self.r_p
+
+        # Check if r_p_C exists in the 'yangın tedbirleri' column
+        if r_p_C in r_p_DF["yangın tedbirleri"].values:
+            self.r_p = r_p_DF.loc[r_p_DF["yangın tedbirleri"] == r_p_C, "r_p"].values[0]
+            return self.r_p
+        else:
+            raise ValueError("Provided r_p_C value does not match any entry in the 'yangın tedbirleri' column.")
+    
     def r_f_belirle(self):
         data = {
             "risk tutarı" :
@@ -227,6 +240,7 @@ class LightningRiskCalculator_min_values:
        
         self.r_f = r_f_DF.loc[r_f_DF["risk tutarı"]==r_f_C,"r_f"].values[0]
         return self.r_f
+    
     def h_z_belirle(self):
         data ={
             "özel tehlike cinsi" : 
@@ -239,24 +253,24 @@ class LightningRiskCalculator_min_values:
             "h_z" : [1,2,5,5,10]
         }
         h_z_DF = pd.DataFrame(data)
-        secim = input("Özel tehlike olması halinde bağıl kayıp miktarını arttıran hz faktörü:")
         self.H_Z = h_z_DF.loc[h_z_DF["özel tehlike cinsi"]==H_Z_C,"h_z"].values[0]
         return self.H_Z
+    
     def L_f_belirle(self):
-        data = { "yüzde kayıp" : 
-                [
-                    "Patlama riski",
-                    "Hastane, otel, okul, kamu binası"
-                    "Halka açık eğlence yeri, ibadethane, müze"
-                    "Sanayi, ticari"
-                    "Diğerleri"
+        data = { 
+            "yüzde kayıp" : 
+            ["Patlama riski",
+                "Hastane, otel, okul, kamu binası",
+                "Halka açık eğlence yeri, ibadethane, müze",
+                "Sanayi, ticari",
+                "Diğerleri"
                 ],
-                "L_z" : [0.1,0.1,0.05,0.02,0.01]
+                "L_f" : [0.1,0.1,0.05,0.02,0.01]
         }
         L_f_DF = pd.DataFrame(data)
-        
+
         self.L_f = L_f_DF.loc[L_f_DF["yüzde kayıp"]==L_F_C,"L_f"].values[0]
         return self.L_f
 
 
-    """
+    

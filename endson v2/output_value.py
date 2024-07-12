@@ -16,6 +16,11 @@ class LightningRiskCalculator_output_value:
         self.C_LD = None
         self.L_O = None
         self.P_MS = None
+        self.r_f = None
+        self.r_p = None
+        self.H_Z = None
+        self.L_F = None
+
        
 
     def n_g_bul(self):
@@ -120,19 +125,24 @@ class LightningRiskCalculator_output_value:
         KS4 = (1/P_MS_soru4)
         self.P_MS = (KS1*KS2*KS3*KS4)**2
         return self.P_MS
-    """
+    
     
     def r_p_bul(self):
-        self.r_p =input("Yangın tedbiri sonucu kayıp azaltma faktörü nedir ?")
+        self.r_p ="Patlama riski var"#input("Yangın tedbiri sonucu kayıp azaltma faktörü nedir ?")
         return self.r_p
+    
+    
     def r_f_bul(self):
-        self.r_f =input("Yangın riskine bağlı azalma faktörü nedir")
+        self.r_f ="Yangın : Yüksek"#input("Yangın riskine bağlı azalma faktörü nedir")
         return self.r_f
+    
     def h_z_bul(self):
-        self.H_Z = input("Özel tehlike olması halinde bağıl kayıp miktarını arttıran hz faktörü:")
+        self.H_Z = "Tahliye zorluğu (örneğin, hareket edemeyen kişiler, hastaneler)"#input("Özel tehlike olması halinde bağıl kayıp miktarını arttıran hz faktörü:")
         return self.H_Z
+    
+    
     def l_f_bul(self):
-        self.L_F = input("Yapıda fiziksel hasarla ilgili tipik yüzde kayıp :")
+        self.L_F = "Halka açık eğlence yeri, ibadethane, müze"#input("Yapıda fiziksel hasarla ilgili tipik yüzde kayıp :")
         return self.L_F
 
-"""
+

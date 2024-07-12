@@ -35,14 +35,18 @@ class LightningRiskCalculator_middle_values:
         self.C_LD = min.c_ld_belirle()
         ##################################
         #################################
-        """
+    
         self.L_B = None
         self.r_p = min.r_p_belirle()
+        
         self.r_f = min.r_f_belirle()
+        
         self.h_z = min.h_z_belirle()
+        
+    
         self.L_F = min.L_f_belirle()
         
-"""
+
 
     def n_d_belirle(self):
         self.N_D = self.N_G*self.A_D*self.C_D
@@ -71,11 +75,11 @@ class LightningRiskCalculator_middle_values:
         return self.L_M
     #######################################################################################
     #######################################################################################
-    """
+    
     def l_b_belirle(self):#LB=LV
-        self.L_B=self.r_p*self.r_f*self.h_z*self.h_z*self.L_F*self.nz_bölü_nt*self.tz_bölü_8760 
+        self.L_B=self.L_F*self.h_z*self.nz_bölü_nt*self.tz_bölü_8760*self.r_p*self.r_f
         return self.L_B
-        """
+        
     ###################################################################################333
     ###################################################################################333
 
@@ -91,6 +95,6 @@ print(x.p_c_belirle())
 print(x.l_a_belirle())
 print(x.p_a_belirleme())
 print(x.n_d_belirle())
-#print(x.l_b_belirle())
+print(x.l_b_belirle())
 
 
