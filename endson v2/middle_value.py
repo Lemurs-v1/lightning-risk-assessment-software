@@ -45,6 +45,8 @@ class LightningRiskCalculator_middle_values:
         self.N_L = None
         self.A_L = min.a_l_belirle()
         self.C_I = min.c_ı_belirle()
+        self.C_T = min.C_t_belirle()
+        self.C_E = min.C_e_belirle()
         
 
 
@@ -81,12 +83,18 @@ class LightningRiskCalculator_middle_values:
         return self.L_B
         
     ###################################################################################333
-    ###################################################################################333  
+    ###################################################################################333
+    # rw  
     def n_l_belirle(self):
-        self.N_L = self.N_G*self.A_L*self.C_I
+        self.N_L = self.N_G*self.A_L*self.C_I*self.C_T*self.C_E*10**-6
         return self.N_L
-
+    def n_dj_belirle(self):#İhmal ADJ ANLAMIA BAKILDIGINDA EKLENEBİLİR
+        return 0
+    def p_w_belirle(self):#GİRİLMEMİŞ
+        pass
         
+    
+       
         
 x = LightningRiskCalculator_middle_values()
 print(x.l_m_belirle())

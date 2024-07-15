@@ -23,6 +23,8 @@ class LightningRiskCalculator_output_value:
 
         self.L_L = None
         self.C_I = None
+        self.C_T = None
+        self.C_E = None
 
        
 
@@ -154,3 +156,9 @@ class LightningRiskCalculator_output_value:
     def c_ı_bul(self):
         self.C_I = "Gömülü"#input("Güzergah türü nedir ?")
         return self.C_I
+    def c_t_bul(self):
+        self.C_T = "YG güç (YG/AG transformatörü ile)"#input("Tesisat türü nedir?")
+        return self.C_T
+    def c_e_bul(self):
+        self.C_E = input("Çevre türü nedir?")
+        return self.C_E

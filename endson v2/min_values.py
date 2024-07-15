@@ -26,6 +26,8 @@ L_F_C = output.l_f_bul()
 
 L_L_C = output.l_l_bul()
 C_I_C = output.c_ı_bul()
+C_T_C = output.c_t_bul()
+C_E_C = output.c_e_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -55,6 +57,8 @@ class LightningRiskCalculator_min_values:
 
         self.L_L = None
         self.C_I = None
+        self.C_T = None
+        self.C_E = None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -283,4 +287,29 @@ class LightningRiskCalculator_min_values:
         C_I_DF = pd.DataFrame(data)
         self.C_I = C_I_DF.loc[C_I_DF["Güzergah"]==C_I_C,"C_ı"].values[0]
         return self.C_I
-
+    def C_t_belirle(self):
+        data = {
+            "Tesisat" : [
+                "AG güç, telekomünikasyon veya veri hattı",
+                "YG güç (YG/AG transformatörü ile)"
+            ],
+            "C_t" : [1,0.2]
+        }
+        C_t_DF = pd.DataFrame(data)
+        self.C_T = C_t_DF.loc[C_t_DF["Tesisat"]== C_T_C,"C_t"].values[0]
+        return self.C_T
+    def C_e_belirle(self):
+        data = {
+            "Çevre" : [
+                "Kırsal",
+                "Banliyo",
+                "Şehir",
+                "Büyük binaların olduğu şehir(20m'den yüksek.)"
+            ],
+            "C_e" : [1,0.5,0.1,0.01]
+        }
+        C_e_DF = pd.DataFrame(data)
+        
+        self.C_E= C_e_DF.loc[C_e_DF["Çevre"]==C_E_C,"C_e"].values[0]
+        return self.C_E
+    
