@@ -35,16 +35,16 @@ class LightningRiskCalculator_middle_values:
         self.C_LD = min.c_ld_belirle()
         ##################################
         #################################
-    
         self.L_B = None
         self.r_p = min.r_p_belirle()
-        
         self.r_f = min.r_f_belirle()
-        
         self.h_z = min.h_z_belirle()
-        
-    
-        self.L_F = min.L_f_belirle()
+        self.L_F = min.l_f_belirle()
+        #################################3
+        ##################################
+        self.N_L = None
+        self.A_L = min.a_l_belirle()
+        self.C_I = min.c_ı_belirle()
         
 
 
@@ -81,9 +81,10 @@ class LightningRiskCalculator_middle_values:
         return self.L_B
         
     ###################################################################################333
-    ###################################################################################333
-
-    
+    ###################################################################################333  
+    def n_l_belirle(self):
+        self.N_L = self.N_G*self.A_L*self.C_I
+        return self.N_L
 
         
         
@@ -96,5 +97,5 @@ print(x.l_a_belirle())
 print(x.p_a_belirleme())
 print(x.n_d_belirle())
 print(x.l_b_belirle())
-
+print(x.n_l_belirle())
 

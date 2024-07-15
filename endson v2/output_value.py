@@ -21,6 +21,9 @@ class LightningRiskCalculator_output_value:
         self.H_Z = None
         self.L_F = None
 
+        self.L_L = None
+        self.C_I = None
+
        
 
     def n_g_bul(self):
@@ -144,5 +147,10 @@ class LightningRiskCalculator_output_value:
     def l_f_bul(self):
         self.L_F = "Halka açık eğlence yeri, ibadethane, müze"#input("Yapıda fiziksel hasarla ilgili tipik yüzde kayıp :")
         return self.L_F
+    def l_l_bul(self):
+        self.L_L = 100#float(input("Hat kısmının uzunluğu :"))
+        return self.L_L
 
-
+    def c_ı_bul(self):
+        self.C_I = "Gömülü"#input("Güzergah türü nedir ?")
+        return self.C_I

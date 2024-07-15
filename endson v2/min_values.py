@@ -20,13 +20,12 @@ L_O_C = output.l_o_bul()
 P_MS_C = output.p_ms_bul()
 
 r_p_C = output.r_p_bul()
-
 r_f_C = output.r_f_bul() 
-
 H_Z_C = output.h_z_bul()
-
-
 L_F_C = output.l_f_bul()
+
+L_L_C = output.l_l_bul()
+C_I_C = output.c_ı_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -49,14 +48,13 @@ class LightningRiskCalculator_min_values:
         self.A_M =None
         self.P_MS =None
         
-        
         self.r_p = None
-        
         self.r_f = None
-        
         self.H_Z = None
-        
         self.L_F = None
+
+        self.L_L = None
+        self.C_I = None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -256,7 +254,7 @@ class LightningRiskCalculator_min_values:
         self.H_Z = h_z_DF.loc[h_z_DF["özel tehlike cinsi"]==H_Z_C,"h_z"].values[0]
         return self.H_Z
     
-    def L_f_belirle(self):
+    def l_f_belirle(self):
         data = { 
             "yüzde kayıp" : 
             ["Patlama riski",
@@ -271,6 +269,18 @@ class LightningRiskCalculator_min_values:
 
         self.L_f = L_f_DF.loc[L_f_DF["yüzde kayıp"]==L_F_C,"L_f"].values[0]
         return self.L_f
-
-
+    def a_l_belirle(self):
+        self.L_L = L_L_C
+        self.A_L = 40* self.L_L
+        return self.A_L
     
+    def c_ı_belirle(self):
+        data = {
+            "Güzergah" : ["Havai","Gömülü","Tamamiyle bir kafes biçimindeki toprak sonlandırma uclarına giden gömülü kablolar"
+            ],
+            "C_ı" : [1,0.5,0.01]
+        }
+        C_I_DF = pd.DataFrame(data)
+        self.C_I = C_I_DF.loc[C_I_DF["Güzergah"]==C_I_C,"C_ı"].values[0]
+        return self.C_I
+
