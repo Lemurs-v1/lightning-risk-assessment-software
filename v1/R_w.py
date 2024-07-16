@@ -59,7 +59,7 @@ class N_dj():
         pass
     def A_dj_belirle(self): #A_d bitişik yapının toplama alanı. anlayan, anlamayana anlatsın amk.
         pass
-    def C_dj_belirlee(self): #C_dj aslında C_T ile aynı tabloyu kullanıyor incelenebilir. 
+    def C_dj_belirlee(self): #C_dj aslında C_T ile aynı tabloyu kullanıyor incelenebilir.
         pass
 
 class P_w():
@@ -77,13 +77,48 @@ class P_w():
         return P_SPD
     
     def P_ld_belirle(self):
-        pass
         
+        self.P_ld_cevap = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir ?")
+        if self.P_ld_cevap == "evet": #Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış ise =>> "evet"
+            sonuc = int(1)
+        elif self.P_ld_cevap == "hayır": #Zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü ise =>> "hayır"
+            data = {
+                "5 Ω /km <RS ≤ 20 Ω /km" :[
+                    "1",
+                    "1",
+                    "0.95",
+                    "0.9",
+                    "0.8"
+                ],
+                "1 Ω /km <RS ≤ 5 Ω /km" :[
+                    "0.9",
+                    "0.8",
+                    "0.6",
+                    "0.3",
+                    "0.1"
+                ],
+                "RS ≤ 1 Ω /km" :[
+                    "0.6",
+                    "0.4",
+                    "0.2",
+                    "0.04",
+                    "0.02"
+
+                ]
+                
+            }
+            secim1 = input("Direnç değerini giriniz :")
+            secim2 = input("Dayanım gerilimini giriniz :") 
+            sonuc = data[secim1][secim2]
+        return sonuc       
+    
     def C_ld_belirle(self):
         pass
 
 class L_w():
     def __init__(self) -> None:
         pass
+    def L_o_belirle(self):
+        pass #output da belirlenmiş
 
         
