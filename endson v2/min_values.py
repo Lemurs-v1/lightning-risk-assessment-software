@@ -28,6 +28,8 @@ L_L_C = output.l_l_bul()
 C_I_C = output.c_ı_bul()
 C_T_C = output.c_t_bul()
 C_E_C = output.c_e_bul()
+P_TU_C = output.p_tu_bul()
+P_EB_C = output.p_eb_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -59,6 +61,9 @@ class LightningRiskCalculator_min_values:
         self.C_I = None
         self.C_T = None
         self.C_E = None
+
+        self.P_TU = None
+        self.P_EB =None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -312,4 +317,34 @@ class LightningRiskCalculator_min_values:
         
         self.C_E= C_e_DF.loc[C_e_DF["Çevre"]==C_E_C,"C_e"].values[0]
         return self.C_E
+    def p_tu_belirle(self):
+        data = {
+            "Korunma tedbiri": [
+                "Korunma tedbirleri yok",
+                "Kablaj uyarıları",
+                "Elektriksel yalıtım",
+                "Fiziksel kısıtlamalar"
+            ],
+            "P_TU": [1, 10**-1, 10**-2, 0]
+        }
+        P_TU_DF = pd.DataFrame(data)
+
+        self.P_TU = P_TU_DF.loc[P_TU_DF["Korunma tedbiri"] == P_TU_C, "P_TU"].values[0]
+        return self.P_TU
+    def p_eb_belirle(self,):
+        data = {
+            "LPL": [
+                "SPD yok",
+                "III-IV",
+                "II",
+                "I"
+            ],
+            "P_EB": [1, 0.05, 0.02, 0.01]
+        }
+        P_EB__DF = pd.DataFrame(data)
+
+        self.P_EB = P_EB__DF.loc[P_EB__DF["LPL"] == P_EB_C, "P_EB"].values[0]
+        return self.P_EB
+    def p_ld_belirle(self):#mert yapacak
+        pass
     
