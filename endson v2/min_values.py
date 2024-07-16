@@ -64,6 +64,7 @@ class LightningRiskCalculator_min_values:
 
         self.P_TU = None
         self.P_EB =None
+        self.L_L = None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -347,4 +348,5 @@ class LightningRiskCalculator_min_values:
         return self.P_EB
     def p_ld_belirle(self):#mert yapacak
         pass
-    
+    def a_ı_belirle(self):
+        self.A_I = 4000*self.L_L

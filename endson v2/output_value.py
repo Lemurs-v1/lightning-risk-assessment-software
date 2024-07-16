@@ -153,7 +153,11 @@ class LightningRiskCalculator_output_value:
         self.L_F = "Halka açık eğlence yeri, ibadethane, müze"#input("Yapıda fiziksel hasarla ilgili tipik yüzde kayıp :")
         return self.L_F
     def l_l_bul(self):
-        self.L_L = 100#float(input("Hat kısmının uzunluğu :"))
+        L_L_C = 100#float(input("Hat kısmının uzunluğu :"))
+        if L_L_C == "bilmiyorum":
+            self.L_L = 1000
+        else:
+            self.L_L=L_L_C
         return self.L_L
 
     def c_ı_bul(self):
