@@ -47,11 +47,14 @@ class LightningRiskCalculator_middle_values:
         self.C_I = min.c_ı_belirle()
         self.C_T = min.C_t_belirle()
         self.C_E = min.C_e_belirle()
+
+        self.P_TU = min.p_tu_belirle()
+        self.P_EB = min.p_eb_belirle()
         
 
 
     def n_d_belirle(self):
-        self.N_D = self.N_G*self.A_D*self.C_D
+        self.N_D = self.N_G*self.A_D*self.C_D*10**-6
         return self.N_D
     def p_a_belirleme(self):
         self.P_A = self.P_TA*self.P_B
@@ -67,7 +70,7 @@ class LightningRiskCalculator_middle_values:
     #####################################################################################
     #####################################################################################3
     def n_m_belirle(self):
-        self.N_M = self.N_G* self.A_M*(10**-6)
+        self.N_M = self.N_G* self.A_M*10**-6
         return self.N_M 
     def p_m_belirle(self):
         self.P_M = self.P_SPD*self.P_MS 
@@ -90,8 +93,11 @@ class LightningRiskCalculator_middle_values:
         return self.N_L
     def n_dj_belirle(self):#İhmal ADJ ANLAMIA BAKILDIGINDA EKLENEBİLİR
         return 0
-    def p_w_belirle(self):#GİRİLMEMİŞ
+    def p_w_belirle(self):#GİRİLMEMİŞ girelecek 
         pass
+    def p_u_belirle(self):
+        self.P_U=self.P_TU*self.P_EB
+        return self.P_U
         
     
        
@@ -106,4 +112,5 @@ print(x.p_a_belirleme())
 print(x.n_d_belirle())
 print(x.l_b_belirle())
 print(x.n_l_belirle())
+print(x.p_u_belirle())
 
