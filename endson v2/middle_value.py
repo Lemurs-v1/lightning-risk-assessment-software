@@ -67,7 +67,7 @@ class LightningRiskCalculator_middle_values:
     def n_d_belirle(self):
         self.N_D = self.N_G*self.A_D*self.C_D*10**-6
         return self.N_D
-    def p_a_belirleme(self):
+    def p_a_belirle(self):
         self.P_A = self.P_TA*self.P_B
         return self.P_A
     def l_a_belirle(self):
@@ -98,7 +98,7 @@ class LightningRiskCalculator_middle_values:
         
     ###################################################################################333
     ###################################################################################333
-    # rw  
+    
     def n_l_belirle(self):
         self.N_L = self.N_G*self.A_L*self.C_I*self.C_T*self.C_E*10**-6
         return self.N_L
@@ -132,7 +132,7 @@ print(x.p_m_belirle())
 print(x.n_m_belirle())
 print(x.p_c_belirle())
 print(x.l_a_belirle())
-print(x.p_a_belirleme())
+print(x.p_a_belirle())
 print(x.n_d_belirle())
 print(x.l_b_belirle())
 print(x.n_l_belirle())

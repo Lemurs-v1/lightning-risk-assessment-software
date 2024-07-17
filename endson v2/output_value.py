@@ -183,9 +183,9 @@ class LightningRiskCalculator_output_value:
         self.P_LD = [self.P_LD_1,self.P_LD_2,self.P_LD_3]
         return self.P_LD
     def p_lı_bul(self):
-        self.P_LI_1 = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
-        self.P_LI_2 = input("Hat tipini giriniz:")
-        self.P_LI_3 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
+        self.P_LI_1 = "hayır"#input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
+        self.P_LI_2 = "Güç Hatları"#input("Hat tipini giriniz:")
+        self.P_LI_3 = "6"#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
         self.P_LI = [self.P_LI_1,self.P_LI_2,self.P_LI_3]
         return self.P_LI
 

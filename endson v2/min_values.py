@@ -86,7 +86,7 @@ class LightningRiskCalculator_min_values:
 
         elif self.A_D_denklem=="hayır":
             self.A_D = (self.A_D_uzunluk * self.A_D_genişlik)+(2*3*self.A_D_yükseklik)*(self.A_D_uzunluk+self.A_D_genişlik)+(pi*(3*self.A_D_yükseklik)**2)
-        
+        print(self.A_D)
         return self.A_D
         
     def c_d_belirle(self):
