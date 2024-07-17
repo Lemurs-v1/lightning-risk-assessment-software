@@ -31,6 +31,7 @@ C_E_C = output.c_e_bul()
 P_TU_C = output.p_tu_bul()
 P_EB_C = output.p_eb_bul()
 P_LD_C = output.p_ld_bul()
+P_LI_C = output.p_lı_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -69,6 +70,8 @@ class LightningRiskCalculator_min_values:
 
         self.P_LD = None
 
+        self.P_LI = None
+
     def n_g_belirle(self):
         self.N_G = N_G_C
         return self.N_G
@@ -82,7 +85,7 @@ class LightningRiskCalculator_min_values:
             self.A_D= pi*(3*self.HMAX)**2
 
         elif self.A_D_denklem=="hayır":
-            self.A_D = (self.A_D_uzunluk * self.A_D_genişlik)+(2*3*self.A_D_yükseklik)*(self.A_D_uzunluk+self.A_D_genişlik)+(3*pi*(3*self.A_D_yükseklik)**2)
+            self.A_D = (self.A_D_uzunluk * self.A_D_genişlik)+(2*3*self.A_D_yükseklik)*(self.A_D_uzunluk+self.A_D_genişlik)+(pi*(3*self.A_D_yükseklik)**2)
         
         return self.A_D
         
@@ -352,6 +355,7 @@ class LightningRiskCalculator_min_values:
 
     def a_ı_belirle(self):
         self.A_I = 4000*self.L_L
+        return self.A_I
     def p_ld_belirle(self):
         if P_LD_C[0] == "evet":
             self.P_LD = 1
@@ -369,4 +373,42 @@ class LightningRiskCalculator_min_values:
             }
             df = pd.DataFrame(data)
             self.P_LD = df.loc[(df['Direnç Değeri'] == P_LD_C[1]) & (df['Dayanım Gerilimi'] == P_LD_C[2]), 'Değer'].values[0]
-            return self.P_LD
+            return self.P_LD    
+    def p_lı_belirle(self):
+        if P_LI_C[0] == "evet":
+            sonuc = 1
+        elif P_LI_C[0] == "hayır":
+            data = {
+                "Hat tipi": ["Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları",
+                                "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları",
+                ],
+                "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
+                                    "1", "1.5", "2.5", "4", "6",
+                                   ],
+                "Değer": [1, 0.6, 0.3, 0.16, 0.1,
+                        1, 0.5, 0.2, 0.08, 0.04,
+                        ]
+            }
+            df = pd.DataFrame(data)
+            self.P_LI = df.loc[(df['Hat tipi'] == P_LI_C[1]) & (df['Dayanım Gerilimi'] == P_LI_C[2]), 'Değer'].values[0]
+        return self.P_LI
+    
+    def c_lı_belirle(self):
+        data = {
+            "Dış hat tipi ve Girişte bağlantı": [
+                "Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış",
+                "Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış",
+                "Dış hat tipi: Çoklu topraklanmış nötr güç hattı / Girişte bağlantı: Yoktur",
+                "Dış hat tipi: Zırhlanmış gömülü hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmamış",
+                "Dış hat tipi: Zırhlanmış havai hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmamış",
+                "Dış hat tipi: Zırhlanmış gömülü hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmış",
+                "Dış hat tipi: Zırhlanmış havai hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmış",
+                "Dış hat tipi: Yıldırıma karşı koruyucu kablo kanalları, metalik kanal veya metalik borular içinde yıldırım koruyucu kablo veya kablaj / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmış",
+                "Dış hat tipi: Dış hat yok / Girişte bağlantı: Dış hatlara bağlantı yok (yalnız başına bulunan sistemler)",
+                "Dış hat tipi: Herhangi bir tip / Girişte bağlantı: EN 62305-4’e göre ayırma ara yüzü"
+                ],
+                "C_LI": [1, 1, 0.2, 0.3, 0.1, 0, 0, 0, 0, 0]
+                }
+        C_LI_DF = pd.DataFrame(data)
+        self.C_LI = C_LI_DF.loc[C_LI_DF["Dış hat tipi ve Girişte bağlantı"] == C_LD_C, "C_LI"].values[0] # C_LI_C tanımlanacak 
+        return self.C_LI

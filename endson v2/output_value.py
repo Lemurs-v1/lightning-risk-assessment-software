@@ -28,6 +28,7 @@ class LightningRiskCalculator_output_value:
 
         self.P_TU =None
         self.P_EB = None
+        self.P_LI = None
 
        
 
@@ -95,7 +96,7 @@ class LightningRiskCalculator_output_value:
         return self.P_SPD
 
     def c_ld_bul(self):
-        self.C_LD = "Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış"#input("Dış hat tipi ve girişte bağlantı olarak ne kullanılıyor: ")
+        self.C_LD = "Dış hat tipi: Çoklu topraklanmış nötr güç hattı / Girişte bağlantı: Yoktur"#input("Dış hat tipi ve girişte bağlantı olarak ne kullanılıyor: ")
         return self.C_LD
 
     def l_o_bul(self):
@@ -176,10 +177,16 @@ class LightningRiskCalculator_output_value:
         self.P_EB = "III-IV"#input("LPL SEVİYESİ NEDİR?")
         return self.P_EB
     def p_ld_bul(self):
-        self.P_LD_1 = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
-        self.P_LD_2 = input("Direnç değerini giriniz: ")
-        self.P_LD_3 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
+        self.P_LD_1 = "hayır"#input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
+        self.P_LD_2 = "5 Ω /km <RS ≤ 20 Ω /km"#input("Direnç değerini giriniz: ")
+        self.P_LD_3 = "6"#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
         self.P_LD = [self.P_LD_1,self.P_LD_2,self.P_LD_3]
         return self.P_LD
+    def p_lı_bul(self):
+        self.P_LI_1 = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
+        self.P_LI_2 = input("Hat tipini giriniz:")
+        self.P_LI_3 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
+        self.P_LI = [self.P_LI_1,self.P_LI_2,self.P_LI_3]
+        return self.P_LI
 
 
