@@ -30,6 +30,7 @@ C_T_C = output.c_t_bul()
 C_E_C = output.c_e_bul()
 P_TU_C = output.p_tu_bul()
 P_EB_C = output.p_eb_bul()
+P_LD_C = output.
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -350,3 +351,25 @@ class LightningRiskCalculator_min_values:
         pass
     def a_ı_belirle(self):
         self.A_I = 4000*self.L_L
+    def P_ld_belirle(self):
+        P_ld_cevap = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir? ")
+        if P_ld_cevap == "evet":
+            sonuc = 1
+        elif P_ld_cevap == "hayır":
+            data = {
+                "Direnç Değeri": ["5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km",
+                                    "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km",
+                                    "RS ≤ 1 Ω /km", "RS ≤ 1 Ω /km", "RS ≤ 1 Ω /km", "RS ≤ 1 Ω /km", "RS ≤ 1 Ω /km"],
+                "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
+                                        "1", "1.5", "2.5", "4", "6",
+                                        "1", "1.5", "2.5", "4", "6",],
+                "Değer": [1, 1, 0.95, 0.9, 0.8,
+                            0.9, 0.8, 0.6, 0.3, 0.1,
+                            0.6, 0.4, 0.2, 0.04, 0.02]
+            }
+            df = pd.DataFrame(data)
+            print(df)
+            secim1 = input("Direnç değerini giriniz: ")
+            secim2 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
+            
+            sonuc = df.loc[(df['Direnç Değeri'] == secim1) & (df['Dayanım Gerilimi'] == secim2), 'Değer'].values[0]

@@ -175,3 +175,11 @@ class LightningRiskCalculator_output_value:
     def p_eb_bul(self):
         self.P_EB = "III-IV"#input("LPL SEVİYESİ NEDİR?")
         return self.P_EB
+    def p_ld_bul(self):
+        self.P_LD_1 = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
+        self.P_LD_2 = input("Direnç değerini giriniz: ")
+        self.P_LD_3 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
+        self.P_LD = [self.P_LD_1,self.P_LD_2,self.P_LD_3]
+        return self.P_LD
+
+
