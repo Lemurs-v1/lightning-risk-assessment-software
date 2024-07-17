@@ -30,6 +30,7 @@ class LightningRiskCalculator_output_value:
         self.P_EB = None
         self.P_LI = None
         self.L_FO_2 = None
+        self.L_F_4 = None
 
        
 
@@ -192,4 +193,7 @@ class LightningRiskCalculator_output_value:
     def l_fo_2_bul(self):
         self.L_FO_2 = "Gaz, su, güç besleme"#input("yapı tipi nedir")
         return self.L_FO_2
+    def l_fo_4_bul(self):
+        self.L_FO_4 = "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari"#input("yapı tipi nedir")
+        return self.L_FO_4
     

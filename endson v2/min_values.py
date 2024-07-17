@@ -33,6 +33,8 @@ P_EB_C = output.p_eb_bul()
 P_LD_C = output.p_ld_bul()
 P_LI_C = output.p_lı_bul()
 L_FO_C_2 =output.l_fo_2_bul()
+L_FO_4_C = output.l_fo_4_bul()
+
 
 
 class LightningRiskCalculator_min_values:
@@ -74,6 +76,10 @@ class LightningRiskCalculator_min_values:
         self.L_O_2=None
         ##########################################################################################
         self.L_F_3=None
+        ##########################################################################
+        self.L_T_4=None
+        self.L_F_4=None
+        self.L_O_4=None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -451,6 +457,41 @@ class LightningRiskCalculator_min_values:
     def l_f_3_belirle(self):
         self.L_F_3 = 10**-1
         return self.L_F_3
+    ################################################################################################################################
+    ################################################################################################################################
+    def l_t_4_belirle(self):
+        self.L_T_4 = 10**-2
+        return self.L_T_4
+    def l_f_4_belirle(self):
+        data = { 
+            "yapının tipi" : 
+            ["Patlama riski",
+                "Hastahane, sanayi, müze, zirai ",
+                "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari",
+                "Diğerleri"
+                ],
+                "L_f" : [1,0.5,0.2,10**-1]
+        }
+        L_F_4_DF = pd.DataFrame(data)
+
+        self.L_F_4 = L_F_4_DF.loc[L_F_4_DF["yapının tipi"]==L_FO_4_C,"L_f"].values[0]
+        return self.L_F_4
+    def l_o_4_belirle(self):
+        data = { 
+            "yapının tipi" : 
+            ["Patlama riski",
+                "Hastahane, sanayi, müze, zirai ",
+                "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari",
+                "Diğerleri"
+                ],
+                "L_o" : [10**-1,10**-2,10**-3,10**-4]
+        }
+        L_O_4_DF = pd.DataFrame(data)
+
+        self.L_O_4 = L_O_4_DF.loc[L_O_4_DF["yapının tipi"]==L_FO_4_C,"L_o"].values[0]
+        return self.L_O_4
+
+
 x = LightningRiskCalculator_min_values()
-print(x.l_o_2_belirle())
-print(x.l_f_2_belirle())
+
+print(x.l_o_4_belirle())
