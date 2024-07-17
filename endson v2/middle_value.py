@@ -119,7 +119,11 @@ class LightningRiskCalculator_middle_values:
     def  p_z_belrile(self):
         self.P_Z = self.C_LI*self.P_SPD*self.C_LI
         return self.P_Z
+
+    def p_b_belirle(self):
+        return self.P_B
     
+        
 
     
     
