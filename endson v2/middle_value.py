@@ -122,7 +122,6 @@ class LightningRiskCalculator_middle_values:
 
     def p_b_belirle(self):
         return self.P_B
-    
         
 
     
