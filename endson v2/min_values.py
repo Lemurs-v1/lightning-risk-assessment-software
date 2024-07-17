@@ -494,4 +494,3 @@ class LightningRiskCalculator_min_values:
 
 x = LightningRiskCalculator_min_values()
 
-print(x.l_o_4_belirle())
