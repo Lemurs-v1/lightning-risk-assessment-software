@@ -18,7 +18,7 @@ class LightningRiskCalculator_top_values:
     def r_a_1_belirle(self):
         self.R_A_1 =self.N_D*self.P_A*self.L_A
         return self.R_A_1
-    
+        
         
 x = LightningRiskCalculator_top_values()
 print(x.r_a_1_belirle())     

@@ -190,6 +190,6 @@ class LightningRiskCalculator_output_value:
         self.P_LI = [self.P_LI_1,self.P_LI_2,self.P_LI_3]
         return self.P_LI
     def l_fo_2_bul(self):
-        self.L_FO_2 = "Gaz, su, güç besleme"#input("yapı tipi nedir")
+        self.L_FO_2 = input("yapı tipi nedir")
         return self.L_FO_2
 
