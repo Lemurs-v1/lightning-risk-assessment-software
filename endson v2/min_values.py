@@ -30,7 +30,7 @@ C_T_C = output.c_t_bul()
 C_E_C = output.c_e_bul()
 P_TU_C = output.p_tu_bul()
 P_EB_C = output.p_eb_bul()
-P_LD_C = output.
+P_LD_C = output.p_ld_bul()
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -66,6 +66,8 @@ class LightningRiskCalculator_min_values:
         self.P_TU = None
         self.P_EB =None
         self.L_L = None
+
+        self.P_LD = None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -347,15 +349,13 @@ class LightningRiskCalculator_min_values:
 
         self.P_EB = P_EB__DF.loc[P_EB__DF["LPL"] == P_EB_C, "P_EB"].values[0]
         return self.P_EB
-    def p_ld_belirle(self):#mert yapacak
-        pass
+
     def a_ı_belirle(self):
         self.A_I = 4000*self.L_L
-    def P_ld_belirle(self):
-        P_ld_cevap = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir? ")
-        if P_ld_cevap == "evet":
-            sonuc = 1
-        elif P_ld_cevap == "hayır":
+    def p_ld_belirle(self):
+        if P_LD_C[0] == "evet":
+            self.P_LD = 1
+        elif P_LD_C[0] == "hayır":
             data = {
                 "Direnç Değeri": ["5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km",
                                     "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km",
@@ -368,8 +368,5 @@ class LightningRiskCalculator_min_values:
                             0.6, 0.4, 0.2, 0.04, 0.02]
             }
             df = pd.DataFrame(data)
-            print(df)
-            secim1 = input("Direnç değerini giriniz: ")
-            secim2 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
-            
-            sonuc = df.loc[(df['Direnç Değeri'] == secim1) & (df['Dayanım Gerilimi'] == secim2), 'Değer'].values[0]
+            self.P_LD = df.loc[(df['Direnç Değeri'] == P_LD_C[1]) & (df['Dayanım Gerilimi'] == P_LD_C[2]), 'Değer'].values[0]
+            return self.P_LD

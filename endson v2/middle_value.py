@@ -50,7 +50,7 @@ class LightningRiskCalculator_middle_values:
 
         self.P_TU = min.p_tu_belirle()
         self.P_EB = min.p_eb_belirle()
-        self
+        self.P_LD = min.p_ld_belirle()
         
 
 
@@ -97,10 +97,11 @@ class LightningRiskCalculator_middle_values:
     def p_w_belirle(self):#GİRİLMEMİŞ girelecek 
         pass
     def p_u_belirle(self):
-        self.P_U=self.P_TU*self.P_EB*self.C_LD
+        self.P_U=self.P_LD#self.P_TU*self.P_EB*self.C_LD
         return self.P_U
-    
-    
+
+  
+
     
     
        
