@@ -27,8 +27,30 @@ class P_z():
     
     def P_spd_belirle(self): #
         pass
-    def P_lı_belirle(self): # P_lb benzer bir tablo var aynı yöntemle yapılacak.
-        pass
+    
+    def P_lı_belirle():
+        P_lı_cevap = input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir? ")
+        if P_lı_cevap == "evet":
+            sonuc = 1
+        elif P_lı_cevap == "hayır":
+            data = {
+                "Hat tipi": ["Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları",
+                                "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları",
+                ],
+                "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
+                                    "1", "1.5", "2.5", "4", "6",
+                                   ],
+                "Değer": [1, 0.6, 0.3, 0.16, 0.1,
+                        1, 0.5, 0.2, 0.08, 0.04,
+                        ]
+            }
+            df = pd.DataFrame(data)
+            print(df)
+            secim1 = input("Hat tipini giriniz:")
+            secim2 = input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
+            
+            sonuc = df.loc[(df['Hat tipi'] == secim1) & (df['Dayanım Gerilimi'] == secim2), 'Değer'].values[0]
+        return sonuc 
     def C_lı_belirle(self):
         data = {
             "Dış hat tipi ve Girişte bağlantı": [
