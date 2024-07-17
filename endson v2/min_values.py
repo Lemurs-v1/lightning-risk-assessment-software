@@ -32,7 +32,7 @@ P_TU_C = output.p_tu_bul()
 P_EB_C = output.p_eb_bul()
 P_LD_C = output.p_ld_bul()
 P_LI_C = output.p_lı_bul()
-L_F_C_2 =output.l_f_2_bul()
+L_FO_C_2 =output.l_fo_2_bul()
 
 
 class LightningRiskCalculator_min_values:
@@ -70,7 +70,7 @@ class LightningRiskCalculator_min_values:
         self.P_LI = None
         #######################################################################################33
         #######################################################################################33
-        self.L_f_2=None
+        self.L_F_2=None
         self.L_O_2=None
         ##########################################################################################
         self.L_F_3=None
@@ -427,10 +427,10 @@ class LightningRiskCalculator_min_values:
                 ],
                 "L_f_2" : [10**-1,10**-2]
         }
-        L_f_2_DF = pd.DataFrame(data)
+        L_F_2_DF = pd.DataFrame(data)
 
-        self.L_f_2 = L_f_2_DF.loc[L_f_2_DF["yüzde kayıp"]==L_F_C_2,"L_f_2"].values[0]
-        return self.L_f_2
+        self.L_F_2 = L_F_2_DF.loc[L_F_2_DF["yüzde kayıp"]==L_FO_C_2,"L_f_2"].values[0]
+        return self.L_F_2
 
 
     def l_o_2_belirle(self):
@@ -443,7 +443,7 @@ class LightningRiskCalculator_min_values:
         }
         L_O_2_DF = pd.DataFrame(data)
 
-        self.L_O_2 = L_O_2_DF.loc[L_O_2_DF["hizmet tipi"]==L_F_C_2,"L_o_2"].values[0]
+        self.L_O_2 = L_O_2_DF.loc[L_O_2_DF["hizmet tipi"]==L_FO_C_2,"L_o_2"].values[0]
     
         return self.L_O_2
 ##############################################################################################################################################33
