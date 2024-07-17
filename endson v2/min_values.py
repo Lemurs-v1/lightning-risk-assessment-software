@@ -32,6 +32,8 @@ P_TU_C = output.p_tu_bul()
 P_EB_C = output.p_eb_bul()
 P_LD_C = output.p_ld_bul()
 P_LI_C = output.p_lı_bul()
+L_F_C_2 =output.l_f_2_bul()
+
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
@@ -53,24 +55,25 @@ class LightningRiskCalculator_min_values:
         self.L_O = None
         self.A_M =None
         self.P_MS =None
-        
         self.r_p = None
         self.r_f = None
         self.H_Z = None
         self.L_F = None
-
         self.L_L = None
         self.C_I = None
         self.C_T = None
         self.C_E = None
-
         self.P_TU = None
         self.P_EB =None
         self.L_L = None
-
         self.P_LD = None
-
         self.P_LI = None
+        #######################################################################################33
+        #######################################################################################33
+        self.L_f_2=None
+        self.L_O_2=None
+        ##########################################################################################
+        self.L_F_3=None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -86,7 +89,7 @@ class LightningRiskCalculator_min_values:
 
         elif self.A_D_denklem=="hayır":
             self.A_D = (self.A_D_uzunluk * self.A_D_genişlik)+(2*3*self.A_D_yükseklik)*(self.A_D_uzunluk+self.A_D_genişlik)+(pi*(3*self.A_D_yükseklik)**2)
-        
+        print(self.a)
         return self.A_D
         
     def c_d_belirle(self):
@@ -281,10 +284,10 @@ class LightningRiskCalculator_min_values:
                 ],
                 "L_f" : [0.1,0.1,0.05,0.02,0.01]
         }
-        L_f_DF = pd.DataFrame(data)
+        L_F_DF = pd.DataFrame(data)
 
-        self.L_f = L_f_DF.loc[L_f_DF["yüzde kayıp"]==L_F_C,"L_f"].values[0]
-        return self.L_f
+        self.L_F = L_F_DF.loc[L_F_DF["yüzde kayıp"]==L_F_C,"L_f"].values[0]
+        return self.L_F
     def a_l_belirle(self):
         self.L_L = L_L_C
         self.A_L = 40* self.L_L
@@ -412,3 +415,42 @@ class LightningRiskCalculator_min_values:
         C_LI_DF = pd.DataFrame(data)
         self.C_LI = C_LI_DF.loc[C_LI_DF["Dış hat tipi ve Girişte bağlantı"] == C_LD_C, "C_LI"].values[0] # C_LI_C tanımlanacak 
         return self.C_LI
+
+##############################################################################################################################################################
+##############################################################################################################################################################
+
+    def l_f_2_belirle(self):
+        data = { 
+            "yüzde kayıp" : 
+            ["Gaz, su, güç besleme",
+                "TV, telekomünikasyon hatları",
+                ],
+                "L_f_2" : [10**-1,10**-2]
+        }
+        L_f_2_DF = pd.DataFrame(data)
+
+        self.L_f_2 = L_f_2_DF.loc[L_f_2_DF["yüzde kayıp"]==L_F_C_2,"L_f_2"].values[0]
+        return self.L_f_2
+
+
+    def l_o_2_belirle(self):
+        data = { 
+            "hizmet tipi" : 
+            ["Gaz, su, güç besleme",
+                "TV, telekomünikasyon hatları",
+                ],
+                "L_o_2" : [10**-2,10**-3]
+        }
+        L_O_2_DF = pd.DataFrame(data)
+
+        self.L_O_2 = L_O_2_DF.loc[L_O_2_DF["hizmet tipi"]==L_F_C_2,"L_o_2"].values[0]
+    
+        return self.L_O_2
+##############################################################################################################################################33
+##############################################################################################################################################33
+    def l_f_3_belirle(self):
+        self.L_F_3 = 10**-1
+        return self.L_F_3
+x = LightningRiskCalculator_min_values()
+print(x.l_o_2_belirle())
+print(x.l_f_2_belirle())
