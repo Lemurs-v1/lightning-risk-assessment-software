@@ -106,6 +106,7 @@ class LightningRiskCalculator_middle_values:
         return 0
     def p_w_belirle(self):#GİRİLMEMİŞ girelecek 
         self.P_W = self.P_LD*self.P_SPD*self.C_LD
+        return self.P_W
     def p_u_belirle(self):
         self.P_U=self.P_LD*self.P_TU*self.P_EB*self.C_LD
         return self.P_U

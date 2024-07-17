@@ -6,28 +6,26 @@ class LightningRiskCalculator_top_values:
         self.R_A_1 = None
         self.N_D = mid.n_d_belirle()
         self.P_A = mid.p_a_belirle()
-        self.L_A = mid.l_a_belirle()
+        self.L_A = self.L_U = mid.l_a_belirle()
         self.R_B_1 = None
         self.P_B = mid.p_b_belirle()
         self.L_B = mid.l_b_belirle()
         self.R_C_1 = None
         self.P_C = mid.p_c_belirle()
-        self.L_C = mid.l_m_belirle()
+        self.L_C = self.L_M = self.L_W = mid.l_m_belirle()
         self.R_M_1 = None
         self.N_M = mid.n_m_belirle()
         self.P_M = mid.p_m_belirle()
-        self.L_M = mid.l_m_belirle()
         self.R_U_1 = None
         self.N_L = mid.n_l_belirle()
         self.N_DJ = mid.n_dj_belirle()
         self.P_U = mid.p_u_belirle()
-        self.L_U = mid.l_a_belirle()
         self.R_V_1 = None
         self.P_V = mid.p_v_belirle()
         self.L_V = mid.l_b_belirle()
         self.R_W_1 = None
         self.P_W = mid.p_w_belirle()
-        self.L_W = mid.l_m_belirle()
+        
 
 
         self.R_Z_1 = None
@@ -55,4 +53,11 @@ class LightningRiskCalculator_top_values:
     
         
 x = LightningRiskCalculator_top_values()
-print(x.r_a_1_belirle())  
+print(x.r_a_1_belirle())
+print(x.r_b_1_belirle())
+print(x.r_c_1_belirle())
+print(x.r_m_1_belirle())
+print(x.r_u_1_belirle())
+print(x.r_v_1_belirle())
+print(x.r_w_1_belirle())
+
