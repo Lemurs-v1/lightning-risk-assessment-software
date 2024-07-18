@@ -7,7 +7,7 @@ class LightningRiskCalculator_top_values:
         self.R_A_1 = None
         self.N_D = mid.n_d_belirle()
         self.P_A = mid.p_a_belirle()
-        self.L_A = mid.l_a_belirle()
+        self.L_A = mid.l_au_1_belirle()
         self.R_B_1 = None
         self.R_C_1 = None
         self.R_M_1 = None

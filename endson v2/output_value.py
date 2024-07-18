@@ -31,6 +31,8 @@ class LightningRiskCalculator_output_value:
         self.P_LI = None
         self.L_FO_2 = None
         self.L_F_4 = None
+        self.c_z = None
+        self.c_a_b_c_t = None
 
        
 
@@ -196,4 +198,32 @@ class LightningRiskCalculator_output_value:
     def l_fo_4_bul(self):
         self.L_FO_4 = "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari"#input("yapı tipi nedir")
         return self.L_FO_4
-    
+
+    def c_t34_bul(self): 
+        self.c_t = "hayır"#input("Yapı sanayi bir yapı mı: (evet/hayır)")
+        self.c_t_2 = "düşük"#input("Toplam yeniden inşa maliyetleri (faaliyet kayıpları dahil değil):  ")
+        return [self.c_t, self.c_t_2]
+    def c_a_bölü_c_t(self):
+        self.c_a_b_c_t = input("ortam hayvanlı mı ? (evet/hayır):") 
+        return self.c_a_b_c_t
+
+
+
+"""
+    def c_z_bul(self):
+        self.c_z = input("Bölgedeki kültürel mirasın değeri: ")
+        return self.c_z
+
+    def c_a_bul(self):
+        self.c_a = input("Bölgedeki hayvanların değeri: ")
+        return self.c_a
+    def c_b_bul(self):
+        self.c_b = input("Bölge ile ilgili binanın değeri: ")
+        return self.c_b
+    def c_c_bul(self):
+        self.c_c = input("Bölge içindekilerin değeri: ")
+        return self.c_c
+    def c_s_bul(self):
+        self.c_s = input("Bölgedeki faaliyetleri dahil, iç sistemlerin değeri: ")
+        return self.c_s
+        """

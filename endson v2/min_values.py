@@ -34,6 +34,9 @@ P_LD_C = output.p_ld_bul()
 P_LI_C = output.p_lı_bul()
 L_FO_C_2 =output.l_fo_2_bul()
 L_FO_4_C = output.l_fo_4_bul()
+#c_z_c = output.c_z_bul()
+c_t34_c = output.c_t34_bul()
+c_a_bölü_c_t_c = output.c_a_bölü_c_t()
 
 
 
@@ -80,6 +83,8 @@ class LightningRiskCalculator_min_values:
         self.L_T_4=None
         self.L_F_4=None
         self.L_O_4=None
+        self.c_z_b_c_t = None
+        self.c_t=None
 
     def n_g_belirle(self):
         self.N_G = N_G_C
@@ -490,7 +495,35 @@ class LightningRiskCalculator_min_values:
 
         self.L_O_4 = L_O_4_DF.loc[L_O_4_DF["yapının tipi"]==L_FO_4_C,"L_o"].values[0]
         return self.L_O_4
+    def c_z_bölü_c_t(self):
+        return 1
 
 
-x = LightningRiskCalculator_min_values()
 
+    def c_t34_belirle(self):
+        data = {
+            "referans değer": ["düşük", "normal", "yüksek", "düşük", "normal", "yüksek"],
+            "sanayi": ["evet", "evet", "evet", "hayır", "hayır", "hayır"],
+            "Değer": [100, 300, 500, 300, 400, 500]
+        }
+        c_t_DF = pd.DataFrame(data)
+        # Boolean indexing
+        condition = (c_t_DF["sanayi"] == c_t34_c[0]) & (c_t_DF["referans değer"] == c_t34_c[1])
+        self.c_t = c_t_DF.loc[condition, "Değer"].values[0]
+
+    def c_a_bölü_c_t(self):
+        if c_a_bölü_c_t_c == "evet":
+            return (1/10)
+        elif c_a_bölü_c_t_c == "hayır":
+            return 0
+        
+        
+        
+
+        
+
+"""
+    def c_z_bölü_c_t(self):
+        self.c_z_b_c_t = c_z_c/c_t_c
+        return self.c_z_b_c_t
+"""
