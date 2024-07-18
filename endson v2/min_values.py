@@ -9,6 +9,7 @@ A_D_uzunluk_C = output.a_d_uzunluk_bul()
 A_D_denklem_C = output.a_d_denklem()
 A_D_yükseklik_C = output.a_d_yükseklik_bul()
 C_D_C = output.c_d_bul()
+C_DJ_C = output.c_dj_bul()
 P_TA_C = output.p_ta_bul()
 P_B_C = output.p_b_bul()
 r_t_C = output.r_t_bul()
@@ -18,6 +19,7 @@ P_SPD_C = output.p_spd_bul()
 C_LD_C = output.c_ld_bul()
 L_O_C = output.l_o_bul()
 P_MS_C = output.p_ms_bul()
+A_DJ_C = output.a_dj_bul()
 
 r_p_C = output.r_p_bul()
 r_f_C = output.r_f_bul() 
@@ -34,7 +36,7 @@ P_LD_C = output.p_ld_bul()
 P_LI_C = output.p_lı_bul()
 L_FO_C_2 =output.l_fo_2_bul()
 L_FO_4_C = output.l_fo_4_bul()
-#c_z_c = output.c_z_bul()
+
 c_t34_c = output.c_t34_bul()
 c_a_bölü_c_t_c = output.c_a_bölü_c_t()
 
@@ -48,6 +50,7 @@ class LightningRiskCalculator_min_values:
         self.A_D_denklem = A_D_denklem_C
         self.A_D_yükseklik = A_D_yükseklik_C
         self.A_D = None
+        self.A_DJ = None
         self.C_D = None
         self.P_TA = None
         self.P_B = None
@@ -102,6 +105,19 @@ class LightningRiskCalculator_min_values:
             self.A_D = (self.A_D_uzunluk * self.A_D_genişlik)+(2*3*self.A_D_yükseklik)*(self.A_D_uzunluk+self.A_D_genişlik)+(pi*(3*self.A_D_yükseklik)**2)
         
         return self.A_D
+    def c_dj_belirle(self):
+        data = {
+            "bağıl konum": [
+                "Daha yüksek cisimler ile çevrelenen yapı",
+                "Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı",
+                "Aynı yapı: yakında başka cisimlerin olmaması",
+                "Tepe veya tepecik üzerinde ayrık yapı"
+            ],
+            "C_DJ": [0.25, 0.5, 1, 2]
+        }
+        C_DJ_DF = pd.DataFrame(data)
+        self.C_DJ = C_DJ_DF.loc[C_DJ_DF["bağıl konum"] == C_DJ_C, "C_DJ"].values[0]
+        return self.C_DJ
         
     def c_d_belirle(self):
         data = {
@@ -170,6 +186,10 @@ class LightningRiskCalculator_min_values:
         r_t_DF = pd.DataFrame(data)
         self.r_t = r_t_DF.loc[r_t_DF["yapı tipi"] == r_t_C, "r_t"].values[0]
         return self.r_t
+    def a_dj_belirle(self):
+        self.A_Dj = A_DJ_C
+        return self.A_Dj
+
 
     def t_z_bölü_8760_belirle(self):
         if t_z_bölü_8760_C == "bilmiyorum":
@@ -522,8 +542,3 @@ class LightningRiskCalculator_min_values:
 
         
 
-"""
-    def c_z_bölü_c_t(self):
-        self.c_z_b_c_t = c_z_c/c_t_c
-        return self.c_z_b_c_t
-"""

@@ -7,6 +7,7 @@ class LightningRiskCalculator_output_value:
         self.A_D_yükseklik = None
         self.A_D_denklem = None
         self.C_D = None
+        self.C_DJ = None
         self.P_TA = None
         self.P_B = None
         self.r_t = None
@@ -25,6 +26,7 @@ class LightningRiskCalculator_output_value:
         self.C_I = None
         self.C_T = None
         self.C_E = None
+        self.A_DJ = None
 
         self.P_TU =None
         self.P_EB = None
@@ -57,10 +59,23 @@ class LightningRiskCalculator_output_value:
     def a_d_uzunluk_bul(self):
         self.A_D_uzunluk = 30#float(input("Yapı uzunluğunu giriniz: "))
         return self.A_D_uzunluk
-    
+    def a_dj_bul(self):
 
+        A_DJ_cevap_1 = input("ayrık yapı var mı: ")
+        if A_DJ_cevap_1 == "evet":
+            A_DJ_cevap_2 = int(input("ayrık yapının uzunluğu nedir? :"))
+            A_DJ_cevap_3 = int(input("ayrık yapının genişliği"))
+            self.A_DJ = A_DJ_cevap_2*A_DJ_cevap_3
+            
+        elif A_DJ_cevap_1 == "hayır":
+            self.A_DJ = 0
+        return self.A_DJ
+        
     def c_d_bul(self):
         self.C_D = "Daha yüksek cisimler ile çevrelenen yapı"#input("Bağıl konumu nedir: ")
+        return self.C_D
+    def c_dj_bul(self):
+        self.C_DJ = "Daha yüksek cisimler ile çevrelenen yapı"#input("ayrık yapının Bağıl konumu nedir: ")
         return self.C_D
 
     def p_ta_bul(self):
@@ -204,7 +219,7 @@ class LightningRiskCalculator_output_value:
         self.c_t_2 = "düşük"#input("Toplam yeniden inşa maliyetleri (faaliyet kayıpları dahil değil):  ")
         return [self.c_t, self.c_t_2]
     def c_a_bölü_c_t(self):
-        self.c_a_b_c_t = input("ortam hayvanlı mı ? (evet/hayır):") 
+        self.c_a_b_c_t = "evet"#input("ortam hayvanlı mı ? (evet/hayır):") 
         return self.c_a_b_c_t
 
 
