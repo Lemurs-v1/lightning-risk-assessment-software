@@ -93,6 +93,14 @@ print(x.r_v_1_belirle())
 print(x.r_w_1_belirle())
 
 
+print(x.r_b_2_belirle())
+print(x.r_c_2_belirle())
+print(x.r_m_2_belirle())
+print(x.r_v_2_belirle())
+print(x.r_w_2_belirle())
+
+
+
 '''
 ⠁⠀⠂⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠂⠀⠁⡀⠐⠈⠀⠐⠈⠀⠐⠀⠐⠀⡀⠂⠀⠐⠀⠠⠐⠀⠀⠄⠀⠠⠀⠀⠄⠀⠀⠄⠀⠀⢸⡿⠀⠀⠀⠀⠀⡀⠀⢀⠀⠀⡀⠀⢀⠀⠀⡀⠀⢀⠀⠀⡀⠀⠀
