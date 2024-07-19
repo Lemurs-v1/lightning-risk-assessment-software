@@ -12,7 +12,7 @@ class LightningRiskCalculator_top_values:
         self.L_B =self.L_V= mid.l_bv_1_belirle()
         self.R_C_1 = None
         self.P_C = mid.p_c_belirle()
-        self.L_C = self.L_M = self.L_W = mid.l_cmwz_1_belirle()
+        self.L_C = self.L_M = self.L_W = self.L_Z_1 = mid.l_cmwz_1_belirle()
         self.R_M_1 = None
         self.N_M = mid.n_m_belirle()
         self.P_M = mid.p_m_belirle()
@@ -24,6 +24,7 @@ class LightningRiskCalculator_top_values:
         self.P_V = mid.p_v_belirle()
         self.R_W_1 = None
         self.P_W = mid.p_w_belirle()
+        self.R_Z_1 = None
         
         self.R_Z_2 = None
         self.R_B_2 = None
@@ -74,6 +75,9 @@ class LightningRiskCalculator_top_values:
     def r_w_1_belirle(self):
         self.R_W_1 = (self.N_L + self.N_DJ)*self.P_W*self.L_W
         return self.R_W_1
+    def r_z_1_belirle(self):
+        self.R_Z_1 = self.N_I*self.P_Z*self.L_Z_1
+        return self.R_Z_1
     
     #r2 icin r'ler
 
