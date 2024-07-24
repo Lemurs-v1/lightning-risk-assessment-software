@@ -37,7 +37,7 @@ P_LI_C = output.p_lı_bul()
 L_FO_C_2 =output.l_fo_2_bul()
 L_FO_4_C = output.l_fo_4_bul()
 
-c_t34_c = output.c_t34_bul()
+
 c_a_bölü_c_t_c = output.c_a_bölü_c_t()
 
 
@@ -520,16 +520,6 @@ class LightningRiskCalculator_min_values:
 
 
 
-    def c_t34_belirle(self):
-        data = {
-            "referans değer": ["düşük", "normal", "yüksek", "düşük", "normal", "yüksek"],
-            "sanayi": ["evet", "evet", "evet", "hayır", "hayır", "hayır"],
-            "Değer": [100, 300, 500, 300, 400, 500]
-        }
-        c_t_DF = pd.DataFrame(data)
-        # Boolean indexing
-        condition = (c_t_DF["sanayi"] == c_t34_c[0]) & (c_t_DF["referans değer"] == c_t34_c[1])
-        self.c_t = c_t_DF.loc[condition, "Değer"].values[0]
 
     def c_a_bölü_c_t(self):
         if c_a_bölü_c_t_c == "evet":
