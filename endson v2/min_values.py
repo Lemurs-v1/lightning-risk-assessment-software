@@ -409,22 +409,19 @@ class LightningRiskCalculator_min_values:
             self.P_LD = df.loc[(df['Direnç Değeri'] == P_LD_C[1]) & (df['Dayanım Gerilimi'] == P_LD_C[2]), 'Değer'].values[0]
             return self.P_LD    
     def p_lı_belirle(self):
-        if P_LI_C[0] == "evet":
-            sonuc = 1
-        elif P_LI_C[0] == "hayır":
-            data = {
-                "Hat tipi": ["Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları",
-                                "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları",
-                ],
-                "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
-                                    "1", "1.5", "2.5", "4", "6",
-                                   ],
-                "Değer": [1, 0.6, 0.3, 0.16, 0.1,
-                        1, 0.5, 0.2, 0.08, 0.04,
-                        ]
-            }
-            df = pd.DataFrame(data)
-            self.P_LI = df.loc[(df['Hat tipi'] == P_LI_C[1]) & (df['Dayanım Gerilimi'] == P_LI_C[2]), 'Değer'].values[0]
+        data = {
+            "Hat tipi": ["Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları",
+                            "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları",
+            ],
+            "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
+                                "1", "1.5", "2.5", "4", "6",
+                                ],
+            "Değer": [1, 0.6, 0.3, 0.16, 0.1,
+                    1, 0.5, 0.2, 0.08, 0.04,
+                    ]
+        }
+        df = pd.DataFrame(data)
+        self.P_LI = df.loc[(df['Hat tipi'] == P_LI_C[1]) & (df['Dayanım Gerilimi'] == P_LI_C[2]), 'Değer'].values[0]
         return self.P_LI
     
     def c_lı_belirle(self):
@@ -517,9 +514,6 @@ class LightningRiskCalculator_min_values:
         return self.L_O_4
     def c_z_bölü_c_t(self):
         return 1
-
-
-
 
     def c_a_bölü_c_t(self):
         if c_a_bölü_c_t_c == "evet":

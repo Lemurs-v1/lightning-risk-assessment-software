@@ -202,7 +202,7 @@ class LightningRiskCalculator_output_value:
         self.P_LD = [self.P_LD_1,self.P_LD_2,self.P_LD_3]
         return self.P_LD
     def p_lı_bul(self):
-        self.P_LI_1 = "hayır"#input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
+        self.P_LI_1 = "döndürmüyor"#input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
         self.P_LI_2 = "Güç Hatları"#input("Hat tipini giriniz:")
         self.P_LI_3 = "6"#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
         self.P_LI = [self.P_LI_1,self.P_LI_2,self.P_LI_3]
@@ -213,9 +213,6 @@ class LightningRiskCalculator_output_value:
     def l_fo_4_bul(self):
         self.L_FO_4 = "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari"#input("yapı tipi nedir")
         return self.L_FO_4
-
-  
-        return [self.c_t, self.c_t_2]
     def c_a_bölü_c_t(self):
         self.c_a_b_c_t = "evet"#input("ortam hayvanlı mı ? (evet/hayır):") 
         return self.c_a_b_c_t
