@@ -91,7 +91,7 @@ class LightningRiskCalculator_output_value:
         return self.r_t
 
     def n_z_bölü_n_t_bul(self):
-        oran = "evet"#input("Yapıdaki ve bölgedeki kişi sayısı eşit mi (evet/hayır): ")
+        oran = "evet"#input("Yapıdaki ve bölgedeki kişi sayısı biliniyor mu (evet/hayır): ")
         if oran.lower() == "evet":
             self.n_z_bölü_n_t = 1
         elif oran.lower() == "hayır":
