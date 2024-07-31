@@ -91,10 +91,18 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Pli_comboBox2.currentIndexChanged.connect(self.selection_changed_Pli2)
 
         # Diğer bileşenler
+        # Ekranlama Checkbox
+
         self.wm1_doubleSpinbox = self.ui.wm1_doubleSpinbox
         self.wm2_doubleSpinbox = self.ui.wm2_doubleSpinbox
         self.Uw_doubleSpinbox = self.ui.Uw_doubleSpinbox
         self.Ng_checkBox = self.ui.Ng_checkBox
+        self.ekranlama_checkBox = self.ui.ekranlama_checkBox
+        self.ekranlama_checkBox.stateChanged.connect(self.selection_changed_ekranlama)
+
+        self.metal_checkBox = self.ui.metal_checkBox
+        self.metal_checkBox.stateChanged.connect(self.selection_changed_metal)
+
         self.Ng_doubleSpinbox = self.ui.Ng_doubleSpinbox
         self.Ad_y_doubleSpinbox = self.ui.Ad_y_doubleSpinbox
         self.Ad_g_doubleSpinbox = self.ui.Ad_g_doubleSpinbox
@@ -207,6 +215,12 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def selection_changed_Pli2(self):
         selected_item = self.Pli_comboBox2.currentText()
+    def selection_changed_ekranlama(self):
+        state = self.ekranlama_checkBox.isChecked()
+
+    def selection_changed_metal(self):
+        state = self.metal_checkBox.isChecked()
+
 
     def save_values(self):
         Ad_value = self.Ad_comboBox.currentText()
@@ -237,6 +251,8 @@ class MainWindow(QtWidgets.QMainWindow):
         Pli2_value = self.Pli_comboBox2.currentText()
 
         Ng_value = self.Ng_checkBox.isChecked()
+        ekranlama_value = self.ekranlama_checkBox.isChecked()
+        metal_value = self.metal_checkBox.isChecked()
         wm1_value = self.wm1_doubleSpinbox.value()
         wm2_value = self.wm2_doubleSpinbox.value()
         Uw_value = self.Uw_doubleSpinbox.value()
@@ -284,6 +300,8 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'wm1 değeri: {wm1_value}')
         print(f'wm2 değeri: {wm2_value}')
         print(f'Uw değeri: {Uw_value}')
+        print(f'Ekranlama CheckBox durumu: {ekranlama_value}')
+        print(f'Metal CheckBox durumu: {metal_value}')
 
         print(f'Ng Double Spinbox değeri: {Ng_double_value}')
         print(f'Ad_y Double Spinbox değeri: {Ad_y_double_value}')
@@ -342,6 +360,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.nz_doubleSpinbox.setValue(0.0)
         self.tz_doubleSpinbox.setValue(0.0)
         self.LI_doubleSpinbox.setValue(0.0)
+        self.ekranlama_checkBox.setChecked(False)
+        self.metal_checkBox.setChecked(False)
+
 
         self.textEdit.clear()
 
