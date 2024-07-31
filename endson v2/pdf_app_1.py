@@ -95,53 +95,79 @@ html_content_7 = f"""
     <title>Risk Analysis for Assessing the Risk for Structures</title>
     <style>
         body {{
-            font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
-            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
-            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
-            min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
-            margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
         }}
 
-        
         .section {{
-            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar
+            flex: 1;
             margin-bottom: 20px;
         }}
+
         .subsection {{
             margin-left: 20px;
             margin-bottom: 10px;
+            margin: 50px 0;
         }}
+
         .risk-table {{
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 20px;
+            margin: 30px 0;
         }}
+
         .risk-table th, .risk-table td {{
-            border: 1px solid #dddddd;
+            border: 5px solid #dddddd;
             text-align: left;
-            padding: 8px;
+            padding: 4px;
         }}
+
         .risk-table th {{
             background-color: #f2f2f2;
         }}
+
         .footer {{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 10;
-            padding: 1px 20px; /* İç boşlukları belirler */
+            margin-top: 10px;
+            padding: 1px 20px;
             background-color: #f1f1f1;
         }}
+
         .footer img {{
-            display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
-            margin: 0px auto 20; /* Resmin üstüne 20px boşluk ekler, yatayda ortalar ve altta boşluk bırakmaz */
+            display: block;
+            margin: 0;
         }}
+
         .footer p {{
-            margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+            margin: 0;
+        }}
+
+        /* Sağ üst köşede yer alan resim için stil */
+        .top-right-image {{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px; /* Resmin genişliğini buradan ayarlayabilirsiniz */
+            height: auto; /* Yüksekliği otomatik ayarlayın */
+            margin: 10px; /* Resme biraz boşluk bırakır */
+        }}
+        
+        /* Konteynerin konumunu belirlemek için */
+        .container {{
+            position: relative;
         }}
     </style>
 </head>
 <body>
+    <div class="container">
+        <img src="resim.jpg" alt="Açıklama" class="top-right-image">
+    </div>
 
     <div class="section">
         <h2>4. Project data</h2>
@@ -189,28 +215,38 @@ html_content_7 = f"""
             <p>W<sub>b</sub> Width: 110,00 m</p>
         </div>
     </div>
+
     <div class="footer">
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35">
-        <p>Radsan Risk Tools 1.0 - {tarih.strftime("%Y-%m-%d")}</p>
+        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p>
         <p>Page 1 of 19</p>
     </div>
 </body>
 </html>
 
-
+"""
+html_content_8 = f"""
 
 """
-# Dizin ve dosya adı
-dizin_yolu = "output_pdf"
+
+
+# Kod dosyasının bulunduğu dizini al
+kod_dizin = os.path.dirname(os.path.abspath(__file__))
+
+# Klasör adı
+klasör_adı = "output_pdf_1"
+klasör_yolu = os.path.join(kod_dizin, klasör_adı)
+
+# Klasörü oluştur (eğer mevcut değilse)
+if not os.path.exists(klasör_yolu):
+    os.makedirs(klasör_yolu)
+    print(f"{klasör_yolu} klasörü oluşturuldu.")
+
 dosya_adı = f"{müşteri.lower().replace(' ', '_')}_risk_analiz_raporu.html"
-tam_yol = os.path.join(dizin_yolu, dosya_adı)
-
-# Eğer dizin mevcut değilse oluştur
-if not os.path.exists(dizin_yolu):
-    os.makedirs(dizin_yolu)
-
-# HTML dosyasını oluştur ve yaz
-with open(tam_yol, "w", encoding="utf-8") as file:
-    file.write(html_content_7)
-
-print(f"{tam_yol} dosyası başarıyla oluşturuldu.")
+tam_yol = os.path.join(klasör_yolu, dosya_adı)
+try:
+    with open(tam_yol, "w", encoding="utf-8") as file:
+        file.write(html_content_1)
+        print(f"{tam_yol} dosyası başarıyla oluşturuldu.")
+except Exception as e:
+    print(f"Dosya oluşturulurken bir hata oluştu: {e}")

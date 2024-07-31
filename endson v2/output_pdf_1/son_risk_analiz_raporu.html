@@ -14,21 +14,24 @@
             margin: 0; /* Varsayılan margin değerlerini sıfırlar */
         }
         .section {
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
             margin-bottom: 20px;
         }
         .subsection {
             margin-left: 20px;
             margin-bottom: 10px;
+            margin: 50px 0; /* Üst ve alt tarafta 20px boşluk bırakır */
         }
         .risk-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 20px;
+            margin: 30px 0; /* Üst ve alt tarafta 20px boşluk bırakır */
         }
         .risk-table th, .risk-table td {
-            border: 1px solid #dddddd;
+            border: 5px solid #dddddd;
             text-align: left;
-            padding: 8px;
+            padding: 4px;
         }
         .risk-table th {
             background-color: #f2f2f2;
@@ -43,7 +46,7 @@
         }
         .footer img {
             display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
-            margin: 0px auto 20; /* Resmin üstüne 20px boşluk ekler, yatayda ortalar ve altta boşluk bırakmaz */
+            margin: 0 ; /* Resmin yatayda ortalanmasını sağlar */
         }
         .footer p {
             margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
@@ -51,7 +54,6 @@
     </style>
 </head>
 <body>
-
     <div class="section">
         <h2>4. Project data</h2>
 
@@ -98,13 +100,12 @@
             <p>W<sub>b</sub> Width: 110,00 m</p>
         </div>
     </div>
-    <div class="footer">
-        <img src="images/logo.png" alt="Radsan Logo" width="80" height="35">
-        <p>Radsan Risk Tools 1.0 - 2024-07-24</p>
-        <p>Page 1 of 19</p>
+    <div class="footer"> <!-- Footer bölümü -->
+        <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
+        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </div>
 </body>
 </html>
-
 
 
