@@ -126,7 +126,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.temizle_pushButton.clicked.connect(self.clear_values)
 
         # Uygulama ikonu ayarla
-        icon_path = "C:/Users/rohat/Desktop/Interface/icon.png"
+        icon_path = "icon.png"
         self.setWindowIcon(QtGui.QIcon(icon_path))
         
         # Sistem tepsisi ikonu ayarla
@@ -222,6 +222,10 @@ class MainWindow(QtWidgets.QMainWindow):
         state = self.metal_checkBox.isChecked()
 
 
+ 
+ 
+ 
+ 
     def save_values(self):
         Ad_value = self.Ad_comboBox.currentText()
         Cd_value = self.Cd_comboBox.currentText()
@@ -249,7 +253,6 @@ class MainWindow(QtWidgets.QMainWindow):
         Pld2_value = self.Pld_comboBox2.currentText()
         Pld3_value = self.Pld_comboBox3.currentText()
         Pli2_value = self.Pli_comboBox2.currentText()
-
         Ng_value = self.Ng_checkBox.isChecked()
         ekranlama_value = self.ekranlama_checkBox.isChecked()
         metal_value = self.metal_checkBox.isChecked()
@@ -268,6 +271,31 @@ class MainWindow(QtWidgets.QMainWindow):
         tz_value = self.tz_doubleSpinbox.value()
         LI_value = self.LI_doubleSpinbox.value()
         description = self.textEdit.toPlainText()
+        #  bunları outputda çekicem 
+        değerler = f"{Ad_value}#{Cd_value}#{rt_value}#{Ce_value}#{Adj_value}#{Cdj_value}{Pb_value}#{Pta_value}#{Cld_value}#{Pli_value}#{Pld_value}#{Pspd_value}#{Cl_value}#{Peb_value}#{CT_value}#{ca_bolu_ct_value}#{rf_value}#{rp_value}#{Lf_value}#{Lo_value}#{Lfo2_value}#{Lfo4_value}#{KS3_value}#{Pld2_value}#{Pld3_value}#{Pli2_value}#{Ng_value}#{wm1_value}#{wm2_value}#{Uw_value}#{ekranlama_value}#{metal_value}#{Ng_double_value}#{Ad_y_double_value}#{Ad_g_double_value}#{Ad_u_double_value}#{Adj_g_double_value}#{Adj_u_double_value}#{nt_value}#{nz_value}#{nz_double_value}#{tz_value}#{LI_value}#{description}"
+        with open("kullanıcı_değer.txt", "w") as dosya:
+            dosya.write(değerler)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         print(f'Seçilen Ad değeri: {Ad_value}')
         print(f'Seçilen Cd değeri: {Cd_value}')
@@ -295,14 +323,12 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'Seçilen Pld2 değeri: {Pld2_value}')
         print(f'Seçilen Pld3 değeri: {Pld3_value}')
         print(f'Seçilen Pli2 değeri: {Pli2_value}')
-
         print(f'Ng CheckBox durumu: {Ng_value}')
         print(f'wm1 değeri: {wm1_value}')
         print(f'wm2 değeri: {wm2_value}')
         print(f'Uw değeri: {Uw_value}')
         print(f'Ekranlama CheckBox durumu: {ekranlama_value}')
         print(f'Metal CheckBox durumu: {metal_value}')
-
         print(f'Ng Double Spinbox değeri: {Ng_double_value}')
         print(f'Ad_y Double Spinbox değeri: {Ad_y_double_value}')
         print(f'Ad_g Double Spinbox değeri: {Ad_g_double_value}')
@@ -315,7 +341,7 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'tz Double Spinbox değeri: {tz_value}')
         print(f'LI Double Spinbox değeri: {LI_value}')
         print(f'Açıklama: {description}')
-
+        
     def clear_values(self):
         self.Ad_comboBox.setCurrentIndex(0)
         self.Cd_comboBox.setCurrentIndex(0)

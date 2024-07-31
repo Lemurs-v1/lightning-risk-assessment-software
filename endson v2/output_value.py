@@ -1,4 +1,9 @@
 import pandas as pd
+with open("kullanıcı_değer.txt", "r") as dosya:
+    veriler_file = dosya.read()
+veriler = veriler_file.split("#")
+N_G_C = float(veriler[31])#ilk buraya tanımlanacak  ardından alta geçilecek float değerlere dikkat
+
 class LightningRiskCalculator_output_value:
     def __init__(self):
         self.N_G = None
@@ -39,7 +44,7 @@ class LightningRiskCalculator_output_value:
        
 
     def n_g_bul(self):
-        self.N_G = 15 #input("Yıldırım yoğunluğunu giriniz (sayı/bilmiyorum): ")
+        self.N_G =N_G_C #input("Yıldırım yoğunluğunu giriniz (sayı/bilmiyorum): ")
         if self.N_G == "bilmiyorum":
             T_D = float(input("Fırtınalı gün sayısını giriniz: "))
             self.N_G = 0.1 * T_D

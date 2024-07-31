@@ -98,7 +98,7 @@ class LightningRiskCalculator_min_values:
     def a_d_belirle(self):
         
         if self.A_D_denklem == "evet":
-            self.HMAX = float(input("düzensiz yapının max yükseklik nedir: "))
+            self.HMAX =  self.A_D_yükseklik 
             self.A_D= pi*(3*self.HMAX)**2
 
         elif self.A_D_denklem=="hayır":
