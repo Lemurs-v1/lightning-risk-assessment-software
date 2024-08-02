@@ -1,10 +1,10 @@
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- HTML5 belge türü tanımı -->
+<html lang="tr"> <!-- Belge dilini Türkçe olarak belirtir -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Analysis for Assessing the Risk for Structures</title>
+    <meta charset="UTF-8"> <!-- Belgenin karakter kodlamasını UTF-8 olarak ayarlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sayfa boyutunu ve ölçeğini ayarlar, mobil uyumluluğu sağlar -->
+    <title>Risk Analysis for Assessing the Risk for Structures</title> <!-- Sayfanın başlık etiketini belirtir -->
     <style>
         body {
             font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
@@ -13,54 +13,78 @@
             min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
             margin: 0; /* Varsayılan margin değerlerini sıfırlar */
         }
+
         .section {
-            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
-            margin-bottom: 20px;
+            flex: 1; /* Bölümün esnekliğini sağlar */
+            margin-bottom: 20px; /* Bölümün altına 20px boşluk ekler */
         }
+
         .subsection {
-            margin-left: 20px;
-            margin-bottom: 10px;
-            margin: 50px 0; /* Üst ve alt tarafta 20px boşluk bırakır */
+            margin-left: 20px; /* Alt bölümün sol tarafına 20px boşluk ekler */
+            margin-bottom: 10px; /* Alt bölümün altına 10px boşluk ekler */
         }
+
         .risk-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            margin: 30px 0; /* Üst ve alt tarafta 20px boşluk bırakır */
+            width: 100%; /* Tablo genişliğini %100 yapar */
+            border-collapse: collapse; /* Tablonun kenar boşluklarını kaldırır */
+            margin: 30px 0; /* Tablonun üst ve altına 30px boşluk ekler */
         }
+
         .risk-table th, .risk-table td {
-            border: 5px solid #dddddd;
-            text-align: left;
-            padding: 4px;
+            border: 1px solid #dddddd; /* Tablo hücrelerinin kenarlıklarını belirler */
+            text-align: left; /* Hücre içeriğini sola hizalar */
+            padding: 4px; /* Hücrelerin içindeki boşluğu 4px yapar */
         }
+
         .risk-table th {
-            background-color: #f2f2f2;
+            background-color: #f2f2f2; /* Tablo başlık hücrelerinin arka plan rengini belirler */
         }
+
         .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10;
-            padding: 1px 20px; /* İç boşlukları belirler */
-            background-color: #f1f1f1;
+            display: flex; /* Footer öğelerini yatayda hizalar */
+            justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+            align-items: center; /* Footer öğelerini dikeyde ortalar */
+            margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+            padding: 10px 20px; /* İç boşlukları belirler */
+            background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
         }
         .footer img {
             display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
-            margin: 0 ; /* Resmin yatayda ortalanmasını sağlar */
+            margin: 0; /* Resmin marginlerini sıfırlar */
         }
         .footer p {
             margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
         }
+
+        /* Sağ üst köşede yer alan resim için stil */
+        .top-right-image {
+            position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+            top: 0;
+            right: 0;
+            width: 100px; /* Resmin genişliğini ayarlar */
+            height: auto; /* Yüksekliği otomatik ayarlar */
+            margin: 10px; /* Resme biraz boşluk bırakır */
+        }
+        
+        /* Konteynerin konumunu belirlemek için */
+        .container {
+            position: relative; /* Konteynerin göreceli konumunu belirler */
+        }
     </style>
 </head>
 <body>
-    <div class="section">
-        <h2>4. Project data</h2>
+    <div class="container"> <!-- Ana içerik kapsayıcısı -->
+        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+    </div>
 
-        <div class="subsection">
-            <h3>4.1 Selection of risks to be considered</h3>
+    <div class="section"> <!-- Bölüm -->
+        <h2>4. Project data</h2> <!-- Bölüm başlığı -->
+
+        <div class="subsection"> <!-- Alt bölüm -->
+            <h3>4.1 Selection of risks to be considered</h3> <!-- Alt bölüm başlığı -->
             <p>Due to the type and use of the structure, object WATER STORAGE MEKKE, the following risks were selected and considered:</p>
-            <table class="risk-table">
+            <table class="risk-table"> <!-- Risk tablosu -->
                 <tr>
                     <th>Risk</th>
                     <th>Description</th>
@@ -92,20 +116,20 @@
             <p>The aim of a risk analysis is to reduce the risk to an acceptable level RT by an economically sound selection of protection measures.</p>
         </div>
 
-        <div class="subsection">
-            <h3>4.2 Geographic and building parameters</h3>
+        <div class="subsection"> <!-- Alt bölüm -->
+            <h3>4.2 Geographic and building parameters</h3> <!-- Alt bölüm başlığı -->
             <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of 2,00 lightning strikes / year / km² was determined for the location of the object STEEL WATER STORAGES IN MOASIM/MAKKAH by means of the ground flash density map. As a result, there is a calculated number of 20,00 of thunderstorm days per year for the location of the project.</p>
             <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure STEEL WATER STORAGES IN MOASIM/MAKKAH has the following dimensions:</p>
             <p>L<sub>b</sub> Length: 110,00 m</p>
             <p>W<sub>b</sub> Width: 110,00 m</p>
         </div>
     </div>
+
     <div class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
+        <p>Radsan Risk Tools-2024-08-01</p> <!-- Footer'da yer alan metin -->
         <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </div>
 </body>
 </html>
-
 

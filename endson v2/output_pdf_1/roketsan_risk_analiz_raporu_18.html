@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Analysis Page 18</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+            margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+        }
+
+        .container {
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            padding: 20px; /* İçeriğin etrafına 20px boşluk ekler */
+        }
+
+        .subsection {
+            margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+            margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
+        }
+
+        .content {
+            margin-bottom: 20px; /* İçeriğin altına 20px boşluk ekler */
+        }
+
+        .content p {
+            margin: 8px 0; /* Paragrafların üst ve altına 8px boşluk ekler */
+        }
+
+        p {
+            margin-bottom: 1px;
+            margin-top: 1px; /* Paragraf altındaki boşluğu ayarlar */
+        }
+        h2 {
+            margin-bottom: 1px;
+            margin-top: 1px; /* Paragraf altındaki boşluğu ayarlar */
+            font-size: 18px; /* Font boyutunu ayarlar */
+        }
+
+
+        .footer {
+            display: flex; /* Footer öğelerini yatayda hizalar */
+            justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+            align-items: center; /* Footer öğelerini dikeyde ortalar */
+            margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+            padding: 10px 20px; /* İç boşlukları belirler */
+            background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+        }
+        .footer img {
+            display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+            margin: 0; /* Resmin marginlerini sıfırlar */
+        }
+        .footer p {
+            margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+        }
+
+        .top-right-image {
+            position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+            top: 0;
+            right: 0;
+            width: 80px; /* Resmin genişliğini ayarlar */
+            height: auto; /* Yüksekliği otomatik ayarlar */
+            margin: 5px; /* Resme biraz boşluk bırakır */
+        }
+
+        .caption {
+            text-align: center; /* Açıklamayı ortalar */
+            margin-top: 5px; /* Açıklamanın üstüne 5px boşluk ekler */
+            font-size: 14px; /* Yazı boyutunu belirler */
+            color: #555; /* Yazı rengini belirler */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Ana içerik kapsayıcısı -->
+        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+        <div class="content"></div>
+    <h2>Coordinated SPD system</h2>
+    <p>SPDs properly selected, coordinated and installed to form a system intended to reduce failures of electrical and electronic systems.</p>
+    
+    <h2>Isolating interfaces</h2>
+    <p>Devices which are capable of reducing conducted surges on lines entering the LPZ. These include isolation transformers with earthed screen between windings, metal-free fibre optic cables and opto-isolators. Insulation withstand characteristics of these devices are suitable for this application intrinsically or via SPD.</p>
+    
+    <h2>LEMP (lightning electromagnetic impulse)</h2>
+    <p>All electromagnetic effects of lightning current via resistive, inductive and capacitive coupling, which create surges and electromagnetic fields.</p>
+    
+    <h2>LP (lightning protection)</h2>
+    <p>Complete system for protection of structures against lightning, including their internal systems and contents, as well as persons, in general consisting of an LPS and SPM.</p>
+    
+    <h2>LPL (lightning protection level)</h2>
+    <p>Number related to a set of lightning current parameters values relevant to the probability that the associated maximum and minimum design values will not be exceeded in naturally occurring lightning.</p>
+    
+    <h2>LPS (lightning protection system)</h2>
+    <p>Complete system used to reduce physical damage due to lightning flashes to a structure.</p>
+    
+    <h2>EB (lightning equipotential bonding)</h2>
+    <p>Bonding to LPS of separated metallic parts, by direct conductive connections or via surge protective devices, to reduce potential differences caused by lightning current.</p>
+    
+    <h2>SPD (surge protection device)</h2>
+    <p>Device intended to limit transient overvoltages and divert surge currents; contains at least one non-linear component.</p>
+    
+    <h2>Node</h2>
+    <p>Point on a line from which onward surge propagation can be assumed to be neglected. Examples of nodes are a point on a power line branch distribution at an HV / LV transformer or on a power substation, a telecommunication exchange or an equipment (e.g. multiplexer or xDSL equipment) on a telecommunication line.</p>
+    
+    <h2>Physical damage</h2>
+    <p>Damage to a structure (or to its contents) due to mechanical, thermal, chemical or explosive effects of lightning.</p>
+    
+    <h2>Injury to living beings</h2>
+    <p>Permanent injuries, including loss of life, to people or to animals by electric shock due to touch and step voltages caused by lightning.</p>
+    
+    <h2>Risk R</h2>
+    <p>Value of probable average annual loss (humans and goods) due to lightning, relative to the total value (humans and goods) of the structure to be protected.</p>
+    
+    <h2>Zone of a structure ZS</h2>
+</div>
+<footer class="footer"> <!-- Footer bölümü -->
+    <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+    <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
+    <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+</footer>
+</body>
+</html>
+
