@@ -8,6 +8,7 @@ A_D_genişlik_C = output.a_d_genişlik_bul()
 A_D_uzunluk_C = output.a_d_uzunluk_bul()
 A_D_denklem_C = output.a_d_denklem()
 A_D_yükseklik_C = output.a_d_yükseklik_bul()
+A_D_yükseklik_max_C = output.a_d_max_yükseklik_bul()
 C_D_C = output.c_d_bul()
 C_DJ_C = output.c_dj_bul()
 P_TA_C = output.p_ta_bul()
@@ -49,6 +50,7 @@ class LightningRiskCalculator_min_values:
         self.A_D_uzunluk = A_D_uzunluk_C
         self.A_D_denklem = A_D_denklem_C
         self.A_D_yükseklik = A_D_yükseklik_C
+        self.A_D_yükseklik_max  =  A_D_yükseklik_max_C 
         self.A_D = None
         self.A_DJ = None
         self.C_D = None
@@ -98,7 +100,7 @@ class LightningRiskCalculator_min_values:
     def a_d_belirle(self):
         
         if self.A_D_denklem == "evet":
-            self.HMAX =  self.A_D_yükseklik 
+            self.HMAX =  self.A_D_yükseklik_max
             self.A_D= pi*(3*self.HMAX)**2
 
         elif self.A_D_denklem=="hayır":

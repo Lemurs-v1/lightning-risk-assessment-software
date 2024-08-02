@@ -10,6 +10,7 @@ class LightningRiskCalculator_output_value:
         self.A_D_genişlik = None
         self.A_D_uzunluk = None
         self.A_D_yükseklik = None
+        self.A_D_yükseklik_max = None
         self.A_D_denklem = None
         self.C_D = None
         self.C_DJ = None
@@ -57,6 +58,9 @@ class LightningRiskCalculator_output_value:
     def a_d_yükseklik_bul(self):
         self.A_D_yükseklik = 150#float(input("yapı yüksekliğini giriniz: "))
         return self.A_D_yükseklik
+    def a_d_max_yükseklik_bul(self):
+        self.A_D_yükseklik_max = 200#float(input("yapı yüksekliğini giriniz: "))
+        return self.A_D_yükseklik_max
     def a_d_genişlik_bul(self):
         self.A_D_genişlik = 20#float(input("Yapı genişliğini giriniz: "))
         return self.A_D_genişlik

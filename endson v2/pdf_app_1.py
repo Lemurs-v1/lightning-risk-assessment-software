@@ -9,6 +9,7 @@ yazar = "çetin bey"
 proje_no = "1518484"
 uzunluk = 120 
 genişlik = 155 
+yükseklik = 30
 
 
 # HTML içeriği
@@ -457,7 +458,7 @@ html_content_4 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content"></div>
     <ol>
@@ -503,8 +504,8 @@ html_content_4 = f"""
     </div>
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 4 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 
@@ -611,7 +612,7 @@ html_content_5 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content"></div>
 
@@ -645,8 +646,8 @@ html_content_5 = f"""
     </div>
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 5 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 </html>
@@ -734,7 +735,7 @@ html_content_6 =  f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content"></div>
 
@@ -759,8 +760,8 @@ html_content_6 =  f"""
     </div>
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 6 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 </html>
@@ -841,7 +842,7 @@ html_content_7 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
     </div>
 
@@ -887,15 +888,15 @@ html_content_7 = f"""
             <h3>4.2 Geographic and building parameters</h3> <!-- Alt bölüm başlığı -->
             <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of 2,00 lightning strikes / year / km² was determined for the location of the object STEEL WATER STORAGES IN MOASIM/MAKKAH by means of the ground flash density map. As a result, there is a calculated number of 20,00 of thunderstorm days per year for the location of the project.</p>
             <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure STEEL WATER STORAGES IN MOASIM/MAKKAH has the following dimensions:</p>
-            <p>L<sub>b</sub> Length: 110,00 m</p>
-            <p>W<sub>b</sub> Width: 110,00 m</p>
+            <p>L<sub>b</sub> Length: {uzunluk}/p>
+            <p>W<sub>b</sub> Width: {genişlik}</p>
         </div>
     </div>
 
     <div class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
         <p>Radsan Risk Tools-{tarih}</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Page 7 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </div>
 </body>
 </html>
@@ -977,11 +978,11 @@ html_content_8 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
     </div>
     <div class="content"> <!-- İçerik bölümü -->
-        <p><strong>Hb Height:</strong> 20,00 m</p>
+        <p><strong>Hb Height:</strong> {yükseklik}</p>
         <p><strong>Hpb Highest point (if applicable):</strong> 40,00 m</p>
         <p>This results in a calculated collection area for direct lightning strikes of 49.809,00 m² and for indirect lightning strikes (near the structure) of 1.005.398,00 m².</p>
         <div class="image-section"> <!-- Görsel bölümü -->
@@ -998,8 +999,8 @@ html_content_8 = f"""
     </div>
     <div class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 8 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </div>
 </body>
 </html>
@@ -1075,7 +1076,7 @@ html_content_9 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
             <p>- data</p>
@@ -1106,8 +1107,8 @@ html_content_9 = f"""
     </div>
     <div class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 9 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </div>
 </body>
 </html>
@@ -1215,7 +1216,7 @@ html_content_10 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
             <table class="data-table">
@@ -1262,8 +1263,8 @@ html_content_10 = f"""
         </div>
         <footer class="footer"> <!-- Footer bölümü -->
             <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-            <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-            <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+            <p>Page 10 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
         </footer>
     </div>
 </body>
@@ -1359,7 +1360,7 @@ html_content_11 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
         </div>
@@ -1403,8 +1404,8 @@ html_content_11 = f"""
 
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 11 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 </html>
@@ -1506,7 +1507,7 @@ html_content_12 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
         
@@ -1548,8 +1549,8 @@ html_content_12 = f"""
 
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 12 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 
 </body>
@@ -1652,7 +1653,7 @@ html_content_13 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         
         <h2>7.3 Risk R3, Cultural heritage</h2>
@@ -1698,8 +1699,8 @@ html_content_13 = f"""
     </div> 
         <footer class="footer"> <!-- Footer bölümü -->
             <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-            <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-            <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+            <p>Page 13 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
         </footer>
 
 </body>
@@ -1783,7 +1784,7 @@ html_content_14 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
             <p><strong>pB:</strong> Lightning protection system (LPS) Class of LPS IV : 2.000E-01</p>
@@ -1796,8 +1797,8 @@ html_content_14 = f"""
     </div> 
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 14 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 </html>
@@ -1882,7 +1883,7 @@ html_content_15 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
             <h3>9. Legal obligation</h3>
@@ -1907,8 +1908,8 @@ html_content_15 = f"""
         </div>
         <footer class="footer"> <!-- Footer bölümü -->
             <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-            <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-            <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+            <p>Page 15 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
         </footer>
     </div>
 </body>
@@ -1993,7 +1994,7 @@ html_content_16 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
             <h3>10. General information</h3>
@@ -2019,8 +2020,8 @@ html_content_16 = f"""
         </div>
         <footer class="footer"> <!-- Footer bölümü -->
             <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-            <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-            <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+            <p>Page 16 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
         </footer>
     </div>
 </body>
@@ -2103,7 +2104,7 @@ html_content_17 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
             <h4>10.1.3 IEC 62561-3:2012 Requirements for isolating spark gaps</h4>
@@ -2117,8 +2118,8 @@ html_content_17 = f"""
     </div>
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 17 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 </html>
@@ -2206,7 +2207,7 @@ html_content_18 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content"></div>
     <h2>Coordinated SPD system</h2>
@@ -2249,8 +2250,8 @@ html_content_18 = f"""
 </div>
 <footer class="footer"> <!-- Footer bölümü -->
     <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-    <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-    <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+    <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+    <p>Page 18 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
 </footer>
 </body>
 </html>
@@ -2338,7 +2339,7 @@ html_content_19 = f"""
 </head>
 <body>
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
-        <img src="resim.jpg" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content"></div>
 
@@ -2359,8 +2360,8 @@ html_content_19 = f"""
     </div>
     <footer class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
-        <p>Radsan Risk Tools 18/26 (3.120) - 22.04.2020</p> <!-- Footer'da yer alan metin -->
-        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        <p>Radsan Risk Tools - {tarih}</p> <!-- Footer'da yer alan metin -->
+        <p>Page 19 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
     </footer>
 </body>
 </html>
