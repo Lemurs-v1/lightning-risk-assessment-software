@@ -3,12 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from Interface import Ui_MainWindow  # Arayüz tanımını içeren dosya
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QMessageBox
-import os
-from tkinter import Tk, filedialog
-from PIL import Image
-
-
+import codecs
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -95,6 +90,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Pli_comboBox2 = self.ui.Pli_comboBox2
         self.Pli_comboBox2.currentIndexChanged.connect(self.selection_changed_Pli2)
 
+        self.Hz_comboBox=self.ui.Hz_comboBox
+        self.Hz_comboBox.currentIndexChanged.connect(self.selection_changed_Hz)
+
+        self.Ptu_comboBox = self.ui.Ptu_comboBox
+        self.Ptu_comboBox.currentIndexChanged.connect(self.selection_changed_Ptu)
+
         # Diğer bileşenler
         # Ekranlama Checkbox
 
@@ -116,6 +117,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Adj_u_doubleSpinbox = self.ui.Adj_u_doubleSpinbox
         self.nt_doubleSpinbox = self.ui.nt_doubleSpinbox
         self.nz_checkBox = self.ui.nz_checkBox
+        self.tz_checkBox=self.ui.tz_checkBox
+        self.Ll_checkbox=self.ui.Ll_checkBox
         self.nz_doubleSpinbox = self.ui.nz_doubleSpinbox
         self.tz_doubleSpinbox = self.ui.tz_doubleSpinbox
         self.LI_doubleSpinbox = self.ui.LI_doubleSpinbox
@@ -142,12 +145,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.quit_action.triggered.connect(QtWidgets.qApp.quit)
         self.tray_icon.setContextMenu(self.tray_menu)
         self.tray_icon.show()
-        #hesapla butonu
-        self.hesapla_pushButton = self.ui.hesapla_pushButton
-        self.hesapla_pushButton.clicked.connect(self.calculate)
-        #logo yükle 
-        self.logo_pushButton = self.ui.logo_pushButton
-        self.logo_pushButton.clicked.connect(self.logo)
 
     def selection_changed_Ad(self):
         selected_item = self.Ad_comboBox.currentText()
@@ -208,6 +205,9 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def selection_changed_Lo(self):
         selected_item = self.Lo_comboBox.currentText()
+
+    def selection_changed_Hz(self):
+        selected_item = self.Hz_comboBox.currentText()
     
     def selection_changed_Lfo2(self):
         selected_item = self.Lfo2_comboBox.currentText()
@@ -232,6 +232,17 @@ class MainWindow(QtWidgets.QMainWindow):
     def selection_changed_metal(self):
         state = self.metal_checkBox.isChecked()
 
+    def selection_changed_Ptu(self):
+        selected_item = self.Ptu_comboBox.currentText()
+
+    def selection_changed_tz_double_value(self):
+        state = self.metal_checkBox.isChecked()
+
+    def selection_changed_Ll_double_value(self):
+        state = self.metal_checkBox.isChecked()
+
+    
+
 
  
  
@@ -239,6 +250,10 @@ class MainWindow(QtWidgets.QMainWindow):
  
     def save_values(self):
         Ad_value = self.Ad_comboBox.currentText()
+        if Ad_value == 'Karmaşık biçimli':
+            Ad_value='evet'
+        elif Ad_value == 'Düz biçimli':
+            Ad_value = 'hayır'
         Cd_value = self.Cd_comboBox.currentText()
         rt_value = self.rt_comboBox.currentText()
         Ce_value = self.Ce_comboBox.currentText()
@@ -250,6 +265,8 @@ class MainWindow(QtWidgets.QMainWindow):
         Pli_value = self.Pli_comboBox.currentText()
         Pld_value = self.Pld_comboBox.currentText()
         Pspd_value = self.Pspd_comboBox.currentText()
+        Hz_value = self.Hz_comboBox.currentText()
+        Ptu_value=self.Ptu_comboBox.currentText()
         Cl_value = self.Cl_comboBox.currentText()
         Peb_value = self.Peb_comboBox.currentText()
         CT_value = self.CT_comboBox.currentText()
@@ -278,35 +295,68 @@ class MainWindow(QtWidgets.QMainWindow):
         Adj_u_double_value = self.Adj_u_doubleSpinbox.value()
         nt_value = self.nt_doubleSpinbox.value()
         nz_value = self.nz_checkBox.isChecked()
+        tz_value = self.nz_checkBox.isChecked()
+        Ll_value = self.nz_checkBox.isChecked()
         nz_double_value = self.nz_doubleSpinbox.value()
-        tz_value = self.tz_doubleSpinbox.value()
-        LI_value = self.LI_doubleSpinbox.value()
+        tz_double_value = self.tz_doubleSpinbox.value()
+        Ll_double_value = self.LI_doubleSpinbox.value()
         description = self.textEdit.toPlainText()
-        #  bunları outputda çekicem 
-        değerler = f"{Ad_value}#{Cd_value}#{rt_value}#{Ce_value}#{Adj_value}#{Cdj_value}{Pb_value}#{Pta_value}#{Cld_value}#{Pli_value}#{Pld_value}#{Pspd_value}#{Cl_value}#{Peb_value}#{CT_value}#{ca_bolu_ct_value}#{rf_value}#{rp_value}#{Lf_value}#{Lo_value}#{Lfo2_value}#{Lfo4_value}#{KS3_value}#{Pld2_value}#{Pld3_value}#{Pli2_value}#{Ng_value}#{wm1_value}#{wm2_value}#{Uw_value}#{ekranlama_value}#{metal_value}#{Ng_double_value}#{Ad_y_double_value}#{Ad_g_double_value}#{Ad_u_double_value}#{Adj_g_double_value}#{Adj_u_double_value}#{nt_value}#{nz_value}#{nz_double_value}#{tz_value}#{LI_value}#{description}"
-        with open("kullanıcı_değer.txt", "w") as dosya:
+
+    # Verileri ilgili formatta yazdır
+        değerler = (
+            f"{Ad_value}\n"
+            f"{Cd_value}\n"
+            f"{rt_value}\n"
+            f"{Ce_value}\n"
+            f"{Adj_value}\n"
+            f"{Cdj_value}\n"
+            f"{Pb_value}\n"
+            f"{Pta_value}\n"
+            f"{Cld_value}\n"
+            f"{Pli_value}\n"
+            f"{Pld_value}\n"
+            f"{Pspd_value}\n"
+            f"{Cl_value}\n"
+            f"{Peb_value}\n"
+            f"{CT_value}\n"
+            f"{ca_bolu_ct_value}\n"
+            f"{rf_value}\n"
+            f"{rp_value}\n"
+            f"{Lf_value}\n"
+            f"{Lo_value}\n"
+            f"{Lfo2_value}\n"
+            f"{Lfo4_value}\n"
+            f"{KS3_value}\n"
+            f"{Pld2_value}\n"
+            f"{Pld3_value}\n"
+            f"{Pli2_value}\n"
+            f"{Ng_value}\n"
+            f"{wm1_value}\n"
+            f"{wm2_value}\n"
+            f"{Uw_value}\n"
+            f"{ekranlama_value}\n"
+            f"{metal_value}\n"
+            f"{Ng_double_value}\n"
+            f"{Ad_y_double_value}\n"
+            f"{Ad_g_double_value}\n"
+            f"{Ad_u_double_value}\n"
+            f"{Adj_g_double_value}\n"
+            f"{Adj_u_double_value}\n"
+            f"{nt_value}\n"
+            f"{nz_value}\n"
+            f"{nz_double_value}\n"
+            f"{tz_double_value}\n"
+            f"{Ll_double_value}\n"
+            f"{Hz_value}\n"
+            f"{Ptu_value}\n"
+            f"{tz_value}\n"   
+            f"{Ll_value}\n"
+            f"{description}"
+                )
+
+    
+        with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya:
             dosya.write(değerler)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         print(f'Seçilen Ad değeri: {Ad_value}')
         print(f'Seçilen Cd değeri: {Cd_value}')
@@ -349,49 +399,13 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'nt Double Spinbox değeri: {nt_value}')
         print(f'nz CheckBox durumu: {nz_value}')
         print(f'nz Double Spinbox değeri: {nz_double_value}')
-        print(f'tz Double Spinbox değeri: {tz_value}')
-        print(f'LI Double Spinbox değeri: {LI_value}')
+        print(f'tz Double Spinbox değeri: {tz_double_value}')
+        print(f'LI Double Spinbox değeri: {Ll_double_value}')
+        print(f'Seçilen Hz değeri: {Hz_value}')
+        print(f'Seçilen Ptu değeri: {Ptu_value}')
+        print(f'Seçilen tz CheckBox değeri: {tz_value}')
+        print(f'Seçilen Ll CheckBox değeri: {Ll_value}')
         print(f'Açıklama: {description}')
-        
-    def calculate(self):
-        from result import LightningRiskCalculator_result
-        def format_number_scientific(number):
-            return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
-        with open("sonuc.txt", "r") as dosya:
-            sonuc_file = dosya.read()
-        veriler = sonuc_file.split("#")
-        r1 = format_number_scientific(float(veriler[0]))
-        r2 = format_number_scientific(float(veriler[1]))
-        r3 = format_number_scientific(float(veriler[2]))
-        r4 = format_number_scientific(float(veriler[3]))
-
-        QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
-    def logo(self):
-        # Tkinter kök penceresini oluştur (bu pencere görünmeyecek)
-        root = Tk()
-        root.withdraw()  # Ana pencereyi gizle
-
-        # Kullanıcıdan dosya seçmesini sağla
-        file_path = filedialog.askopenfilename(
-            title="Resim Seç",
-            filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")]
-        )
-
-        if file_path:
-            # Kaydedilecek klasör ve dosya yolunu oluştur
-            output_directory = "output_pdf_1/images"
-            if not os.path.exists(output_directory):
-                os.makedirs(output_directory)  # Klasörü oluştur
-
-            # Resmi okuma ve kaydetme
-            image = Image.open(file_path)
-            save_path = os.path.join(output_directory, "customer.png")
-            image.save(save_path)
-
-            print(f"Resim başarıyla kaydedildi: {save_path}")
-        else:
-            print("Hiçbir dosya seçilmedi.")
-
         
     def clear_values(self):
         self.Ad_comboBox.setCurrentIndex(0)
@@ -420,6 +434,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Pld_comboBox2.setCurrentIndex(0)
         self.Pld_comboBox3.setCurrentIndex(0)
         self.Pli_comboBox2.setCurrentIndex(0)
+        self.Hz_comboBox.setCurrentIndex(0)
 
         self.Ng_checkBox.setChecked(False)
         self.wm1_doubleSpinbox.setValue(0.0)
@@ -436,7 +451,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.nz_checkBox.setChecked(False)
         self.nz_doubleSpinbox.setValue(0.0)
         self.tz_doubleSpinbox.setValue(0.0)
-        self.LI_doubleSpinbox.setValue(0.0)
+        self.Ll_doubleSpinbox.setValue(0.0)
         self.ekranlama_checkBox.setChecked(False)
         self.metal_checkBox.setChecked(False)
 
