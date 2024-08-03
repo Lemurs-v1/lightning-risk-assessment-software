@@ -3,6 +3,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from Interface import Ui_MainWindow  # Arayüz tanımını içeren dosya
 from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QMessageBox
+from result import LightningRiskCalculator_result
+
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
@@ -137,7 +140,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.quit_action.triggered.connect(QtWidgets.qApp.quit)
         self.tray_icon.setContextMenu(self.tray_menu)
         self.tray_icon.show()
-
+        #hesapla butonu
+        self.hesapla_pushButton = self.ui.hesapla_pushButton
+        self.hesapla_pushButton.clicked.connect(self.calculate)
     def selection_changed_Ad(self):
         selected_item = self.Ad_comboBox.currentText()
     
@@ -341,6 +346,14 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'tz Double Spinbox değeri: {tz_value}')
         print(f'LI Double Spinbox değeri: {LI_value}')
         print(f'Açıklama: {description}')
+        
+    def calculate(self):
+        result = LightningRiskCalculator_result()
+        r1=result.R_1_belirle()
+        r2 = result.R_2_belirle()
+        r3= result.R_3_belirle()
+        r4 = result.R_4_belirle()
+        QMessageBox.information(self, "Sonuç", f"R1={r1} R2={r2} R3={r3} R4={r4}")
         
     def clear_values(self):
         self.Ad_comboBox.setCurrentIndex(0)

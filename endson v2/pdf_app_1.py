@@ -7,15 +7,15 @@ açıklama = "açıklamaaaaaa"
 müşteri = "roketsan"
 yazar = "çetin bey"
 proje_no = "1518484"
-uzunluk = 120 
-genişlik = 155 
-yükseklik = 30
-yükseklik_max = 60
+uzunluk_yapı = 120 
+genişlik_yapı = 155 
+yükseklik_yapı = 30
+yükseklik_yapı_max = 60
 yıldırım_yoğunluğu = 5
 yapı_konum = "su deposu in mekke"
 yapı_AD_alan = 5000
 ayrık_yapı_AD_alan = 300
-c_dj = "sadad"
+c_dj = 0.5
 
 
 # HTML içeriği
@@ -761,7 +761,7 @@ html_content_6 =  f"""
         <br>
         <p>The risk components allow to analyse the risks and measures to avoid possible loss can be taken.</p>
         <br>
-        <p>The following risk analysis according to IEC 62305-2:2010-12 for the project MNG - object WATER STORAGE MEKKE shows the necessity of protection measures. The risk potential for the structure is determined and, if necessary, measures to reduce the risk have to be taken. The result of the risk analysis not only specifies the class of LPS, but also provides a complete protection concept including the</p>
+        <p>The following risk analysis according to IEC 62305-2:2010-12 for the this project - object {yapı_konum} shows the necessity of protection measures. The risk potential for the structure is determined and, if necessary, measures to reduce the risk have to be taken. The result of the risk analysis not only specifies the class of LPS, but also provides a complete protection concept including the</p>
         
     </div>
     <footer class="footer"> <!-- Footer bölümü -->
@@ -892,10 +892,10 @@ html_content_7 = f"""
 
         <div class="subsection"> <!-- Alt bölüm -->
             <h3>4.2 Geographic and building parameters</h3> <!-- Alt bölüm başlığı -->
-            <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of 2,00 lightning strikes / year / km² was determined for the location of the object {yapı_konum} by means of the ground flash density map. As a result, there is a calculated number of 20,00 of thunderstorm days per year for the location of the project.</p>
+            <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of {n_g} lightning strikes / year / km² was determined for the location of the object {yapı_konum} by means of the ground flash density map. As a result, there is a calculated number of {t_d} of thunderstorm days per year for the location of the project.</p>
             <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure {yapı_konum} has the following dimensions:</p>
-            <p>L<sub>b</sub> Length: {uzunluk}/p>
-            <p>W<sub>b</sub> Width: {genişlik}</p>
+            <p>L<sub>b</sub> Length: {uzunluk_yapı}/p>
+            <p>W<sub>b</sub> Width: {genişlik_yapı}</p>
         </div>
     </div>
 
@@ -988,15 +988,15 @@ html_content_8 = f"""
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
     </div>
     <div class="content"> <!-- İçerik bölümü -->
-        <p><strong>Hb Height:</strong> {yükseklik}</p>
-        <p><strong>Hpb Highest point (if applicable):</strong> {yükseklik_max}</p>
+        <p><strong>Hb Height:</strong> {yükseklik_yapı}</p>
+        <p><strong>Hpb Highest point (if applicable):</strong> {yükseklik_yapı_max}</p>
         <p>This results in a calculated collection area for direct lightning strikes of {yapı_AD_alan} m² and for indirect lightning strikes (near the structure) of {ayrık_yapı_AD_alan} m².</p>
         <div class="image-section"> <!-- Görsel bölümü -->
             <img src="path_to_image/graph.png" alt="Graph Image"> <!-- Görsel -->
         </div>
         <p>The environment surrounding the structure is an important factor for determining the number of direct / indirect lightning strikes. It was defined as follows for the building {yapı_konum}</p>
-        <p><strong>Relative location Cd:</strong> 2,00</p>
-        <p>If the ground flash density is referred to the size and the environment of the structure, a frequency of direct strikes Nd to the structure of 0,1992 strikes / year and indirect strikes near the structure of 2,0108 strikes / year is to be expected.</p>
+        <p><strong>Relative location Cd:</strong> {c_dj}</p>
+        <p>If the ground flash density is referred to the size and the environment of the structure, a frequency of direct strikes Nd to the structure of {n_d} strikes / year and indirect strikes near the structure of {middle_den_bir_Değer} strikes / year is to be expected.</p>
         <h3>4.3 Division of the structure into lightning protection zones/zones</h3> <!-- Alt bölüm başlığı -->
         <p>The structure {yapı_konum} was not divided into lightning protection zones / zones.</p>
         <h3>5. Supply lines</h3> <!-- Alt bölüm başlığı -->
@@ -1088,27 +1088,27 @@ html_content_9 = f"""
             <p>- data</p>
             <p>- power</p>
             <h3>5.1 data</h3>
-            <p><strong>Installation factor:</strong> Buried</p>
-            <p><strong>Type of conductor:</strong> Power supply line</p>
-            <p><strong>Environment:</strong> Rural</p>
-            <p><strong>Connection of the conductor:</strong> Connected to shielded and earthed lines</p>
-            <p><strong>Transformer:</strong> LV power supply, telecommunication or data line</p>
-            <p><strong>Conductor shielding:</strong> External: Shielded: 5 ohms/km < shield resistance (RS) <= 20 ohms/km</p>
-            <p>The conductor length outside the structure up to the next node is 1.000,00 m.</p>
+            <p><strong>Installation factor:</strong> {Installation_factor_data}</p>
+            <p><strong>Type of conductor:</strong> {Type_of_conductor_data}</p>
+            <p><strong>Environment:</strong> {Environment_data}</p>
+            <p><strong>Connection of the conductor:</strong> {Connection_of_the_conductor_data}</p>
+            <p><strong>Transformer:</strong> {Transformer_data}</p>
+            <p><strong>Conductor shielding:</strong> External: {Conductor_shielding_data}</p>
+            <p>The conductor length outside the structure up to the next node is {conductor_lenght_data}.</p>
             <p>Based on this, the following collection areas were determined for the supply line:</p>
-            <p>- Collection area for direct lightning strikes to a supply line: 40.000,00 m²</p>
-            <p>- Collection area for indirect lightning strikes near a supply line: 4.000.000,00 m²</p>
-            <p>The dielectric strength of the electrical equipment which is connected with the data is Uw <= 1.0 kV</p>
-            <p>The conductors in the building are installed via Unshielded cable – no routing precaution in order to avoid loops.</p>
+            <p>- Collection area for direct lightning strikes to a supply line: {supply_line_area_direct_data} m²</p>
+            <p>- Collection area for indirect lightning strikes near a supply line: {supply_line_area_indirect_data} m²</p>
+            <p>The dielectric strength of the electrical equipment which is connected with the data is Uw <= {u_w}</p>
+            <p>{shield_cable_discription}</p>
             <h3>5.2 power</h3>
-            <p><strong>Installation factor:</strong> Buried</p>
-            <p><strong>Type of conductor:</strong> Telecommunication line</p>
-            <p><strong>Environment:</strong> Rural</p>
-            <p><strong>Connection of the conductor:</strong> Connected to shielded and earthed lines</p>
-            <p><strong>Transformer:</strong> LV power supply, telecommunication or data line</p>
-            <p><strong>Conductor shielding:</strong> External: Shielded: 5 ohms/km < shield resistance (RS) <= 20 ohms/km</p>
-            <p>The conductor length outside the structure up to the next node is 1.000,00 m.</p>
-            <p>A connected structure with the following dimensions is located at a distance of 1.000,00 m:</p>
+            <p><strong>Installation factor:</strong> {Installation_factor_power}</p>
+            <p><strong>Type of conductor:</strong> {Type_of_conductor_power}</p>
+            <p><strong>Environment:</strong> {Environment_power}</p>
+            <p><strong>Connection of the conductor:</strong> {Connection_of_the_conductor_power}</p>
+            <p><strong>Transformer:</strong> {Transformer_power}</p>
+            <p><strong>Conductor shielding:</strong> {Conductor_shielding_power}</p>
+            <p>The conductor length outside the structure up to the next node is {conductor_leght_power_1} m.</p>
+            <p>A connected structure with the following dimensions is located at a distance of {conductor_leght_power_2} m:</p>
         </div>
     </div>
     <div class="footer"> <!-- Footer bölümü -->
@@ -1228,23 +1228,23 @@ html_content_10 = f"""
             <table class="data-table">
                 <tr>
                     <th>Length (L<sub>a</sub>)</th>
-                    <td>110,00 m</td>
+                    <td>{uzunluk_ayrık_yapı}</td>
                 </tr>
                 <tr>
                     <th>Width (W<sub>a</sub>)</th>
-                    <td>110,00 m</td>
+                    <td>{genişlik_ayrık_yapı}</td>
                 </tr>
                 <tr>
                     <th>Height (H<sub>a</sub>)</th>
-                    <td>20,00 m</td>
+                    <td>{yükseklik_ayrık_yapı}</td>
                 </tr>
                 <tr>
                     <th>Highest point (H<sub>pa</sub>)</th>
-                    <td>40,00 m</td>
+                    <td>{yükseklik_ayrık_yapı_mac}</td>
                 </tr>
             </table>
 
-            <p>As a result, the calculated collection area for lightning strikes to the connected structure is {yapı_AD_alan} m².</p>
+            <p>As a result, the calculated collection area for lightning strikes to the connected structure is {ayrık_yapı_AD_alan} m².</p>
 
             <div class="image-section">
                 <img src="lightning-collection-area.png" alt="Lightning Collection Area">
@@ -1252,11 +1252,11 @@ html_content_10 = f"""
 
             <p>Based on this, the following collection areas were determined for the supply line:</p>
             <ul>
-                <li>Collection area for direct lightning strikes to the supply line: 40.000,00 m²</li>
-                <li>Collection area for indirect lightning strikes near the supply line: 4.000.000,00 m²</li>
+                <li>Collection area for direct lightning strikes to the supply line: {supply_line_direct_ayrık} m²</li>
+                <li>Collection area for indirect lightning strikes near the supply line: {supply_line_indirect_ayrık}</li>
             </ul>
-            <p>The dielectric strength of the electrical equipment which is connected with the power is 2.5 kV &lt; U<sub>w</sub> &lt;= 4.0 kV</p>
-            <p>The conductors in the building are installed via Shielded cables and cables running in metal conduits.</p>
+            <p>The dielectric strength of the electrical equipment which is connected with the power is 2.5 kV &lt; {u_w_ayrık}</sub> &lt;= 4.0 kV</p>
+            <p>{shield_cable_discription_ayrık}</p>
 
             <h2 class="section-title">6. Properties of the structure</h2>
             <h3 class="section-title">6.1 Risk of fire</h3>
@@ -1379,24 +1379,24 @@ html_content_11 = f"""
         <ul>
         <p>The risk of fire in a structure is an important factor for determining the required protection measures. The risk of fire for the structure {yapı_konum} was defined as follows:</p>
         <ul>
-            <li>No risk of fire or explosion</li>
+            <li>{risk_of_fire}</li>
         <ul>
         <h2>6.2 Measures to reduce the consequences of a fire</h2>
         <p>The following measures were selected to reduce the consequences of a fire:</p>
         <ul>
-            <li>No measures</li>
+            <li>{consequences_of_fire}</li>
         </ul>
         <h2>6.3 Special hazards in the building for persons</h2>
         <p>Due to the number of persons, the possible risk of panic for the structure {yapı_konum} was defined as follows:</p>
         <ul>
-            <li>No special hazard</li>
+            <li>{risk_of_panic}</li>
         </ul>
         <h2>6.4 External spatial shielding</h2>
         <p>Spatial shielding attenuates the magnetic field within a structure caused by lightning strikes to or near the object and reduces internal surges.</p>
         <p>This can be achieved by an intermeshed equipotential bonding network in which all conductive parts of the structure and the internal systems are integrated. Consequently, the external / internal spatial shield is only a part of a shielded building structure. It must be observed that metal coverings and claddings are connected to one another and conductively to the equipotential bonding of the building. In this context, the relevant normative requirements must be observed.</p>
         <p>Covering of the structure {yapı_konum}:</p>
         <ul>
-            <li>No shielding</li>
+            <li>{External_spatial_shielding}</li>
         </ul>
         <h2>7. Risk assessment</h2>
         <p>As described in 4.1, the following risks according to 7. were assessed. The blue bar shows the tolerable risk value and the green / red bar shows the risk determined.</p>
@@ -1404,7 +1404,7 @@ html_content_11 = f"""
         <p>The following risk was determined for persons outside and inside the structure {yapı_konum}:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-05</li>
-            <li>Calculated risk R1 (unprotected): 0,00E00</li>
+            <li>Calculated risk R1: {R_1}</li>
         </ul>
     </div> <!-- .container div kapanışı eklendi(en aşağı atmak için gerekli ) --> 
 
@@ -1533,8 +1533,7 @@ html_content_12 = f"""
         <p>The risk R2, failure of services to the public, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-03</li>
-            <li>Calculated risk R2 (unprotected): 0,00E00</li>
-            <li>Calculated risk R2 (protected): 0,00E00</li>
+            <li>Calculated risk R2: {R_2}</li>
         </ul>
         
         <div class="image-section">
@@ -1666,8 +1665,8 @@ html_content_13 = f"""
         <p>The risk R3, loss of cultural heritage, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-04</li>
-            <li>Calculated risk R3 (unprotected): 0,00E00</li>
-            <li>Calculated risk R3 (protected): 0,00E00</li>
+            <li>Calculated risk R3: {R_3}</li>
+
         </ul>
 
         <div class="image-section">
@@ -1686,18 +1685,17 @@ html_content_13 = f"""
         <p>The risk R3, loss of cultural heritage, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-04</li>
-            <li>Calculated risk R3 (unprotected): 0,00E00</li>
-            <li>Calculated risk R3 (protected): 0,00E00</li>
+            <li>Calculated risk R4: {R_4}</li>
         </ul>
 
         <div class="image-section">
-            <img src="without-measures-r3.png" alt="Risk R3 without measures">
-            <img src="with-measures-r3.png" alt="Risk R3 with measures">
+            <img src="without-measures-r4.png" alt="Risk R4 without measures">
+            <img src="with-measures-r4.png" alt="Risk R4 with measures">
         </div>
 
-        <p>The risk R3 consists of following risk components:</p>
+        <p>The risk R4 consists of following risk components:</p>
         <div class="image-section">
-            <img src="risk-components-r3.png" alt="Risk R3 Components">
+            <img src="risk-components-r4.png" alt="Risk R3 Components">
         </div>
         
         <p>To reduce the risk, it is necessary to take measures as described in 8.</p>
@@ -1793,12 +1791,12 @@ html_content_14 = f"""
         <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         <div class="content">
-            <p><strong>pB:</strong> Lightning protection system (LPS) Class of LPS IV : 2.000E-01</p>
-            <p><strong>pEB:</strong> Lightning equipotential bonding Equipotential bonding for LPL III or IV : 5.000E-02</p>
-            <p><strong>KS1-2:</strong> External spatial shielding (all zones) continuous metal shield with a thickness <br> not lower than 0.1 mm : 1.000E-04</p>
+            <p><strong>pB:</strong> Lightning protection system (LPS) Class of LPS IV : {P_B}</p>
+            <p><strong>pEB:</strong> Lightning equipotential bonding Equipotential bonding for LPL III or IV : {P_EB}</p>
+            <p><strong>KS1-2:</strong> External spatial shielding (all zones) continuous metal shield with a thickness <br> not lower than 0.1 mm : {KS1}</p>
 
             <p><strong>Type of internal wiring</strong></p>
-            <p><strong>KS3:</strong> Shielded cables and cables running in metal conduits : 1.000E-04</p>
+            <p><strong>KS3:</strong> Shielded cables and cables running in metal conduits : {KS3}</p>
         </div>
     </div> 
     <footer class="footer"> <!-- Footer bölümü -->
