@@ -4,7 +4,9 @@ import sys
 from Interface import Ui_MainWindow  # Arayüz tanımını içeren dosya
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMessageBox
-from result import LightningRiskCalculator_result
+import os
+from tkinter import Tk, filedialog
+from PIL import Image
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -143,6 +145,10 @@ class MainWindow(QtWidgets.QMainWindow):
         #hesapla butonu
         self.hesapla_pushButton = self.ui.hesapla_pushButton
         self.hesapla_pushButton.clicked.connect(self.calculate)
+        #logo yükle 
+        self.logo_pushButton = self.ui.logo_pushButton
+        self.logo_pushButton.clicked.connect(self.logo)
+
     def selection_changed_Ad(self):
         selected_item = self.Ad_comboBox.currentText()
     
@@ -348,12 +354,44 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'Açıklama: {description}')
         
     def calculate(self):
-        result = LightningRiskCalculator_result()
-        r1=result.R_1_belirle()
-        r2 = result.R_2_belirle()
-        r3= result.R_3_belirle()
-        r4 = result.R_4_belirle()
-        QMessageBox.information(self, "Sonuç", f"R1={r1} R2={r2} R3={r3} R4={r4}")
+        from result import LightningRiskCalculator_result
+        def format_number_scientific(number):
+            return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
+        with open("sonuc.txt", "r") as dosya:
+            sonuc_file = dosya.read()
+        veriler = sonuc_file.split("#")
+        r1 = format_number_scientific(float(veriler[0]))
+        r2 = format_number_scientific(float(veriler[1]))
+        r3 = format_number_scientific(float(veriler[2]))
+        r4 = format_number_scientific(float(veriler[3]))
+
+        QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
+    def logo(self):
+        # Tkinter kök penceresini oluştur (bu pencere görünmeyecek)
+        root = Tk()
+        root.withdraw()  # Ana pencereyi gizle
+
+        # Kullanıcıdan dosya seçmesini sağla
+        file_path = filedialog.askopenfilename(
+            title="Resim Seç",
+            filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")]
+        )
+
+        if file_path:
+            # Kaydedilecek klasör ve dosya yolunu oluştur
+            output_directory = "output_pdf_1/images"
+            if not os.path.exists(output_directory):
+                os.makedirs(output_directory)  # Klasörü oluştur
+
+            # Resmi okuma ve kaydetme
+            image = Image.open(file_path)
+            save_path = os.path.join(output_directory, "customer.png")
+            image.save(save_path)
+
+            print(f"Resim başarıyla kaydedildi: {save_path}")
+        else:
+            print("Hiçbir dosya seçilmedi.")
+
         
     def clear_values(self):
         self.Ad_comboBox.setCurrentIndex(0)

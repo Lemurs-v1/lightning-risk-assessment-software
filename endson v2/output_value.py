@@ -45,7 +45,7 @@ class LightningRiskCalculator_output_value:
        
 
     def n_g_bul(self):
-        self.N_G =N_G_C #input("Yıldırım yoğunluğunu giriniz (sayı/bilmiyorum): ")
+        self.N_G =20 #input("Yıldırım yoğunluğunu giriniz (sayı/bilmiyorum): ")
         if self.N_G == "bilmiyorum":
             T_D = float(input("Fırtınalı gün sayısını giriniz: "))
             self.N_G = 0.1 * T_D
@@ -70,7 +70,7 @@ class LightningRiskCalculator_output_value:
         return self.A_D_uzunluk
     def a_dj_bul(self):
 
-        A_DJ_cevap_1 = input("ayrık yapı var mı: ")
+        A_DJ_cevap_1 = "hayır"#input("ayrık yapı var mı: ")
         if A_DJ_cevap_1 == "evet":
             A_DJ_cevap_2 = int(input("ayrık yapının uzunluğu nedir? :"))
             A_DJ_cevap_3 = int(input("ayrık yapının genişliği"))

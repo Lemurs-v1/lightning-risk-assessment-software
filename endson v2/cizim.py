@@ -66,7 +66,7 @@ class MplCanvas(FigureCanvas):
         self.draw()
         
         # Save the plot as a PNG file
-        self.fig.savefig("complex_structure.png")
+        self.fig.savefig("output_pdf_1/images/complex_structure.png")
 
 class MainWindow(QMainWindow):
 

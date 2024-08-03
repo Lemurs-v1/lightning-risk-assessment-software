@@ -16,6 +16,7 @@ yapı_konum = "su deposu in mekke"
 yapı_AD_alan = 5000
 ayrık_yapı_AD_alan = 300
 c_dj = 0.5
+Installation_factor_data = "gömülü"#c_ı
 
 
 # HTML içeriği
@@ -1081,6 +1082,7 @@ html_content_9 = f"""
     </style>
 </head>
 <body>
+
     <div class="container"> <!-- Ana içerik kapsayıcısı -->
         <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->

@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#False#SeÃ§inizSeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#SeÃ§iniz#False#0.0#0.0#0.0#False#False#0.0#0.0#0.0#0.0#0.0#0.0#0.0#False#0.0#0.0#0.0#
-=======
 Seçiniz#Seçiniz#Seçiniz#Seçiniz#False#SeçinizSeçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#Seçiniz#False#0.0#0.0#0.0#False#False#0.0#0.0#0.0#0.0#0.0#0.0#0.0#False#0.0#0.0#0.0#
->>>>>>> Stashed changes
