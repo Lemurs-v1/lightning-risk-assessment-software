@@ -10,6 +10,12 @@ proje_no = "1518484"
 uzunluk = 120 
 genişlik = 155 
 yükseklik = 30
+yükseklik_max = 60
+yıldırım_yoğunluğu = 5
+yapı_konum = "su deposu in mekke"
+yapı_AD_alan = 5000
+ayrık_yapı_AD_alan = 300
+c_dj = "sadad"
 
 
 # HTML içeriği
@@ -886,8 +892,8 @@ html_content_7 = f"""
 
         <div class="subsection"> <!-- Alt bölüm -->
             <h3>4.2 Geographic and building parameters</h3> <!-- Alt bölüm başlığı -->
-            <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of 2,00 lightning strikes / year / km² was determined for the location of the object STEEL WATER STORAGES IN MOASIM/MAKKAH by means of the ground flash density map. As a result, there is a calculated number of 20,00 of thunderstorm days per year for the location of the project.</p>
-            <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure STEEL WATER STORAGES IN MOASIM/MAKKAH has the following dimensions:</p>
+            <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of 2,00 lightning strikes / year / km² was determined for the location of the object {yapı_konum} by means of the ground flash density map. As a result, there is a calculated number of 20,00 of thunderstorm days per year for the location of the project.</p>
+            <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure {yapı_konum} has the following dimensions:</p>
             <p>L<sub>b</sub> Length: {uzunluk}/p>
             <p>W<sub>b</sub> Width: {genişlik}</p>
         </div>
@@ -983,19 +989,19 @@ html_content_8 = f"""
     </div>
     <div class="content"> <!-- İçerik bölümü -->
         <p><strong>Hb Height:</strong> {yükseklik}</p>
-        <p><strong>Hpb Highest point (if applicable):</strong> 40,00 m</p>
-        <p>This results in a calculated collection area for direct lightning strikes of 49.809,00 m² and for indirect lightning strikes (near the structure) of 1.005.398,00 m².</p>
+        <p><strong>Hpb Highest point (if applicable):</strong> {yükseklik_max}</p>
+        <p>This results in a calculated collection area for direct lightning strikes of {yapı_AD_alan} m² and for indirect lightning strikes (near the structure) of {ayrık_yapı_AD_alan} m².</p>
         <div class="image-section"> <!-- Görsel bölümü -->
             <img src="path_to_image/graph.png" alt="Graph Image"> <!-- Görsel -->
         </div>
-        <p>The environment surrounding the structure is an important factor for determining the number of direct / indirect lightning strikes. It was defined as follows for the building STEEL WATER STORAGES IN MOASIM/MAKKAH</p>
+        <p>The environment surrounding the structure is an important factor for determining the number of direct / indirect lightning strikes. It was defined as follows for the building {yapı_konum}</p>
         <p><strong>Relative location Cd:</strong> 2,00</p>
         <p>If the ground flash density is referred to the size and the environment of the structure, a frequency of direct strikes Nd to the structure of 0,1992 strikes / year and indirect strikes near the structure of 2,0108 strikes / year is to be expected.</p>
         <h3>4.3 Division of the structure into lightning protection zones/zones</h3> <!-- Alt bölüm başlığı -->
-        <p>The structure STEEL WATER STORAGES IN MOASIM/MAKKAH was not divided into lightning protection zones / zones.</p>
+        <p>The structure {yapı_konum} was not divided into lightning protection zones / zones.</p>
         <h3>5. Supply lines</h3> <!-- Alt bölüm başlığı -->
         <p>All incoming and outgoing supply lines of the structure to be considered must be taken into account in the risk analysis. Conductive pipes do not have to be considered if they are connected to the main earthing busbar of the structure. If this is not the case, the risk of incoming pipes should be considered in the risk analysis (observe that equipotential bonding is required!).</p>
-        <p>The following supply lines were considered for the structure STEEL WATER STORAGES IN MOASIM/MAKKAH in the risk analysis:</p>
+        <p>The following supply lines were considered for the structure {yapı_konum} in the risk analysis:</p>
     </div>
     <div class="footer"> <!-- Footer bölümü -->
         <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
@@ -1238,7 +1244,7 @@ html_content_10 = f"""
                 </tr>
             </table>
 
-            <p>As a result, the calculated collection area for lightning strikes to the connected structure is 49.809,00 m².</p>
+            <p>As a result, the calculated collection area for lightning strikes to the connected structure is {yapı_AD_alan} m².</p>
 
             <div class="image-section">
                 <img src="lightning-collection-area.png" alt="Lightning Collection Area">
@@ -1371,7 +1377,7 @@ html_content_11 = f"""
             <li>Explosion: zone 1 / 21</li>
             <li>Explosion: zone 0 / 20</li>
         <ul>
-        <p>The risk of fire in a structure is an important factor for determining the required protection measures. The risk of fire for the structure STEEL WATER STORAGES IN MOASIM/MAKKAH was defined as follows:</p>
+        <p>The risk of fire in a structure is an important factor for determining the required protection measures. The risk of fire for the structure {yapı_konum} was defined as follows:</p>
         <ul>
             <li>No risk of fire or explosion</li>
         <ul>
@@ -1381,21 +1387,21 @@ html_content_11 = f"""
             <li>No measures</li>
         </ul>
         <h2>6.3 Special hazards in the building for persons</h2>
-        <p>Due to the number of persons, the possible risk of panic for the structure STEEL WATER STORAGES IN MOASIM/MAKKAH was defined as follows:</p>
+        <p>Due to the number of persons, the possible risk of panic for the structure {yapı_konum} was defined as follows:</p>
         <ul>
             <li>No special hazard</li>
         </ul>
         <h2>6.4 External spatial shielding</h2>
         <p>Spatial shielding attenuates the magnetic field within a structure caused by lightning strikes to or near the object and reduces internal surges.</p>
         <p>This can be achieved by an intermeshed equipotential bonding network in which all conductive parts of the structure and the internal systems are integrated. Consequently, the external / internal spatial shield is only a part of a shielded building structure. It must be observed that metal coverings and claddings are connected to one another and conductively to the equipotential bonding of the building. In this context, the relevant normative requirements must be observed.</p>
-        <p>Covering of the structure STEEL WATER STORAGES IN MOASIM/MAKKAH:</p>
+        <p>Covering of the structure {yapı_konum}:</p>
         <ul>
             <li>No shielding</li>
         </ul>
         <h2>7. Risk assessment</h2>
         <p>As described in 4.1, the following risks according to 7. were assessed. The blue bar shows the tolerable risk value and the green / red bar shows the risk determined.</p>
         <h3>7.1 Risk R1, Human life</h3>
-        <p>The following risk was determined for persons outside and inside the structure STEEL WATER STORAGES IN MOASIM/MAKKAH:</p>
+        <p>The following risk was determined for persons outside and inside the structure {yapı_konum}:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-05</li>
             <li>Calculated risk R1 (unprotected): 0,00E00</li>
@@ -1524,7 +1530,7 @@ html_content_12 = f"""
         <p>To reduce the risk, it is necessary to take measures as described in 8.</p>
 
         <h2>7.2 Risk R2, Service to the public</h2>
-        <p>The risk R2, failure of services to the public, was determined for the structure <strong>STEEL WATER STORAGES IN MOASIM/MAKKAH</strong> as follows:</p>
+        <p>The risk R2, failure of services to the public, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-03</li>
             <li>Calculated risk R2 (unprotected): 0,00E00</li>
@@ -1657,7 +1663,7 @@ html_content_13 = f"""
         <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
         
         <h2>7.3 Risk R3, Cultural heritage</h2>
-        <p>The risk R3, loss of cultural heritage, was determined for the structure <strong>STEEL WATER STORAGES IN MOASIM/MAKKAH</strong> as follows:</p>
+        <p>The risk R3, loss of cultural heritage, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-04</li>
             <li>Calculated risk R3 (unprotected): 0,00E00</li>
@@ -1677,7 +1683,7 @@ html_content_13 = f"""
         <p>To reduce the risk, it is necessary to take measures as described in 8.</p>
 
         <h2>7.3 Risk R4, Economic</h2>
-        <p>The risk R3, loss of cultural heritage, was determined for the structure <strong>STEEL WATER STORAGES IN MOASIM/MAKKAH</strong> as follows:</p>
+        <p>The risk R3, loss of cultural heritage, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
         <ul>
             <li>Tolerable risk R<sub>T</sub>: 1,00E-04</li>
             <li>Calculated risk R3 (unprotected): 0,00E00</li>
