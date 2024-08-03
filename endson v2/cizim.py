@@ -90,10 +90,10 @@ class MainWindow(QMainWindow):
         self.plot()
 
     def plot(self):
-        l = 10  # Length
-        w = 5   # Width
-        h = 2   # Height (min value)
-        hp = 3 # Karmaşık yapı çıkıntı yüksekliği
+        l = 110  # Length
+        w = 110   # Width
+        h = 20   # Height (min value)
+        hp = 40 # Karmaşık yapı çıkıntı yüksekliği
 
         calculation = Calculation()
         area = calculation.Ad_grafik(l, w, h)
