@@ -1,6 +1,7 @@
 import os
 from datetime import datetime
 import pdfkit
+
 # Kullanıcıdan isim al
 tarih = datetime.now().strftime('%Y-%m-%d')
 açıklama = "açıklamaaaaaa"
