@@ -1,12 +1,19 @@
 evet
+<<<<<<< HEAD
 Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
 mermer, seramik
 Banliyo
+=======
+Daha yüksek cisimler ile çevrelenen yapı
+tarımsal, beton
+Kırsal
+>>>>>>> c247cd444123c7e277df7afe56e3ecabd20c5b70
 False
 Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
 Yapı 4. seviye LPS ile korunuyor
 Uyarı işaretleri
 Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış
+<<<<<<< HEAD
 1 Ω /km <RS ≤ 5 Ω /km
 Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
 Kordineli SPD sistemi yok
@@ -43,6 +50,44 @@ False
 20.0
 Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
 Korunma tedbirleri yok
+=======
+Güç hatları
+Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü
+Kordineli SPD sistemi yok
+Havai
+Seçiniz
+YG güç (YG/AG transformatörü ile)
+Var
+Patlama : Bölgeler 0, 20 ve katı patlayıcı
+Patlama riski var
+Hastane, otel, okul, kamu binası
+Patlama riski
+TV, telekomünikasyon hatları
+Patlama riski
+Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
+1 Ω /km <RS ≤ 5 Ω /km
+1.5
+1.5
+False
+2.0
+2.0
+2.0
+True
+True
+3.0
+30.0
+30.0
+30.0
+2.0
+2.0
+2.0
+False
+2.0
+2.0
+2.0
+Özel tehlike yok
+Kablaj uyarıları
+>>>>>>> c247cd444123c7e277df7afe56e3ecabd20c5b70
 False
 False
 xcvxcvx

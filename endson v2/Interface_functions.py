@@ -131,7 +131,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Ll_checkbox=self.ui.Ll_checkBox
         self.nz_doubleSpinbox = self.ui.nz_doubleSpinbox
         self.tz_doubleSpinbox = self.ui.tz_doubleSpinbox
-        self.LI_doubleSpinbox = self.ui.LI_doubleSpinbox
+        self.Ll_doubleSpinbox = self.ui.Ll_doubleSpinbox
 
         # TextEdit bileşeni
         self.textEdit = self.ui.textEdit
@@ -344,7 +344,7 @@ class MainWindow(QtWidgets.QMainWindow):
         Ll_value = self.nz_checkBox.isChecked()
         nz_double_value = self.nz_doubleSpinbox.value()
         tz_double_value = self.tz_doubleSpinbox.value()
-        Ll_double_value = self.LI_doubleSpinbox.value()
+        Ll_double_value = self.Ll_doubleSpinbox.value()
         description = self.textEdit.toPlainText()
 
     # Verileri ilgili formatta yazdır

@@ -15,6 +15,7 @@ class MplCanvas(FigureCanvas):
     def __init__(self, parent=None, width=5, height=4, dpi=100):
         self.fig, self.ax = plt.subplots(figsize=(width, height), dpi=dpi)
         super(MplCanvas, self).__init__(self.fig)
+        
 
     def plot_area(self, l, w, h, hp):
         self.ax.clear()
@@ -56,8 +57,8 @@ class MplCanvas(FigureCanvas):
         circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
         self.ax.add_patch(circle)
 
-        self.ax.xaxis.set_major_locator(MultipleLocator(2))  # X ekseninde her 1 birim için etiket
-        self.ax.yaxis.set_major_locator(MultipleLocator(2))  # Y ekseninde her 1 birim için etiket
+        self.ax.xaxis.set_major_locator(MultipleLocator(5))  # X ekseninde her 1 birim için etiket
+        self.ax.yaxis.set_major_locator(MultipleLocator(5))  # Y ekseninde her 1 birim için etiket
         self.ax.xaxis.set_major_formatter(FormatStrFormatter('%0.1f'))  # X eksenindeki etiket formatı
         self.ax.yaxis.set_major_formatter(FormatStrFormatter('%0.1f'))  # Y eksenindeki etiket formatı
 
@@ -66,7 +67,7 @@ class MplCanvas(FigureCanvas):
         self.draw()
         
         # Save the plot as a PNG file
-        self.fig.savefig("output_pdf_1/images/complex_structure.png")
+        self.fig.savefig("complex_structure.png")
 
 class MainWindow(QMainWindow):
 
@@ -90,10 +91,10 @@ class MainWindow(QMainWindow):
         self.plot()
 
     def plot(self):
-        l = 110  # Length
-        w = 110   # Width
-        h = 20   # Height (min value)
-        hp = 40 # Karmaşık yapı çıkıntı yüksekliği
+        l = 10  # Length
+        w = 5   # Width
+        h = 2   # Height (min value)
+        hp = 3 # Karmaşık yapı çıkıntı yüksekliği
 
         calculation = Calculation()
         area = calculation.Ad_grafik(l, w, h)
