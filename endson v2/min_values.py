@@ -410,21 +410,24 @@ class LightningRiskCalculator_min_values:
             }
             df = pd.DataFrame(data)
             self.P_LD = df.loc[(df['Direnç Değeri'] == P_LD_C[1]) & (df['Dayanım Gerilimi'] == P_LD_C[2]), 'Değer'].values[0]
-            return self.P_LD    
+        return self.P_LD
     def p_lı_belirle(self):
-        data = {
-            "Hat tipi": ["Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları", "Güç Hatları",
-                            "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları", "Telekomünikasyon hatları",
-            ],
+        if P_LI_C[1] == "Güç hatları":
+            data = {
             "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
-                                "1", "1.5", "2.5", "4", "6",
                                 ],
-            "Değer": [1, 0.6, 0.3, 0.16, 0.1,
-                    1, 0.5, 0.2, 0.08, 0.04,
+            "Değer": [1, 0.6, 0.3, 0.16, 0.1
                     ]
-        }
+            }
+        elif P_LI_C[1] == "Telekomünikasyon hatları":
+            data = {
+            "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
+                                ],
+            "Değer": [1, 0.5, 0.2, 0.08, 0.04
+                    ]
+            }
         df = pd.DataFrame(data)
-        self.P_LI = df.loc[(df['Hat tipi'] == P_LI_C[1]) & (df['Dayanım Gerilimi'] == P_LI_C[2]), 'Değer'].values[0]
+        self.P_LI = df.loc[(df['Dayanım Gerilimi'] == P_LI_C[2]), 'Değer'].values[0]
         return self.P_LI
     
     def c_lı_belirle(self):
@@ -487,6 +490,7 @@ class LightningRiskCalculator_min_values:
     def l_t_4_belirle(self):
         self.L_T_4 = 10**-2
         return self.L_T_4
+    
     def l_f_4_belirle(self):
         data = { 
             "yapının tipi" : 
@@ -498,9 +502,9 @@ class LightningRiskCalculator_min_values:
                 "L_f" : [1,0.5,0.2,10**-1]
         }
         L_F_4_DF = pd.DataFrame(data)
-
         self.L_F_4 = L_F_4_DF.loc[L_F_4_DF["yapının tipi"]==L_FO_4_C,"L_f"].values[0]
         return self.L_F_4
+    
     def l_o_4_belirle(self):
         data = { 
             "yapının tipi" : 
@@ -512,9 +516,9 @@ class LightningRiskCalculator_min_values:
                 "L_o" : [10**-1,10**-2,10**-3,10**-4]
         }
         L_O_4_DF = pd.DataFrame(data)
-
         self.L_O_4 = L_O_4_DF.loc[L_O_4_DF["yapının tipi"]==L_FO_4_C,"L_o"].values[0]
         return self.L_O_4
+    
     def c_z_bölü_c_t(self):
         return 1
 
