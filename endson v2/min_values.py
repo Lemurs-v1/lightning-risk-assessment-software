@@ -1,6 +1,9 @@
 import pandas as pd
 from output_value import LightningRiskCalculator_output_value
 import math
+import traceback
+import re
+from tkinter import messagebox
 pi =math.pi
 output = LightningRiskCalculator_output_value()
 N_G_C = output.n_g_bul()
@@ -120,8 +123,7 @@ class LightningRiskCalculator_min_values:
         }
         C_DJ_DF = pd.DataFrame(data)
         self.C_DJ = C_DJ_DF.loc[C_DJ_DF["bağıl konum"] == C_DJ_C, "C_DJ"].values[0]
-        return self.C_DJ
-        
+        return self.C_DJ     
     def c_d_belirle(self):
         data = {
             "bağıl konum": [
@@ -411,23 +413,24 @@ class LightningRiskCalculator_min_values:
             df = pd.DataFrame(data)
             self.P_LD = df.loc[(df['Direnç Değeri'] == P_LD_C[1]) & (df['Dayanım Gerilimi'] == P_LD_C[2]), 'Değer'].values[0]
         return self.P_LD
+
     def p_lı_belirle(self):
-        if P_LI_C[1] == "Güç hatları":
+        if P_LI_C[1] == "Güç Hatları":
             data = {
-            "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
-                                ],
-            "Değer": [1, 0.6, 0.3, 0.16, 0.1
-                    ]
+                "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6"],
+                "Değer": [1, 0.6, 0.3, 0.16, 0.1]
             }
-        elif P_LI_C[1] == "Telekomünikasyon hatları":
+        elif P_LI_C[1] == "Telekomünikasyon Hatları":
             data = {
-            "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6",
-                                ],
-            "Değer": [1, 0.5, 0.2, 0.08, 0.04
-                    ]
+                "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6"],
+                "Değer": [1, 0.5, 0.2, 0.08, 0.04]
             }
+        else:
+            raise ValueError("Geçersiz hat türü")
+
         df = pd.DataFrame(data)
-        self.P_LI = df.loc[(df['Dayanım Gerilimi'] == P_LI_C[2]), 'Değer'].values[0]
+        
+        self.P_LI = df.loc[df['Dayanım Gerilimi'] == P_LI_C[2], 'Değer'].values[0]
         return self.P_LI
     
     def c_lı_belirle(self):
@@ -509,13 +512,14 @@ class LightningRiskCalculator_min_values:
         data = { 
             "yapının tipi" : 
             ["Patlama riski",
-                "Hastahane, sanayi, müze, zirai ",
+                "Hastahane, sanayi, müze, zirai",
                 "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari",
                 "Diğerleri"
                 ],
                 "L_o" : [10**-1,10**-2,10**-3,10**-4]
         }
         L_O_4_DF = pd.DataFrame(data)
+
         self.L_O_4 = L_O_4_DF.loc[L_O_4_DF["yapının tipi"]==L_FO_4_C,"L_o"].values[0]
         return self.L_O_4
     
@@ -526,8 +530,5 @@ class LightningRiskCalculator_min_values:
         if c_a_bölü_c_t_c == "Var":
             return (1/10)
         elif c_a_bölü_c_t_c == "Yok":
-            return 0
+            return 0     
         
-        
-        
-

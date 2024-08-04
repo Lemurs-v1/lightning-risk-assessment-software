@@ -56,14 +56,10 @@ class LightningRiskCalculator_result():
         elif(soru=="hayır"):
             self.R_4 = self.R_B_4+self.R_C_4+self.R_M_4+self.R_V_4+self.R_W_4+self.R_Z_4
         return self.R_4
+    def R_tespit(self):
+        start = LightningRiskCalculator_result()
+        değerler = f"{start.R_1_belirle()}#{start.R_2_belirle()}#{start.R_3_belirle()}#{start.R_4_belirle()}"
+        with open("sonuc.txt", "w") as dosya:
+            dosya.write(değerler)
+
     
-start = LightningRiskCalculator_result()
-
-print(start.R_1_belirle())
-print(start.R_2_belirle())
-print(start.R_3_belirle())
-print(start.R_4_belirle())
-
-değerler = f"{start.R_1_belirle()}#{start.R_2_belirle()}#{start.R_3_belirle()}#{start.R_4_belirle()}"
-with open("sonuc.txt", "w") as dosya:
-    dosya.write(değerler)

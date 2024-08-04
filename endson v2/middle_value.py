@@ -1,5 +1,10 @@
 from min_values import LightningRiskCalculator_min_values
+import traceback
+import re
+
 min = LightningRiskCalculator_min_values()
+
+
 class LightningRiskCalculator_middle_values:
     def __init__(self):
         #######################RA
@@ -87,7 +92,6 @@ class LightningRiskCalculator_middle_values:
 
 
 
-
     def n_d_belirle(self):
         self.N_D = self.N_G*self.A_D*self.C_D*10**-6
         return self.N_D
@@ -168,10 +172,10 @@ class LightningRiskCalculator_middle_values:
     def l_cmwz_4_belirle(self):
         self.L_CMWZ_4 = self.L_O_4*self.c_a_bölü_ct
         return self.L_CMWZ_4
-    
-    
+
+ 
        
-        
+     
 x = LightningRiskCalculator_middle_values()
 print(x.l_au_4_belirle())
 print(x.l_bv_4_belirle())

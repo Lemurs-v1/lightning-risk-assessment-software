@@ -13,6 +13,8 @@ import tkinter as tk
 import webbrowser
 import re
 import time
+import traceback
+from tkinter import messagebox
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -453,18 +455,42 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'Açıklama: {description}')
         
     def calculate(self):
-        from result import LightningRiskCalculator_result
-        def format_number_scientific(number):
-            return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
-        with open("sonuc.txt", "r") as dosya:
-            sonuc_file = dosya.read()
-        veriler = sonuc_file.split("#")
-        r1 = format_number_scientific(float(veriler[0]))
-        r2 = format_number_scientific(float(veriler[1]))
-        r3 = format_number_scientific(float(veriler[2]))
-        r4 = format_number_scientific(float(veriler[3]))
+        try:
+            from result import LightningRiskCalculator_result
+            b = LightningRiskCalculator_result()
+            b.R_tespit()
+            def format_number_scientific(number):
+                return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
+            with open("sonuc.txt", "r") as dosya:
+                sonuc_file = dosya.read()
+            veriler = sonuc_file.split("#")
+            r1 = format_number_scientific(float(veriler[0]))
+            r2 = format_number_scientific(float(veriler[1]))
+            r3 = format_number_scientific(float(veriler[2]))
+            r4 = format_number_scientific(float(veriler[3]))
 
-        QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
+            QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
+        except IndexError as e:
+
+            tb_str = traceback.format_exc()
+            # self. ile başlayan kısmı ayıklamak için regex kullan
+            değerler = f"{0}#{0}#{0}#{0}"
+            with open("sonuc.txt", "w") as dosya:
+                dosya.write(değerler) 
+            match = re.search(r'self\.(\w+)', tb_str)
+            
+            if match:
+                # self. ifadesinden sonra gelen kelimeyi yazdır
+
+                messagebox.showerror("ERROR",f"{match.group(1)} DEĞERİ EKSİK VEYA YANLIŞ")
+                
+            else:
+                messagebox.showerror("ERROR","VERİLERİNİZDE HATA VAR FAKAT TESPİT EDİLEMİYOR DEĞERLERİNİZİN DOĞRULUĞUNDA EMİN OLUN")
+
+
+
+        
+
     def logo(self):
         # Tkinter kök penceresini oluştur (bu pencere görünmeyecek)
         root = Tk()

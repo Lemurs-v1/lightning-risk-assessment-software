@@ -256,13 +256,13 @@ class LightningRiskCalculator_output_value:
                 WM2 =wm2_C
                 KS1 = WM1*0.12
                 KS2 = WM2*0.12
-        P_MS_soru3 = "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a"#input("İç kablaj tipi nedir")
+        P_MS_soru3 = KS3_C#input("İç kablaj tipi nedir")
         data = {
             "iç kablaj tipi": [
                 "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a",
-                "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b ",
+                "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b",
                 "Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var c",
-                "Zırhlanmış kablolar e metal kanal içinde serili kablolar  d",
+                "Zırhlanmış kablolar e metal kanal içinde serili kablolar d",
             ],
             "K_S3": [1,0.2,0.01,0.0001]
         }
