@@ -894,6 +894,7 @@ class Ui_MainWindow(object):
         self.Pli_comboBox2.setItemText(3, _translate("MainWindow", "2.5"))
         self.Pli_comboBox2.setItemText(4, _translate("MainWindow", "4"))
         self.Pli_comboBox2.setItemText(5, _translate("MainWindow", "6"))
+        self.label_31.setToolTip(_translate("MainWindow", "Hat karakteristiklerine bağlı olarak bağlı hatta yıldırım düşmesinden dolayı iç sistemlerdeki arıza ihtimalidir."))
         self.label_31.setText(_translate("MainWindow", "Pld değeri"))
         self.Pld_comboBox.setItemText(0, _translate("MainWindow", "Seçiniz"))
         self.Pld_comboBox.setItemText(1, _translate("MainWindow", "Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış"))
