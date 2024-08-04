@@ -1,47 +1,48 @@
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
+evet
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+mermer, seramik
+Banliyo
 False
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+Yapı 4. seviye LPS ile korunuyor
+Uyarı işaretleri
+Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış
+1 Ω /km <RS ≤ 5 Ω /km
+Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
+Kordineli SPD sistemi yok
+Havai
+SPD yok
+AG güç, telekomünikasyon veya veri hattı
+Var
+Patlama : Bölgeler 1, 21
+Patlama riski var
+Patlama riski
+Patlama riski
+Gaz, su, güç besleme
+Gaz, su, güç besleme
 Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-False
-0.0
-0.0
-0.0
-False
+5 Ω /km <RS ≤ 20 Ω /km
+1
+1.5
 False
 0.0
 0.0
 0.0
-0.0
-0.0
-0.0
-0.0
-False
-0.0
-0.0
-0.0
-Seçiniz
-Seçiniz
 False
 False
+20.0
+20.0
+20.0
+20.0
+20.0
+20.0
+20.0
+False
+20.0
+20.0
+20.0
+Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
+Korunma tedbirleri yok
+False
+False
+xcvxcvx
