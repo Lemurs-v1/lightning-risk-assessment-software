@@ -394,9 +394,9 @@ class LightningRiskCalculator_min_values:
         self.A_I = 4000*self.L_L
         return self.A_I
     def p_ld_belirle(self):
-        if P_LD_C[0] == "evet":
+        if P_LD_C[0] == "Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış":
             self.P_LD = 1
-        elif P_LD_C[0] == "hayır":
+        elif P_LD_C[0] == "Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü":
             data = {
                 "Direnç Değeri": ["5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km",
                                     "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km",
@@ -519,9 +519,9 @@ class LightningRiskCalculator_min_values:
         return 1
 
     def c_a_bölü_c_t(self):
-        if c_a_bölü_c_t_c == "SPD var":
+        if c_a_bölü_c_t_c == "Var":
             return (1/10)
-        elif c_a_bölü_c_t_c == "SPD yok":
+        elif c_a_bölü_c_t_c == "Yok":
             return 0
         
         

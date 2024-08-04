@@ -8,12 +8,18 @@ from PyQt5.QtWidgets import QMessageBox
 import os
 from tkinter import Tk, filedialog
 from PIL import Image
+import os
+import tkinter as tk
+import webbrowser
+import re
+import time
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.adjust_combobox_popup_width()
+        self.delete_html_files_from_folder()
 
         # QComboBox'lar
         self.Ad_comboBox = self.ui.Ad_comboBox
@@ -137,6 +143,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.temizle_pushButton = self.ui.temizle_pushButton
         self.temizle_pushButton.clicked.connect(self.clear_values)
 
+        #html aç
+
+        self.rapor_pushButton= self.ui.rapor_pushButton
+        self.rapor_pushButton.clicked.connect(self.open_html_files)
+
         # Uygulama ikonu ayarla
         icon_path = "icon.png"
         self.setWindowIcon(QtGui.QIcon(icon_path))
@@ -251,12 +262,36 @@ class MainWindow(QtWidgets.QMainWindow):
     def selection_changed_Ll_double_value(self):
         state = self.metal_checkBox.isChecked()
 
+
+
+
+    def open_html_files(self):
+
+        html_folder_path = 'output_pdf_1'
+        html_files = [f for f in os.listdir(html_folder_path) if f.endswith('.html')]
+        
+        
+        # Dosya isimlerindeki numaraları çıkarıp sıralama fonksiyonu
+        def extract_number(file_name):
+            match = re.search(r'(\d+)\.html$', file_name)
+            return int(match.group(1)) if match else float('inf')
+        
+        # HTML dosyalarını numaralara göre sıralama
+        html_files.sort(key=extract_number)
+        
+        for html_file in html_files:
+            file_path = os.path.join(html_folder_path, html_file)
+            webbrowser.open(f'file://{os.path.abspath(file_path)}')
+            time.sleep(0.5)  # 2 saniye bekleme
+
+    def delete_html_files_from_folder(self):
+        folder_path = "output_pdf_1"
+        for file_name in os.listdir(folder_path):
+            if file_name.endswith(".html"):
+                file_path = os.path.join(folder_path, file_name)
+                os.remove(file_path)
     
 
-
- 
- 
- 
  
     def save_values(self):
         Ad_value = self.Ad_comboBox.currentText()

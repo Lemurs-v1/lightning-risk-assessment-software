@@ -56,7 +56,7 @@ class LightningRiskCalculator_middle_values:
 
         self.P_TU = min.p_tu_belirle()
         self.P_EB = min.p_eb_belirle()
-        self.P_LD = 1#min.p_ld_belirle()
+        self.P_LD = min.p_ld_belirle()
 
         self.P_V = None
         self.N_I =None
@@ -78,7 +78,7 @@ class LightningRiskCalculator_middle_values:
 
         self.L_AU_4 = None
         self.L_T_4 = min.l_t_4_belirle()
-        self.c_a_bölü_ct = 1#min.c_a_bölü_c_t()
+        self.c_a_bölü_ct = min.c_a_bölü_c_t()
         self.L_F_4= min.l_f_4_belirle()
         self.L_O_4 = min.l_o_4_belirle()
         self.L_BV_4 =None
