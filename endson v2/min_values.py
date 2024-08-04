@@ -8,8 +8,9 @@ A_D_genişlik_C = output.a_d_genişlik_bul()
 A_D_uzunluk_C = output.a_d_uzunluk_bul()
 A_D_denklem_C = output.a_d_denklem()
 A_D_yükseklik_C = output.a_d_yükseklik_bul()
-A_D_yükseklik_max_C = output.a_d_max_yükseklik_bul()
+#A_D_yükseklik_max_C = output.a_d_max_yükseklik_bul()
 C_D_C = output.c_d_bul()
+
 C_DJ_C = output.c_dj_bul()
 P_TA_C = output.p_ta_bul()
 P_B_C = output.p_b_bul()
@@ -50,7 +51,7 @@ class LightningRiskCalculator_min_values:
         self.A_D_uzunluk = A_D_uzunluk_C
         self.A_D_denklem = A_D_denklem_C
         self.A_D_yükseklik = A_D_yükseklik_C
-        self.A_D_yükseklik_max  =  A_D_yükseklik_max_C 
+        #self.A_D_yükseklik_max  =  A_D_yükseklik_max_C 
         self.A_D = None
         self.A_DJ = None
         self.C_D = None
@@ -100,7 +101,7 @@ class LightningRiskCalculator_min_values:
     def a_d_belirle(self):
         
         if self.A_D_denklem == "evet":
-            self.HMAX =  self.A_D_yükseklik_max
+            self.HMAX =  self.A_D_yükseklik
             self.A_D= pi*(3*self.HMAX)**2
 
         elif self.A_D_denklem=="hayır":
@@ -138,11 +139,11 @@ class LightningRiskCalculator_min_values:
     def p_ta_belirle(self):
         data = { 
             "ilave koruma tedbirleri": [
-                "koruma tedbiri yok",
-                "uyarı işaretleri",
-                "açıktaki bölümlerin elektriksel yalıtımları",
-                "etkin zemin eş potansiyel kuşaklanması",
-                "fiziksel kısıtlamalar ve indirme indirme iletkeni olarak kullanılan bina iskeleti"
+                "Koruma tedbiri yok",
+                "Uyarı işaretleri",
+                "Açıktaki bölümlerin elektriksel yalıtımları",
+                "Etkin zemin eş potansiyel kuşaklanması",
+                "Fiziksel kısıtlamalar ve indirme indirme iletkeni olarak kullanılan bina iskeleti"
             ],
             "P_TA": [1, 0.1, 0.01, 0.01, 0]
         }
@@ -153,11 +154,11 @@ class LightningRiskCalculator_min_values:
     def p_b_belirle(self):
         data = { 
             "yapı karakteristikleri": [
-                "yapı LPS ile korunumuyor",
-                "yapı 4. seviye LPS ile korunuyor",
-                "yapı 3. seviye LPS ile korunuyor",
-                "yapı 2. seviye LPS ile korunuyor",
-                "yapı 1. seviye LPS ile korunuyor",
+                "Yapı LPS ile korunumuyor",
+                "Yapı 4. seviye LPS ile korunuyor",
+                "Yapı 3. seviye LPS ile korunuyor",
+                "Yapı 2. seviye LPS ile korunuyor",
+                "Yapı 1. seviye LPS ile korunuyor",
                 "LPS 1'e uygun yakalama ucu sistemine ve doğal indirme iletkeni olarak davranan sürekli metal veya takviyeli beton iskelete sahip yapı",
                 "Metal çatıya ve çatıdaki bütün tesisatı doğrudan yıldırım düşmesine karşı tamamen koruyan, muhtemelen doğal bileşenler dahil, bir yakalama ucu sistemine ve doğal indirme iletkeni olarak davranan sürekli metal veya takviyeli beton iskelete sahip yapı"
             ],
@@ -195,16 +196,16 @@ class LightningRiskCalculator_min_values:
 
     def t_z_bölü_8760_belirle(self):
         if t_z_bölü_8760_C == "bilmiyorum":
-            cevap_son = 1
+            self.t_z_bölü_8760 = 1
         elif isinstance(t_z_bölü_8760_C, int) or isinstance(t_z_bölü_8760_C, float):
-            cevap_son = float(t_z_bölü_8760_C) / 8760
-        self.t_z_bölü_8760 = cevap_son
+            self.t_z_bölü_8760 = float(t_z_bölü_8760_C) / 8760
+        
         return self.t_z_bölü_8760
 
     def p_spd_belirle(self):
         data = {
             "LPL": [
-                "kordineli SPD sistemi yok",
+                "Kordineli SPD sistemi yok",
                 "3. ve 4. seviye",
                 "2. seviye",
                 "1.seviye"
@@ -490,7 +491,7 @@ class LightningRiskCalculator_min_values:
         data = { 
             "yapının tipi" : 
             ["Patlama riski",
-                "Hastahane, sanayi, müze, zirai ",
+                "Hastahane, sanayi, müze, zirai",
                 "Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari",
                 "Diğerleri"
                 ],
@@ -518,13 +519,11 @@ class LightningRiskCalculator_min_values:
         return 1
 
     def c_a_bölü_c_t(self):
-        if c_a_bölü_c_t_c == "evet":
+        if c_a_bölü_c_t_c == "SPD var":
             return (1/10)
-        elif c_a_bölü_c_t_c == "hayır":
+        elif c_a_bölü_c_t_c == "SPD yok":
             return 0
         
         
-        
-
         
 

@@ -921,7 +921,7 @@ class Ui_MainWindow(object):
         self.label_29.setToolTip(_translate("MainWindow", "Bir hat üzerindeki bir YG/AG transformatörü için hat tipi factor"))
         self.label_29.setText(_translate("MainWindow", "CT değeri"))
         self.CT_comboBox.setItemText(0, _translate("MainWindow", "Seçiniz"))
-        self.CT_comboBox.setItemText(1, _translate("MainWindow", "AG güç, telekomünikasyon veya veri hattıAG güç, telekomünikasyon veya veri hattı"))
+        self.CT_comboBox.setItemText(1, _translate("MainWindow", "AG güç, telekomünikasyon veya veri hattı"))
         self.CT_comboBox.setItemText(2, _translate("MainWindow", "YG güç (YG/AG transformatörü ile)"))
         self.label_42.setToolTip(_translate("MainWindow", "Yapıda fiziksel hasar olma ihtimali (yapıya yıldırım düşmesi)"))
         self.label_42.setText(_translate("MainWindow", "Koruma tedbiri (Ptu)"))
