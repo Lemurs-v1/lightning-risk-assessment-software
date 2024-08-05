@@ -14,35 +14,42 @@ Gömülü
 III-IV
 YG güç (YG/AG transformatörü ile)
 Var
-Patlama : Bölgeler 1, 21
-Tedbir yok
-Hastane, otel, okul, kamu binası
-Hastahanenin yoğun bakım ünitesi ve ameliyathane
-TV, telekomünikasyon hatları
-Hastahane, sanayi, müze, zirai
+Patlama : Bölgeler 2, 22
+Patlama riski var
+Patlama riski
+Patlama riski
+Gaz, su, güç besleme
+Patlama riski
 Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
 1 Ω /km <RS ≤ 5 Ω /km
 1.5
 1.5
 False
-20.0
-20.0
-20.0
+22.0
+22.0
+4.0
 True
 True
+0.0
+33.0
+11.0
+22.0
 20.0
-3.0
-3.0
-3.0
-50.0
-60.0
 20.0
+22.0
 False
-20.0
-20.0
-20.0
-Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
+22.0
+55.0
+33.0
+Özel tehlike yok
 Kablaj uyarıları
 False
 False
-asddasd
+dsfdsfdsf
+22.0
+20.0
+20.0
+dsfs
+dsfsdf
+sdfdsf
+fdsf

@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QComboBox, QListView
+from PyQt5.QtWidgets import QApplication, QMainWindow, QComboBox, QListView , QLineEdit
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from Interface import Ui_MainWindow  # Arayüz tanımını içeren dosya
@@ -123,8 +123,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.Ng_doubleSpinbox = self.ui.Ng_doubleSpinbox
         self.Ad_y_doubleSpinbox = self.ui.Ad_y_doubleSpinbox
+        self.Ad_ymax_doubleSpinbox = self.ui.Ad_ymax_doubleSpinbox
         self.Ad_g_doubleSpinbox = self.ui.Ad_g_doubleSpinbox
         self.Ad_u_doubleSpinbox = self.ui.Ad_u_doubleSpinbox
+        self.Adj_y_doubleSpinbox = self.ui.Adj_y_doubleSpinbox
+        self.Adj_y_doubleSpinbox_2=self.ui.Adj_y_doubleSpinbox_2
         self.Adj_g_doubleSpinbox = self.ui.Adj_g_doubleSpinbox
         self.Adj_u_doubleSpinbox = self.ui.Adj_u_doubleSpinbox
         self.nt_doubleSpinbox = self.ui.nt_doubleSpinbox
@@ -137,6 +140,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
         # TextEdit bileşeni
         self.textEdit = self.ui.textEdit
+        self.lineEdit=self.ui.lineEdit
+        self.lineEdit_2=self.ui.lineEdit_2
+        self.lineEdit_3=self.ui.lineEdit_3
+        self.lineEdit_4=self.ui.lineEdit_4
 
         # Kaydet ve Temizle butonları
         self.kaydet_pushButton = self.ui.kaydet_pushButton
@@ -336,8 +343,11 @@ class MainWindow(QtWidgets.QMainWindow):
         Uw_value = self.Uw_doubleSpinbox.value()
         Ng_double_value = self.Ng_doubleSpinbox.value()
         Ad_y_double_value = self.Ad_y_doubleSpinbox.value()
+        Ad_ymax_double_value = self.Ad_ymax_doubleSpinbox.value()
         Ad_g_double_value = self.Ad_g_doubleSpinbox.value()
         Ad_u_double_value = self.Ad_u_doubleSpinbox.value()
+        Adj_y_double_value = self.Adj_y_doubleSpinbox.value()
+        Adj_y_double_value_2=self.Adj_y_doubleSpinbox_2.value()
         Adj_g_double_value = self.Adj_g_doubleSpinbox.value()
         Adj_u_double_value = self.Adj_u_doubleSpinbox.value()
         nt_value = self.nt_doubleSpinbox.value()
@@ -348,6 +358,11 @@ class MainWindow(QtWidgets.QMainWindow):
         tz_double_value = self.tz_doubleSpinbox.value()
         Ll_double_value = self.Ll_doubleSpinbox.value()
         description = self.textEdit.toPlainText()
+        Rapor_yazarı = self.lineEdit.text()
+        Müsteri = self.lineEdit_2.text()
+        Obje = self.lineEdit_4.text()
+        Proje_no = self.lineEdit_3.text()
+
 
     # Verileri ilgili formatta yazdır
         değerler = (
@@ -398,7 +413,15 @@ class MainWindow(QtWidgets.QMainWindow):
             f"{Ptu_value}\n"
             f"{tz_value}\n"   
             f"{Ll_value}\n"
-            f"{description}"
+            f"{description}\n"
+            f"{Ad_ymax_double_value}\n"
+            f"{Adj_y_double_value}\n"
+            f"{Adj_y_double_value_2}\n"
+            f"{Rapor_yazarı}\n"
+            f"{Müsteri}\n"
+            f"{Obje}\n"
+            f"{Proje_no}\n"
+
                 )
 
     
@@ -452,7 +475,14 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'Seçilen Ptu değeri: {Ptu_value}')
         print(f'Seçilen tz CheckBox değeri: {tz_value}')
         print(f'Seçilen Ll CheckBox değeri: {Ll_value}')
-        print(f'Açıklama: {description}')
+        print(f'description: {description}')
+        print(f'Seçilen Ad_ymax: {Ad_ymax_double_value}')
+        print(f'Seçilen Adj_y: {Adj_y_double_value}')
+        print(f'Seçilen Adj_y_max: {Adj_y_double_value_2}')
+        print(f'Rapor yazarı: {Rapor_yazarı}')
+        print(f'Müsteri: {Müsteri}')
+        print(f'Obje: {Obje}')
+        print(f'Proje_no: {Proje_no}')
         
     def calculate(self):
         try:
@@ -470,7 +500,7 @@ class MainWindow(QtWidgets.QMainWindow):
             r4 = format_number_scientific(float(veriler[3]))
 
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
-        except (IndexError, ValueError, TypeError, KeyError) as e:
+        except (IndexError, ValueError, TypeError, KeyError,ZeroDivisionError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
@@ -552,9 +582,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Uw_doubleSpinbox.setValue(0.0)
         self.Ng_doubleSpinbox.setValue(0.0)
         self.Ad_y_doubleSpinbox.setValue(0.0)
+        self.Ad_ymax_doubleSpinbox.setValue(0.0)
         self.Ad_g_doubleSpinbox.setValue(0.0)
         self.Ad_u_doubleSpinbox.setValue(0.0)
         self.Adj_checkBox.setChecked(False)
+        self.Adj_y_doubleSpinbox.setValue(0.0)
+        self.Adj_y_doubleSpinbox_2.setValue(0.0)
         self.Adj_g_doubleSpinbox.setValue(0.0)
         self.Adj_u_doubleSpinbox.setValue(0.0)
         self.nt_doubleSpinbox.setValue(0.0)
@@ -567,6 +600,10 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
         self.textEdit.clear()
+        self.lineEdit.clear()
+        self.lineEdit_2.clear()
+        self.lineEdit_3.clear()
+        self.lineEdit_4.clear()
 
     def adjust_combobox_popup_width(self):
         comboboxes = self.findChildren(QComboBox)

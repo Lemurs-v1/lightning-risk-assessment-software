@@ -49,6 +49,16 @@ tz_C = float(veriler[41])  # 7.0
 Ll_C = float(veriler[42])  # 8.0
 Hz_C = str(veriler[43])
 Ptu_C = str(veriler[44])
+tz_value = str(veriler[45])
+Ll_value=str(veriler[46])
+description=str(veriler[47])
+Ad_ymax=float(veriler[48])
+Adj_y=float(veriler[49])
+Adj_y_max=float(veriler[50])
+Rapor_yazarı=str(veriler[51])
+Müsteri=str(veriler[52])
+Obje=str(veriler[53])
+Proje_no=str(veriler[54])
 """
 if Cd_C == "Daha yüksek cisimler ile çevrelenen yapı":
     print("okey")
