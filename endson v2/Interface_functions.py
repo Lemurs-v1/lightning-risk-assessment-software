@@ -470,7 +470,7 @@ class MainWindow(QtWidgets.QMainWindow):
             r4 = format_number_scientific(float(veriler[3]))
 
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
-        except IndexError as e:
+        except (IndexError, ValueError, TypeError, KeyError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
@@ -513,9 +513,9 @@ class MainWindow(QtWidgets.QMainWindow):
             save_path = os.path.join(output_directory, "customer.png")
             image.save(save_path)
 
-            print(f"Resim başarıyla kaydedildi: {save_path}")
+            messagebox.showinfo("Resim Yükleme Durumu",f"Resim başarıyla kaydedildi: {save_path}")
         else:
-            print("Hiçbir dosya seçilmedi.")
+            messagebox.showerror("ERROR","Hiçbir resim seçilmedi.")
 
     def clear_values(self):
         self.Ad_comboBox.setCurrentIndex(0)

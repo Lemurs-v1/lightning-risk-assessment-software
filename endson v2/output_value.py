@@ -171,7 +171,7 @@ class LightningRiskCalculator_output_value:
         return self.A_D_uzunluk
     def a_dj_bul(self):
         A_DJ_cevap_1 = Adj_C
-        if A_DJ_cevap_1 == "True":
+        if A_DJ_cevap_1 == "False":
             A_DJ_cevap_2 = Adj_u_double_C
             A_DJ_cevap_3 = Adj_g_double_C
             self.A_DJ = A_DJ_cevap_2*A_DJ_cevap_3
@@ -179,7 +179,7 @@ class LightningRiskCalculator_output_value:
             return self.A_DJ
 
             
-        elif A_DJ_cevap_1 == "False":
+        elif A_DJ_cevap_1 == "True":
             self.A_DJ = 0
             print(self.A_DJ)
         return self.A_DJ
