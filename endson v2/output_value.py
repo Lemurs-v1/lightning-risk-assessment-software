@@ -61,10 +61,7 @@ Obje=str(veriler[53])
 Proje_no=str(veriler[54])
 R1_value=str(veriler[55])
 R4_value=str(veriler[56])
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 """
 if Cd_C == "Daha yüksek cisimler ile çevrelenen yapı":
     #print("okey")
@@ -163,17 +160,10 @@ class LightningRiskCalculator_output_value:
  
         if Ng_C == 'True':
             self.N_G = 0.1 * Ng_double_C
-<<<<<<< Updated upstream
             ##print(self.N_G)
         elif Ng_C == "False":
             pass
             ##print(self.N_G)
-=======
-            #print(self.N_G)
-        elif Ng_C == 'False':
-            pass
-            #print(self.N_G)
->>>>>>> Stashed changes
         return self.N_G
 
     def a_d_denklem(self):
