@@ -6,6 +6,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 from top_deger import LightningRiskCalculator_top_values
 import matplotlib.pyplot as plt
+from matplotlib.ticker import AutoLocator, MaxNLocator
+
 
 top = LightningRiskCalculator_top_values()
 
@@ -89,7 +91,7 @@ class MplCanvas(FigureCanvas):
         ax.legend()
 
         # PNG olarak kaydetme
-        plt.savefig('graph_1.png')
+        plt.savefig('output_pdf_1/images/graph_1.png')
 
     def grafik_2(self,constant_value_2=1e-3):
         # Grafiği oluşturma
@@ -113,7 +115,7 @@ class MplCanvas(FigureCanvas):
         ax.legend()
 
         # PNG olarak kaydetme
-        plt.savefig('graph_2.png')
+        plt.savefig('output_pdf_1/images/graph_2.png')
 
     def grafik_3(self,constant_value_3=1e-4):
         # Grafiği oluşturma
@@ -137,7 +139,7 @@ class MplCanvas(FigureCanvas):
         ax.legend()
 
         # PNG olarak kaydetme
-        plt.savefig('graph_3.png')
+        plt.savefig('output_pdf_1/images/graph_3.png')
 
     def grafik_4(self,constant_value_4=1e-3):
         # Grafiği oluşturma
@@ -161,7 +163,7 @@ class MplCanvas(FigureCanvas):
         ax.legend()
 
         # PNG olarak kaydetme
-        plt.savefig('graph_4.png')
+        plt.savefig('output_pdf_1/images/graph_4.png')
 
 
     def plot_area_ad(self, l, w, h, hp):
@@ -204,8 +206,8 @@ class MplCanvas(FigureCanvas):
         circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
         self.ax.add_patch(circle)
 
-        self.ax.xaxis.set_major_locator(MultipleLocator(5))  # X ekseninde her 1 birim için etiket
-        self.ax.yaxis.set_major_locator(MultipleLocator(5))  # Y ekseninde her 1 birim için etiket
+        self.ax.xaxis.set_major_locator(MaxNLocator(nbins=6, prune='both'))  # X ekseninde en fazla 10 bölüm
+        self.ax.yaxis.set_major_locator(MaxNLocator(nbins=6, prune='both')) 
         self.ax.xaxis.set_major_formatter(FormatStrFormatter('%0.1f'))  # X eksenindeki etiket formatı
         self.ax.yaxis.set_major_formatter(FormatStrFormatter('%0.1f'))  # Y eksenindeki etiket formatı
 
@@ -214,7 +216,7 @@ class MplCanvas(FigureCanvas):
         self.draw()
         
         # Save the plot as a PNG file
-        self.fig.savefig("complex_structure_ad.png")
+        self.fig.savefig("output_pdf_1/images/complex_structure_ad.png")
 
     def plot_area_adj(self, l, w, h, hp):
         self.ax.clear()
@@ -256,8 +258,8 @@ class MplCanvas(FigureCanvas):
         circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
         self.ax.add_patch(circle)
 
-        self.ax.xaxis.set_major_locator(MultipleLocator(5))  # X ekseninde her 1 birim için etiket
-        self.ax.yaxis.set_major_locator(MultipleLocator(5))  # Y ekseninde her 1 birim için etiket
+        self.ax.xaxis.set_major_locator(MaxNLocator(nbins=8, prune='both'))  # X ekseninde en fazla 10 bölüm
+        self.ax.yaxis.set_major_locator(MaxNLocator(nbins=8, prune='both'))  # Y ekseninde her 1 birim için etiket
         self.ax.xaxis.set_major_formatter(FormatStrFormatter('%0.1f'))  # X eksenindeki etiket formatı
         self.ax.yaxis.set_major_formatter(FormatStrFormatter('%0.1f'))  # Y eksenindeki etiket formatı
 
@@ -266,14 +268,14 @@ class MplCanvas(FigureCanvas):
         self.draw()
         
         # Save the plot as a PNG file
-        self.fig.savefig("complex_structure_ad.png")
+        self.fig.savefig("output_pdf_1/images/complex_structure_adj.png")
     def plot_area_adj_yok(self):
         self.ax.clear()
-        self.fig.savefig("complex_structure_adj.png")
+        self.fig.savefig("output_pdf_1/images/complex_structure_adj.png")
 
 x = MplCanvas()
-l = Ad_u_double_C # Length
-w = Ad_g_double_C  # Width
+l = 100 #Ad_u_double_C # Length
+w =  100#Ad_g_double_C  # Width
 h = Ad_y_double_C  # Height (min value)
 hp = 3 # Karmaşık yapı çıkıntı yüksekliği################ eklenecek
 x.plot_area_ad(l, w, h, hp)
