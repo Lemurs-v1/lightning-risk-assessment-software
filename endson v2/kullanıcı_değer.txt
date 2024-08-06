@@ -1,57 +1,57 @@
-hayır
-Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
-mermer, seramik
-Kırsal
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
 False
-Daha yüksek cisimler ile çevrelenen yapı
-Yapı 3. seviye LPS ile korunuyor
-Uyarı işaretleri
-Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış
-Telekomünikasyon hatları
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Güç hatları
 Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü
-3. ve 4. seviye
-Gömülü
-III-IV
-YG güç (YG/AG transformatörü ile)
-Var
-Patlama : Bölgeler 1, 21
-Tedbir yok
-Hastane, otel, okul, kamu binası
-Hastahanenin yoğun bakım ünitesi ve ameliyathane
-TV, telekomünikasyon hatları
-Hastahane, sanayi, müze, zirai
-Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b
-1 Ω /km <RS ≤ 5 Ω /km
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+5 Ω /km <RS ≤ 20 Ω /km
 1.5
-1.5
+1
 False
-1.0
-2.0
-10.0
-True
-True
-30.0
-12.0
-20.0
-30.0
-25.0
-68.0
-32.0
-True
-21.0
-12.0
-52.0
-Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
-Kablaj uyarıları
-True
-True
-sdfsdfsd
-12.0
-32.0
-21.0
-sdfsdf
-sdfsdf
-sdfsdf
-dsfsdf
-Hayır
-Evet
+0.0
+0.0
+0.0
+False
+False
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+False
+0.0
+0.0
+0.0
+Seçiniz
+Seçiniz
+False
+False
+
+0.0
+0.0
+0.0
+
+
+
+
+Seçiniz
+Seçiniz

@@ -94,13 +94,13 @@ class MainWindow(QtWidgets.QMainWindow):
         self.KS3_comboBox.currentIndexChanged.connect(self.selection_changed_KS3)
 
         self.Pld_2_comboBox = self.ui.Pld_comboBox2
-        self.Pld_2_comboBox.currentIndexChanged.connect(self.selection_changed_Pld2)
+        self.Pld_2_comboBox.currentIndexChanged.connect(self.selection_changed_Pld_2)
 
         self.Pld_3_comboBox = self.ui.Pld_comboBox3
-        self.Pld_3_comboBox.currentIndexChanged.connect(self.selection_changed_Pld3)
+        self.Pld_3_comboBox.currentIndexChanged.connect(self.selection_changed_Pld_3)
 
         self.Pli_2_comboBox = self.ui.Pli_comboBox2
-        self.Pli_2_comboBox.currentIndexChanged.connect(self.selection_changed_Pli2)
+        self.Pli_2_comboBox.currentIndexChanged.connect(self.selection_changed_Pli_2)
 
         self.Hz_comboBox=self.ui.Hz_comboBox
         self.Hz_comboBox.currentIndexChanged.connect(self.selection_changed_Hz)
@@ -255,10 +255,10 @@ class MainWindow(QtWidgets.QMainWindow):
         selected_item = self.KS3_comboBox.currentText()
     
     def selection_changed_Pld_2(self):
-        selected_item = self.Pld_comboBox2.currentText()
+        selected_item = self.Pld_2_comboBox.currentText()
     
     def selection_changed_Pld_3(self):
-        selected_item = self.Pld_comboBox3.currentText()
+        selected_item = self.Pld_3_comboBox.currentText()
     
     def selection_changed_Pli_2(self):
         selected_item = self.Pli_2_comboBox.currentText()

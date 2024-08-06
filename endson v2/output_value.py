@@ -114,6 +114,7 @@ else:
 #print("Hz_C", Hz_C)
 #print("Ptu_C" ,Ptu_C)
 """
+
 class LightningRiskCalculator_output_value:
     def __init__(self):
         self.N_G = None
@@ -153,7 +154,9 @@ class LightningRiskCalculator_output_value:
         self.c_a_b_c_t = None
         self.P_MS_soru2 = None
 
-       
+    print("Pld2_C:", Pld_2_C)
+    print("Pld3_C:", Pld_3_C)
+    print("Pli2_C:", Pli_2_C)   
 
     def n_g_bul(self):
         self.N_G = Ng_double_C 
