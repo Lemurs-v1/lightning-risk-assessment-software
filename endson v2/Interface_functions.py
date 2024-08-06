@@ -108,6 +108,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Ptu_comboBox = self.ui.Ptu_comboBox
         self.Ptu_comboBox.currentIndexChanged.connect(self.selection_changed_Ptu)
 
+        self.R1soru_comboBox=self.ui.R1soru_comboBox
+        self.R1soru_comboBox.currentIndexChanged.connect(self.selection_changed_R1soru)
+
+        self.R4soru_comboBox=self.ui.R4soru_comboBox
+        self.R4soru_comboBox.currentIndexChanged.connect(self.selection_changed_R4soru)
+
         # Diğer bileşenler
         # Ekranlama Checkbox
 
