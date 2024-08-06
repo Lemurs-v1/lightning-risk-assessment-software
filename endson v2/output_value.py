@@ -5,7 +5,7 @@ with open("kullanıcı_değer.txt", "r",encoding="utf-8") as dosya:
 veriler = veriler_file.split("\n")
 
 Ad_C = str(veriler[0])  # Karmaşık biçimli
-Cd_C = (veriler[1])  # Daha yüksek cisimler ile çevrelenen yapı
+Cd_C = str(veriler[1])  # Daha yüksek cisimler ile çevrelenen yapı
 rt_C = str(veriler[2])  # asfalt, muşamba, ahşap
 Ce_C = str(veriler[3])  # Şehir
 Adj_C = str(veriler[4])  # False
@@ -153,10 +153,12 @@ class LightningRiskCalculator_output_value:
         self.c_z = None
         self.c_a_b_c_t = None
         self.P_MS_soru2 = None
-
+    print("Pld1_C:", Pld_C)
     print("Pld2_C:", Pld_2_C)
     print("Pld3_C:", Pld_3_C)
-    print("Pli2_C:", Pli_2_C)   
+    print("Pli1_C:", Pli_C)  
+    print("Pli2_C:", Pli_2_C)  
+ 
 
     def n_g_bul(self):
         self.N_G = Ng_double_C 
@@ -344,8 +346,8 @@ class LightningRiskCalculator_output_value:
         return self.P_LD
     def p_lı_bul(self):
         self.P_LI_1 = "döndürmüyor"#input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
-        self.P_LI_2 = "Güç Hatları"#input("Hat tipini giriniz:")
-        self.P_LI_3 = "6"#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
+        self.P_LI_2 = Pli_C#input("Hat tipini giriniz:")
+        self.P_LI_3 = Pli_2_C#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6):")
         self.P_LI = [self.P_LI_1,self.P_LI_2,self.P_LI_3]
         return self.P_LI
     def l_fo_2_bul(self):

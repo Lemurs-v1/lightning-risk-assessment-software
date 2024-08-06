@@ -21,9 +21,9 @@ Seçiniz
 Seçiniz
 Seçiniz
 Seçiniz
-5 Ω /km <RS ≤ 20 Ω /km
+1 Ω /km <RS ≤ 5 Ω /km
 1.5
-1
+1.5
 False
 0.0
 0.0
@@ -36,7 +36,7 @@ False
 0.0
 0.0
 0.0
-0.0
+10.0
 False
 0.0
 0.0
