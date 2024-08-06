@@ -93,14 +93,14 @@ class MainWindow(QtWidgets.QMainWindow):
         self.KS3_comboBox = self.ui.KS3_comboBox
         self.KS3_comboBox.currentIndexChanged.connect(self.selection_changed_KS3)
 
-        self.Pld_comboBox2 = self.ui.Pld_comboBox2
-        self.Pld_comboBox2.currentIndexChanged.connect(self.selection_changed_Pld2)
+        self.Pld_2_comboBox = self.ui.Pld_comboBox2
+        self.Pld_2_comboBox.currentIndexChanged.connect(self.selection_changed_Pld2)
 
-        self.Pld_comboBox3 = self.ui.Pld_comboBox3
-        self.Pld_comboBox3.currentIndexChanged.connect(self.selection_changed_Pld3)
+        self.Pld_3_comboBox = self.ui.Pld_comboBox3
+        self.Pld_3_comboBox.currentIndexChanged.connect(self.selection_changed_Pld3)
 
-        self.Pli_comboBox2 = self.ui.Pli_comboBox2
-        self.Pli_comboBox2.currentIndexChanged.connect(self.selection_changed_Pli2)
+        self.Pli_2_comboBox = self.ui.Pli_comboBox2
+        self.Pli_2_comboBox.currentIndexChanged.connect(self.selection_changed_Pli2)
 
         self.Hz_comboBox=self.ui.Hz_comboBox
         self.Hz_comboBox.currentIndexChanged.connect(self.selection_changed_Hz)
@@ -254,14 +254,14 @@ class MainWindow(QtWidgets.QMainWindow):
     def selection_changed_KS3(self):
         selected_item = self.KS3_comboBox.currentText()
     
-    def selection_changed_Pld2(self):
+    def selection_changed_Pld_2(self):
         selected_item = self.Pld_comboBox2.currentText()
     
-    def selection_changed_Pld3(self):
+    def selection_changed_Pld_3(self):
         selected_item = self.Pld_comboBox3.currentText()
     
-    def selection_changed_Pli2(self):
-        selected_item = self.Pli_comboBox2.currentText()
+    def selection_changed_Pli_2(self):
+        selected_item = self.Pli_2_comboBox.currentText()
     def selection_changed_ekranlama(self):
         state = self.ekranlama_checkBox.isChecked()
 
@@ -346,9 +346,9 @@ class MainWindow(QtWidgets.QMainWindow):
         Lfo2_value = self.Lfo2_comboBox.currentText()
         Lfo4_value = self.Lfo4_comboBox.currentText()
         KS3_value = self.KS3_comboBox.currentText()
-        Pld2_value = self.Pld_comboBox2.currentText()
-        Pld3_value = self.Pld_comboBox3.currentText()
-        Pli2_value = self.Pli_comboBox2.currentText()
+        Pld_2_value = self.Pld_2_comboBox.currentText()
+        Pld_3_value = self.Pld_3_comboBox.currentText()
+        Pli_2_value = self.Pli_2_comboBox.currentText()
         Ng_value = self.Ng_checkBox.isChecked()
         ekranlama_value = self.ekranlama_checkBox.isChecked()
         metal_value = self.metal_checkBox.isChecked()
@@ -405,9 +405,9 @@ class MainWindow(QtWidgets.QMainWindow):
             f"{Lfo2_value}\n"
             f"{Lfo4_value}\n"
             f"{KS3_value}\n"
-            f"{Pld2_value}\n"
-            f"{Pld3_value}\n"
-            f"{Pli2_value}\n"
+            f"{Pld_2_value}\n"
+            f"{Pld_3_value}\n"
+            f"{Pli_2_value}\n"
             f"{Ng_value}\n"
             f"{wm1_value}\n"
             f"{wm2_value}\n"
@@ -468,9 +468,9 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'Seçilen Lfo2 değeri: {Lfo2_value}')
         print(f'Seçilen Lfo4 değeri: {Lfo4_value}')
         print(f'Seçilen KS3 değeri: {KS3_value}')
-        print(f'Seçilen Pld2 değeri: {Pld2_value}')
-        print(f'Seçilen Pld3 değeri: {Pld3_value}')
-        print(f'Seçilen Pli2 değeri: {Pli2_value}')
+        print(f'Seçilen Pld2 değeri: {Pld_2_value}')
+        print(f'Seçilen Pld3 değeri: {Pld_3_value}')
+        print(f'Seçilen Pli2 değeri: {Pli_2_value}')
         print(f'Ng CheckBox durumu: {Ng_value}')
         print(f'wm1 değeri: {wm1_value}')
         print(f'wm2 değeri: {wm2_value}')
@@ -589,9 +589,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Lfo2_comboBox.setCurrentIndex(0)
         self.Lfo4_comboBox.setCurrentIndex(0)
         self.KS3_comboBox.setCurrentIndex(0)
-        self.Pld_comboBox2.setCurrentIndex(0)
-        self.Pld_comboBox3.setCurrentIndex(0)
-        self.Pli_comboBox2.setCurrentIndex(0)
+        self.Pld_2_comboBox.setCurrentIndex(0)
+        self.Pld_3_comboBox.setCurrentIndex(0)
+        self.Pli_2_comboBox.setCurrentIndex(0)
         self.Hz_comboBox.setCurrentIndex(0)
         self.R1soru_combobox.setCurrentIndex(0)
         self.R4soru_combobox.setCurrentIndex(0)

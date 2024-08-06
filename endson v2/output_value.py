@@ -27,9 +27,9 @@ Lo_C = str(veriler[19])  # Hastahanenin diğer bölümleri
 Lfo2_C = str(veriler[20])  # TV, telekomünikasyon hatları
 Lfo4_C = str(veriler[21])  # Gaz, su, güç besleme
 KS3_C = str(veriler[22])  # Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
-Pld2_C = str(veriler[23])  # 1 Ω /km <RS ≤ 5 Ω /km
-Pld3_C = str(veriler[24])  # 2.5
-Pli2_C = str(veriler[25])  # 1.5
+Pld_2_C = str(veriler[23])  # 1 Ω /km <RS ≤ 5 Ω /km
+Pld_3_C = str(veriler[24])  # 2.5
+Pli_2_C = str(veriler[25])  # 1.5
 Ng_C =str(veriler[26])  # False
 wm1_C = float(veriler[27])  # 2.0
 wm2_C = float(veriler[28])  # 10.0
@@ -335,8 +335,8 @@ class LightningRiskCalculator_output_value:
         return self.P_EB
     def p_ld_bul(self):
         self.P_LD_1 = Pld_C#input("Güç hatları veya telekominikasyon hatlarının güzergah, zırhlama ve kuşaklama şartları hangisidir?(evet/hayır)")
-        self.P_LD_2 = Pld2_C#input("Direnç değerini giriniz: ")
-        self.P_LD_3 = Pld3_C#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
+        self.P_LD_2 = Pld_2_C#input("Direnç değerini giriniz: ")
+        self.P_LD_3 = Pld_3_C#input("Dayanım gerilimini giriniz (1-1,5-2,5-4-6): ")
         self.P_LD = [self.P_LD_1,self.P_LD_2,self.P_LD_3]
         return self.P_LD
     def p_lı_bul(self):
