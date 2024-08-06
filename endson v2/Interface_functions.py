@@ -444,7 +444,7 @@ class MainWindow(QtWidgets.QMainWindow):
     
         with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya:
             dosya.write(değerler)
-
+        
         print(f'Seçilen Ad değeri: {Ad_value}')
         print(f'Seçilen Cd değeri: {Cd_value}')
         print(f'Seçilen rt değeri: {rt_value}')

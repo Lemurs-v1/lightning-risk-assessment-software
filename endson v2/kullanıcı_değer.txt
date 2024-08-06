@@ -1,10 +1,15 @@
 hayır
 Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+<<<<<<< Updated upstream
 mermer, seramik
 Kırsal
+=======
+tarımsal, beton
+Banliyo
+>>>>>>> Stashed changes
 False
-Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
-Yapı 4. seviye LPS ile korunuyor
+Daha yüksek cisimler ile çevrelenen yapı
+Yapı 3. seviye LPS ile korunuyor
 Uyarı işaretleri
 Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış
 Telekomünikasyon hatları
@@ -13,7 +18,11 @@ Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai v
 Gömülü
 III-IV
 YG güç (YG/AG transformatörü ile)
+<<<<<<< Updated upstream
 Var
+=======
+Yok
+>>>>>>> Stashed changes
 Patlama : Bölgeler 1, 21
 Tedbir yok
 Hastane, otel, okul, kamu binası
@@ -27,6 +36,7 @@ Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b
 False
 1.0
 2.0
+<<<<<<< Updated upstream
 10.0
 True
 True
@@ -55,3 +65,31 @@ sdfsdf
 dsfsdf
 Hayır
 Evet
+=======
+14.0
+True
+True
+30.0
+20.0
+40.0
+50.0
+40.0
+50.0
+20.0
+False
+30.0
+30.0
+50.0
+Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
+Kablaj uyarıları
+False
+False
+amskpdjfıo
+30.0
+30.0
+20.0
+dfıjsf
+dflkjdoıf
+uhıuh
+ıuoh
+>>>>>>> Stashed changes
