@@ -16,12 +16,20 @@ with open("kullanıcı_değer.txt", "r",encoding="utf-8") as dosya:
 
 veriler = veriler_file.split("\n")
 Adj_C = str(veriler[4])
-Ad_y_double_C = float(veriler[33])  # 2.0
-Ad_g_double_C = float(veriler[34])  # 3.0
-Ad_u_double_C = float(veriler[35])  # 4.0
+Ad_y_double_C = float(veriler[33]) 
+Ad_g_double_C = float(veriler[34])  
+Ad_u_double_C = float(veriler[35])  
+Ad_ymax_double_C = float(veriler[48])
 
-Adj_g_double_C = float(veriler[36])  # 10.0
-Adj_u_double_C = float(veriler[37])  # 11.0
+
+Adj_g_double_C = float(veriler[36])  
+Adj_u_double_C = float(veriler[37])  
+Adj_y_double_C = float(veriler[49])
+adj_ymax_double_C = float(veriler[50])
+
+Ad_durum = float(veriler[0])
+Adj_kontrol = float(veriler[4])
+
 
 
 class MplCanvas(FigureCanvas):
@@ -168,43 +176,43 @@ class MplCanvas(FigureCanvas):
 
     def plot_area_ad(self, l, w, h, hp):
         self.ax.clear()
-        
-        # Dikdörtgenin köşe koordinatları
-        x = [-l/2, l/2, l/2, -l/2, -l/2]
-        y = [-w/2, -w/2, w/2, w/2, -w/2]
-        
-        
-        self.ax.plot(x, y,)
-        # Dikdörtgenin alanını doldur
-        self.ax.fill(x, y, 'b', alpha=0.3, label="Yapı")
-
-        # Genişletilmiş dikdörtgenin kenarlarını çiz
-        self.ax.plot([x[0], x[1]], [y[0] - 3*h, y[1] - 3*h], 'r--')
-        self.ax.plot([x[1] + 3*h, x[2] + 3*h], [y[1], y[2]], 'r--')
-        self.ax.plot([x[2], x[3]], [y[2] + 3*h, y[3] + 3*h], 'r--')
-        self.ax.plot([x[3] - 3*h, x[4] - 3*h], [y[3], y[4]], 'r--')
-
-        # Köşelerde çeyrek çemberler çiz
-        corners = [(-l/2, -w/2), (l/2, -w/2), (l/2, w/2), (-l/2, w/2)]
-        for (cx, cy) in corners:
-            if cx < 0 and cy < 0:
-                theta = np.linspace(np.pi, 3*np.pi/2, 100)
-            elif cx > 0 and cy < 0:
-                theta = np.linspace(3*np.pi/2, 2*np.pi, 100)
-            elif cx > 0 and cy > 0:
-                theta = np.linspace(0, np.pi/2, 100)
-            elif cx < 0 and cy > 0:
-                theta = np.linspace(np.pi/2, np.pi, 100)
+        if Ad_durum == "Düz biçimli":
+            # Dikdörtgenin köşe koordinatları
+            x = [-l/2, l/2, l/2, -l/2, -l/2]
+            y = [-w/2, -w/2, w/2, w/2, -w/2]
             
-            x_arc = cx + 3 * h * np.cos(theta)
-            y_arc = cy + 3 * h * np.sin(theta)
-            self.ax.plot(x_arc, y_arc, 'r--')
-        self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
+            
+            self.ax.plot(x, y,)
+            # Dikdörtgenin alanını doldur
+            self.ax.fill(x, y, 'b', alpha=0.3, label="Yapı")
 
-        # Karmaşık grafik çizimi (karmasik_grafik)
-        circle_radius = 3 * hp
-        circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
-        self.ax.add_patch(circle)
+            # Genişletilmiş dikdörtgenin kenarlarını çiz
+            self.ax.plot([x[0], x[1]], [y[0] - 3*h, y[1] - 3*h], 'r--')
+            self.ax.plot([x[1] + 3*h, x[2] + 3*h], [y[1], y[2]], 'r--')
+            self.ax.plot([x[2], x[3]], [y[2] + 3*h, y[3] + 3*h], 'r--')
+            self.ax.plot([x[3] - 3*h, x[4] - 3*h], [y[3], y[4]], 'r--')
+
+            # Köşelerde çeyrek çemberler çiz
+            corners = [(-l/2, -w/2), (l/2, -w/2), (l/2, w/2), (-l/2, w/2)]
+            for (cx, cy) in corners:
+                if cx < 0 and cy < 0:
+                    theta = np.linspace(np.pi, 3*np.pi/2, 100)
+                elif cx > 0 and cy < 0:
+                    theta = np.linspace(3*np.pi/2, 2*np.pi, 100)
+                elif cx > 0 and cy > 0:
+                    theta = np.linspace(0, np.pi/2, 100)
+                elif cx < 0 and cy > 0:
+                    theta = np.linspace(np.pi/2, np.pi, 100)
+                
+                x_arc = cx + 3 * h * np.cos(theta)
+                y_arc = cy + 3 * h * np.sin(theta)
+                self.ax.plot(x_arc, y_arc, 'r--')
+            self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
+
+        if Ad_durum == "Karmaşık biçimli": # Karmaşık grafik çizimi (karmasik_grafik)
+            circle_radius = 3 * hp
+            circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
+            self.ax.add_patch(circle)
 
         self.ax.xaxis.set_major_locator(MaxNLocator(nbins=6, prune='both'))  # X ekseninde en fazla 10 bölüm
         self.ax.yaxis.set_major_locator(MaxNLocator(nbins=6, prune='both')) 
@@ -218,45 +226,45 @@ class MplCanvas(FigureCanvas):
         # Save the plot as a PNG file
         self.fig.savefig("output_pdf_1/images/complex_structure_ad.png")
 
-    def plot_area_adj(self, l, w, h, hp):
+    def plot_area_adj(self, l_a, w_a, h_a, hp_a):
         self.ax.clear()
-        
+        if Ad_durum == "Düz biçimli":
         # Dikdörtgenin köşe koordinatları
-        x = [-l/2, l/2, l/2, -l/2, -l/2]
-        y = [-w/2, -w/2, w/2, w/2, -w/2]
-        
-        
-        self.ax.plot(x, y,)
-        # Dikdörtgenin alanını doldur
-        self.ax.fill(x, y, 'b', alpha=0.3, label="Yapı")
-
-        # Genişletilmiş dikdörtgenin kenarlarını çiz
-        self.ax.plot([x[0], x[1]], [y[0] - 3*h, y[1] - 3*h], 'r--')
-        self.ax.plot([x[1] + 3*h, x[2] + 3*h], [y[1], y[2]], 'r--')
-        self.ax.plot([x[2], x[3]], [y[2] + 3*h, y[3] + 3*h], 'r--')
-        self.ax.plot([x[3] - 3*h, x[4] - 3*h], [y[3], y[4]], 'r--')
-
-        # Köşelerde çeyrek çemberler çiz
-        corners = [(-l/2, -w/2), (l/2, -w/2), (l/2, w/2), (-l/2, w/2)]
-        for (cx, cy) in corners:
-            if cx < 0 and cy < 0:
-                theta = np.linspace(np.pi, 3*np.pi/2, 100)
-            elif cx > 0 and cy < 0:
-                theta = np.linspace(3*np.pi/2, 2*np.pi, 100)
-            elif cx > 0 and cy > 0:
-                theta = np.linspace(0, np.pi/2, 100)
-            elif cx < 0 and cy > 0:
-                theta = np.linspace(np.pi/2, np.pi, 100)
+            x = [-l_a/2, l_a/2, l_a/2, -l_a/2, -l_a/2]
+            y = [-w_a/2, -w_a/2, w_a/2, w_a/2, -w_a/2]
             
-            x_arc = cx + 3 * h * np.cos(theta)
-            y_arc = cy + 3 * h * np.sin(theta)
-            self.ax.plot(x_arc, y_arc, 'r--')
-        self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
+            
+            self.ax.plot(x, y,)
+            # Dikdörtgenin alanını doldur
+            self.ax.fill(x, y, 'b', alpha=0.3, label="Ayrık Yapı")
 
-        # Karmaşık grafik çizimi (karmasik_grafik)
-        circle_radius = 3 * hp
-        circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
-        self.ax.add_patch(circle)
+            # Genişletilmiş dikdörtgenin kenarlarını çiz
+            self.ax.plot([x[0], x[1]], [y[0] - 3*h_a, y[1] - 3*h_a], 'r--')
+            self.ax.plot([x[1] + 3*h_a, x[2] + 3*h_a], [y[1], y[2]], 'r--')
+            self.ax.plot([x[2], x[3]], [y[2] + 3*h_a, y[3] + 3*h_a], 'r--')
+            self.ax.plot([x[3] - 3*h_a, x[4] - 3*h_a], [y[3], y[4]], 'r--')
+
+            # Köşelerde çeyrek çemberler çiz
+            corners = [(-l_a/2, -w_a/2), (l_a/2, -w_a/2), (l_a/2, w_a/2), (-l_a/2, w_a/2)]
+            for (cx, cy) in corners:
+                if cx < 0 and cy < 0:
+                    theta = np.linspace(np.pi, 3*np.pi/2, 100)
+                elif cx > 0 and cy < 0:
+                    theta = np.linspace(3*np.pi/2, 2*np.pi, 100)
+                elif cx > 0 and cy > 0:
+                    theta = np.linspace(0, np.pi/2, 100)
+                elif cx < 0 and cy > 0:
+                    theta = np.linspace(np.pi/2, np.pi, 100)
+                
+                x_arc = cx + 3 * h_a * np.cos(theta)
+                y_arc = cy + 3 * h_a * np.sin(theta)
+                self.ax.plot(x_arc, y_arc, 'r--')
+            self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
+        if Ad_durum == "Karmaşık biçimli":
+            # Karmaşık grafik çizimi (karmasik_grafik)
+            circle_radius = 3 * hp_a
+            circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
+            self.ax.add_patch(circle)
 
         self.ax.xaxis.set_major_locator(MaxNLocator(nbins=8, prune='both'))  # X ekseninde en fazla 10 bölüm
         self.ax.yaxis.set_major_locator(MaxNLocator(nbins=8, prune='both'))  # Y ekseninde her 1 birim için etiket
@@ -269,20 +277,21 @@ class MplCanvas(FigureCanvas):
         
         # Save the plot as a PNG file
         self.fig.savefig("output_pdf_1/images/complex_structure_adj.png")
+    
     def plot_area_adj_yok(self):
         self.ax.clear()
         self.fig.savefig("output_pdf_1/images/complex_structure_adj.png")
 
 x = MplCanvas()
-l = 100 #Ad_u_double_C # Length
-w =  100#Ad_g_double_C  # Width
+l = Ad_u_double_C # Length
+w =  Ad_g_double_C  # Width
 h = Ad_y_double_C  # Height (min value)
-hp = 3 # Karmaşık yapı çıkıntı yüksekliği################ eklenecek
+hp = Ad_ymax_double_C # Karmaşık yapı çıkıntı yüksekliği eklenecek
 x.plot_area_ad(l, w, h, hp)
 l_a = Adj_u_double_C # Length ayrık  
 w_a = Adj_g_double_C  # Width ayrık  
-h_a = 5  # Height (min value) ayrık########################
-hp_a = 3 # Karmaşık yapı çıkıntı yüksekliği ayrık######################
+h_a = Adj_y_double_C  # Height (min value) ayrık
+hp_a = Ad_ymax_double_C # Karmaşık yapı çıkıntı yüksekliği ayrık
 
 if Adj_C == "True" :
     x.plot_area_adj_yok()
@@ -295,7 +304,3 @@ x.grafik_1()
 x.grafik_2()
 x.grafik_3()
 x.grafik_4()
-
-
-
-
