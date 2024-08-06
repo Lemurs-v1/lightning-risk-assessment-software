@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contents - Risk Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+            margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+        }
+
+        .container {
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            padding: 20px; /* İçeriğin etrafına 20px boşluk ekler */
+        }
+
+        .subsection {
+            margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+            margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
+        }
+
+        .content {
+            margin-bottom: 20px; /* İçeriğin altına 20px boşluk ekler */
+        }
+
+        .content p {
+            margin: 8px 0; /* Paragrafların üst ve altına 8px boşluk ekler */
+        }
+
+        p {
+            margin-bottom: 1px;
+            margin-top: 1px;
+            font-size: 14px;  /* Paragraf altındaki boşluğu ayarlar */
+        }
+        h2 {
+            margin-bottom: 1px;
+            margin-top: 1px; /* Paragraf altındaki boşluğu ayarlar */
+            font-size: 18px; /* Font boyutunu ayarlar */
+        }
+        li {
+            margin-bottom: 1px;
+            margin-top: 1px; /* Paragraf altındaki boşluğu ayarlar */
+            font-size: 18px; /* Font boyutunu ayarlar */
+        }
+
+
+        .footer {
+            display: flex; /* Footer öğelerini yatayda hizalar */
+            justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+            align-items: center; /* Footer öğelerini dikeyde ortalar */
+            margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+            padding: 10px 20px; /* İç boşlukları belirler */
+            background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+        }
+        .footer img {
+            display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+            margin: 0; /* Resmin marginlerini sıfırlar */
+        }
+        .footer p {
+            margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+        }
+
+        .top-right-image {
+            position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+            top: 0;
+            right: 0;
+            width: 80px; /* Resmin genişliğini ayarlar */
+            height: auto; /* Yüksekliği otomatik ayarlar */
+            margin: 5px; /* Resme biraz boşluk bırakır */
+        }
+
+        .caption {
+            text-align: center; /* Açıklamayı ortalar */
+            margin-top: 5px; /* Açıklamanın üstüne 5px boşluk ekler */
+            font-size: 14px; /* Yazı boyutunu belirler */
+            color: #555; /* Yazı rengini belirler */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Ana içerik kapsayıcısı -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+        <div class="content"></div>
+    <ol>
+        <li><strong>Abbreviations</strong></li>
+    </ol>
+    <p><strong>a</strong> Amortisation rate</p>
+    <p><strong>a<sub>t</sub></strong> Amortisation period</p>
+    <p><strong>c<sub>a</sub></strong> Value of animals in a zone in currency</p>
+    <p><strong>c<sub>b</sub></strong> Value of a zone of the structure in currency</p>
+    <p><strong>c<sub>c</sub></strong> Value of the contents of a zone in currency</p>
+    <p><strong>c<sub>s</sub></strong> Value of the systems in a zone (including their activities) in currency</p>
+    <p><strong>c<sub>t</sub></strong> Total value of the structure in currency</p>
+    <p><strong>C<sub>D</sub>;C<sub>DJ</sub></strong> Location factor</p>
+    <p><strong>C<sub>L</sub></strong> Annual costs of the total loss without protection measures</p>
+    <p><strong>C<sub>PM</sub></strong> Annual costs of the selected protection measures</p>
+    <p><strong>C<sub>RL</sub></strong> Annual costs of the residual loss</p>
+    <p><strong>EB</strong> Lightning equipotential bonding</p>
+    <p><strong>H</strong> Height of the structure</p>
+    <p><strong>H<sub>P</sub></strong> Highest point of the structure</p>
+    <p><strong>i</strong> Interest rate</p>
+    <p><strong>K<sub>S1</sub></strong> Factor relevant to the shielding effectiveness of a structure (external spatial shielding)</p>
+    <p><strong>K<sub>S1W</sub></strong> Mesh size of the shielding of a structure</p>
+    <p><strong>K<sub>S2</sub></strong> Factor relevant to the shielding effectiveness of a structure (external spatial shielding)</p>
+    <p><strong>K<sub>S2W</sub></strong> Mesh size of the shielding within a structure</p>
+    <p><strong>L1</strong> Loss of human life</p>
+    <p><strong>L2</strong> Loss of service to the public</p>
+    <p><strong>L3</strong> Loss of cultural heritage</p>
+    <p><strong>L4</strong> Loss of economic value</p>
+    <p><strong>L</strong> Length of the structure</p>
+    <p><strong>LEMP</strong> Lightning electromagnetic impulse</p>
+    <p><strong>LP</strong> Lightning protection (consisting of a lightning protection system (LPS) and LEMP protection measures)</p>
+    <p><strong>LPL</strong> Lightning protection level</p>
+    <p><strong>LPS</strong> Lightning protection system</p>
+    <p><strong>LPZ</strong> Lightning protection zone (zone where the lightning electromagnetic environment is defined)</p>
+    <p><strong>m</strong> Maintenance rates</p>
+    <p><strong>N<sub>D</sub></strong> Frequency of dangerous events caused by lightning strikes to a structure</p>
+    <p><strong>N<sub>G</sub></strong> Ground flash density</p>
+    <p><strong>P<sub>B</sub></strong> Probability that a lightning strike to a structure causes physical damage</p>
+    <p><strong>PEB</strong> Lightning equipotential bonding</p>
+    <p><strong>PSPD</strong> Coordinated SPD system</p>
+    <p><strong>R</strong> Risk</p>
+    <p><strong>R<sub>1</sub></strong> Risk of loss of human life in a structure</p>
+    <p><strong>R<sub>2</sub></strong> Risk of loss of service to the public</p>
+    <p><strong>R<sub>3</sub></strong> Risk of loss of cultural heritage</p>
+    <p><strong>R<sub>4</sub></strong> Risk of loss of economical value in a structure</p>
+    <p><strong>R<sub>A</sub></strong> Risk component (injury to living beings - Lightning strike to the structure)</p>
+</div>
+<footer class="footer"> <!-- Footer bölümü -->
+    <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+    <p>Radsan Risk Tools - 2024-08-06</p> <!-- Footer'da yer alan metin -->
+    <p>Page 3 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+</footer>
+</body>
+
+</html>
+
