@@ -2217,35 +2217,19 @@ pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({{}});
 
 """
 
-import os
+# Dosya yolu
+dir_path = "output_pdf_1"
+file_name = f"{müşteri}_Risk_Analiz_Raporu.html"
+file_path = os.path.join(dir_path, file_name)
 
-# Kod dizini
-kod_dizin = os.path.dirname(os.path.abspath(__file__))
-
-# Klasör adı
-klasör_adı = "output_pdf_1"
-klasör_yolu = os.path.join(kod_dizin, klasör_adı)
-
-# Klasörü oluştur (eğer mevcut değilse)
-if not os.path.exists(klasör_yolu):
-    os.makedirs(klasör_yolu)
-    print(f"{klasör_yolu} klasörü oluşturuldu.")
-
-# HTML içerikleri ve dosya adları
-html_content_list = html_content_1
-rapor_numaraları = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-
-# HTML dosyalarını oluştur
-
-dosya_adı = f"{müşteri.lower().replace(' ', '_')}_risk_analiz_raporu_{5}.html"
-tam_yol = os.path.join(klasör_yolu, dosya_adı)
-
-try:
-    with open(tam_yol, "w", encoding="utf-8") as file:
-        file.write(html_content_1)
-        print(f"{tam_yol} dosyası başarıyla oluşturuldu.")
-except Exception as e:
-    print(f"Dosya oluşturulurken bir hata oluştu: {e}")
-
-
-
+# Dizinin mevcut olduğundan emin olma
+if os.path.exists(dir_path) and os.path.isdir(dir_path):
+    try:
+        # HTML içeriğini dizindeki dosyaya kaydetme
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(html_content_1)
+        print(f"HTML içeriği {file_path} dosyasına kaydedildi.")
+    except PermissionError:
+        print(f"{file_path} dosyasına yazma izniniz yok.")
+else:
+    print(f"{dir_path} adlı dizin mevcut değil veya bir dizin değil.")
