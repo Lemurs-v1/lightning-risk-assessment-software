@@ -271,6 +271,14 @@ class MainWindow(QtWidgets.QMainWindow):
     def selection_changed_Ll_double_value(self):
         state = self.metal_checkBox.isChecked()
 
+    def selection_changed_R1soru(self):
+        selected_item = self.R1soru_comboBox.currentText()
+
+    def selection_changed_R4soru(self):
+        selected_item = self.R4soru_comboBox.currentText()
+
+
+
 
 
 
@@ -362,6 +370,8 @@ class MainWindow(QtWidgets.QMainWindow):
         Müsteri = self.lineEdit_2.text()
         Obje = self.lineEdit_4.text()
         Proje_no = self.lineEdit_3.text()
+        R1_value=self.R1soru_comboBox.currentText()
+        R4_value=self.R4soru_comboBox.currentText()
 
 
     # Verileri ilgili formatta yazdır
@@ -421,7 +431,8 @@ class MainWindow(QtWidgets.QMainWindow):
             f"{Müsteri}\n"
             f"{Obje}\n"
             f"{Proje_no}\n"
-
+            f"{R1_value}\n"
+            f"{R4_value}\n"
                 )
 
     
@@ -482,7 +493,8 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'Rapor yazarı: {Rapor_yazarı}')
         print(f'Müsteri: {Müsteri}')
         print(f'Obje: {Obje}')
-        print(f'Proje_no: {Proje_no}')
+        print(f'R1_value: {R1_value}')
+        print(f'R4_value: {R4_value}')
         
     def calculate(self):
         try:
@@ -500,7 +512,7 @@ class MainWindow(QtWidgets.QMainWindow):
             r4 = format_number_scientific(float(veriler[3]))
 
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
-        except (IndexError, ValueError, TypeError, KeyError,ZeroDivisionError) as e:
+        except (IndexError, ValueError, TypeError, KeyError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
@@ -575,6 +587,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.Pld_comboBox3.setCurrentIndex(0)
         self.Pli_comboBox2.setCurrentIndex(0)
         self.Hz_comboBox.setCurrentIndex(0)
+        self.R1soru_combobox.setCurrentIndex(0)
+        self.R4soru_combobox.setCurrentIndex(0)
 
         self.Ng_checkBox.setChecked(False)
         self.wm1_doubleSpinbox.setValue(0.0)
