@@ -11,7 +11,12 @@ A_D_genişlik_C = output.a_d_genişlik_bul()
 A_D_uzunluk_C = output.a_d_uzunluk_bul()
 A_D_denklem_C = output.a_d_denklem()
 A_D_yükseklik_C = output.a_d_yükseklik_bul()
-#A_D_yükseklik_max_C = output.a_d_max_yükseklik_bul()
+A_D_yükseklik_max_C = output.a_d_yükseklik_max_bul()
+
+A_DJ_genişlik_C = output.a_dj_genişlik_bul()
+A_DJ_uzunluk_C = output.a_dj_uzunluk_bul()
+A_DJ_yükseklik_C = output.a_dj_yükseklik_bul()
+A_DJ_yükseklik_max_C = output.a_dj_yükseklik_max_bul()
 C_D_C = output.c_d_bul()
 
 C_DJ_C = output.c_dj_bul()
@@ -24,7 +29,7 @@ P_SPD_C = output.p_spd_bul()
 C_LD_C = output.c_ld_bul()
 L_O_C = output.l_o_bul()
 P_MS_C = output.p_ms_bul()
-A_DJ_C = output.a_dj_bul()
+
 
 r_p_C = output.r_p_bul()
 r_f_C = output.r_f_bul() 
@@ -54,7 +59,12 @@ class LightningRiskCalculator_min_values:
         self.A_D_uzunluk = A_D_uzunluk_C
         self.A_D_denklem = A_D_denklem_C
         self.A_D_yükseklik = A_D_yükseklik_C
-        #self.A_D_yükseklik_max  =  A_D_yükseklik_max_C 
+        self.A_D_yükseklik_max  =  A_D_yükseklik_max_C 
+
+        self.A_DJ_genişlik = A_DJ_genişlik_C
+        self.A_DJ_uzunluk = A_DJ_uzunluk_C
+        self.A_DJ_yükseklik = A_DJ_yükseklik_C
+        self.A_DJ_yükseklik_max  =  A_DJ_yükseklik_max_C 
         self.A_D = None
         self.A_DJ = None
         self.C_D = None
@@ -104,7 +114,7 @@ class LightningRiskCalculator_min_values:
     def a_d_belirle(self):
         
         if self.A_D_denklem == "evet":
-            self.HMAX =  self.A_D_yükseklik
+            self.HMAX =  self.A_D_yükseklik_max
             self.A_D= pi*(3*self.HMAX)**2
 
         elif self.A_D_denklem=="hayır":
@@ -192,10 +202,14 @@ class LightningRiskCalculator_min_values:
         self.r_t = r_t_DF.loc[r_t_DF["yapı tipi"] == r_t_C, "r_t"].values[0]
         return self.r_t
     def a_dj_belirle(self):
-        self.A_Dj = A_DJ_C
-        return self.A_Dj
+        
+        if self.A_DJ_yükseklik != self.A_D_yükseklik_max:
+            self.HMAXJ =  self.A_DJ_yükseklik_max
+            self.A_DJ= pi*(3*self.HMAXJ)**2
 
-
+        elif self.A_DJ_yükseklik == self.A_D_yükseklik_max:
+            self.A_DJ = (self.A_DJ_uzunluk * self.A_DJ_genişlik)+(2*3*self.A_DJ_yükseklik)*(self.A_DJ_uzunluk+self.A_DJ_genişlik)+(pi*(3*self.A_DJ_yükseklik)**2)
+        return self.A_DJ
     def t_z_bölü_8760_belirle(self):
         if t_z_bölü_8760_C == "bilmiyorum":
             self.t_z_bölü_8760 = 1
@@ -415,12 +429,12 @@ class LightningRiskCalculator_min_values:
         return self.P_LD
 
     def p_lı_belirle(self):
-        if P_LI_C[1] == "Güç Hatları":
+        if P_LI_C[1] == "Güç hatları":
             data = {
                 "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6"],
                 "Değer": [1, 0.6, 0.3, 0.16, 0.1]
             }
-        elif P_LI_C[1] == "Telekomünikasyon Hatları":
+        elif P_LI_C[1] == "Telekomünikasyon hatları":
             data = {
                 "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6"],
                 "Değer": [1, 0.5, 0.2, 0.08, 0.04]

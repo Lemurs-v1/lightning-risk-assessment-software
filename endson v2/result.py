@@ -10,6 +10,10 @@ R4_value=str(veriler[56])
 
 class LightningRiskCalculator_result():
     def __init__(self):
+        self.R_1 =None
+        self.R_2 = None
+        self.R_3 = None
+        self.R_4 = None
         self.R_A_1 = top.r_a_1_belirle()
         self.R_B_1 = top.r_b_1_belirle()
         self.R_C_1 = top.r_c_1_belirle()
@@ -43,10 +47,10 @@ class LightningRiskCalculator_result():
 
 
     def R_1_belirle(self):
-        soru = R1_value#input("Yapıda patlama riski veya elektriksel sistemlerin arızalanması durumunda insan hayatını direkt tehlike altına alacak bir durum mevcut mu ? (evet/hayır)")
-        if (soru == "Evet"):
+        soru_1 = R1_value#input("Yapıda patlama riski veya elektriksel sistemlerin arızalanması durumunda insan hayatını direkt tehlike altına alacak bir durum mevcut mu ? (evet/hayır)")
+        if (soru_1 == "Evet"):
             self.R_1 = self.R_A_1+self.R_B_1+self.R_U_1+self.R_V_1+(self.R_C_1+self.R_M_1+self.R_W_1+self.R_Z_1)
-        elif(soru == "Hayır"):
+        elif(soru_1 == "Hayır"):
             self.R_1 = self.R_A_1+self.R_B_1+self.R_U_1+self.R_V_1
         return self.R_1
     def R_2_belirle(self):
@@ -57,9 +61,9 @@ class LightningRiskCalculator_result():
         return self.R_3
     def R_4_belirle(self):
         soru = R4_value#input("Sadece hayvan kaybı riski mi mevcut ? (evet/hayır)")
-        if (soru=="evet"):
+        if (soru=="Evet"):
             self.R_4 = self.R_B_4+self.R_C_4+self.R_M_4+self.R_V_4+self.R_W_4+self.R_Z_4+(self.R_A_4+self.R_U_4)
-        elif(soru=="hayır"):
+        elif(soru=="Hayır"):
             self.R_4 = self.R_B_4+self.R_C_4+self.R_M_4+self.R_V_4+self.R_W_4+self.R_Z_4
         return self.R_4
     def R_tespit(self):

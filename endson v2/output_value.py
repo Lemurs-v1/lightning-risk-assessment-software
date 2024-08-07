@@ -40,8 +40,13 @@ Ng_double_C = float(veriler[32])  # 1.0
 Ad_y_double_C = float(veriler[33])  # 2.0
 Ad_g_double_C = float(veriler[34])  # 3.0
 Ad_u_double_C = float(veriler[35])  # 4.0
+Ad_ymax=float(veriler[48])
+
 Adj_g_double_C = float(veriler[36])  # 10.0
 Adj_u_double_C = float(veriler[37])  # 11.0
+Adj_y=float(veriler[49])
+Adj_y_max=float(veriler[50])
+
 nt_C = float(veriler[38])  # 5.0
 nz_C = str(veriler[39])  # False
 nz_double_C = float(veriler[40])  # 6.0
@@ -52,9 +57,7 @@ Ptu_C = str(veriler[44])
 tz_value = str(veriler[45])
 Ll_value=str(veriler[46])
 description=str(veriler[47])
-Ad_ymax=float(veriler[48])
-Adj_y=float(veriler[49])
-Adj_y_max=float(veriler[50])
+
 Rapor_yazarı=str(veriler[51])
 Müsteri=str(veriler[52])
 Obje=str(veriler[53])
@@ -123,6 +126,14 @@ class LightningRiskCalculator_output_value:
         self.A_D_yükseklik = None
         self.A_D_yükseklik_max = None
         self.A_D_denklem = None
+
+        
+        self.A_DJ_genişlik = None
+        self.A_DJ_uzunluk = None
+        self.A_DJ_yükseklik = None
+        self.A_DJ_yükseklik_max = None
+        self.A_DJ_denklem = None
+        
         self.C_D = None
         self.C_DJ = None
         self.P_TA = None
@@ -173,7 +184,7 @@ class LightningRiskCalculator_output_value:
 
     def a_d_denklem(self):
         self.A_D_denklem = Ad_C
-        ##print(self.A_D_denklem)#input("yapı karmaşık yapıda mı: (evet/hayır)")Karmaşık biçimli
+        ##print(self.A_D_denklem)#input("yapı karmaşık yapıda mı: Karmaşık biçimli
         return self.A_D_denklem
     def a_d_yükseklik_bul(self):
         self.A_D_yükseklik = Ad_y_double_C#float(input("yapı yüksekliğini giriniz: "))
@@ -188,20 +199,33 @@ class LightningRiskCalculator_output_value:
         self.A_D_uzunluk =Ad_u_double_C
         #print(self.A_D_uzunluk) #float(input("Yapı uzunluğunu giriniz: "))
         return self.A_D_uzunluk
-    def a_dj_bul(self):
-        A_DJ_cevap_1 = Adj_C
-        if A_DJ_cevap_1 == "False":
-            A_DJ_cevap_2 = Adj_u_double_C
-            A_DJ_cevap_3 = Adj_g_double_C
-            self.A_DJ = A_DJ_cevap_2*A_DJ_cevap_3
-            #print(self.A_DJ)
-            return self.A_DJ
+    def a_d_yükseklik_max_bul(self):
+        self.A_D_yükseklik_max =Ad_ymax
+        return self.A_D_yükseklik_max
 
-            
-        elif A_DJ_cevap_1 == "True":
-            self.A_DJ = 0
-            #print(self.A_DJ)
-        return self.A_DJ
+    def a_dj_yükseklik_bul(self):
+        self.A_DJ_yükseklik = Adj_y#float(input("yapı yüksekliğini giriniz: "))
+        #print(self.A_D_yükseklik)
+        return self.A_DJ_yükseklik
+    def a_dj_genişlik_bul(self):
+        self.A_DJ_genişlik = Adj_g_double_C
+        #print(self.A_D_genişlik)#float(input("Yapı genişliğini giriniz: "))
+        return self.A_DJ_genişlik
+
+    def a_dj_uzunluk_bul(self):
+        self.A_DJ_uzunluk =Adj_u_double_C
+        #print(self.A_D_uzunluk) #float(input("Yapı uzunluğunu giriniz: "))
+        return self.A_DJ_uzunluk
+    def a_dj_yükseklik_max_bul(self):
+        self.A_DJ_yükseklik_max =Adj_y_max
+        return self.A_DJ_yükseklik_max
+
+    
+    
+
+
+
+    
         
     def c_d_bul(self):
         self.C_D = Cd_C

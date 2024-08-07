@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Analysis Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+            margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+        }
+
+        .container {
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+        }
+
+        .subsection {
+            margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+            margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
+        }
+
+        .content {
+            margin-bottom: 1px; /* İçeriğin altına 1px boşluk ekler */
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+        }
+
+        .content p {
+            margin: 1px 0; /* Paragrafların üst ve altına 1px boşluk ekler */
+        }
+
+        .image-section {
+            text-align: center; /* Görsel bölümünü ortalar */
+            margin: 10px 0; /* Görsel bölümünün üst ve altına 10px boşluk ekler */
+        }
+
+        .image-section img {
+            max-width: 100%; /* Görselin maksimum genişliğini %100 yapar */
+            height: auto; /* Görselin yüksekliğini otomatik ayarlar */
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 4px; /* Hücreler arasındaki boşluğu azaltır */
+        }
+
+        .data-table th {
+            padding-top: 1px; /* Üst boşluğu azaltır */
+            padding-bottom: 1px; /* Alt boşluğu azaltır */
+            text-align: left;
+            background-color: #f2f2f2;
+        }
+
+        p {
+            margin-bottom: 5px; /* Paragraf altındaki boşluğu azaltır */
+            line-height: 1; /* Satır yüksekliğini kısaltır (isteğe bağlı) */
+        }
+
+        ul {
+            margin-top: 5px; /* Liste üstündeki boşluğu azaltır */
+            padding-left: 20px; /* Liste başlığı ile liste elemanları arasındaki boşluğu ayarlar */
+        }       
+
+        .footer {
+            display: flex; /* Footer öğelerini yatayda hizalar */
+            justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+            align-items: center; /* Footer öğelerini dikeyde ortalar */
+            padding: 10px 20px; /* İç boşlukları belirler */
+            background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+        }
+
+        .footer img {
+            display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+            margin: 0; /* Resmin marginlerini sıfırlar */
+        }
+
+        .footer p {
+            margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+        }
+
+        .top-right-image {
+            position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+            top: 0;
+            right: 0;
+            width: 80px; /* Resmin genişliğini ayarlar */
+            height: auto; /* Yüksekliği otomatik ayarlar */
+            margin: 5px; /* Resme biraz boşluk bırakır */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Ana içerik kapsayıcısı -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+        <div class="content">
+            <table class="data-table">
+                <tr>
+                    <th>Length (L<sub>a</sub>)</th>
+                    <td>22.0</td>
+                </tr>
+                <tr>
+                    <th>Width (W<sub>a</sub>)</th>
+                    <td>22.0</td>
+                </tr>
+                <tr>
+                    <th>Height (H<sub>a</sub>)</th>
+                    <td>22.0</td>
+                </tr>
+                <tr>
+                    <th>Highest point (H<sub>pa</sub>)</th>
+                    <td>22.0</td>
+                </tr>
+            </table>
+
+            <p>As a result, the calculated collection area for lightning strikes to the connected structure is 19976.777599037137 m².</p>
+
+            <div class="image-section">
+                <img src="lightning-collection-area.png" alt="Lightning Collection Area">
+            </div>
+
+            <p>Based on this, the following collection areas were determined for the supply line:</p>
+            <ul>
+            </ul>
+            <p>The dielectric strength of the electrical equipment which is connected with the power is  2.0</p>
+            <p>Kablaj uyarıları</p>
+
+            <h2 class="section-title">6. Properties of the structure</h2>
+            <h3 class="section-title">6.1 Risk of fire</h3>
+            <p>The risk of fire is one of the most important criteria for determining whether an LPS (lightning protection system) must be installed. The risk of fire is classified according to the specific fire load. The fire load should be determined by a fire safety expert or defined after consultation with the proprietor of the building and his / her insurance company. A distinction is made according to the following criteria:</p>
+            <ul>
+                <li class="list-item">None</li>
+                <li class="list-item">Low (specific fire load in the building less than 400 MJ/m²)</li>
+                <li class="list-item">Ordinary (specific fire load in the building between 400 MJ/m² and 800 MJ/m²)</li>
+            </ul>
+        </div>
+        <footer class="footer"> <!-- Footer bölümü -->
+            <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+            <p>Radsan Risk Tools - 2024-08-08</p> <!-- Footer'da yer alan metin -->
+            <p>Page 10 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+        </footer>
+    </div>
+</body>
+</html>
+

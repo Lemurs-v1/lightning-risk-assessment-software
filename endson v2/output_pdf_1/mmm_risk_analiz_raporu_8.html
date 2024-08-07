@@ -1,0 +1,103 @@
+
+<!DOCTYPE html> <!-- HTML5 belge türü tanımı -->
+<html lang="tr"> <!-- Belge dilini Türkçe olarak belirtir -->
+<head>
+    <meta charset="UTF-8"> <!-- Belgenin karakter kodlamasını UTF-8 olarak ayarlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sayfa boyutunu ve ölçeğini ayarlar, mobil uyumluluğu sağlar -->
+    <title>Lightning Protection Risk Management</title> <!-- Sayfanın başlık etiketini belirtir -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+            margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+        }
+
+        .section {
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+            margin-bottom: 20px; /* Bölümün altına 20px boşluk ekler */
+        }
+
+        .subsection {
+            margin-left: 20px; /* Alt bölümün sol tarafına 20px boşluk ekler */
+            margin-bottom: 10px; /* Alt bölümün altına 10px boşluk ekler */
+        }
+
+        .container {
+            position: relative; /* Konteynerin göreceli konumunu belirler */
+        }
+
+        .content {
+            margin-bottom: 20px; /* İçeriğin altına 20px boşluk ekler */
+            flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+        }
+
+        .content p {
+            margin: 10px 0; /* Paragrafların üst ve altına 5px boşluk ekler */
+        }
+
+        .image-section {
+            text-align: center; /* Görsel bölümünü ortalar */
+            margin: 20px 0; /* Görsel bölümünün üst ve altına 20px boşluk ekler */
+        }
+
+        .image-section img {
+            max-width: 100%; /* Görselin maksimum genişliğini %100 yapar */
+            height: auto; /* Görselin yüksekliğini otomatik ayarlar */
+        }
+
+        .footer {
+            display: flex; /* Footer öğelerini yatayda hizalar */
+            justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+            align-items: center; /* Footer öğelerini dikeyde ortalar */
+            margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+            padding: 10px 20px; /* İç boşlukları belirler */
+            background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+        }
+        .footer img {
+            display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+            margin: 0; /* Resmin marginlerini sıfırlar */
+        }
+        .footer p {
+            margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+        }
+        .top-right-image {
+            position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+            top: 0;
+            right: 0;
+            width: 100px; /* Resmin genişliğini ayarlar */
+            height: auto; /* Yüksekliği otomatik ayarlar */
+            margin: 10px; /* Resme biraz boşluk bırakır */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Ana içerik kapsayıcısı -->
+        <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+        <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+    </div>
+    <div class="content"> <!-- İçerik bölümü -->
+        <p><strong>Hb Height:</strong> 22.0</p>
+        <p><strong>Hpb Highest point (if applicable):</strong> 22.0</p>
+        <p>This results in a calculated collection area for direct lightning strikes of 19976.777599037137 m² and for indirect lightning strikes (near the structure) of 19976.777599037137 m².</p>
+        <div class="image-section"> <!-- Görsel bölümü -->
+            <img src="path_to_image/graph.png" alt="Graph Image"> <!-- Görsel -->
+        </div>
+        <p>The environment surrounding the structure is an important factor for determining the number of direct / indirect lightning strikes. It was defined as follows for the building mm</p>
+        <p><strong>Relative location Cd:</strong> 0.5</p>
+        <p>If the ground flash density is referred to the size and the environment of the structure, a frequency of direct strikes Nd to the structure of 0.19976777599037135 strikes / year.</p>
+        <h3>4.3 Division of the structure into lightning protection zones/zones</h3> <!-- Alt bölüm başlığı -->
+        <p>The structure mm was not divided into lightning protection zones / zones.</p>
+        <h3>5. Supply lines</h3> <!-- Alt bölüm başlığı -->
+        <p>All incoming and outgoing supply lines of the structure to be considered must be taken into account in the risk analysis. Conductive pipes do not have to be considered if they are connected to the main earthing busbar of the structure. If this is not the case, the risk of incoming pipes should be considered in the risk analysis (observe that equipotential bonding is required!).</p>
+        <p>The following supply lines were considered for the structure mm in the risk analysis:</p>
+    </div>
+    <div class="footer"> <!-- Footer bölümü -->
+        <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+        <p>Radsan Risk Tools - 2024-08-08</p> <!-- Footer'da yer alan metin -->
+        <p>Page 8 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+    </div>
+</body>
+</html>
+
