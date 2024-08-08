@@ -1,0 +1,76 @@
+
+<!DOCTYPE html> <!-- HTML5 belge türü tanımı -->
+<html lang="tr"> <!-- Belge dilini Türkçe olarak belirtir -->
+<head>
+    <meta charset="UTF-8"> <!-- Belgenin karakter kodlamasını UTF-8 olarak ayarlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sayfa boyutunu ve ölçeğini ayarlar, mobil uyumluluğu sağlar -->
+    <title>Lightning Protection Risk Management</title> <!-- Sayfanın başlık etiketini belirtir -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+            display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+            flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+            min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+            margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+        }
+        .container {
+            width: 80%; /* Container genişliğini sayfanın %80'i olarak ayarlar */
+            margin: 0 auto; /* Container'ı yatayda ortalar */
+            padding: 20px; /* Container'ın içindeki boşluğu 20px yapar */
+            flex: 1; /* Container'ın esnekliğini sağlar, diğer flex öğeleriyle uyumlu olmasını sağlar */
+        }
+        .header {
+            text-align: center; /* Header içindeki metni ortalar */
+            margin-bottom: 100px; /* Header'ın altına 100px boşluk ekler */
+        }
+        .header img {
+            max-width: 100px; /* Header içindeki resmin maksimum genişliğini 100px olarak ayarlar */
+        }
+        .content {
+            margin-bottom: 100px; /* Content bölümünün altına 100px boşluk ekler */
+        }
+        .content p {
+            margin: 30px 0; /* Content içindeki paragrafların üst ve alt marginlerini 30px yapar */
+        }
+        .footer {
+            display: flex; /* Footer öğelerini yatayda hizalar */
+            justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+            align-items: center; /* Footer öğelerini dikeyde ortalar */
+            margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+            padding: 10px 20px; /* İç boşlukları belirler */
+            background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+        }
+        .footer img {
+            display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+            margin: 0; /* Resmin marginlerini sıfırlar */
+        }
+        .footer p {
+            margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Ana içerik kapsayıcısı -->
+        <div class="header"> <!-- Header bölümü -->
+            <img src="images/customer.png" alt=""> <!-- Header'da yer alan logo resmi -->
+            <h2>Lightning protection Risk management</h2> <!-- Başlık -->
+            <p>Created according to international standard: IEC 62305-2:2010-12</p><br> <!-- İlk bilgi metni -->
+            <p>Considering the country-specific annexes for: IEC 62305-2:2010-12</p><br> <!-- İkinci bilgi metni -->
+            <p><strong>Summary of measures for reducing damage caused by lightning effects, resulting from the risk management concerning the following project:</strong></p> <!-- Üçüncü bilgi metni, kalın olarak vurgulanmış -->
+        </div>
+        <div class="content"> <!-- İçerik bölümü -->
+            <p><strong>Date:</strong> 2024-08-07</p> <!-- Tarih bilgisi -->
+            <p><strong>Project No.:</strong> </p> <!-- Proje numarası -->
+            <p><strong>Project / object description:</strong></p> <!-- Proje açıklaması -->
+            <p><strong>Customer / principal:</strong> </p> <!-- Müşteri bilgisi -->
+            <p><strong>Risk assessment by:</strong> </p> <!-- Risk değerlendirmesi yapan kişi -->
+        </div>
+    </div>
+    <div class="footer"> <!-- Footer bölümü -->
+        <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+        <p>Radsan Risk Tools - 2024-08-07</p> <!-- Footer'da yer alan metin -->
+        <p>Page 1 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+    </div>
+</body>
+</html>
+

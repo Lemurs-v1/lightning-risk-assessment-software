@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 hayır
 Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
 mermer, seramik
@@ -36,13 +37,61 @@ False
 22.0
 22.0
 22.0
-10.0
+=======
+Seçiniz
+Aynı yapı: yakında başka cisimlerin olmaması
+Seçiniz
+Banliyo
+True
+Seçiniz
+Yapı LPS ile korunumuyor
+Seçiniz
+Dış hat tipi: Zırhlanmış havai hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmış
+Güç hatları
+Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü
+Seçiniz
+Gömülü
+SPD yok
+YG güç (YG/AG transformatörü ile)
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+Seçiniz
+RS ≤ 1 Ω /km
+2.5
+2.5
 False
+1.0
+0.0
+0.4
+False
+False
+4.0
+50.0
+150.0
+>>>>>>> Stashed changes
+10.0
+0.0
+0.0
+0.0
+False
+<<<<<<< Updated upstream
 55.0
 10.0
 22.0
 Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
 Kablaj uyarıları
+=======
+0.0
+0.0
+40.0
+Seçiniz
+Seçiniz
+>>>>>>> Stashed changes
 False
 False
 mmmm
