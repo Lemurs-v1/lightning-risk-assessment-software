@@ -1,29 +1,29 @@
-hayır
-Aynı yapı: yakında başka cisimlerin olmaması
+evet
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
 mermer, seramik
 Banliyo
 False
-Aynı yapı: yakında başka cisimlerin olmaması
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
 Yapı 4. seviye LPS ile korunuyor
-Koruma tedbiri yok
-Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış
-Güç hatları
-Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
+Uyarı işaretleri
+Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış
+Telekomünikasyon hatları
+Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü
 3. ve 4. seviye
 Gömülü
 III-IV
 YG güç (YG/AG transformatörü ile)
-Yok
-Patlama : Bölgeler 1, 21
+Var
+Patlama : Bölgeler 0, 20 ve katı patlayıcı
 Tedbir yok
 Hastane, otel, okul, kamu binası
 Hastahanenin yoğun bakım ünitesi ve ameliyathane
 TV, telekomünikasyon hatları
 Hastahane, sanayi, müze, zirai
-Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var c
-RS ≤ 1 Ω /km
+Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b
+1 Ω /km <RS ≤ 5 Ω /km
 1.5
-1
+1.5
 False
 1.0
 1.0
@@ -31,27 +31,27 @@ False
 True
 True
 20.0
-4.0
-4.0
-6.0
-11.0
-10.0
-8.0
-False
-9.0
-30.0
-30.0
+20.0
+20.0
+20.0
+20.0
+20.0
+55.0
+True
+0.0
+0.0
+0.0
 Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
 Kablaj uyarıları
-False
-False
-mkmkk
-21.0
-10.0
+True
+True
+dfgdfd
 20.0
-mkm
-mkmk
-mkmk
-mkm
+20.0
+20.0
+fdsg
+dfgdg
+dfgdfg
+dfgdfgd
 Hayır
 Hayır
