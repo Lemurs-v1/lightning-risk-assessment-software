@@ -296,7 +296,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
 
         html_folder_path = 'output_pdf_1'
-        html_files = [19 for f in os.listdir(html_folder_path) if f.endswith('.html')]
+        html_files = [f for f in os.listdir(html_folder_path) if f.endswith('.html')]
         
         
         # Dosya isimlerindeki numaraları çıkarıp sıralama fonksiyonu
