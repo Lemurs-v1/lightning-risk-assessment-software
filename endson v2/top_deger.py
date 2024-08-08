@@ -138,6 +138,7 @@ class LightningRiskCalculator_top_values:
     
         
 x = LightningRiskCalculator_top_values()
+print("mmmmmmmmmmmmmmmmmmmmmm")
 print(x.r_a_1_belirle())
 print(x.r_b_1_belirle())
 print(x.r_c_1_belirle())
@@ -165,3 +166,4 @@ print(x.r_u_4_belirle())
 print(x.r_v_4_belirle())
 print(x.r_w_4_belirle())
 print(x.r_z_4_belirle())
+print("mmmmmmmmmmmmmmmmmmmmmm")

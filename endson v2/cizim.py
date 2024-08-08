@@ -11,26 +11,7 @@ from matplotlib.ticker import AutoLocator, MaxNLocator
 
 top = LightningRiskCalculator_top_values()
 
-with open("kullanıcı_değer.txt", "r",encoding="utf-8") as dosya:
-    veriler_file = dosya.read()
 
-veriler = veriler_file.split("\n")
-
-Ad_y_double_C = float(veriler[33]) 
-Ad_g_double_C = float(veriler[34])  
-Ad_u_double_C = float(veriler[35])  
-Ad_ymax_double_C = float(veriler[48])
-
-
-Adj_g_double_C = float(veriler[36])  
-Adj_u_double_C = float(veriler[37])  
-Adj_y_double_C = float(veriler[49])
-adj_ymax_double_C = float(veriler[50])
-
-
-Ad_durum = str(veriler[0])
-
-Adj_kontrol = str(veriler[4])
 
 
 
@@ -39,6 +20,27 @@ class MplCanvas(FigureCanvas):
     def __init__(self, parent=None, width=5, height=4, dpi=100):
         self.fig, self.ax = plt.subplots(figsize=(width, height), dpi=dpi)
         super(MplCanvas, self).__init__(self.fig)
+        
+        with open("kullanıcı_değer.txt", "r",encoding="utf-8") as dosya:
+            veriler_file = dosya.read()
+
+        veriler = veriler_file.split("\n")
+
+        self.Ad_y_double_C = float(veriler[33]) 
+        self.Ad_g_double_C = float(veriler[34])  
+        self.Ad_u_double_C = float(veriler[35])  
+        self.Ad_ymax_double_C = float(veriler[48])
+
+
+        self.Adj_g_double_C = float(veriler[36])  
+        self.Adj_u_double_C = float(veriler[37])  
+        self.Adj_y_double_C = float(veriler[49])
+        self.Adj_ymax_double_C = float(veriler[50])
+
+
+        self.Ad_durum = str(veriler[0])
+
+        self.Adj_kontrol = str(veriler[4])
         self.R_A_1 = top.r_a_1_belirle()
         self.R_B_1 = top.r_b_1_belirle()
         self.R_C_1 = top.r_c_1_belirle()
@@ -178,7 +180,7 @@ class MplCanvas(FigureCanvas):
 
     def plot_area_ad(self, l, w, h, hp):
         self.ax.clear()
-        if Ad_durum == "hayır":
+        if self.Ad_durum == "hayır":
             # Dikdörtgenin köşe koordinatları
             x = [-l/2, l/2, l/2, -l/2, -l/2]
             y = [-w/2, -w/2, w/2, w/2, -w/2]
@@ -211,7 +213,7 @@ class MplCanvas(FigureCanvas):
                 self.ax.plot(x_arc, y_arc, 'r--')
             self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
 
-        if Ad_durum == "evet": # Karmaşık grafik çizimi (karmasik_grafik)
+        if self.Ad_durum == "evet": # Karmaşık grafik çizimi (karmasik_grafik)
             circle_radius = 3 * hp
             circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
             self.ax.add_patch(circle)
@@ -230,7 +232,7 @@ class MplCanvas(FigureCanvas):
 
     def plot_area_adj(self, l_a, w_a, h_a, hp_a):
         self.ax.clear()
-        if Adj_y_double_C==adj_ymax_double_C:
+        if self.Adj_y_double_C==self.Adj_ymax_double_C:
         # Dikdörtgenin köşe koordinatları
             x = [-l_a/2, l_a/2, l_a/2, -l_a/2, -l_a/2]
             y = [-w_a/2, -w_a/2, w_a/2, w_a/2, -w_a/2]
@@ -262,7 +264,7 @@ class MplCanvas(FigureCanvas):
                 y_arc = cy + 3 * h_a * np.sin(theta)
                 self.ax.plot(x_arc, y_arc, 'r--')
             self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
-        if Adj_y_double_C!=adj_ymax_double_C:
+        elif self.Adj_y_double_C!=self.Adj_ymax_double_C:
             # Karmaşık grafik çizimi (karmasik_grafik)
             circle_radius = 3 * hp_a
             circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")
@@ -284,26 +286,27 @@ class MplCanvas(FigureCanvas):
         self.ax.clear()
         self.fig.savefig("output_pdf_1/images/complex_structure_adj.png")
     def çizdir(self):
-        l = Ad_u_double_C # Length
-        w =  Ad_g_double_C  # Width
-        h = Ad_y_double_C  # Height (min value)
-        hp = Ad_ymax_double_C # Karmaşık yapı çıkıntı yüksekliği eklenecek
+        l = self.Ad_u_double_C # Length
+        w =  self.Ad_g_double_C  # Width
+        h = self.Ad_y_double_C  # Height (min value)
+        hp = self.Ad_ymax_double_C # Karmaşık yapı çıkıntı yüksekliği eklenecek
         self.plot_area_ad(l, w, h, hp)
-        l_a = Adj_u_double_C # Length ayrık  
-        w_a = Adj_g_double_C  # Width ayrık  
-        h_a = Adj_y_double_C  # Height (min value) ayrık
-        hp_a = Ad_ymax_double_C # Karmaşık yapı çıkıntı yüksekliği ayrık
-
-        if Adj_kontrol == "True" :
+        l_a = self.Adj_u_double_C # Length ayrık  
+        w_a = self.Adj_g_double_C  # Width ayrık  
+        h_a = self.Adj_y_double_C  # Height (min value) ayrık
+        hp_a = self.Adj_ymax_double_C # Karmaşık yapı çıkıntı yüksekliği ayrık
+        self.plot_area_adj(l_a, w_a, h_a, hp_a)
+        if self.Adj_kontrol == "True" :
             self.plot_area_adj_yok()
-        elif Adj_kontrol == "False":
+        elif self.Adj_kontrol == "False":
             self.plot_area_adj(l_a, w_a, h_a, hp_a)
         self.grafik_1()
         self.grafik_2()
         self.grafik_3()
         self.grafik_4()
 
-
+x = MplCanvas()
+x.çizdir()
 
 
 
