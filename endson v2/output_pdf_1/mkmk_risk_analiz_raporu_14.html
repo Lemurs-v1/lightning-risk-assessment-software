@@ -15,12 +15,15 @@
                 }
 
                 .container {
-                    flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */ /* <-- Fosforla belirtilen değişiklik */
+                    flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    padding: 20px; /* İçeriğin etrafına 20px boşluk ekler */
                 }
 
                 .subsection {
-                    margin-left: 20px; /* Alt bölümün sol tarafına 20px boşluk ekler */
-                    margin-bottom: 10px; /* Alt bölümün altına 10px boşluk ekler */
+                    margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+                    margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
                 }
 
                 .content {
@@ -28,18 +31,14 @@
                 }
 
                 .content p {
-                    margin: 5px 0; /* Paragrafların üst ve altına 5px boşluk ekler */
+                    margin: 8px 0; /* Paragrafların üst ve altına 8px boşluk ekler */
                 }
 
-                .image-section {
-                    text-align: center; /* Görsel bölümünü ortalar */
-                    margin: 20px 0; /* Görsel bölümünün üst ve altına 20px boşluk ekler */
+                p {
+                    margin-bottom: 10px; /* Paragraf altındaki boşluğu ayarlar */
+                    line-height: 1.5; /* Satır yüksekliğini ayarlar */
                 }
 
-                .image-section img {
-                    max-width: 100%; /* Görselin maksimum genişliğini %100 yapar */
-                    height: auto; /* Görselin yüksekliğini otomatik ayarlar */
-                }
 
                 .footer {
                     display: flex; /* Footer öğelerini yatayda hizalar */
@@ -56,52 +55,42 @@
                 .footer p {
                     margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
                 }
+
                 .top-right-image {
                     position: absolute; /* Resmi sayfanın köşesine yerleştirir */
                     top: 0;
                     right: 0;
-                    width: 100px; /* Resmin genişliğini ayarlar */
+                    width: 80px; /* Resmin genişliğini ayarlar */
                     height: auto; /* Yüksekliği otomatik ayarlar */
-                    margin: 10px; /* Resme biraz boşluk bırakır */
+                    margin: 5px; /* Resme biraz boşluk bırakır */
+                }
+
+                .caption {
+                    text-align: center; /* Açıklamayı ortalar */
+                    margin-top: 5px; /* Açıklamanın üstüne 5px boşluk ekler */
+                    font-size: 14px; /* Yazı boyutunu belirler */
+                    color: #555; /* Yazı rengini belirler */
                 }
             </style>
         </head>
         <body>
-
             <div class="container"> <!-- Ana içerik kapsayıcısı -->
                 <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
                 <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
                 <div class="content">
-                    <p>- data</p>
-                    <p>- power</p>
-                    <h3>5.1 data</h3>
-                    <p><strong>Installation factor:</strong> 0.5</p>
-                    <p><strong>Type of conductor:</strong> Telekomünikasyon hatları</p>
-                    <p><strong>Environment:</strong> Banliyo</p>
-                    <p><strong>Connection of the conductor:</strong> Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış</p>
-                    <p><strong>Transformer:</strong> YG güç (YG/AG transformatörü ile)</p>
-                    <p><strong>Conductor shielding:</strong> External: 1 Ω /km <RS ≤ 5 Ω /km</p>
-                    <p>The conductor length outside the structure up to the next node is False.</p>
-                    <p>Based on this, the following collection areas were determined for the supply line:</p>
-                    <p>- Collection area for direct lightning strikes to a supply line: 400.0 m²</p>
-                    <p>The dielectric strength of the electrical equipment which is connected with the data is Uw <= 2.0</p>
-                    <p>Kablaj uyarıları</p>
-                    <h3>5.2 power</h3>
-                    <p><strong>Installation factor:</strong> 0.5</p>
-                    <p><strong>Type of conductor:</strong> Telekomünikasyon hatları</p>
-                    <p><strong>Environment:</strong> Banliyo</p>
-                    <p><strong>Connection of the conductor:</strong> Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış</p>
-                    <p><strong>Transformer:</strong> YG güç (YG/AG transformatörü ile)</p>
-                    <p><strong>Conductor shielding:</strong> 1 Ω /km <RS ≤ 5 Ω /km</p>
-                    <p>The conductor length outside the structure up to the next node is False m.</p>
-            
+                    <p><strong>pB:</strong> Lightning protection system (LPS) Class of LPS IV : Yapı 4. seviye LPS ile korunuyor</p>
+                    <p><strong>pEB:</strong> Lightning equipotential bonding Equipotential bonding for LPL III or IV : III-IV</p>
+                    <p><strong>KS1-2:</strong> External spatial shielding (all zones) continuous metal shield with a thickness <br> not lower than 0.1 mm : True</p>
+
+                    <p><strong>Type of internal wiring</strong></p>
+                    <p><strong>KS3:</strong> Shielded cables and cables running in metal conduits : Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var c</p>
                 </div>
-            </div>
-            <div class="footer"> <!-- Footer bölümü -->
+            </div> 
+            <footer class="footer"> <!-- Footer bölümü -->
                 <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
                 <p>Radsan Risk Tools - 2024-08-08</p> <!-- Footer'da yer alan metin -->
-                <p>Page 9 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
-            </div>
+                <p>Page 14 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            </footer>
         </body>
         </html>
 
