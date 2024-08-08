@@ -1,0 +1,57 @@
+evet
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+mermer, seramik
+Banliyo
+False
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+Yapı 4. seviye LPS ile korunuyor
+Koruma tedbiri yok
+Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış
+Güç hatları
+Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
+Kordineli SPD sistemi yok
+Havai
+SPD yok
+AG güç, telekomünikasyon veya veri hattı
+Var
+Patlama : Bölgeler 0, 20 ve katı patlayıcı
+Patlama riski var
+Patlama riski
+Patlama riski
+Gaz, su, güç besleme
+Patlama riski
+Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
+5 Ω /km <RS ≤ 20 Ω /km
+1
+1
+False
+11.0
+11.0
+11.0
+True
+True
+88
+22.0
+22.0
+22.0
+22.0
+22.0
+1.0
+False
+33.0
+33.0
+333.0
+Özel tehlike yok
+Korunma tedbirleri yok
+False
+False
+a	a	a	a	a
+20.0
+22.0
+3.0
+a
+s
+s
+s
+Evet
+Evet

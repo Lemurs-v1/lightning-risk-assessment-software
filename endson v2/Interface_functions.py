@@ -22,7 +22,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.adjust_combobox_popup_width()
-        self.delete_html_files_from_folder()
+        #♥self.delete_html_files_from_folder()
 
         # QComboBox'lar
         self.Ad_comboBox = self.ui.Ad_comboBox
@@ -352,6 +352,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
  
     def save_values(self):
+
+
         Ad_value = self.Ad_comboBox.currentText()
         if Ad_value == 'Karmaşık biçimli':
             Ad_value='evet'
@@ -477,8 +479,8 @@ class MainWindow(QtWidgets.QMainWindow):
                 )
 
     
-        with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya:
-            dosya.write(değerler)
+        with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya_2:
+            dosya_2.write(değerler)
         
         print(f'Seçilen Ad değeri: {Ad_value}')
         print(f'Seçilen Cd değeri: {Cd_value}')
@@ -538,27 +540,32 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'R4_value: {R4_value}')
         
     def calculate(self):
+
+        
         try:
             from result import LightningRiskCalculator_result
             b = LightningRiskCalculator_result()
-            b.R_tespit()
+            
             def format_number_scientific(number):
                 return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
-            with open("sonuc.txt", "r") as dosya:
-                sonuc_file = dosya.read()
-            veriler = sonuc_file.split("#")
+
+            veriler = b.R_tespit()
             r1 = format_number_scientific(float(veriler[0]))
             r2 = format_number_scientific(float(veriler[1]))
             r3 = format_number_scientific(float(veriler[2]))
             r4 = format_number_scientific(float(veriler[3]))
+            değerler_s = f"{r1}#{r2}#{r3}#{r4}"
+            with open("sonuc.txt", "w",encoding="utf-8") as dosya_s:
+                dosya_s.write(değerler_s) 
 
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
+            
         except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
             değerler = f"{0}#{0}#{0}#{0}"
-            with open("sonuc.txt", "w") as dosya:
+            with open("sonuc.txt", "w",encoding="utf-8") as dosya:
                 dosya.write(değerler) 
             match = re.search(r'self\.(\w+)', tb_str)
             

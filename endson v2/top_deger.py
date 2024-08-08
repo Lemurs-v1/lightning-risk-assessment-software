@@ -136,7 +136,7 @@ class LightningRiskCalculator_top_values:
         self.R_Z_4 = self.N_I*self.P_Z*self.L_Z_4
         return self.R_Z_4
     
-        
+"""      
 x = LightningRiskCalculator_top_values()
 print("mmmmmmmmmmmmmmmmmmmmmm")
 print(x.r_a_1_belirle())
@@ -167,3 +167,4 @@ print(x.r_v_4_belirle())
 print(x.r_w_4_belirle())
 print(x.r_z_4_belirle())
 print("mmmmmmmmmmmmmmmmmmmmmm")
+"""
