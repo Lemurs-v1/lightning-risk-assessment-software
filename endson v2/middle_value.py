@@ -173,9 +173,7 @@ class LightningRiskCalculator_middle_values:
         self.L_CMWZ_4 = self.L_O_4*self.c_a_bölü_ct
         return self.L_CMWZ_4
 
- 
-       
-"""    
+    
 x = LightningRiskCalculator_middle_values()
 print(x.l_au_4_belirle())
 print(x.l_bv_4_belirle())
@@ -194,4 +192,3 @@ print(x.p_u_belirle())
 print(x.p_v_belirle())
 print(x.n_ı_belirle())
 print(x.p_z_belrile())
-"""

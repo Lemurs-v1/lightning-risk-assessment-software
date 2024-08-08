@@ -1,106 +1,57 @@
-<<<<<<< Updated upstream
-hayır
-Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
-mermer, seramik
+evet
+Aynı yapı: yakında başka cisimlerin olmaması
+tarımsal, beton
 Banliyo
-False
-Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
-Yapı 4. seviye LPS ile korunuyor
-Uyarı işaretleri
-Dış hat tipi: Zırhlanmamış gömülü hat / Girişte bağlantı: Tanımlanmamış
-Telekomünikasyon hatları
+True
+Seçiniz
+Yapı LPS ile korunumuyor
+Koruma tedbiri yok
+Dış hat tipi: Zırhlanmış havai hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmış
+Güç hatları
 Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü
 Kordineli SPD sistemi yok
 Havai
 III-IV
-YG güç (YG/AG transformatörü ile)
+AG güç, telekomünikasyon veya veri hattı
 Yok
-Patlama : Bölgeler 0, 20 ve katı patlayıcı
+Patlama ve Yangın : Yok
 Tedbir yok
-Hastane, otel, okul, kamu binası
-Hastahanenin yoğun bakım ünitesi ve ameliyathane
-TV, telekomünikasyon hatları
-Hastahane, sanayi, müze, zirai
+Halka açık eğlence yeri, ibadethane, müze
+Patlama riski
+Gaz, su, güç besleme
+Otel, okul, ofis, ibadet yeri, halka açık eğlence yeri, ticari
 Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b
 1 Ω /km <RS ≤ 5 Ω /km
 1.5
 1.5
 False
-6.0
-4.0
+2.0
+2.0
 2.0
 True
-False
-20.0
-22.0
-22.0
-22.0
-22.0
-22.0
-=======
-Seçiniz
-Aynı yapı: yakında başka cisimlerin olmaması
-Seçiniz
-Banliyo
 True
-Seçiniz
-Yapı LPS ile korunumuyor
-Seçiniz
-Dış hat tipi: Zırhlanmış havai hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmış
-Güç hatları
-Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü
-Seçiniz
-Gömülü
-SPD yok
-YG güç (YG/AG transformatörü ile)
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-Seçiniz
-RS ≤ 1 Ω /km
-2.5
-2.5
-False
-1.0
-0.0
-0.4
-False
-False
 4.0
-50.0
-150.0
->>>>>>> Stashed changes
-10.0
+2.0
+2.0
+2.0
 0.0
 0.0
-0.0
+2.0
 False
-<<<<<<< Updated upstream
-55.0
-10.0
-22.0
-Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
-Kablaj uyarıları
-=======
+2.0
+2.0
 0.0
-0.0
-40.0
-Seçiniz
-Seçiniz
->>>>>>> Stashed changes
+Özel tehlike yok
+Korunma tedbirleri yok
 False
 False
-mmmm
-22.0
-22.0
-22.0
-mm
-mmm
-mm
-mm
+
+2.0
+0.0
+0.0
+
+
+
+
 Hayır
 Evet
