@@ -15,6 +15,7 @@ import re
 import time
 import traceback
 from tkinter import messagebox
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -181,6 +182,9 @@ class MainWindow(QtWidgets.QMainWindow):
         #logo yükle 
         self.logo_pushButton = self.ui.logo_pushButton
         self.logo_pushButton.clicked.connect(self.logo)
+        #ÇİZİM BAS
+        self.rapor_pushButton = self.ui.rapor_pushButton
+        self.rapor_pushButton.clicked.connect(self.cizim)
 
     def selection_changed_Ad(self):
         selected_item = self.Ad_comboBox.currentText()
@@ -307,12 +311,42 @@ class MainWindow(QtWidgets.QMainWindow):
             webbrowser.open(f'file://{os.path.abspath(file_path)}')
             time.sleep(0.5)  # 2 saniye bekleme
 
+
+
+
+
     def delete_html_files_from_folder(self):
         folder_path = "output_pdf_1"
+        images_folder_path = os.path.join(folder_path, "images")
+        specific_png_files = [
+            "graph_1.png", "graph_2.png", "graph_3.png", 
+            "graph_4.png", "customer.png", 
+            "complex_structure_adj.png", "complex_structure_ad.png"
+        ]
+        specific_txt_files = [
+            "sonuc.txt", "kullanıcı_değer.txt"
+        ]
+        
+        # output_pdf_1 klasöründeki .html dosyalarını sil
         for file_name in os.listdir(folder_path):
             if file_name.endswith(".html"):
                 file_path = os.path.join(folder_path, file_name)
                 os.remove(file_path)
+        
+        # images klasöründeki belirli .png dosyalarını sil
+        for file_name in os.listdir(images_folder_path):
+            if file_name in specific_png_files:
+                file_path = os.path.join(images_folder_path, file_name)
+                os.remove(file_path)
+        
+        # Kodun bulunduğu dizindeki belirli .txt dosyalarını sil
+        current_dir = os.getcwd()  # Kodun bulunduğu dizini al
+        for file_name in specific_txt_files:
+            file_path = os.path.join(current_dir, file_name)
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+
     
 
  
@@ -564,6 +598,15 @@ class MainWindow(QtWidgets.QMainWindow):
             messagebox.showinfo("Resim Yükleme Durumu",f"Resim başarıyla kaydedildi: {save_path}")
         else:
             messagebox.showerror("ERROR","Hiçbir resim seçilmedi.")
+    def cizim(self):
+        from cizim import MplCanvas
+        from pdf_app_1 import LightningRiskWriter
+        ciz= MplCanvas()
+        pdf = LightningRiskWriter()
+        ciz.çizdir()
+        pdf.rapor_yaz()
+        self.open_html_files()
+        
 
     def clear_values(self):
         self.Ad_comboBox.setCurrentIndex(0)
