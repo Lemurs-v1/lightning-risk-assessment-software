@@ -156,7 +156,7 @@ print(x.r_z_2_belirle())
 
 print(x.r_b_3_belirle())
 print(x.r_v_3_belirle())
-
+print("annna")
 
 print(x.r_a_4_belirle())
 print(x.r_b_4_belirle())

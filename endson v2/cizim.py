@@ -80,20 +80,31 @@ class MplCanvas(FigureCanvas):
 
         self.categories_4 = ["RA",'RB', 'RC', 'RM', "RU",'RV', 'RW', 'RZ']
         self.values_4 = [self.R_A_4,self.R_B_4, self.R_C_4,self.R_M_4,self.R_U_4,self.R_V_4,self.R_W_4,self.R_Z_4]
+        print(self.values_1)
+        print(self.values_2)
+        print(self.values_3)
+        print(self.values_4)
 
-    def grafik_1(self,constant_value_1=1e-5):
+
+    def grafik_1(self, constant_value_1=1e-5):
         # Grafiği oluşturma
-        fig, ax = plt.subplots(figsize=(10, 6)) 
+        fig, ax = plt.subplots(figsize=(10, 6))
 
-        # Düz çizgiyi çizme
+        # Değerlerin minimum ve maksimumlarını hesapla
+        min_value = min(min(self.values_1), constant_value_1)
+        max_value = max(max(self.values_1), constant_value_1)
 
+        # Mavi çizginin görünmesini sağlamak için margin ekle
+        margin = (max_value - min_value) * 0.1  # %10 margin
+
+        # Y eksenini min ve max değerlere göre margin ile ayarlama
+        ax.set_ylim(bottom=min_value - margin, top=max_value + margin)
 
         # Diğer değerleri çizme
-        ax.plot(self.categories_1, self.values_1, color='red',marker ="o", label='Values')
+        ax.plot(self.categories_1, self.values_1, color='red', marker="o", label='Values')
 
+        # Düz çizgiyi çizme
         ax.plot(self.categories_1, [constant_value_1] * len(self.categories_1), color='blue', label='1e-5')
-        margin = 2e-4
-        ax.set_ylim(bottom=constant_value_1 - margin, top=constant_value_1 + margin)
 
         # Başlık ve etiketler
         ax.set_title('Total')
@@ -101,23 +112,28 @@ class MplCanvas(FigureCanvas):
         ax.set_xlabel('Categories')
         ax.set_ylabel('Values')
         ax.legend()
-
-        # PNG olarak kaydetme
         plt.savefig('output_pdf_1/images/graph_1.png')
 
-    def grafik_2(self,constant_value_2=1e-3):
+
+    def grafik_2(self, constant_value_2=1e-5):
         # Grafiği oluşturma
-        fig, ax = plt.subplots(figsize=(10, 6)) 
+        fig, ax = plt.subplots(figsize=(10, 6))
 
-        # Düz çizgiyi çizme
+        # Değerlerin minimum ve maksimumlarını hesapla
+        min_value = min(min(self.values_2), constant_value_2)
+        max_value = max(max(self.values_2), constant_value_2)
 
+        # Mavi çizginin görünmesini sağlamak için margin ekle
+        margin = (max_value - min_value) * 0.1  # %10 margin
+
+        # Y eksenini min ve max değerlere göre margin ile ayarlama
+        ax.set_ylim(bottom=min_value - margin, top=max_value + margin)
 
         # Diğer değerleri çizme
-        ax.plot(self.categories_2, self.values_2, color='red',marker ="o", label='Values')
+        ax.plot(self.categories_2, self.values_2, color='red', marker="o", label='Values')
 
+        # Düz çizgiyi çizme
         ax.plot(self.categories_2, [constant_value_2] * len(self.categories_2), color='blue', label='1e-3')
-        margin = 2e-2
-        ax.set_ylim(bottom=constant_value_2 - margin, top=constant_value_2 + margin)
 
         # Başlık ve etiketler
         ax.set_title('Total')
@@ -131,17 +147,23 @@ class MplCanvas(FigureCanvas):
 
     def grafik_3(self,constant_value_3=1e-4):
         # Grafiği oluşturma
-        fig, ax = plt.subplots(figsize=(10, 6)) 
+        fig, ax = plt.subplots(figsize=(10, 6))
 
-        # Düz çizgiyi çizme
+        # Değerlerin minimum ve maksimumlarını hesapla
+        min_value = min(min(self.values_3), constant_value_3)
+        max_value = max(max(self.values_3), constant_value_3)
 
+        # Mavi çizginin görünmesini sağlamak için margin ekle
+        margin = (max_value - min_value) * 0.1  # %10 margin
+
+        # Y eksenini min ve max değerlere göre margin ile ayarlama
+        ax.set_ylim(bottom=min_value - margin, top=max_value + margin)
 
         # Diğer değerleri çizme
-        ax.plot(self.categories_3, self.values_3, color='red',marker ="o", label='Values')
+        ax.plot(self.categories_3, self.values_3, color='red', marker="o", label='Values')
 
+        # Düz çizgiyi çizme
         ax.plot(self.categories_3, [constant_value_3] * len(self.categories_3), color='blue', label='1e-4')
-        margin = 2e-3
-        ax.set_ylim(bottom=constant_value_3 - margin, top=constant_value_3 + margin)
 
         # Başlık ve etiketler
         ax.set_title('Total')
@@ -155,17 +177,23 @@ class MplCanvas(FigureCanvas):
 
     def grafik_4(self,constant_value_4=1e-3):
         # Grafiği oluşturma
-        fig, ax = plt.subplots(figsize=(10, 6)) 
+        fig, ax = plt.subplots(figsize=(10, 6))
 
-        # Düz çizgiyi çizme
+        # Değerlerin minimum ve maksimumlarını hesapla
+        min_value = min(min(self.values_4), constant_value_4)
+        max_value = max(max(self.values_4), constant_value_4)
 
+        # Mavi çizginin görünmesini sağlamak için margin ekle
+        margin = (max_value - min_value) * 0.1  # %10 margin
+
+        # Y eksenini min ve max değerlere göre margin ile ayarlama
+        ax.set_ylim(bottom=min_value - margin, top=max_value + margin)
 
         # Diğer değerleri çizme
-        ax.plot(self.categories_4, self.values_4, color='red',marker ="o", label='Values')
+        ax.plot(self.categories_4, self.values_4, color='red', marker="o", label='Values')
 
+        # Düz çizgiyi çizme
         ax.plot(self.categories_4, [constant_value_4] * len(self.categories_4), color='blue', label='1e-3')
-        margin = 2e-2
-        ax.set_ylim(bottom=constant_value_4 - margin, top=constant_value_4 + margin)
 
         # Başlık ve etiketler
         ax.set_title('Total')
@@ -173,14 +201,12 @@ class MplCanvas(FigureCanvas):
         ax.set_xlabel('Categories')
         ax.set_ylabel('Values')
         ax.legend()
-
-        # PNG olarak kaydetme
         plt.savefig('output_pdf_1/images/graph_4.png')
 
 
     def plot_area_ad(self, l, w, h, hp):
         self.ax.clear()
-        if self.Ad_durum == "hayır":
+        if True:
             # Dikdörtgenin köşe koordinatları
             x = [-l/2, l/2, l/2, -l/2, -l/2]
             y = [-w/2, -w/2, w/2, w/2, -w/2]
@@ -232,7 +258,7 @@ class MplCanvas(FigureCanvas):
 
     def plot_area_adj(self, l_a, w_a, h_a, hp_a):
         self.ax.clear()
-        if self.Adj_y_double_C==self.Adj_ymax_double_C:
+        if True:
         # Dikdörtgenin köşe koordinatları
             x = [-l_a/2, l_a/2, l_a/2, -l_a/2, -l_a/2]
             y = [-w_a/2, -w_a/2, w_a/2, w_a/2, -w_a/2]
@@ -264,7 +290,7 @@ class MplCanvas(FigureCanvas):
                 y_arc = cy + 3 * h_a * np.sin(theta)
                 self.ax.plot(x_arc, y_arc, 'r--')
             self.ax.plot(0,0,"r--",label = "Düz Yapı Alanı")
-        elif self.Adj_y_double_C!=self.Adj_ymax_double_C:
+        if self.Adj_y_double_C!=self.Adj_ymax_double_C:
             # Karmaşık grafik çizimi (karmasik_grafik)
             circle_radius = 3 * hp_a
             circle = plt.Circle((0, 0), circle_radius, color='g', fill=False, linestyle='--', label="Karmaşık Yapı Alanı")

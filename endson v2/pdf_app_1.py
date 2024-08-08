@@ -694,7 +694,7 @@ class LightningRiskWriter():
                     <p>The risk components are differentiated according to the sources of damage.</p>
                 <div>
                 <div class="image-section">
-                    <img src="path/to/your/image.jpeg" alt="Risk Components">
+                    <img src="images/fire.png" alt="Graph Image" width="340" sheight="auto">
                 </div>
                 <div class="content">
                     <h3>Source of damage S1: Risk components based on lightning strikes to the structure</h3>
@@ -1044,7 +1044,7 @@ class LightningRiskWriter():
                 <p><strong>Hpb Highest point (if applicable):</strong> {yükseklik_yapı_max}</p>
                 <p>This results in a calculated collection area for direct lightning strikes of {yapı_AD_alan} m² and for indirect lightning strikes (near the structure) of {ayrık_yapı_AD_alan} m².</p>
                 <div class="image-section"> <!-- Görsel bölümü -->
-                    <img src="path_to_image/graph.png" alt="Graph Image"> <!-- Görsel -->
+                    <img src="images/complex_structure_ad.png" alt="Graph Image" width="430" sheight="auto">
                 </div>
                 <p>The environment surrounding the structure is an important factor for determining the number of direct / indirect lightning strikes. It was defined as follows for the building {yapı_konum}</p>
                 <p><strong>Relative location Cd:</strong> {c_dj}</p>
@@ -1299,7 +1299,7 @@ class LightningRiskWriter():
                     <p>As a result, the calculated collection area for lightning strikes to the connected structure is {ayrık_yapı_AD_alan} m².</p>
 
                     <div class="image-section">
-                        <img src="lightning-collection-area.png" alt="Lightning Collection Area">
+                        <img src="images/complex_structure_adj.png" alt="Graph Image" width="430" sheight="auto">
                     </div>
 
                     <p>Based on this, the following collection areas were determined for the supply line:</p>
@@ -1567,18 +1567,15 @@ class LightningRiskWriter():
                 <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
                 <div class="content">
                 
-                <div class="image-section">
-                    <img src="without-measures.png" alt="Risk without measures">
-                    <img src="with-measures.png" alt="Risk with measures">
-                </div>
+                <br><br>
 
                 <p>The risk R1 consists of following risk components:</p>
                 <div class="image-section">
-                    <img src="risk-components.png" alt="Risk Components">
+                    <img src="images/graph_1.png" alt="Graph Image" width="430" sheight="auto">
                 </div>
                 
                 <p>To reduce the risk, it is necessary to take measures as described in 8.</p>
-
+                <br><br>
                 <h2>7.2 Risk R2, Service to the public</h2>
                 <p>The risk R2, failure of services to the public, was determined for the structure <strong>{yapı_konum}</strong> as follows:</p>
                 <ul>
@@ -1586,14 +1583,12 @@ class LightningRiskWriter():
                     <li>Calculated risk R2: {R_2}</li>
                 </ul>
                 
-                <div class="image-section">
-                    <img src="without-measures-r2.png" alt="Risk R2 without measures">
-                    <img src="with-measures-r2.png" alt="Risk R2 with measures">
-                </div>
+                
+
 
                 <p>The risk R2 consists of following risk components:</p>
                 <div class="image-section">
-                    <img src="risk-components-r2.png" alt="Risk R2 Components">
+                    <img src="images/graph_2.png" alt="Graph Image" width="430" sheight="auto">
                     <div class="caption"></div>
                 </div>
                 
@@ -1719,14 +1714,10 @@ class LightningRiskWriter():
 
                 </ul>
 
-                <div class="image-section">
-                    <img src="without-measures-r3.png" alt="Risk R3 without measures">
-                    <img src="with-measures-r3.png" alt="Risk R3 with measures">
-                </div>
 
                 <p>The risk R consists of following risk components:</p>
                 <div class="image-section">
-                    <img src="risk-components-r3.png" alt="Risk R3 Components">
+                    <img src="images/graph_3.png" alt="Graph Image" width="430" sheight="auto">
                 </div>
                 
                 <p>To reduce the risk, it is necessary to take measures as described in 8.</p>
@@ -1738,14 +1729,10 @@ class LightningRiskWriter():
                     <li>Calculated risk R4: {R_4}</li>
                 </ul>
 
-                <div class="image-section">
-                    <img src="without-measures-r4.png" alt="Risk R4 without measures">
-                    <img src="with-measures-r4.png" alt="Risk R4 with measures">
-                </div>
 
                 <p>The risk R4 consists of following risk components:</p>
                 <div class="image-section">
-                    <img src="risk-components-r4.png" alt="Risk R3 Components">
+                    <img src="images/graph_4.png" alt="Graph Image" width="430" sheight="auto">
                 </div>
                 
                 <p>To reduce the risk, it is necessary to take measures as described in 8.</p>
@@ -2479,5 +2466,6 @@ class LightningRiskWriter():
             print(f"Dosya oluşturulurken bir hata oluştu: {e}")
 
 
-
+x = LightningRiskWriter()
+x.rapor_yaz()
 
