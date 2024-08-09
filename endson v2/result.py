@@ -70,6 +70,8 @@ class LightningRiskCalculator_result():
     def R_tespit(self):
 
         değerler = [self.R_1_belirle(),self.R_2_belirle(),self.R_3_belirle(),self.R_4_belirle()]
+        print(değerler)
+        
         return değerler
 
 
