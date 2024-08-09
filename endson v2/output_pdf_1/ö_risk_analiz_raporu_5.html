@@ -1,0 +1,140 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Risk Analysis</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+                    margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+                }
+
+                .container {
+                    flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    padding: 20px; /* İçeriğin etrafına 20px boşluk ekler */
+                }
+
+                .subsection {
+                    margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+                    margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
+                }
+
+                .content {
+                    margin-bottom: 20px; /* İçeriğin altına 20px boşluk ekler */
+                }
+
+                .content p {
+                    margin: 8px 0; /* Paragrafların üst ve altına 8px boşluk ekler */
+                }
+                .image-section {
+                    text-align: center; /* Görsel bölümünü ortalar */
+                    margin: 20px 0; /* Görsel bölümünün üst ve altına 10px boşluk ekler */
+                }
+
+                .image-section img {
+                    max-width: 100%; /* Görselin maksimum genişliğini %100 yapar */
+                    height: auto; /* Görselin yüksekliğini otomatik ayarlar */
+                }
+
+
+                p {
+                    margin-bottom: 1px;
+                    margin-top: 1px; /* Paragraf altındaki boşluğu ayarlar */
+                }
+                h2 {
+                    margin-bottom: 1px;
+                    margin-top: 1px; /* Paragraf altındaki boşluğu ayarlar */
+                    font-size: 18px; /* Font boyutunu ayarlar */
+                }
+
+                .footer {
+                    display: flex; /* Footer öğelerini yatayda hizalar */
+                    justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+                    align-items: center; /* Footer öğelerini dikeyde ortalar */
+                    padding: 10px 20px; /* İç boşlukları belirler */
+                    background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+                }
+                .footer img {
+                    display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+                    margin: 0; /* Resmin marginlerini sıfırlar */
+                }
+                .footer p {
+                    margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+                }
+
+                .top-right-image {
+                    position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+                    top: 0;
+                    right: 0;
+                    width: 80px; /* Resmin genişliğini ayarlar */
+                    height: auto; /* Yüksekliği otomatik ayarlar */
+                    margin: 5px; /* Resme biraz boşluk bırakır */
+                }
+
+                .caption {
+                    text-align: center; /* Açıklamayı ortalar */
+                    margin-top: 5px; /* Açıklamanın üstüne 5px boşluk ekler */
+                    font-size: 14px; /* Yazı boyutunu belirler */
+                    color: #555; /* Yazı rengini belirler */
+                }
+
+                /* Footer'ı sayfanın en altına yerleştirmek için */
+                html, body {
+                    height: 100%;
+                }
+
+                .footer {
+                    margin-top: auto; /* Footer'ı sayfanın en altına itmek için */
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container"> <!-- Ana içerik kapsayıcısı -->
+                <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+                <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+                <div class="content"></div>
+
+
+                    <p>All risks or the individual risks must be assessed depending on the type of consideration. Every risk is defined with a tolerable risk in form of a numerical value. To achieve a tolerable risk, technically and economically sound protection measures are defined e.g. external lightning protection measures according to IEC 62305-3:2010-12 and SPD measures according to IEC 62305-4:2010-12.</p>
+                    <p>To be able to determine the risk focus more exactly, the risks are considered in detail. Every risk consists of a sum of risk components.</p>
+                    <ul>
+                        <li>R<sub>1</sub> = R<sub>A</sub> + R<sub>B</sub> + R<sub>C</sub> + R<sub>M</sub> + R<sub>U</sub> + R<sub>V</sub> + R<sub>W</sub> + R<sub>Z</sub></li>
+                        <li>R<sub>2</sub> = R<sub>B</sub> + R<sub>C</sub> + R<sub>M</sub> + R<sub>V</sub> + R<sub>W</sub> + R<sub>Z</sub></li>
+                        <li>R<sub>3</sub> = R<sub>B</sub> + R<sub>V</sub></li>
+                        <li>R<sub>4</sub> = R<sub>A</sub> + R<sub>B</sub> + R<sub>C</sub> + R<sub>M</sub> + R<sub>U</sub> + R<sub>V</sub> + R<sub>W</sub> + R<sub>Z</sub></li>
+                    </ul>
+                    <p>Every risk component describes a certain danger and thus a possible loss. The loss resulting from lightning effects is defined as follows:</p>
+                    <ul>
+                        <li>L1 = Loss of human life</li>
+                        <li>L2 = Loss of service to the public</li>
+                        <li>L3 = Loss of cultural heritage</li>
+                        <li>L4 = Loss of economic value</li>
+                    </ul>
+                    <p>The possible loss is assigned to the risk components as follows:</p>
+                    <p>The risk components are differentiated according to the sources of damage.</p>
+                <div>
+                <div class="image-section">
+                    <img src="images/fire.png" alt="Graph Image" width="340" sheight="auto">
+                </div>
+                <div class="content">
+                    <h3>Source of damage S1: Risk components based on lightning strikes to the structure</h3>
+                    <p><strong>R<sub>A</sub></strong> Component which refers to injury of living beings caused by an electric shock resulting from touch and step voltage within the structure and up to 3 m around the down conductors outside the structure. Type of damage L1 may occur for agricultural buildings and type of damage L4 with possible loss of animals.</p>
+                    <p><strong>R<sub>B</sub></strong> Component which refers to physical damage caused by dangerous sparking within the structure resulting in fire and explosion. Even the environment can be at risk. All types of damage can occur (L1, L2, L3, L4).</p>
+                </div>
+            </div>
+            <footer class="footer"> <!-- Footer bölümü -->
+                <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+                <p>Radsan Risk Tools - 2024-08-09</p> <!-- Footer'da yer alan metin -->
+                <p>Page 5 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            </footer>
+        </body>
+        </html>
+
+        

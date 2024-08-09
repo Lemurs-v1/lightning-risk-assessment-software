@@ -1,4 +1,5 @@
 from top_deger import LightningRiskCalculator_top_values
+import pandas as pd
 
 top = LightningRiskCalculator_top_values()
 
@@ -68,10 +69,34 @@ class LightningRiskCalculator_result():
             self.R_4 = self.R_B_4+self.R_C_4+self.R_M_4+self.R_V_4+self.R_W_4+self.R_Z_4
         return self.R_4
     def R_tespit(self):
+<<<<<<< Updated upstream
+        değerler = [self.R_1_belirle(), self.R_2_belirle(), self.R_3_belirle(), self.R_4_belirle()]
+        with open("sonuc.txt", "w", encoding="utf-8") as dosya:
+            for değer in değerler:
+                dosya.write(f"{değer}#")
+x = LightningRiskCalculator_result()
+x.R_tespit()
+=======
+        # self burada bir sınıf içinde olmalı, self'den önce bir sınıf tanımlı olduğunu varsayıyorum
+        degerler = [self.R_1_belirle(), self.R_2_belirle(), self.R_3_belirle(), self.R_4_belirle()]
 
-        değerler = [self.R_1_belirle(),self.R_2_belirle(),self.R_3_belirle(),self.R_4_belirle()]
-        print(değerler)
-        
-        return değerler
+        # v listesinin uzunluğunu kontrol etme
+        if len(degerler) >= 4:
+            v_a = ['R_1', 'R_2', 'R_3', 'R_4']
+            degerler = [[degerler[0], degerler[1], degerler[2], degerler[3]]]  # İndeksler 0'dan 3'e kadar olmalı
+        else:
+            raise IndexError(f"v listesi beklenen uzunlukta değil: {len(degerler)}")
+
+        # DataFrame oluşturma
+        f = pd.DataFrame(degerler, columns=v_a)
+
+        # DataFrame'i CSV dosyasına kaydetme
+        f.to_csv('veriler.csv', index=False)
+
+ 
+ 
+>>>>>>> Stashed changes
 
 
+x = LightningRiskCalculator_result()
+x.R_tespit()

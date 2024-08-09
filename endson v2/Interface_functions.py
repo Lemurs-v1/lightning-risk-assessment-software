@@ -15,6 +15,12 @@ import re
 import time
 import traceback
 from tkinter import messagebox
+<<<<<<< Updated upstream
+from veri_cek import veri_cek
+y = veri_cek()
+=======
+import pandas as pd
+>>>>>>> Stashed changes
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -23,7 +29,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.adjust_combobox_popup_width()
-        #♥self.delete_html_files_from_folder()
+        self.delete_html_files_from_folder()
+
+
 
         # QComboBox'lar
         self.Ad_comboBox = self.ui.Ad_comboBox
@@ -394,7 +402,7 @@ class MainWindow(QtWidgets.QMainWindow):
         wm1_value = self.wm1_doubleSpinbox.value()
         wm2_value = self.wm2_doubleSpinbox.value()
         Uw_value = self.Uw_doubleSpinbox.value()
-        Ng_double_value = self.Ng_doubleSpinbox.value()
+        self.Ng_double_value = self.Ng_doubleSpinbox.value()
         Ad_y_double_value = self.Ad_y_doubleSpinbox.value()
         Ad_ymax_double_value = self.Ad_ymax_doubleSpinbox.value()
         Ad_g_double_value = self.Ad_g_doubleSpinbox.value()
@@ -419,6 +427,7 @@ class MainWindow(QtWidgets.QMainWindow):
         R4_value=self.R4soru_comboBox.currentText()
 
 
+<<<<<<< Updated upstream
     # Verileri ilgili formatta yazdır
         değerler = (
             f"{Ad_value}\n"
@@ -453,7 +462,7 @@ class MainWindow(QtWidgets.QMainWindow):
             f"{Uw_value}\n"
             f"{ekranlama_value}\n"
             f"{metal_value}\n"
-            f"{Ng_double_value}\n"
+            f"{self.Ng_double_value}\n"
             f"{Ad_y_double_value}\n"
             f"{Ad_g_double_value}\n"
             f"{Ad_u_double_value}\n"
@@ -479,72 +488,143 @@ class MainWindow(QtWidgets.QMainWindow):
             f"{R1_value}\n"
             f"{R4_value}\n"
                 )
-
-    
-        with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya_2:
-            dosya_2.write(değerler)
+=======
+        # Verileri ilgili formatta yazdır
         
-        print(f'Seçilen Ad değeri: {Ad_value}')
-        print(f'Seçilen Cd değeri: {Cd_value}')
-        print(f'Seçilen rt değeri: {rt_value}')
-        print(f'Seçilen Ce değeri: {Ce_value}')
-        print(f'Adj CheckBox durumu: {Adj_value}')
-        print(f'Seçilen Cdj değeri: {Cdj_value}')
-        print(f'Seçilen Pb değeri: {Pb_value}')
-        print(f'Seçilen Pta değeri: {Pta_value}')
-        print(f'Seçilen Cld değeri: {Cld_value}')
-        print(f'Seçilen Pli değeri: {Pli_value}')
-        print(f'Seçilen Pld değeri: {Pld_value}')
-        print(f'Seçilen Pspd değeri: {Pspd_value}')
-        print(f'Seçilen Cl değeri: {Cl_value}')
-        print(f'Seçilen Peb değeri: {Peb_value}')
-        print(f'Seçilen CT değeri: {CT_value}')
-        print(f'Seçilen ca_bolu_ct değeri: {ca_bolu_ct_value}')
-        print(f'Seçilen rf değeri: {rf_value}')
-        print(f'Seçilen rp değeri: {rp_value}')
-        print(f'Seçilen Lf değeri: {Lf_value}')
-        print(f'Seçilen Lo değeri: {Lo_value}')
-        print(f'Seçilen Lfo2 değeri: {Lfo2_value}')
-        print(f'Seçilen Lfo4 değeri: {Lfo4_value}')
-        print(f'Seçilen KS3 değeri: {KS3_value}')
-        print(f'Seçilen Pld2 değeri: {Pld_2_value}')
-        print(f'Seçilen Pld3 değeri: {Pld_3_value}')
-        print(f'Seçilen Pli2 değeri: {Pli_2_value}')
-        print(f'Ng CheckBox durumu: {Ng_value}')
-        print(f'wm1 değeri: {wm1_value}')
-        print(f'wm2 değeri: {wm2_value}')
-        print(f'Uw değeri: {Uw_value}')
-        print(f'Ekranlama CheckBox durumu: {ekranlama_value}')
-        print(f'Metal CheckBox durumu: {metal_value}')
-        print(f'Ng Double Spinbox değeri: {Ng_double_value}')
-        print(f'Ad_y Double Spinbox değeri: {Ad_y_double_value}')
-        print(f'Ad_g Double Spinbox değeri: {Ad_g_double_value}')
-        print(f'Ad_u Double Spinbox değeri: {Ad_u_double_value}')
-        print(f'Adj_g Double Spinbox değeri: {Adj_g_double_value}')
-        print(f'Adj_u Double Spinbox değeri: {Adj_u_double_value}')
-        print(f'nt Double Spinbox değeri: {nt_value}')
-        print(f'nz CheckBox durumu: {nz_value}')
-        print(f'nz Double Spinbox değeri: {nz_double_value}')
-        print(f'tz Double Spinbox değeri: {tz_double_value}')
-        print(f'LI Double Spinbox değeri: {Ll_double_value}')
-        print(f'Seçilen Hz değeri: {Hz_value}')
-        print(f'Seçilen Ptu değeri: {Ptu_value}')
-        print(f'Seçilen tz CheckBox değeri: {tz_value}')
-        print(f'Seçilen Ll CheckBox değeri: {Ll_value}')
-        print(f'description: {description}')
-        print(f'Seçilen Ad_ymax: {Ad_ymax_double_value}')
-        print(f'Seçilen Adj_y: {Adj_y_double_value}')
-        print(f'Seçilen Adj_y_max: {Adj_y_double_value_2}')
-        print(f'Rapor yazarı: {Rapor_yazarı}')
-        print(f'Müsteri: {Müsteri}')
-        print(f'Obje: {Obje}')
-        print(f'R1_value: {R1_value}')
-        print(f'R4_value: {R4_value}')
+>>>>>>> Stashed changes
+
+        # Değerleri bir sözlük içinde saklayarak, her bir değeri uygun bir sütuna yerleştirelim
+        data = {
+            "Ad_value": Ad_value,
+            "Cd_value": Cd_value,
+            "rt_value": rt_value,
+            "Ce_value": Ce_value,
+            "Adj_value": Adj_value,
+            "Cdj_value": Cdj_value,
+            "Pb_value": Pb_value,
+            "Pta_value": Pta_value,
+            "Cld_value": Cld_value,
+            "Pli_value": Pli_value,
+            "Pld_value": Pld_value,
+            "Pspd_value": Pspd_value,
+            "Cl_value": Cl_value,
+            "Peb_value": Peb_value,
+            "CT_value": CT_value,
+            "ca_bolu_ct_value": ca_bolu_ct_value,
+            "rf_value": rf_value,
+            "rp_value": rp_value,
+            "Lf_value": Lf_value,
+            "Lo_value": Lo_value,
+            "Lfo2_value": Lfo2_value,
+            "Lfo4_value": Lfo4_value,
+            "KS3_value": KS3_value,
+            "Pld_2_value": Pld_2_value,
+            "Pld_3_value": Pld_3_value,
+            "Pli_2_value": Pli_2_value,
+            "Ng_value": Ng_value,
+            "wm1_value": wm1_value,
+            "wm2_value": wm2_value,
+            "Uw_value": Uw_value,
+            "ekranlama_value": ekranlama_value,
+            "metal_value": metal_value,
+            "Ng_double_value": Ng_double_value,
+            "Ad_y_double_value": Ad_y_double_value,
+            "Ad_g_double_value": Ad_g_double_value,
+            "Ad_u_double_value": Ad_u_double_value,
+            "Adj_g_double_value": Adj_g_double_value,
+            "Adj_u_double_value": Adj_u_double_value,
+            "nt_value": nt_value,
+            "nz_value": nz_value,
+            "nz_double_value": nz_double_value,
+            "tz_double_value": tz_double_value,
+            "Ll_double_value": Ll_double_value,
+            "Hz_value": Hz_value,
+            "Ptu_value": Ptu_value,
+            "tz_value": tz_value,
+            "Ll_value": Ll_value,
+            "description": description,
+            "Ad_ymax_double_value": Ad_ymax_double_value,
+            "Adj_y_double_value": Adj_y_double_value,
+            "Adj_y_double_value_2": Adj_y_double_value_2,
+            "Rapor_yazarı": Rapor_yazarı,
+            "Müsteri": Müsteri,
+            "Obje": Obje,
+            "Proje_no": Proje_no,
+            "R1_value": R1_value,
+            "R4_value": R4_value
+        }
+
+        # Pandas DataFrame oluşturma
+        df = pd.DataFrame([data])
+
+        # DataFrame'i bir CSV dosyasına kaydetme
+        df.to_csv("kullanıcı_değer.csv", index=False, encoding='utf-8')
+        
+        # print(f'Seçilen Ad değeri: {Ad_value}')
+        # print(f'Seçilen Cd değeri: {Cd_value}')
+        # print(f'Seçilen rt değeri: {rt_value}')
+        # print(f'Seçilen Ce değeri: {Ce_value}')
+        # print(f'Adj CheckBox durumu: {Adj_value}')
+        # print(f'Seçilen Cdj değeri: {Cdj_value}')
+        # print(f'Seçilen Pb değeri: {Pb_value}')
+        # print(f'Seçilen Pta değeri: {Pta_value}')
+        # print(f'Seçilen Cld değeri: {Cld_value}')
+        # print(f'Seçilen Pli değeri: {Pli_value}')
+        # print(f'Seçilen Pld değeri: {Pld_value}')
+        # print(f'Seçilen Pspd değeri: {Pspd_value}')
+        # print(f'Seçilen Cl değeri: {Cl_value}')
+        # print(f'Seçilen Peb değeri: {Peb_value}')
+        # print(f'Seçilen CT değeri: {CT_value}')
+        # print(f'Seçilen ca_bolu_ct değeri: {ca_bolu_ct_value}')
+        # print(f'Seçilen rf değeri: {rf_value}')
+        # print(f'Seçilen rp değeri: {rp_value}')
+        # print(f'Seçilen Lf değeri: {Lf_value}')
+        # print(f'Seçilen Lo değeri: {Lo_value}')
+        # print(f'Seçilen Lfo2 değeri: {Lfo2_value}')
+        # print(f'Seçilen Lfo4 değeri: {Lfo4_value}')
+        # print(f'Seçilen KS3 değeri: {KS3_value}')
+        # print(f'Seçilen Pld2 değeri: {Pld_2_value}')
+        # print(f'Seçilen Pld3 değeri: {Pld_3_value}')
+        # print(f'Seçilen Pli2 değeri: {Pli_2_value}')
+        # print(f'Ng CheckBox durumu: {Ng_value}')
+        # print(f'wm1 değeri: {wm1_value}')
+        # print(f'wm2 değeri: {wm2_value}')
+        # print(f'Uw değeri: {Uw_value}')
+        # print(f'Ekranlama CheckBox durumu: {ekranlama_value}')
+        # print(f'Metal CheckBox durumu: {metal_value}')
+        # print(f'Ng Double Spinbox değeri: {self.Ng_double_value}')
+        # print(f'Ad_y Double Spinbox değeri: {Ad_y_double_value}')
+        # print(f'Ad_g Double Spinbox değeri: {Ad_g_double_value}')
+        # print(f'Ad_u Double Spinbox değeri: {Ad_u_double_value}')
+        # print(f'Adj_g Double Spinbox değeri: {Adj_g_double_value}')
+        # print(f'Adj_u Double Spinbox değeri: {Adj_u_double_value}')
+        # print(f'nt Double Spinbox değeri: {nt_value}')
+        # print(f'nz CheckBox durumu: {nz_value}')
+        # print(f'nz Double Spinbox değeri: {nz_double_value}')
+        # print(f'tz Double Spinbox değeri: {tz_double_value}')
+        # print(f'LI Double Spinbox değeri: {Ll_double_value}')
+        # print(f'Seçilen Hz değeri: {Hz_value}')
+        # print(f'Seçilen Ptu değeri: {Ptu_value}')
+        # print(f'Seçilen tz CheckBox değeri: {tz_value}')
+        # print(f'Seçilen Ll CheckBox değeri: {Ll_value}')
+        # print(f'description: {description}')
+        # print(f'Seçilen Ad_ymax: {Ad_ymax_double_value}')
+        # print(f'Seçilen Adj_y: {Adj_y_double_value}')
+        # print(f'Seçilen Adj_y_max: {Adj_y_double_value_2}')
+        # print(f'Rapor yazarı: {Rapor_yazarı}')
+        # print(f'Müsteri: {Müsteri}')
+        # print(f'Obje: {Obje}')
+        # print(f'R1_value: {R1_value}')
+        # print(f'R4_value: {R4_value}')
         
     def calculate(self):
 
+
         
         try:
+            from result import LightningRiskCalculator_result
+            x=LightningRiskCalculator_result()
+            x.R_tespit()
             def format_number_scientific(number):
                 return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
             
@@ -556,6 +636,7 @@ class MainWindow(QtWidgets.QMainWindow):
             r2 = format_number_scientific(float(veriler[1]))
             r3 = format_number_scientific(float(veriler[2]))
             r4 = format_number_scientific(float(veriler[3]))
+
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
             
         except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError) as e:
@@ -577,7 +658,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 
-        
+       
 
     def logo(self):
         # Tkinter kök penceresini oluştur (bu pencere görünmeyecek)
@@ -613,17 +694,33 @@ class MainWindow(QtWidgets.QMainWindow):
         pdf.rapor_yaz()
         self.open_html_files()
         
-
+ 
     def clear_values(self):
+<<<<<<< Updated upstream
+            from output_value import LightningRiskCalculator_output_value
+            o = LightningRiskCalculator_output_value()
+            o.__init__()
 
-
+            
 
             from result import LightningRiskCalculator_result
+            l = LightningRiskCalculator_result()
+            z=l.R_tespit()
+            print(z)
+
+
+=======
+            from result import LightningRiskCalculator_result
+            
+            
             res = LightningRiskCalculator_result()
             res.R_tespit()
-            with open ("sonuc.txt", "w",encoding= "utf-8") as dosya_1:
-                 dosya_1.write(f"{str(res.R_1_belirle())}#{str(res.R_2_belirle())}#{str(res.R_3_belirle())}#{str(res.R_4_belirle())}")
-            print("bas")
+
+            # CSV dosyasını okuma
+            a = pd.read_csv('veriler.csv')
+            ilk_satir_verileri = a.iloc[0]
+            print(f"rastgele{ilk_satir_verileri}")
+>>>>>>> Stashed changes
 
 
     def adjust_combobox_popup_width(self):
@@ -646,5 +743,6 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setWindowIcon(QIcon('icon.png'))
     window = MainWindow()
+    
     window.show()
     sys.exit(app.exec_())
