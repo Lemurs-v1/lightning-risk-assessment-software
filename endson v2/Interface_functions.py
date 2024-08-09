@@ -631,7 +631,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
             
-        except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError,FileNotFoundError,IndentationError) as e:
+        except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError,FileNotFoundError,IndentationError,SyntaxError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
