@@ -109,7 +109,7 @@ class LightningRiskCalculator_middle_values:
     #####################################################################################
     #####################################################################################3
     def n_m_belirle(self):
-        self.N_M = self.N_G* self.A_M*10**-6
+        self.N_M = self.N_G* self.A_M*(10**-6)
         return self.N_M 
     def p_m_belirle(self):
         self.P_M = self.P_SPD*self.P_MS 
@@ -172,8 +172,26 @@ class LightningRiskCalculator_middle_values:
     def l_cmwz_4_belirle(self):
         self.L_CMWZ_4 = self.L_O_4*self.c_a_bölü_ct
         return self.L_CMWZ_4
-"""    
+ 
 x = LightningRiskCalculator_middle_values()
+print(x.n_l_belirle())
+print(x.n_dj_belirle())#####
+print(x.p_w_belirle())
+print(x.l_cmwz_1_belirle())
+print(x.p_m_belirle())
+print(x.n_m_belirle())
+print("-------------")
+print(x.p_z_belrile())####
+print(x.n_d_belirle())
+print(x.p_a_belirle())
+print(x.l_au_1_belirle())
+print(x.p_b_belirle())
+print(x.l_bv_1_belirle())####10e-1 e
+print(x.p_v_belirle())
+print(x.p_c_belirle())
+print(x.l_cmwz_1_belirle())
+
+"""
 print("4444asdasad444")
 print(x.l_au_4_belirle())
 print(x.l_bv_4_belirle())
