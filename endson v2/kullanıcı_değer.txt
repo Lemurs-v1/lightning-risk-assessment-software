@@ -1,0 +1,57 @@
+hayır
+Tepe veya tepecik üzerinde ayrık yapı
+mermer, seramik
+Banliyo
+False
+Daha yüksek cisimler ile çevrelenen yapı
+Yapı LPS ile korunumuyor
+Koruma tedbiri yok
+Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış
+Güç hatları
+Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
+Kordineli SPD sistemi yok
+Havai
+SPD yok
+AG güç, telekomünikasyon veya veri hattı
+Var
+Patlama : Bölgeler 0, 20 ve katı patlayıcı
+Patlama riski var
+Patlama riski
+Patlama riski
+Gaz, su, güç besleme
+Patlama riski
+Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
+5 Ω /km <RS ≤ 20 Ω /km
+1
+1
+False
+1.0
+1.0
+2.0
+True
+True
+100.0
+20.0
+1000000
+10000
+10000
+2.0
+50.0
+False
+3.0
+2.0
+3.0
+Özel tehlike yok
+Korunma tedbirleri yok
+False
+False
+2
+30.0
+5.0
+2.0
+ö
+ö
+ö
+ö
+Evet
+Evet

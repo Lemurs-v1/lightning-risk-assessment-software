@@ -16,13 +16,14 @@ import time
 import traceback
 from tkinter import messagebox
 
+
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.adjust_combobox_popup_width()
-        self.delete_html_files_from_folder()
+        #♥self.delete_html_files_from_folder()
 
         # QComboBox'lar
         self.Ad_comboBox = self.ui.Ad_comboBox
@@ -185,6 +186,7 @@ class MainWindow(QtWidgets.QMainWindow):
         #ÇİZİM BAS
         self.rapor_pushButton = self.ui.rapor_pushButton
         self.rapor_pushButton.clicked.connect(self.cizim)
+
 
     def selection_changed_Ad(self):
         selected_item = self.Ad_comboBox.currentText()
@@ -352,6 +354,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
  
     def save_values(self):
+
+
         Ad_value = self.Ad_comboBox.currentText()
         if Ad_value == 'Karmaşık biçimli':
             Ad_value='evet'
@@ -477,8 +481,8 @@ class MainWindow(QtWidgets.QMainWindow):
                 )
 
     
-        with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya:
-            dosya.write(değerler)
+        with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya_2:
+            dosya_2.write(değerler)
         
         print(f'Seçilen Ad değeri: {Ad_value}')
         print(f'Seçilen Cd değeri: {Cd_value}')
@@ -538,27 +542,28 @@ class MainWindow(QtWidgets.QMainWindow):
         print(f'R4_value: {R4_value}')
         
     def calculate(self):
+
+        
         try:
-            from result import LightningRiskCalculator_result
-            b = LightningRiskCalculator_result()
-            b.R_tespit()
             def format_number_scientific(number):
                 return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
-            with open("sonuc.txt", "r") as dosya:
+            
+
+            with open("sonuc.txt", "r",encoding="utf-8") as dosya:
                 sonuc_file = dosya.read()
             veriler = sonuc_file.split("#")
             r1 = format_number_scientific(float(veriler[0]))
             r2 = format_number_scientific(float(veriler[1]))
             r3 = format_number_scientific(float(veriler[2]))
             r4 = format_number_scientific(float(veriler[3]))
-
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
+            
         except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
             değerler = f"{0}#{0}#{0}#{0}"
-            with open("sonuc.txt", "w") as dosya:
+            with open("sonuc.txt", "w",encoding="utf-8") as dosya:
                 dosya.write(değerler) 
             match = re.search(r'self\.(\w+)', tb_str)
             
@@ -610,64 +615,16 @@ class MainWindow(QtWidgets.QMainWindow):
         
 
     def clear_values(self):
-        self.Ad_comboBox.setCurrentIndex(0)
-        self.Cd_comboBox.setCurrentIndex(0)
-        self.rt_comboBox.setCurrentIndex(0)
-        self.Ce_comboBox.setCurrentIndex(0)
-        self.Adj_checkBox.setChecked(False)
-        self.Cdj_comboBox.setCurrentIndex(0)
-        self.Pb_comboBox.setCurrentIndex(0)
-        self.Pta_comboBox.setCurrentIndex(0)
-        self.Cld_comboBox.setCurrentIndex(0)
-        self.Pli_comboBox.setCurrentIndex(0)
-        self.Pld_comboBox.setCurrentIndex(0)
-        self.Pspd_comboBox.setCurrentIndex(0)
-        self.Cl_comboBox.setCurrentIndex(0)
-        self.Peb_comboBox.setCurrentIndex(0)
-        self.CT_comboBox.setCurrentIndex(0)
-        self.ca_bolu_ct_comboBox.setCurrentIndex(0)
-        self.rf_comboBox.setCurrentIndex(0)
-        self.rp_comboBox.setCurrentIndex(0)
-        self.Lf_comboBox.setCurrentIndex(0)
-        self.Lo_comboBox.setCurrentIndex(0)
-        self.Lfo2_comboBox.setCurrentIndex(0)
-        self.Lfo4_comboBox.setCurrentIndex(0)
-        self.KS3_comboBox.setCurrentIndex(0)
-        self.Pld_2_comboBox.setCurrentIndex(0)
-        self.Pld_3_comboBox.setCurrentIndex(0)
-        self.Pli_2_comboBox.setCurrentIndex(0)
-        self.Hz_comboBox.setCurrentIndex(0)
-        self.R1soru_combobox.setCurrentIndex(0)
-        self.R4soru_combobox.setCurrentIndex(0)
-
-        self.Ng_checkBox.setChecked(False)
-        self.wm1_doubleSpinbox.setValue(0.0)
-        self.wm2_doubleSpinbox.setValue(0.0)
-        self.Uw_doubleSpinbox.setValue(0.0)
-        self.Ng_doubleSpinbox.setValue(0.0)
-        self.Ad_y_doubleSpinbox.setValue(0.0)
-        self.Ad_ymax_doubleSpinbox.setValue(0.0)
-        self.Ad_g_doubleSpinbox.setValue(0.0)
-        self.Ad_u_doubleSpinbox.setValue(0.0)
-        self.Adj_checkBox.setChecked(False)
-        self.Adj_y_doubleSpinbox.setValue(0.0)
-        self.Adj_y_doubleSpinbox_2.setValue(0.0)
-        self.Adj_g_doubleSpinbox.setValue(0.0)
-        self.Adj_u_doubleSpinbox.setValue(0.0)
-        self.nt_doubleSpinbox.setValue(0.0)
-        self.nz_checkBox.setChecked(False)
-        self.nz_doubleSpinbox.setValue(0.0)
-        self.tz_doubleSpinbox.setValue(0.0)
-        self.Ll_doubleSpinbox.setValue(0.0)
-        self.ekranlama_checkBox.setChecked(False)
-        self.metal_checkBox.setChecked(False)
 
 
-        self.textEdit.clear()
-        self.lineEdit.clear()
-        self.lineEdit_2.clear()
-        self.lineEdit_3.clear()
-        self.lineEdit_4.clear()
+
+            from result import LightningRiskCalculator_result
+            res = LightningRiskCalculator_result()
+            res.R_tespit()
+            with open ("sonuc.txt", "w",encoding= "utf-8") as dosya_1:
+                 dosya_1.write(f"{str(res.R_1_belirle())}#{str(res.R_2_belirle())}#{str(res.R_3_belirle())}#{str(res.R_4_belirle())}")
+            print("bas")
+
 
     def adjust_combobox_popup_width(self):
         comboboxes = self.findChildren(QComboBox)
