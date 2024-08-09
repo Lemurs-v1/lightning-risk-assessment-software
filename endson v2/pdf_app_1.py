@@ -15,8 +15,6 @@ class LightningRiskWriter():
             veriler_file = dosya.read()
 
         veriler = veriler_file.split("\n")
-        def format_number_scientific(number):
-                return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
 
 
         # Kullanıcıdan isim al
@@ -54,11 +52,11 @@ class LightningRiskWriter():
         patlama_riski=str(veriler[55])
         rp_c=str(veriler[17])  
         hz_c=str(veriler[43])
-        R_1=format_number_scientific(result.R_1_belirle())
-        R_2=format_number_scientific(result.R_2_belirle())
-        R_3=format_number_scientific(result.R_3_belirle())
+        R_1=result.R_1_belirle()
+        R_2=result.R_2_belirle()
+        R_3=result.R_3_belirle()
 
-        R_4=format_number_scientific(result.R_4_belirle())
+        R_4=result.R_4_belirle()
         print(R_4)
         P_B=str(veriler[6])
         P_EB=str(veriler[13])

@@ -546,11 +546,11 @@ class LightningRiskCalculator_output_value:
         self.c_z = None
         self.c_a_b_c_t = None
         self.P_MS_soru2 = None
-    # print("Pld1_C:", Pld_C)
-    # print("Pld2_C:", Pld_2_C)
-    # print("Pld3_C:", Pld_3_C)
-    # print("Pli1_C:", Pli_C)  
-    # print("Pli2_C:", Pli_2_C)  
+    print("Pld1_C:", Pld_C)
+    print("Pld2_C:", Pld_2_C)
+    print("Pld3_C:", Pld_3_C)
+    print("Pli1_C:", Pli_C)  
+    print("Pli2_C:", Pli_2_C)  
  
 
     def n_g_bul(self):

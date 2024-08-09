@@ -264,7 +264,7 @@ class LightningRiskCalculator_min_values:
         self.L_O = L_O_DF.loc[L_O_DF["Tipik kayıp değeri"] == L_O_C, "L_O"].values[0]
         return self.L_O
     def a_m_belirle(self):
-        self.A_M = 2*500*(self.A_D_uzunluk+self.A_D_genişlik)+(pi*(500)**2)
+        self.A_M = 2*500*(self.A_D_uzunluk+self.A_D_genişlik)*pi*500**2
         return self.A_M
     def p_ms_belirle(self):
         self.P_MS = P_MS_C

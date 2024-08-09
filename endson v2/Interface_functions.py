@@ -543,15 +543,15 @@ class MainWindow(QtWidgets.QMainWindow):
         
     def calculate(self):
 
-        try:
-            from result import LightningRiskCalculator_result
-            l = LightningRiskCalculator_result()
-            veriler =l.R_tespit()
         
+        try:
             def format_number_scientific(number):
                 return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
             
 
+            with open("sonuc.txt", "r",encoding="utf-8") as dosya:
+                sonuc_file = dosya.read()
+            veriler = sonuc_file.split("#")
             r1 = format_number_scientific(float(veriler[0]))
             r2 = format_number_scientific(float(veriler[1]))
             r3 = format_number_scientific(float(veriler[2]))
@@ -605,31 +605,13 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             messagebox.showerror("ERROR","Hiçbir resim seçilmedi.")
     def cizim(self):
-        try:
-            from cizim import MplCanvas
-            from pdf_app_1 import LightningRiskWriter
-            ciz= MplCanvas()
-            pdf = LightningRiskWriter()
-            ciz.çizdir()
-            pdf.rapor_yaz()
-            self.open_html_files()
-        except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError) as e:
-
-            tb_str = traceback.format_exc()
-            # self. ile başlayan kısmı ayıklamak için regex kullan
-            değerler = f"{0}#{0}#{0}#{0}"
-            with open("sonuc.txt", "w",encoding="utf-8") as dosya:
-                dosya.write(değerler) 
-            match = re.search(r'self\.(\w+)', tb_str)
-            
-            if match:
-                # self. ifadesinden sonra gelen kelimeyi yazdır
-
-                messagebox.showerror("ERROR",f"{match.group(1)} DEĞERİ EKSİK VEYA YANLIŞ")
-                
-            else:
-                messagebox.showerror("ERROR","VERİLERİNİZDE HATA VAR FAKAT TESPİT EDİLEMİYOR DEĞERLERİNİZİN DOĞRULUĞUNDA EMİN OLUN")
-
+        from cizim import MplCanvas
+        from pdf_app_1 import LightningRiskWriter
+        ciz= MplCanvas()
+        pdf = LightningRiskWriter()
+        ciz.çizdir()
+        pdf.rapor_yaz()
+        self.open_html_files()
         
 
     def clear_values(self):

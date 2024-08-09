@@ -1,7 +1,7 @@
-evet
-Daha yüksek cisimler ile çevrelenen yapı
-tarımsal, beton
-Kırsal
+hayır
+Tepe veya tepecik üzerinde ayrık yapı
+mermer, seramik
+Banliyo
 False
 Daha yüksek cisimler ile çevrelenen yapı
 Yapı LPS ile korunumuyor
@@ -25,33 +25,33 @@ Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
 1
 1
 False
+1.0
+1.0
 2.0
-1.0
-1.0
 True
 True
+100.0
 20.0
-3.0
-3.0
-3.0
+1000000
+10000
+10000
+2.0
+50.0
+False
 3.0
 2.0
-55.0
-False
-55.0
-5.0
-5.0
+3.0
 Özel tehlike yok
 Korunma tedbirleri yok
 False
 False
-m
-20.0
-3.0
-3.0
-m
-m
-m
-m
+2
+30.0
+5.0
+2.0
+ö
+ö
+ö
+ö
 Evet
 Evet
