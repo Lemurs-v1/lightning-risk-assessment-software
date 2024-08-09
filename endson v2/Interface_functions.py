@@ -15,6 +15,7 @@ import re
 import time
 import traceback
 from tkinter import messagebox
+import pandas as pd 
 from veri_cek import veri_cek
 y = veri_cek()
 
