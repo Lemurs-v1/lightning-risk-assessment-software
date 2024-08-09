@@ -545,12 +545,13 @@ class MainWindow(QtWidgets.QMainWindow):
             "R1_value": R1_value,
             "R4_value": R4_value
         }
+        
+
+        with open('kullanıcı_değer.txt', 'w',encoding = "utf-8") as dosya:
+            dosya.write()
 
         # Pandas DataFrame oluşturma
-        df = pd.DataFrame([data])
 
-        # DataFrame'i bir CSV dosyasına kaydetme
-        df.to_csv("kullanıcı_değer.csv", index=False, encoding='utf-8')
         
         # print(f'Seçilen Ad değeri: {Ad_value}')
         # print(f'Seçilen Cd değeri: {Cd_value}')
