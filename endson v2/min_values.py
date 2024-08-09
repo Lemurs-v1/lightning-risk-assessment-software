@@ -4,67 +4,71 @@ import math
 import traceback
 import re
 from tkinter import messagebox
+from Interface_functions import MainWindow
+
 pi =math.pi
 output = LightningRiskCalculator_output_value()
-N_G_C = output.n_g_bul()
-A_D_genişlik_C = output.a_d_genişlik_bul()
-A_D_uzunluk_C = output.a_d_uzunluk_bul()
-A_D_denklem_C = output.a_d_denklem()
-A_D_yükseklik_C = output.a_d_yükseklik_bul()
-A_D_yükseklik_max_C = output.a_d_yükseklik_max_bul()
 
-A_DJ_genişlik_C = output.a_dj_genişlik_bul()
-A_DJ_uzunluk_C = output.a_dj_uzunluk_bul()
-A_DJ_yükseklik_C = output.a_dj_yükseklik_bul()
-A_DJ_yükseklik_max_C = output.a_dj_yükseklik_max_bul()
-C_D_C = output.c_d_bul()
-
-C_DJ_C = output.c_dj_bul()
-P_TA_C = output.p_ta_bul()
-P_B_C = output.p_b_bul()
-r_t_C = output.r_t_bul()
-n_z_bölü_n_t_C = output.n_z_bölü_n_t_bul()
-t_z_bölü_8760_C = output.tz_8760_bul()
-P_SPD_C = output.p_spd_bul()
-C_LD_C = output.c_ld_bul()
-L_O_C = output.l_o_bul()
-P_MS_C = output.p_ms_bul()
-
-
-r_p_C = output.r_p_bul()
-r_f_C = output.r_f_bul() 
-H_Z_C = output.h_z_bul()
-L_F_C = output.l_f_bul()
-
-L_L_C = output.l_l_bul()
-C_I_C = output.c_ı_bul()
-C_T_C = output.c_t_bul()
-C_E_C = output.c_e_bul()
-P_TU_C = output.p_tu_bul()
-P_EB_C = output.p_eb_bul()
-P_LD_C = output.p_ld_bul()
-P_LI_C = output.p_lı_bul()
-L_FO_C_2 =output.l_fo_2_bul()
-L_FO_4_C = output.l_fo_4_bul()
-
-
-c_a_bölü_c_t_c = output.c_a_bölü_c_t()
 
 
 
 class LightningRiskCalculator_min_values:
     def __init__(self):
-        self.N_G = None
-        self.A_D_genişlik = A_D_genişlik_C
-        self.A_D_uzunluk = A_D_uzunluk_C
-        self.A_D_denklem = A_D_denklem_C
-        self.A_D_yükseklik = A_D_yükseklik_C
-        self.A_D_yükseklik_max  =  A_D_yükseklik_max_C 
+        self.N_G_C = output.n_g_bul()
+        self.A_D_genişlik_C = output.a_d_genişlik_bul()
+        self.A_D_uzunluk_C = output.a_d_uzunluk_bul()
+        self.A_D_denklem_C = output.a_d_denklem()
+        self.A_D_yükseklik_C = output.a_d_yükseklik_bul()
+        self.A_D_yükseklik_max_C = output.a_d_yükseklik_max_bul()
 
-        self.A_DJ_genişlik = A_DJ_genişlik_C
-        self.A_DJ_uzunluk = A_DJ_uzunluk_C
-        self.A_DJ_yükseklik = A_DJ_yükseklik_C
-        self.A_DJ_yükseklik_max  =  A_DJ_yükseklik_max_C 
+        self.A_DJ_genişlik_C = output.a_dj_genişlik_bul()
+        self.A_DJ_uzunluk_C = output.a_dj_uzunluk_bul()
+        self.A_DJ_yükseklik_C = output.a_dj_yükseklik_bul()
+        self.A_DJ_yükseklik_max_C = output.a_dj_yükseklik_max_bul()
+        self.C_D_C = output.c_d_bul()
+
+        self.C_DJ_C = output.c_dj_bul()
+        self.P_TA_C = output.p_ta_bul()
+        self.P_B_C = output.p_b_bul()
+        self.r_t_C = output.r_t_bul()
+        self.n_z_bölü_n_t_C = output.n_z_bölü_n_t_bul()
+        self.t_z_bölü_8760_C = output.tz_8760_bul()
+        self.P_SPD_C = output.p_spd_bul()
+        self.C_LD_C = output.c_ld_bul()
+        self.L_O_C = output.l_o_bul()
+        self.P_MS_C = output.p_ms_bul()
+
+
+        self.r_p_C = output.r_p_bul()
+        self.r_f_C = output.r_f_bul() 
+        self.H_Z_C = output.h_z_bul()
+        self.L_F_C = output.l_f_bul()
+
+        self.L_L_C = output.l_l_bul()
+        self.C_I_C = output.c_ı_bul()
+        self.C_T_C = output.c_t_bul()
+        self.C_E_C = output.c_e_bul()
+        self.P_TU_C = output.p_tu_bul()
+        self.P_EB_C = output.p_eb_bul()
+        self.P_LD_C = output.p_ld_bul()
+        self.P_LI_C = output.p_lı_bul()
+        self.L_FO_C_2 =output.l_fo_2_bul()
+        self.L_FO_4_C = output.l_fo_4_bul()
+
+
+        self.c_a_bölü_c_t_c = output.c_a_bölü_c_t()
+
+        self.N_G = None
+        self.A_D_genişlik = self.A_D_genişlik_C
+        self.A_D_uzunluk = self.A_D_uzunluk_C
+        self.A_D_denklem = self.A_D_denklem_C
+        self.A_D_yükseklik = self.A_D_yükseklik_C
+        self.A_D_yükseklik_max  =  self.A_D_yükseklik_max_C 
+
+        self.A_DJ_genişlik = self.A_DJ_genişlik_C
+        self.A_DJ_uzunluk = self.A_DJ_uzunluk_C
+        self.A_DJ_yükseklik = self.A_DJ_yükseklik_C
+        self.A_DJ_yükseklik_max  =  self.A_DJ_yükseklik_max_C 
         self.A_D = None
         self.A_DJ = None
         self.C_D = None
@@ -106,7 +110,7 @@ class LightningRiskCalculator_min_values:
         self.c_t=None
 
     def n_g_belirle(self):
-        self.N_G = N_G_C
+        self.N_G = self.N_G_C
         return self.N_G
 
     
@@ -132,7 +136,7 @@ class LightningRiskCalculator_min_values:
             "C_DJ": [0.25, 0.5, 1, 2]
         }
         C_DJ_DF = pd.DataFrame(data)
-        self.C_DJ = C_DJ_DF.loc[C_DJ_DF["bağıl konum"] == C_DJ_C, "C_DJ"].values[0]
+        self.C_DJ = C_DJ_DF.loc[C_DJ_DF["bağıl konum"] == self.C_DJ_C, "C_DJ"].values[0]
         return self.C_DJ     
     def c_d_belirle(self):
         data = {
@@ -145,7 +149,7 @@ class LightningRiskCalculator_min_values:
             "C_D": [0.25, 0.5, 1, 2]
         }
         C_D_DF = pd.DataFrame(data)
-        self.C_D = C_D_DF.loc[C_D_DF["bağıl konum"] == C_D_C, "C_D"].values[0]
+        self.C_D = C_D_DF.loc[C_D_DF["bağıl konum"] == self.C_D_C, "C_D"].values[0]
         return self.C_D
 
     def p_ta_belirle(self):
@@ -160,7 +164,7 @@ class LightningRiskCalculator_min_values:
             "P_TA": [1, 0.1, 0.01, 0.01, 0]
         }
         P_TA_DF = pd.DataFrame(data)
-        self.P_TA = P_TA_DF.loc[P_TA_DF["ilave koruma tedbirleri"] == P_TA_C, "P_TA"].values[0]
+        self.P_TA = P_TA_DF.loc[P_TA_DF["ilave koruma tedbirleri"] == self.P_TA_C, "P_TA"].values[0]
         return self.P_TA
 
     def p_b_belirle(self):
@@ -177,7 +181,7 @@ class LightningRiskCalculator_min_values:
             "P_B": [1, 0.2, 0.1, 0.05, 0.02, 0.01, 0.001]
         }
         P_B_DF = pd.DataFrame(data)
-        self.P_B = P_B_DF.loc[P_B_DF["yapı karakteristikleri"] == P_B_C, "P_B"].values[0]
+        self.P_B = P_B_DF.loc[P_B_DF["yapı karakteristikleri"] == self.P_B_C, "P_B"].values[0]
         return self.P_B
 
     def l_t_belirle(self):
@@ -185,7 +189,7 @@ class LightningRiskCalculator_min_values:
         return self.L_T
 
     def n_z_bölü_n_t_belirle(self):
-        self.n_z_bölü_n_t = n_z_bölü_n_t_C
+        self.n_z_bölü_n_t = self.n_z_bölü_n_t_C
         return self.n_z_bölü_n_t
 
     def r_t_belirle(self):
@@ -199,7 +203,7 @@ class LightningRiskCalculator_min_values:
             "r_t": [10**-2, 10**-3, 10**-4, 10**-5]
         }
         r_t_DF = pd.DataFrame(data)
-        self.r_t = r_t_DF.loc[r_t_DF["yapı tipi"] == r_t_C, "r_t"].values[0]
+        self.r_t = r_t_DF.loc[r_t_DF["yapı tipi"] == self.r_t_C, "r_t"].values[0]
         return self.r_t
     def a_dj_belirle(self):
         
@@ -211,10 +215,10 @@ class LightningRiskCalculator_min_values:
             self.A_DJ = (self.A_DJ_uzunluk * self.A_DJ_genişlik)+(2*3*self.A_DJ_yükseklik)*(self.A_DJ_uzunluk+self.A_DJ_genişlik)+(pi*(3*self.A_DJ_yükseklik)**2)
         return self.A_DJ
     def t_z_bölü_8760_belirle(self):
-        if t_z_bölü_8760_C == "bilmiyorum":
+        if self.t_z_bölü_8760_C == "bilmiyorum":
             self.t_z_bölü_8760 = 1
-        elif isinstance(t_z_bölü_8760_C, int) or isinstance(t_z_bölü_8760_C, float):
-            self.t_z_bölü_8760 = float(t_z_bölü_8760_C) / 8760
+        elif isinstance(self.t_z_bölü_8760_C, int) or isinstance(self.t_z_bölü_8760_C, float):
+            self.t_z_bölü_8760 = float(self.t_z_bölü_8760_C) / 8760
         
         return self.t_z_bölü_8760
 
@@ -229,7 +233,7 @@ class LightningRiskCalculator_min_values:
             "P_SPD": [1, 0.05, 0.02, 0.01]
         }
         P_SPD_DF = pd.DataFrame(data)
-        self.P_SPD = P_SPD_DF.loc[P_SPD_DF["LPL"] == P_SPD_C, "P_SPD"].values[0]
+        self.P_SPD = P_SPD_DF.loc[P_SPD_DF["LPL"] == self.P_SPD_C, "P_SPD"].values[0]
         return self.P_SPD
 
     def c_ld_belirle(self):
@@ -249,7 +253,7 @@ class LightningRiskCalculator_min_values:
                 "C_LD": [1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
                 }
         C_LD_DF = pd.DataFrame(data)
-        self.C_LD = C_LD_DF.loc[C_LD_DF["Dış hat tipi ve Girişte bağlantı"] == C_LD_C, "C_LD"].values[0]
+        self.C_LD = C_LD_DF.loc[C_LD_DF["Dış hat tipi ve Girişte bağlantı"] == self.C_LD_C, "C_LD"].values[0]
         return self.C_LD
     def l_o_belirle(self):
         data = {
@@ -261,13 +265,13 @@ class LightningRiskCalculator_min_values:
             "L_O": [10**-1, 10**-2, 10**-3]
         }
         L_O_DF = pd.DataFrame(data)
-        self.L_O = L_O_DF.loc[L_O_DF["Tipik kayıp değeri"] == L_O_C, "L_O"].values[0]
+        self.L_O = L_O_DF.loc[L_O_DF["Tipik kayıp değeri"] == self.L_O_C, "L_O"].values[0]
         return self.L_O
     def a_m_belirle(self):
-        self.A_M = 2*500*(self.A_D_uzunluk+self.A_D_genişlik)*pi*500**2
+        self.A_M = 2*500*(self.A_D_uzunluk+self.A_D_genişlik)+(pi*(500)**2)
         return self.A_M
     def p_ms_belirle(self):
-        self.P_MS = P_MS_C
+        self.P_MS = self.P_MS_C
         return self.P_MS
     
     def r_p_belirle(self):
@@ -284,8 +288,8 @@ class LightningRiskCalculator_min_values:
         r_p_DF = pd.DataFrame(data)
 
         # Check if r_p_C exists in the 'yangın tedbirleri' column
-        if r_p_C in r_p_DF["yangın tedbirleri"].values:
-            self.r_p = r_p_DF.loc[r_p_DF["yangın tedbirleri"] == r_p_C, "r_p"].values[0]
+        if self.r_p_C in r_p_DF["yangın tedbirleri"].values:
+            self.r_p = r_p_DF.loc[r_p_DF["yangın tedbirleri"] == self.r_p_C, "r_p"].values[0]
             return self.r_p
         else:
             raise ValueError("Provided r_p_C value does not match any entry in the 'yangın tedbirleri' column.")
@@ -305,7 +309,7 @@ class LightningRiskCalculator_min_values:
         }
         r_f_DF = pd.DataFrame(data)
        
-        self.r_f = r_f_DF.loc[r_f_DF["risk tutarı"]==r_f_C,"r_f"].values[0]
+        self.r_f = r_f_DF.loc[r_f_DF["risk tutarı"]==self.r_f_C,"r_f"].values[0]
         return self.r_f
     
     def h_z_belirle(self):
@@ -320,7 +324,7 @@ class LightningRiskCalculator_min_values:
             "h_z" : [1,2,5,5,10]
         }
         h_z_DF = pd.DataFrame(data)
-        self.H_Z = h_z_DF.loc[h_z_DF["özel tehlike cinsi"]==H_Z_C,"h_z"].values[0]
+        self.H_Z = h_z_DF.loc[h_z_DF["özel tehlike cinsi"]==self.H_Z_C,"h_z"].values[0]
         return self.H_Z
     
     def l_f_belirle(self):
@@ -336,10 +340,10 @@ class LightningRiskCalculator_min_values:
         }
         L_F_DF = pd.DataFrame(data)
 
-        self.L_F = L_F_DF.loc[L_F_DF["yüzde kayıp"]==L_F_C,"L_f"].values[0]
+        self.L_F = L_F_DF.loc[L_F_DF["yüzde kayıp"]==self.L_F_C,"L_f"].values[0]
         return self.L_F
     def a_l_belirle(self):
-        self.L_L = L_L_C
+        self.L_L = self.L_L_C
         self.A_L = 40* self.L_L
         return self.A_L
     
@@ -350,7 +354,7 @@ class LightningRiskCalculator_min_values:
             "C_ı" : [1,0.5,0.01]
         }
         C_I_DF = pd.DataFrame(data)
-        self.C_I = C_I_DF.loc[C_I_DF["Güzergah"]==C_I_C,"C_ı"].values[0]
+        self.C_I = C_I_DF.loc[C_I_DF["Güzergah"]==self.C_I_C,"C_ı"].values[0]
         return self.C_I
     def C_t_belirle(self):
         data = {
@@ -361,7 +365,7 @@ class LightningRiskCalculator_min_values:
             "C_t" : [1,0.2]
         }
         C_t_DF = pd.DataFrame(data)
-        self.C_T = C_t_DF.loc[C_t_DF["Tesisat"]== C_T_C,"C_t"].values[0]
+        self.C_T = C_t_DF.loc[C_t_DF["Tesisat"]== self.C_T_C,"C_t"].values[0]
         return self.C_T
     def C_e_belirle(self):
         data = {
@@ -375,7 +379,7 @@ class LightningRiskCalculator_min_values:
         }
         C_e_DF = pd.DataFrame(data)
         
-        self.C_E= C_e_DF.loc[C_e_DF["Çevre"]==C_E_C,"C_e"].values[0]
+        self.C_E= C_e_DF.loc[C_e_DF["Çevre"]==self.C_E_C,"C_e"].values[0]
         return self.C_E
     def p_tu_belirle(self):
         data = {
@@ -389,7 +393,7 @@ class LightningRiskCalculator_min_values:
         }
         P_TU_DF = pd.DataFrame(data)
 
-        self.P_TU = P_TU_DF.loc[P_TU_DF["Korunma tedbiri"] == P_TU_C, "P_TU"].values[0]
+        self.P_TU = P_TU_DF.loc[P_TU_DF["Korunma tedbiri"] == self.P_TU_C, "P_TU"].values[0]
         return self.P_TU
     def p_eb_belirle(self,):
         data = {
@@ -403,16 +407,16 @@ class LightningRiskCalculator_min_values:
         }
         P_EB__DF = pd.DataFrame(data)
 
-        self.P_EB = P_EB__DF.loc[P_EB__DF["LPL"] == P_EB_C, "P_EB"].values[0]
+        self.P_EB = P_EB__DF.loc[P_EB__DF["LPL"] == self.P_EB_C, "P_EB"].values[0]
         return self.P_EB
 
     def a_ı_belirle(self):
         self.A_I = 4000*self.L_L
         return self.A_I
     def p_ld_belirle(self):
-        if P_LD_C[0] == "Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış":
+        if self.P_LD_C[0] == "Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış":
             self.P_LD = 1
-        elif P_LD_C[0] == "Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü":
+        elif self.P_LD_C[0] == "Zırh donanımı gibi aynı kuşaklama barasına bağlanan zırhlanmış havai veya gömülü":
             data = {
                 "Direnç Değeri": ["5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km", "5 Ω /km <RS ≤ 20 Ω /km",
                                     "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km", "1 Ω /km <RS ≤ 5 Ω /km",
@@ -425,16 +429,16 @@ class LightningRiskCalculator_min_values:
                             0.6, 0.4, 0.2, 0.04, 0.02]
             }
             df = pd.DataFrame(data)
-            self.P_LD = df.loc[(df['Direnç Değeri'] == P_LD_C[1]) & (df['Dayanım Gerilimi'] == P_LD_C[2]), 'Değer'].values[0]
+            self.P_LD = df.loc[(df['Direnç Değeri'] == self.P_LD_C[1]) & (df['Dayanım Gerilimi'] == self.P_LD_C[2]), 'Değer'].values[0]
         return self.P_LD
 
     def p_lı_belirle(self):
-        if P_LI_C[1] == "Güç hatları":
+        if self.P_LI_C[1] == "Güç hatları":
             data = {
                 "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6"],
                 "Değer": [1, 0.6, 0.3, 0.16, 0.1]
             }
-        elif P_LI_C[1] == "Telekomünikasyon hatları":
+        elif self.P_LI_C[1] == "Telekomünikasyon hatları":
             data = {
                 "Dayanım Gerilimi": ["1", "1.5", "2.5", "4", "6"],
                 "Değer": [1, 0.5, 0.2, 0.08, 0.04]
@@ -444,7 +448,7 @@ class LightningRiskCalculator_min_values:
 
         df = pd.DataFrame(data)
         
-        self.P_LI = df.loc[df['Dayanım Gerilimi'] == P_LI_C[2], 'Değer'].values[0]
+        self.P_LI = df.loc[df['Dayanım Gerilimi'] == self.P_LI_C[2], 'Değer'].values[0]
         return self.P_LI
     
     def c_lı_belirle(self):
@@ -464,7 +468,7 @@ class LightningRiskCalculator_min_values:
                 "C_LI": [1, 1, 0.2, 0.3, 0.1, 0, 0, 0, 0, 0]
                 }
         C_LI_DF = pd.DataFrame(data)
-        self.C_LI = C_LI_DF.loc[C_LI_DF["Dış hat tipi ve Girişte bağlantı"] == C_LD_C, "C_LI"].values[0] # C_LI_C tanımlanacak 
+        self.C_LI = C_LI_DF.loc[C_LI_DF["Dış hat tipi ve Girişte bağlantı"] == self.C_LD_C, "C_LI"].values[0] # C_LI_C tanımlanacak 
         return self.C_LI
 
 ##############################################################################################################################################################
@@ -480,7 +484,7 @@ class LightningRiskCalculator_min_values:
         }
         L_F_2_DF = pd.DataFrame(data)
 
-        self.L_F_2 = L_F_2_DF.loc[L_F_2_DF["yüzde kayıp"]==L_FO_C_2,"L_f_2"].values[0]
+        self.L_F_2 = L_F_2_DF.loc[L_F_2_DF["yüzde kayıp"]==self.L_FO_C_2,"L_f_2"].values[0]
         return self.L_F_2
 
 
@@ -494,7 +498,7 @@ class LightningRiskCalculator_min_values:
         }
         L_O_2_DF = pd.DataFrame(data)
 
-        self.L_O_2 = L_O_2_DF.loc[L_O_2_DF["hizmet tipi"]==L_FO_C_2,"L_o_2"].values[0]
+        self.L_O_2 = L_O_2_DF.loc[L_O_2_DF["hizmet tipi"]==self.L_FO_C_2,"L_o_2"].values[0]
     
         return self.L_O_2
 ##############################################################################################################################################33
@@ -519,7 +523,7 @@ class LightningRiskCalculator_min_values:
                 "L_f" : [1,0.5,0.2,10**-1]
         }
         L_F_4_DF = pd.DataFrame(data)
-        self.L_F_4 = L_F_4_DF.loc[L_F_4_DF["yapının tipi"]==L_FO_4_C,"L_f"].values[0]
+        self.L_F_4 = L_F_4_DF.loc[L_F_4_DF["yapının tipi"]==self.L_FO_4_C,"L_f"].values[0]
         return self.L_F_4
     
     def l_o_4_belirle(self):
@@ -534,15 +538,15 @@ class LightningRiskCalculator_min_values:
         }
         L_O_4_DF = pd.DataFrame(data)
 
-        self.L_O_4 = L_O_4_DF.loc[L_O_4_DF["yapının tipi"]==L_FO_4_C,"L_o"].values[0]
+        self.L_O_4 = L_O_4_DF.loc[L_O_4_DF["yapının tipi"]==self.L_FO_4_C,"L_o"].values[0]
         return self.L_O_4
     
     def c_z_bölü_c_t(self):
         return 1
 
     def c_a_bölü_c_t(self):
-        if c_a_bölü_c_t_c == "Var":
+        if self.c_a_bölü_c_t_c == "Var":
             return (1/10)
-        elif c_a_bölü_c_t_c == "Yok":
+        elif self.c_a_bölü_c_t_c == "Yok":
             return 0     
         
