@@ -948,7 +948,7 @@ class LightningRiskWriter():
                     <h3>4.2 Geographic and building parameters</h3> <!-- Alt bölüm başlığı -->
                     <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of {n_g} lightning strikes / year / km² was determined for the location of the object {yapı_konum} by means of the ground flash density map. As a result, there is a calculated number of {t_d} of thunderstorm days per year for the location of the project.</p>
                     <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure {yapı_konum} has the following dimensions:</p>
-                    <p>L<sub>b</sub> Length: {uzunluk_yapı}/p>
+                    <p>L<sub>b</sub> Length: {uzunluk_yapı}</p>
                     <p>W<sub>b</sub> Width: {genişlik_yapı}</p>
                 </div>
             </div>
