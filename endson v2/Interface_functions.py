@@ -15,12 +15,8 @@ import re
 import time
 import traceback
 from tkinter import messagebox
-<<<<<<< Updated upstream
 from veri_cek import veri_cek
 y = veri_cek()
-=======
-import pandas as pd
->>>>>>> Stashed changes
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -427,7 +423,6 @@ class MainWindow(QtWidgets.QMainWindow):
         R4_value=self.R4soru_comboBox.currentText()
 
 
-<<<<<<< Updated upstream
     # Verileri ilgili formatta yazdır
         değerler = (
             f"{Ad_value}\n"
@@ -488,10 +483,6 @@ class MainWindow(QtWidgets.QMainWindow):
             f"{R1_value}\n"
             f"{R4_value}\n"
                 )
-=======
-        # Verileri ilgili formatta yazdır
-        
->>>>>>> Stashed changes
 
         # Değerleri bir sözlük içinde saklayarak, her bir değeri uygun bir sütuna yerleştirelim
         data = {
@@ -527,7 +518,7 @@ class MainWindow(QtWidgets.QMainWindow):
             "Uw_value": Uw_value,
             "ekranlama_value": ekranlama_value,
             "metal_value": metal_value,
-            "Ng_double_value": Ng_double_value,
+            "Ng_double_value": self.Ng_double_value,
             "Ad_y_double_value": Ad_y_double_value,
             "Ad_g_double_value": Ad_g_double_value,
             "Ad_u_double_value": Ad_u_double_value,
@@ -639,7 +630,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             QMessageBox.information(self, "Sonuç", f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}")
             
-        except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError) as e:
+        except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError,FileNotFoundError,IndentationError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
@@ -696,7 +687,6 @@ class MainWindow(QtWidgets.QMainWindow):
         
  
     def clear_values(self):
-<<<<<<< Updated upstream
             from output_value import LightningRiskCalculator_output_value
             o = LightningRiskCalculator_output_value()
             o.__init__()
@@ -709,18 +699,6 @@ class MainWindow(QtWidgets.QMainWindow):
             print(z)
 
 
-=======
-            from result import LightningRiskCalculator_result
-            
-            
-            res = LightningRiskCalculator_result()
-            res.R_tespit()
-
-            # CSV dosyasını okuma
-            a = pd.read_csv('veriler.csv')
-            ilk_satir_verileri = a.iloc[0]
-            print(f"rastgele{ilk_satir_verileri}")
->>>>>>> Stashed changes
 
 
     def adjust_combobox_popup_width(self):
