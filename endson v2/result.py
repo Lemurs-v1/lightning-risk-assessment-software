@@ -71,6 +71,3 @@ class LightningRiskCalculator_result():
         value = [self.R_1_belirle(),self.R_2_belirle(),self.R_3_belirle(),self.R_4_belirle()]
         return value
 
-x = LightningRiskCalculator_result()
-z = x.R_tespit()
-print(z)
