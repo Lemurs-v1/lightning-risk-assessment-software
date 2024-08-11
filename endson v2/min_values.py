@@ -211,11 +211,7 @@ class LightningRiskCalculator_min_values:
             self.A_DJ = (self.A_DJ_uzunluk * self.A_DJ_genişlik)+(2*3*self.A_DJ_yükseklik)*(self.A_DJ_uzunluk+self.A_DJ_genişlik)+(pi*(3*self.A_DJ_yükseklik)**2)
         return self.A_DJ
     def t_z_bölü_8760_belirle(self):
-        if t_z_bölü_8760_C == "bilmiyorum":
-            self.t_z_bölü_8760 = 1
-        elif isinstance(t_z_bölü_8760_C, int) or isinstance(t_z_bölü_8760_C, float):
-            self.t_z_bölü_8760 = float(t_z_bölü_8760_C) / 8760
-        
+        self.t_z_bölü_8760 = t_z_bölü_8760_C
         return self.t_z_bölü_8760
 
     def p_spd_belirle(self):
@@ -546,3 +542,5 @@ class LightningRiskCalculator_min_values:
         elif c_a_bölü_c_t_c == "Yok":
             return 0     
         
+x = LightningRiskCalculator_min_values()
+print(x.t_z_bölü_8760_belirle())

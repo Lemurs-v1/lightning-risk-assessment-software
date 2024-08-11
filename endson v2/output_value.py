@@ -264,9 +264,13 @@ class LightningRiskCalculator_output_value:
         return self.n_z_bölü_n_t
 
     def tz_8760_bul(self):
-        self.t_z_bölü_8760 = self.tz_C#input("Kişiler bölgede yılda kaç saat bulunmakta (saat/bilmiyorum): ")
-        #print(self.t_z_bölü_8760)
-        return self.t_z_bölü_8760
+        print(self.tz_value)
+        print(self.tz_C)
+        if self.tz_value == "True":
+            self.t_z_bölü_8760 = 1
+        if self.tz_value == "False":
+            self.t_z_bölü_8760 =self.tz_C
+        return self.t_z_bölü_8760 
         
 
     def p_spd_bul(self):
@@ -382,3 +386,5 @@ class LightningRiskCalculator_output_value:
     def c_a_bölü_c_t(self):
         self.c_a_b_c_t = self.ca_bolu_ct_C#input("ortam hayvanlı mı ? (evet/hayır):") 
         return self.c_a_b_c_t
+x = LightningRiskCalculator_output_value()
+x.tz_8760_bul()

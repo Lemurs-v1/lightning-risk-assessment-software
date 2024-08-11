@@ -280,10 +280,10 @@ class MainWindow(QtWidgets.QMainWindow):
         selected_item = self.Ptu_comboBox.currentText()
 
     def selection_changed_tz_double_value(self):
-        state = self.metal_checkBox.isChecked()
+        state = self.tz_checkBox.isChecked()
 
     def selection_changed_Ll_double_value(self):
-        state = self.metal_checkBox.isChecked()
+        state = self.Ll_checkbox.isChecked()
 
     def selection_changed_R1soru(self):
         selected_item = self.R1soru_comboBox.currentText()
@@ -297,11 +297,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
     def open_html_files(self):
+        # Çıktı dosyalarının kaydedileceği dizin
+        html_folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output_pdf_1')
         
-
-        html_folder_path = 'output_pdf_1'
+        # HTML dosyalarını al
         html_files = [f for f in os.listdir(html_folder_path) if f.endswith('.html')]
-        
         
         # Dosya isimlerindeki numaraları çıkarıp sıralama fonksiyonu
         def extract_number(file_name):
@@ -314,8 +314,7 @@ class MainWindow(QtWidgets.QMainWindow):
         for html_file in html_files:
             file_path = os.path.join(html_folder_path, html_file)
             webbrowser.open(f'file://{os.path.abspath(file_path)}')
-            time.sleep(0.5)  # 2 saniye bekleme
-
+            time.sleep(0.5)  # 0.5 saniye bekleme
 
 
     def load_values(self):
@@ -472,8 +471,8 @@ class MainWindow(QtWidgets.QMainWindow):
         Adj_u_double_value = self.Adj_u_doubleSpinbox.value()
         nt_value = self.nt_doubleSpinbox.value()
         nz_value = self.nz_checkBox.isChecked()
-        tz_value = self.nz_checkBox.isChecked()
-        Ll_value = self.nz_checkBox.isChecked()
+        tz_value = self.tz_checkBox.isChecked()
+        Ll_value = self.Ll_checkbox.isChecked()
         nz_double_value = self.nz_doubleSpinbox.value()
         tz_double_value = self.tz_doubleSpinbox.value()
         Ll_double_value = self.Ll_doubleSpinbox.value()
