@@ -182,7 +182,7 @@ print(x.l_cmwz_1_belirle())
 print(x.p_m_belirle())
 print(x.n_m_belirle())
 print("-------------")
-print(x.p_z_belrile())####
+print(x.p_z_belrile())
 print(x.n_d_belirle())
 print(x.p_a_belirle())
 print(x.l_au_1_belirle())

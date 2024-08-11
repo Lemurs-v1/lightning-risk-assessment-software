@@ -206,6 +206,7 @@ class LightningRiskCalculator_min_values:
         if self.A_DJ_yükseklik != self.A_D_yükseklik_max:
             self.HMAXJ =  self.A_DJ_yükseklik_max
             self.A_DJ= pi*(3*self.HMAXJ)**2
+            print(f"zxzxzxzxzx{self.A_DJ}")
 
         elif self.A_DJ_yükseklik == self.A_D_yükseklik_max:
             self.A_DJ = (self.A_DJ_uzunluk * self.A_DJ_genişlik)+(2*3*self.A_DJ_yükseklik)*(self.A_DJ_uzunluk+self.A_DJ_genişlik)+(pi*(3*self.A_DJ_yükseklik)**2)

@@ -903,7 +903,7 @@ class MainWindow(QtWidgets.QMainWindow):
             item_width = combobox.fontMetrics().boundingRect(item_text).width()
             if item_width > max_width:
                 max_width = item_width
-        return max_width + 10
+        return max_width + 100
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
