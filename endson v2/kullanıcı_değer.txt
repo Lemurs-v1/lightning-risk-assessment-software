@@ -1,57 +1,57 @@
 evet
-Daha yüksek cisimler ile çevrelenen yapı
-tarımsal, beton
+Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+mermer, seramik
 Kırsal
 False
-Daha yüksek cisimler ile çevrelenen yapı
-Yapı LPS ile korunumuyor
+Aynı yapı: yakında başka cisimlerin olmaması
+Yapı 2. seviye LPS ile korunuyor
 Uyarı işaretleri
-Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış
-Güç hatları
+Dış hat tipi: Zırhlanmış gömülü hat (güç veya TLC) / Girişte bağlantı: Zırh, donanımda olduğu gibi aynı kuşaklama barasına bağlanmamış
+Telekomünikasyon hatları
 Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
-Kordineli SPD sistemi yok
-Havai
-SPD yok
+3. ve 4. seviye
+Gömülü
+III-IV
 AG güç, telekomünikasyon veya veri hattı
 Var
-Patlama : Bölgeler 0, 20 ve katı patlayıcı
+Patlama : Bölgeler 1, 21
 Patlama riski var
 Patlama riski
 Patlama riski
 Gaz, su, güç besleme
-Patlama riski
-Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
+Hastahane, sanayi, müze, zirai
+Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri var b
 1 Ω /km <RS ≤ 5 Ω /km
-1
-1
+1.5
+1.5
 False
-12.0
-12.0
-12.0
+4.0
+4.0
+4.0
 True
 True
-22.0
-20.0
-20.0
-20.0
-5.0
-5.0
-5.0
-False
-12.0
-12.0
-12.0
-Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
-Korunma tedbirleri yok
-False
-False
-m
-20.0
+8.0
+3.0
 30.0
-20.0
-m
-m
-m
-m
+40.0
+4.0
+4.0
+10.0
+False
+5.0
+90.0
+100.0
+Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
+Kablaj uyarıları
+False
+False
+
+5.0
+4.0
+3.0
+
+
+
+
 Evet
-Evet
+Hayır

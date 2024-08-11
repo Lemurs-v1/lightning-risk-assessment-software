@@ -147,7 +147,7 @@ class LightningRiskCalculator_middle_values:
         self.N_I = self.N_G*self.A_I*self.C_I*self.C_E*self.C_T*((10)**-6)
         return self.N_I
     def  p_z_belrile(self):
-        self.P_Z = self.C_LI*self.P_SPD*self.C_LI
+        self.P_Z = self.C_LI*self.P_SPD*self.P_LI
         return self.P_Z
 #bu işlemler yapılırken c_abcd ve c_t yaklasık 1 alındı
     def p_b_belirle(self):
@@ -187,7 +187,7 @@ print(x.n_d_belirle())
 print(x.p_a_belirle())
 print(x.l_au_1_belirle())
 print(x.p_b_belirle())
-print(x.l_bv_1_belirle())####10e-1 e
+print(x.l_bv_1_belirle())
 print(x.p_v_belirle())
 print(x.p_c_belirle())
 print(x.l_cmwz_1_belirle())
