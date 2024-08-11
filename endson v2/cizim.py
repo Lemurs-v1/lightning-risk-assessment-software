@@ -80,10 +80,6 @@ class MplCanvas(FigureCanvas):
 
         self.categories_4 = ["RA",'RB', 'RC', 'RM', "RU",'RV', 'RW', 'RZ']
         self.values_4 = [self.R_A_4,self.R_B_4, self.R_C_4,self.R_M_4,self.R_U_4,self.R_V_4,self.R_W_4,self.R_Z_4]
-        print(self.values_1)
-        print(self.values_2)
-        print(self.values_3)
-        print(self.values_4)
 
 
     def grafik_1(self, constant_value_1=1e-5):

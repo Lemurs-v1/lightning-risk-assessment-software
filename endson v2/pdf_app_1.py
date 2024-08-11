@@ -17,11 +17,7 @@ class LightningRiskWriter():
         veriler = veriler_file.split("\n")
         def format_number_scientific(number):
                 return f"{number:.1e}"  # Bilimsel gösterim, 2 ondalık basamak
-        with open("sonuc.txt", "r",encoding = "utf-8") as dosya_2:
-            sonuc = dosya_2.read()
 
-        son = sonuc.split("\n")
-        print(son)
 
 
         # Kullanıcıdan isim al
@@ -63,7 +59,7 @@ class LightningRiskWriter():
         R_2=format_number_scientific(result.R_2_belirle())
         R_3=format_number_scientific(result.R_3_belirle())
         R_4=format_number_scientific(result.R_4_belirle())
-        print(f"dddddddddddddddd{R_4}")
+
         P_B=str(veriler[6])
         P_EB=str(veriler[13])
         KS1=str(veriler[31])

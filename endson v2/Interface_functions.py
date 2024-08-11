@@ -24,7 +24,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.adjust_combobox_popup_width()
-        #♥self.delete_html_files_from_folder()
+        self.delete_html_files_from_folder()
 
         # QComboBox'lar
         self.Ad_comboBox = self.ui.Ad_comboBox
@@ -187,6 +187,7 @@ class MainWindow(QtWidgets.QMainWindow):
         #ÇİZİM BAS
         self.rapor_pushButton = self.ui.rapor_pushButton
         self.rapor_pushButton.clicked.connect(self.cizim)
+        self.load_values()
 
 
     def selection_changed_Ad(self):
@@ -317,19 +318,87 @@ class MainWindow(QtWidgets.QMainWindow):
 
 
 
+    def load_values(self):
+        try:
+            with open("kullanıcı_değer.txt", "r", encoding='utf-8') as dosya_2:
+                lines = dosya_2.readlines()
+                # Her bileşene sırasıyla değerleri atayın
+                if lines[0].strip() == 'evet':
+                    self.Ad_comboBox.setCurrentText('Karmaşık biçimli')
+                elif lines[0].strip() == 'hayır':
+                    self.Ad_comboBox.setCurrentText('Düz biçimli')
+                else:
+                    self.Ad_comboBox.setCurrentText('Seçiniz')
 
+                self.Cd_comboBox.setCurrentText(lines[1].strip())
+                self.rt_comboBox.setCurrentText(lines[2].strip())
+                self.Ce_comboBox.setCurrentText(lines[3].strip())
+                self.Adj_checkBox.setChecked(lines[4].strip() == 'True')
+                self.Cdj_comboBox.setCurrentText(lines[5].strip())
+                self.Pb_comboBox.setCurrentText(lines[6].strip())
+                self.Pta_comboBox.setCurrentText(lines[7].strip())
+                self.Cld_comboBox.setCurrentText(lines[8].strip())
+                self.Pli_comboBox.setCurrentText(lines[9].strip())
+                self.Pld_comboBox.setCurrentText(lines[10].strip())
+                self.Pspd_comboBox.setCurrentText(lines[11].strip())
+                self.Cl_comboBox.setCurrentText(lines[12].strip())
+                self.Peb_comboBox.setCurrentText(lines[13].strip())
+                self.CT_comboBox.setCurrentText(lines[14].strip())
+                self.ca_bolu_ct_comboBox.setCurrentText(lines[15].strip())
+                self.rf_comboBox.setCurrentText(lines[16].strip())
+                self.rp_comboBox.setCurrentText(lines[17].strip())
+                self.Lf_comboBox.setCurrentText(lines[18].strip())
+                self.Lo_comboBox.setCurrentText(lines[19].strip())
+                self.Lfo2_comboBox.setCurrentText(lines[20].strip())
+                self.Lfo4_comboBox.setCurrentText(lines[21].strip())
+                self.KS3_comboBox.setCurrentText(lines[22].strip())
+                self.Pld_2_comboBox.setCurrentText(lines[23].strip())
+                self.Pld_3_comboBox.setCurrentText(lines[24].strip())
+                self.Pli_2_comboBox.setCurrentText(lines[25].strip())
+                self.Ng_checkBox.setChecked(lines[26].strip() == 'True')
+                self.wm1_doubleSpinbox.setValue(float(lines[27].strip()))
+                self.wm2_doubleSpinbox.setValue(float(lines[28].strip()))
+                self.Uw_doubleSpinbox.setValue(float(lines[29].strip()))
+                self.ekranlama_checkBox.setChecked(lines[30].strip() == 'True')
+                self.metal_checkBox.setChecked(lines[31].strip() == 'True')
+                self.Ng_doubleSpinbox.setValue(float(lines[32].strip()))
+                self.Ad_y_doubleSpinbox.setValue(float(lines[33].strip()))
+                self.Ad_g_doubleSpinbox.setValue(float(lines[34].strip()))
+                self.Ad_u_doubleSpinbox.setValue(float(lines[35].strip()))
+                self.Adj_g_doubleSpinbox.setValue(float(lines[36].strip()))
+                self.Adj_u_doubleSpinbox.setValue(float(lines[37].strip()))
+                self.nt_doubleSpinbox.setValue(float(lines[38].strip()))
+                self.nz_checkBox.setChecked(lines[39].strip() == 'True')
+                self.nz_doubleSpinbox.setValue(float(lines[40].strip()))
+                self.tz_doubleSpinbox.setValue(float(lines[41].strip()))
+                self.Ll_doubleSpinbox.setValue(float(lines[42].strip()))
+                self.Hz_comboBox.setCurrentText(lines[43].strip())
+                self.Ptu_comboBox.setCurrentText(lines[44].strip())
+                self.tz_checkBox.setChecked(lines[45].strip() == 'True')
+                self.Ll_checkbox.setChecked(lines[46].strip() == 'True')
+                self.textEdit.setPlainText(lines[47].strip())
+                self.Ad_ymax_doubleSpinbox.setValue(float(lines[48].strip()))
+                self.Adj_y_doubleSpinbox.setValue(float(lines[49].strip()))
+                self.Adj_y_doubleSpinbox_2.setValue(float(lines[50].strip()))
+                self.lineEdit.setText(lines[51].strip())
+                self.lineEdit_2.setText(lines[52].strip())
+                self.lineEdit_4.setText(lines[53].strip())
+                self.lineEdit_3.setText(lines[54].strip())
+                self.R1soru_comboBox.setCurrentText(lines[55].strip())
+                self.R4soru_comboBox.setCurrentText(lines[56].strip())
+        except FileNotFoundError:
+            # Eğer dosya yoksa (ilk kez açılıyorsa), hiçbir şey yapma
+            pass
 
     def delete_html_files_from_folder(self):
         folder_path = "output_pdf_1"
         images_folder_path = os.path.join(folder_path, "images")
         specific_png_files = [
             "graph_1.png", "graph_2.png", "graph_3.png", 
-            "graph_4.png", "customer.png", 
+            "graph_4.png", 
             "complex_structure_adj.png", "complex_structure_ad.png"
         ]
-        specific_txt_files = [
-            "sonuc.txt", "kullanıcı_değer.txt"
-        ]
+
         
         # output_pdf_1 klasöründeki .html dosyalarını sil
         for file_name in os.listdir(folder_path):
@@ -344,14 +413,11 @@ class MainWindow(QtWidgets.QMainWindow):
                 os.remove(file_path)
         
         # Kodun bulunduğu dizindeki belirli .txt dosyalarını sil
-        current_dir = os.getcwd()  # Kodun bulunduğu dizini al
-        for file_name in specific_txt_files:
-            file_path = os.path.join(current_dir, file_name)
-            if os.path.exists(file_path):
-                os.remove(file_path)
 
 
-    
+
+
+
 
  
     def save_values(self):
@@ -484,6 +550,9 @@ class MainWindow(QtWidgets.QMainWindow):
     
         with open("kullanıcı_değer.txt", "w",encoding='utf-8') as dosya_2:
             dosya_2.write(değerler)
+        QMessageBox.information(self, "İNFO", "Değerler başarıyla kaydedildi")
+        subprocess.Popen([sys.executable] + sys.argv)
+        sys.exit()
         
         # print(f'Seçilen Ad değeri: {Ad_value}')
         # print(f'Seçilen Cd değeri: {Cd_value}')
@@ -558,8 +627,7 @@ class MainWindow(QtWidgets.QMainWindow):
             r3 = format_number_scientific(float(veriler[2]))
             r4 = format_number_scientific(float(veriler[3]))
             sonuç = f"R1={r1}\nR2={r2}\nR3={r3}\nR4={r4}"
-            with open("sonuc.txt", "w",encoding="utf-8") as dosya:
-                dosya.write(sonuç)
+
             QMessageBox.information(self, "Sonuç", sonuç)
 
             # Ad_value = self.Ad_comboBox.currentText()
@@ -677,79 +745,14 @@ class MainWindow(QtWidgets.QMainWindow):
             #     file.write(f"{Proje_no }\n")
             #     file.write(f"{R1_value}\n")
             #     file.write(f"{R4_value}\n")
-            with open("kullanıcı_değer.txt", "r", encoding="utf-8") as file_5:
-                lines = file_5.readlines()
-                self.Ad_comboBox.setCurrentText(lines[0].strip())
-                self.Cd_comboBox.setCurrentText(lines[1].strip())
-                self.rt_comboBox.setCurrentText(lines[2].strip())
-                self.Ce_comboBox.setCurrentText(lines[3].strip())
-                self.Adj_checkBox.setChecked(lines[4].strip() == "True")
-                self.Cdj_comboBox.setCurrentText(lines[5].strip())
-                self.Pb_comboBox.setCurrentText(lines[6].strip())
-                self.Pta_comboBox.setCurrentText(lines[7].strip())
-                self.Cld_comboBox.setCurrentText(lines[8].strip())
-                self.Pli_comboBox.setCurrentText(lines[9].strip())
-                self.Pld_comboBox.setCurrentText(lines[10].strip())
-                self.Pspd_comboBox.setCurrentText(lines[11].strip())
-                self.Hz_comboBox.setCurrentText(lines[12].strip())
-                self.Ptu_comboBox.setCurrentText(lines[13].strip())
-                self.Cl_comboBox.setCurrentText(lines[14].strip())
-                self.Peb_comboBox.setCurrentText(lines[15].strip())
-                self.CT_comboBox.setCurrentText(lines[16].strip())
-                self.ca_bolu_ct_comboBox.setCurrentText(lines[17].strip())
-                self.rf_comboBox.setCurrentText(lines[18].strip())
-                self.rp_comboBox.setCurrentText(lines[19].strip())
-                self.Lf_comboBox.setCurrentText(lines[20].strip())
-                self.Lo_comboBox.setCurrentText(lines[21].strip())
-                self.Lfo2_comboBox.setCurrentText(lines[22].strip())
-                self.Lfo4_comboBox.setCurrentText(lines[23].strip())
-                self.KS3_comboBox.setCurrentText(lines[24].strip())
-                self.Pld_2_comboBox.setCurrentText(lines[25].strip())
-                self.Pld_3_comboBox.setCurrentText(lines[26].strip())
-                self.Pli_2_comboBox.setCurrentText(lines[27].strip())
-                self.Ng_checkBox.setChecked(lines[28].strip() == "True")
-                self.ekranlama_checkBox.setChecked(lines[29].strip() == "True")
-                self.metal_checkBox.setChecked(lines[30].strip() == "True")
-                self.wm1_doubleSpinbox.setValue(float(lines[36].strip()))
-                self.wm2_doubleSpinbox.setValue(float(lines[37].strip()))
-                self.Uw_doubleSpinbox.setValue(float(lines[33].strip()))
-                self.Ng_doubleSpinbox.setValue(float(lines[34].strip()))
-                self.Ad_y_doubleSpinbox.setValue(float(lines[35].strip()))
-                self.Ad_ymax_doubleSpinbox.setValue(float(lines[36].strip()))
-                self.Ad_g_doubleSpinbox.setValue(float(lines[37].strip()))
-                self.Ad_u_doubleSpinbox.setValue(float(lines[38].strip()))
-                self.Adj_y_doubleSpinbox.setValue(float(lines[39].strip()))
-                self.Adj_y_doubleSpinbox_2.setValue(float(lines[40].strip()))
-                self.Adj_g_doubleSpinbox.setValue(float(lines[41].strip()))
-                self.Adj_u_doubleSpinbox.setValue(float(lines[42].strip()))
-                self.nt_doubleSpinbox.setValue(float(lines[43].strip()))
-                self.nz_checkBox.setChecked(lines[44].strip() == "True")
-                self.tz_doubleSpinbox.setValue(float(lines[45].strip()))
-                self.Ll_doubleSpinbox.setValue(float(lines[46].strip()))
-                self.nz_doubleSpinbox.setValue(float(lines[47].strip()))
-                self.tz_doubleSpinbox.setValue(float(lines[48].strip()))
-                self.Ll_doubleSpinbox.setValue(float(lines[49].strip()))
-                self.textEdit.setPlainText(lines[50].strip())
-                self.lineEdit.setText(lines[51].strip())
-                self.lineEdit_2.setText(lines[52].strip())
-                self.lineEdit_4.setText(lines[53].strip())
-                self.lineEdit_3.setText(lines[54].strip())
-                self.R1soru_comboBox.setCurrentText(lines[55].strip())
-                self.R4soru_comboBox.setCurrentText(lines[56].strip())
 
 
-            # Programı yeniden başlatın
-            self.close()
-            time.sleep(1)
-            subprocess.Popen([sys.executable] + sys.argv)
-            sys.exit()
         except (IndexError, ValueError, TypeError, KeyError, ZeroDivisionError) as e:
 
             tb_str = traceback.format_exc()
             # self. ile başlayan kısmı ayıklamak için regex kullan
             değerler = f"{0}#{0}#{0}#{0}"
-            with open("sonuc.txt", "w",encoding="utf-8") as dosya:
-                dosya.write(değerler) 
+            QMessageBox.information(self, "Sonuç", değerler)
             match = re.search(r'self\.(\w+)', tb_str)
             
             if match:
@@ -806,9 +809,6 @@ class MainWindow(QtWidgets.QMainWindow):
             tb_str = traceback.format_exc()
 
             # self. ile başlayan kısmı ayıklamak için regex kullan
-            değerler = f"{0}#{0}#{0}#{0}"
-            with open("sonuc.txt", "w", encoding="utf-8") as dosya:
-                dosya.write(değerler)
 
             match = re.search(r'self\.(\w+)', tb_str)
             
@@ -829,15 +829,65 @@ class MainWindow(QtWidgets.QMainWindow):
         
 
     def clear_values(self):
+        self.Ad_comboBox.setCurrentIndex(0)
+        self.Cd_comboBox.setCurrentIndex(0)
+        self.rt_comboBox.setCurrentIndex(0)
+        self.Ce_comboBox.setCurrentIndex(0)
+        self.Adj_checkBox.setChecked(False)
+        self.Cdj_comboBox.setCurrentIndex(0)
+        self.Pb_comboBox.setCurrentIndex(0)
+        self.Pta_comboBox.setCurrentIndex(0)
+        self.Cld_comboBox.setCurrentIndex(0)
+        self.Pli_comboBox.setCurrentIndex(0)
+        self.Pld_comboBox.setCurrentIndex(0)
+        self.Pspd_comboBox.setCurrentIndex(0)
+        self.Cl_comboBox.setCurrentIndex(0)
+        self.Peb_comboBox.setCurrentIndex(0)
+        self.CT_comboBox.setCurrentIndex(0)
+        self.ca_bolu_ct_comboBox.setCurrentIndex(0)
+        self.rf_comboBox.setCurrentIndex(0)
+        self.rp_comboBox.setCurrentIndex(0)
+        self.Lf_comboBox.setCurrentIndex(0)
+        self.Lo_comboBox.setCurrentIndex(0)
+        self.Lfo2_comboBox.setCurrentIndex(0)
+        self.Lfo4_comboBox.setCurrentIndex(0)
+        self.KS3_comboBox.setCurrentIndex(0)
+        self.Pld_2_comboBox.setCurrentIndex(0)
+        self.Pld_3_comboBox.setCurrentIndex(0)
+        self.Pli_2_comboBox.setCurrentIndex(0)
+        self.Hz_comboBox.setCurrentIndex(0)
 
-
-
-            from result import LightningRiskCalculator_result
-            res = LightningRiskCalculator_result()
-            res.R_tespit()
-            with open ("sonuc.txt", "w",encoding= "utf-8") as dosya_1:
-                 dosya_1.write(f"{str(res.R_1_belirle())}#{str(res.R_2_belirle())}#{str(res.R_3_belirle())}#{str(res.R_4_belirle())}")
-            print("bas")
+        self.Ng_checkBox.setChecked(False)
+        self.wm1_doubleSpinbox.setValue(0.0)
+        self.wm2_doubleSpinbox.setValue(0.0)
+        self.Uw_doubleSpinbox.setValue(0.0)
+        self.Ng_doubleSpinbox.setValue(0.0)
+        self.Ad_y_doubleSpinbox.setValue(0.0)
+        self.Ad_g_doubleSpinbox.setValue(0.0)
+        self.Ad_u_doubleSpinbox.setValue(0.0)
+        self.Adj_checkBox.setChecked(False)
+        self.Adj_g_doubleSpinbox.setValue(0.0)
+        self.Adj_u_doubleSpinbox.setValue(0.0)
+        self.nt_doubleSpinbox.setValue(0.0)
+        self.nz_checkBox.setChecked(False)
+        self.nz_doubleSpinbox.setValue(0.0)
+        self.tz_doubleSpinbox.setValue(0.0)
+        self.Ll_doubleSpinbox.setValue(0.0)
+        self.ekranlama_checkBox.setChecked(False)
+        self.metal_checkBox.setChecked(False)              
+        self.R1soru_comboBox.setCurrentIndex(0)
+        self.R4soru_comboBox.setCurrentIndex(0)
+        self.Ptu_comboBox.setCurrentIndex(0)
+        self.Adj_y_doubleSpinbox_2.setValue(0.0)
+        self.Adj_y_doubleSpinbox.setValue(0.0)
+        self.Ad_ymax_doubleSpinbox.setValue(0.0)
+        self.tz_checkBox.setChecked(False)
+        self.Ll_checkbox.setChecked(False)
+        self.textEdit.clear()
+        self.lineEdit.clear()
+        self.lineEdit_2.clear()
+        self.lineEdit_4.clear()
+        self.lineEdit_3.clear()
 
 
     def adjust_combobox_popup_width(self):

@@ -369,7 +369,7 @@ class LightningRiskCalculator_min_values:
                 "Kırsal",
                 "Banliyo",
                 "Şehir",
-                "Büyük binaların olduğu şehir(20m'den yüksek.)"
+                "Büyük binaların olduğu şehir(20m'den yüksek)"
             ],
             "C_e" : [1,0.5,0.1,0.01]
         }
