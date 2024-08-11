@@ -390,7 +390,7 @@ class MainWindow(QtWidgets.QMainWindow):
             pass
 
     def delete_html_files_from_folder(self):
-        folder_path = "output_pdf_1"
+        folder_path = "_internal\\output_pdf_1"
         images_folder_path = os.path.join(folder_path, "images")
         specific_png_files = [
             "graph_1.png", "graph_2.png", "graph_3.png", 
@@ -779,7 +779,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         if file_path:
             # Kaydedilecek klasör ve dosya yolunu oluştur
-            output_directory = "output_pdf_1/images"
+            output_directory = "_internal\\output_pdf_1\\images"
             if not os.path.exists(output_directory):
                 os.makedirs(output_directory)  # Klasörü oluştur
 

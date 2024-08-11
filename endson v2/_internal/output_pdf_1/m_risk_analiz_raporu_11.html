@@ -1,0 +1,140 @@
+
+        <!DOCTYPE html>
+        <html lang="tr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Risk Analizi</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+                    margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+                }
+
+                .container {
+                    flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                }
+
+                .subsection {
+                    margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+                    margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
+                }
+
+                .content {
+                    margin-bottom: 1px; /* İçeriğin altına 5px boşluk ekler */
+                }
+
+                .content p {
+                    margin: 1px 0; /* Paragrafların üst ve altına 5px boşluk ekler */
+                }
+
+                .image-section {
+                    text-align: center; /* Görsel bölümünü ortalar */
+                    margin: 10px 0; /* Görsel bölümünün üst ve altına 10px boşluk ekler */
+                }
+
+                .image-section img {
+                    max-width: 100%; /* Görselin maksimum genişliğini %100 yapar */
+                    height: auto; /* Görselin yüksekliğini otomatik ayarlar */
+                }
+                p {
+                    margin-bottom: 1px; /* Paragraf altındaki boşluğu azaltır */
+                    line-height: 1; /* Satır yüksekliğini kısaltır (isteğe bağlı) */
+                }
+
+                ul {
+                    margin-top: 10px; /* Liste üstündeki boşluğu azaltır */
+                    padding-left: 1px; /* Liste başlığı ile liste elemanları arasındaki boşluğu ayarlar */
+                }     
+                h2 {
+                    margin-top: 10px; 
+                    margin-bottom: 10px;
+                    /* Liste üstündeki boşluğu azaltır */
+                    padding-left: 1px; /* Liste başlığı ile liste elemanları arasındaki boşluğu ayarlar */
+                    
+                }     
+                
+                .footer {
+                    display: flex; /* Footer öğelerini yatayda hizalar */
+                    justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+                    align-items: center; /* Footer öğelerini dikeyde ortalar */
+                    margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+                    padding: 10px 20px; /* İç boşlukları belirler */
+                    background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+                }
+                .footer img {
+                    display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+                    margin: 0; /* Resmin marginlerini sıfırlar */
+                }
+                .footer p {
+                    margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+                }
+
+                .top-right-image {
+                    position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+                    top: 0;
+                    right: 0;
+                    width: 80px; /* Resmin genişliğini ayarlar */
+                    height: auto; /* Yüksekliği otomatik ayarlar */
+                    margin: 5px; /* Resme biraz boşluk bırakır */
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container"> <!-- Ana içerik kapsayıcısı -->
+                <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+                <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+                <div class="content">
+                </div>
+                <ul>
+                    <br>
+                    <li>High (specific fire load in the building greater than 800 MJ/m²)</li>
+                    <li>Explosion: zone 2 / 22</li>
+                    <li>Explosion: zone 1 / 21</li>
+                    <li>Explosion: zone 0 / 20</li>
+                <ul>
+                <p>The risk of fire in a structure is an important factor for determining the required protection measures. The risk of fire for the structure m was defined as follows:</p>
+                <ul>
+                    <li>Evet</li>
+                <ul>
+                <h2>6.2 Measures to reduce the consequences of a fire</h2>
+                <p>The following measures were selected to reduce the consequences of a fire:</p>
+                <ul>
+                    <li>Patlama riski var</li>
+                </ul>
+                <h2>6.3 Special hazards in the building for persons</h2>
+                <p>Due to the number of persons, the possible risk of panic for the structure m was defined as follows:</p>
+                <ul>
+                    <li>Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)</li>
+                </ul>
+                <h2>6.4 External spatial shielding</h2>
+                <p>Spatial shielding attenuates the magnetic field within a structure caused by lightning strikes to or near the object and reduces internal surges.</p>
+                <p>This can be achieved by an intermeshed equipotential bonding network in which all conductive parts of the structure and the internal systems are integrated. Consequently, the external / internal spatial shield is only a part of a shielded building structure. It must be observed that metal coverings and claddings are connected to one another and conductively to the equipotential bonding of the building. In this context, the relevant normative requirements must be observed.</p>
+                <p>Covering of the structure m:</p>
+                <ul>
+                    <li>Uyarı işaretleri</li>
+                </ul>
+                <h2>7. Risk assessment</h2>
+                <p>As described in 4.1, the following risks according to 7. were assessed. The blue bar shows the tolerable risk value and the green / red bar shows the risk determined.</p>
+                <h3>7.1 Risk R1, Human life</h3>
+                <p>The following risk was determined for persons outside and inside the structure m:</p>
+                <ul>
+                    <li>Tolerable risk R<sub>T</sub>: 1,00E-05</li>
+                    <li>Calculated risk R1: 4.2e+00</li>
+                </ul>
+            </div> <!-- .container div kapanışı eklendi(en aşağı atmak için gerekli ) --> 
+
+            <footer class="footer"> <!-- Footer bölümü -->
+                <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+                <p>Radsan Risk Tools - 2024-08-11</p> <!-- Footer'da yer alan metin -->
+                <p>Page 11 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            </footer>
+        </body>
+        </html>
+
+        

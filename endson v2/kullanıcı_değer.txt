@@ -1,11 +1,11 @@
-hayır
-Aynı yükseklikte veya daha alçak cisimler ile çevrelenen yapı
+evet
+Daha yüksek cisimler ile çevrelenen yapı
 tarımsal, beton
-Banliyo
-True
+Kırsal
+False
 Daha yüksek cisimler ile çevrelenen yapı
 Yapı LPS ile korunumuyor
-Koruma tedbiri yok
+Uyarı işaretleri
 Dış hat tipi: Zırhlanmamış havai hat/ Girişte bağlantı: Tanımlanmamış
 Güç hatları
 Havai veya gömülü hat, zırhlanmamış veya zırhı donanım gibi aynı kuşaklama barasına bağlanan zırhlanmış
@@ -15,43 +15,43 @@ SPD yok
 AG güç, telekomünikasyon veya veri hattı
 Var
 Patlama : Bölgeler 0, 20 ve katı patlayıcı
-Tedbir yok
+Patlama riski var
 Patlama riski
 Patlama riski
-TV, telekomünikasyon hatları
+Gaz, su, güç besleme
 Patlama riski
 Zırhlanmamış kablo – döngüleri önlemek için güzergâh tedbiri yok a
-5 Ω /km <RS ≤ 20 Ω /km
+1 Ω /km <RS ≤ 5 Ω /km
 1
 1
 False
+12.0
+12.0
+12.0
+True
+True
+22.0
 20.0
 20.0
 20.0
+5.0
+5.0
+5.0
 False
-False
-20.0
-10.0
-10.0
-10.0
-3.0
-2.0
-15.0
-False
-15.0
-20.0
-99.0
-Özel tehlike yok
+12.0
+12.0
+12.0
+Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insan sayısının 100’den fazla olmaması)
 Korunma tedbirleri yok
 False
 False
-k
-10.0
-3.0
-3.0
-k
 m
-k
-k
+20.0
+30.0
+20.0
+m
+m
+m
+m
 Evet
 Evet

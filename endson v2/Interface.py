@@ -863,7 +863,7 @@ class Ui_MainWindow(object):
         self.groupBox_3.setTitle(_translate("MainWindow", "Ayrık Yapı"))
         self.label_8.setToolTip(_translate("MainWindow", "Bitişik bir yapıya düşen yıldırımlar için toplama alanı"))
         self.label_8.setText(_translate("MainWindow", "Ayrık yapı (Adj)   "))
-        self.Adj_checkBox.setText(_translate("MainWindow", "Bilinmiyor"))
+        self.Adj_checkBox.setText(_translate("MainWindow", "Bilinmiyor/Yok"))
         self.label_48.setToolTip(_translate("MainWindow", "Yapı yüksekliği"))
         self.label_48.setText(_translate("MainWindow", "Ymax (m)"))
         self.label_49.setToolTip(_translate("MainWindow", "Yapı yüksekliği"))
