@@ -1,0 +1,97 @@
+
+        <!DOCTYPE html>
+        <html lang="tr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Lightning Protection Risk Management</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+                    margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+                }
+
+                .container {
+                    flex: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    padding: 20px; /* İçeriğin etrafına 20px boşluk ekler */
+                }
+
+                .subsection {
+                    margin-left: 10px; /* Alt bölümün sol tarafına 10px boşluk ekler */
+                    margin-bottom: 5px; /* Alt bölümün altına 5px boşluk ekler */
+                }
+
+                .content {
+                    margin-bottom: 20px; /* İçeriğin altına 20px boşluk ekler */
+                }
+
+                .content p {
+                    margin: 8px 0; /* Paragrafların üst ve altına 8px boşluk ekler */
+                }
+
+                p {
+                    margin-bottom: 10px; /* Paragraf altındaki boşluğu ayarlar */
+                    line-height: 1.5; /* Satır yüksekliğini ayarlar */
+                }
+
+                .footer {
+                    display: flex; /* Footer öğelerini yatayda hizalar */
+                    justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+                    align-items: center; /* Footer öğelerini dikeyde ortalar */
+                    margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+                    padding: 10px 20px; /* İç boşlukları belirler */
+                    background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+                }
+                .footer img {
+                    display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+                    margin: 0; /* Resmin marginlerini sıfırlar */
+                }
+                .footer p {
+                    margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+                }
+
+                .top-right-image {
+                    position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+                    top: 0;
+                    right: 0;
+                    width: 80px; /* Resmin genişliğini ayarlar */
+                    height: auto; /* Yüksekliği otomatik ayarlar */
+                    margin: 5px; /* Resme biraz boşluk bırakır */
+                }
+
+                .caption {
+                    text-align: center; /* Açıklamayı ortalar */
+                    margin-top: 5px; /* Açıklamanın üstüne 5px boşluk ekler */
+                    font-size: 14px; /* Yazı boyutunu belirler */
+                    color: #555; /* Yazı rengini belirler */
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container"> <!-- Ana içerik kapsayıcısı -->
+                <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+                <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+                <div class="content">
+                    <h4>10.1.3 IEC 62561-3:2012 Requirements for isolating spark gaps</h4>
+                    <p>Isolating spark gaps can be used to galvanically isolate an earth-termination system. IEC 62561-3 specifies that isolating spark gaps must be dimensioned in such a way that the components, if installed according to the manufacturer's instructions, are reliable, durable and safe for persons and nearby installations.</p>
+                    <h4>10.1.4 IEC 62561-4:2010 Requirements for conductor fasteners</h4>
+                    <p>The IEC 62561-4 standard specifies the requirements and tests for metal and non-metal conductor fasteners used with air-termination and down conductors.</p>
+                    <h4>10.1.5 IEC 62561-5:2011 Requirements for electrode inspection housings and earth electrode seals</h4>
+                    <p>All earth electrode inspection housings and earth electrode seals must be designed in such a way that they are reliable and safe for persons and the environment when used as intended. IEC 62561-5 specifies the requirements and tests for earth electrode inspection housings (e.g. pressure load) and for earth electrode seals (e.g. leak test).</p>
+                    <h3>11. Definition</h3>
+                </div>
+            </div>
+            <footer class="footer"> <!-- Footer bölümü -->
+                <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+                <p>Radsan Risk Tools - 2024-08-12</p> <!-- Footer'da yer alan metin -->
+                <p>Page 17 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            </footer>
+        </body>
+        </html>
+
+        
