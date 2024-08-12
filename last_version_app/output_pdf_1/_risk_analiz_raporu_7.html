@@ -1,0 +1,136 @@
+
+        <!DOCTYPE html> <!-- HTML5 belge türü tanımı -->
+        <html lang="tr"> <!-- Belge dilini Türkçe olarak belirtir -->
+        <head>
+            <meta charset="UTF-8"> <!-- Belgenin karakter kodlamasını UTF-8 olarak ayarlar -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sayfa boyutunu ve ölçeğini ayarlar, mobil uyumluluğu sağlar -->
+            <title>Risk Analysis for Assessing the Risk for Structures</title> <!-- Sayfanın başlık etiketini belirtir -->
+            <style>
+                body {
+                    font-family: Arial, sans-serif; /* Sayfadaki yazı tipini Arial olarak ayarlar, Arial mevcut değilse sans-serif kullanılır */
+                    display: flex; /* Flexbox düzeni kullanarak öğeleri hizalar */
+                    flex-direction: column; /* Flex öğelerinin dikey olarak yerleşmesini sağlar */
+                    min-height: 100vh; /* Sayfanın en az yüksekliğini ekran yüksekliği kadar yapar */
+                    margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+                }
+
+                .section {
+                    flex: 1; /* Bölümün esnekliğini sağlar */
+                    margin-bottom: 20px; /* Bölümün altına 20px boşluk ekler */
+                }
+
+                .subsection {
+                    margin-left: 20px; /* Alt bölümün sol tarafına 20px boşluk ekler */
+                    margin-bottom: 10px; /* Alt bölümün altına 10px boşluk ekler */
+                }
+
+                .risk-table {
+                    width: 100%; /* Tablo genişliğini %100 yapar */
+                    border-collapse: collapse; /* Tablonun kenar boşluklarını kaldırır */
+                    margin: 30px 0; /* Tablonun üst ve altına 30px boşluk ekler */
+                }
+
+                .risk-table th, .risk-table td {
+                    border: 1px solid #dddddd; /* Tablo hücrelerinin kenarlıklarını belirler */
+                    text-align: left; /* Hücre içeriğini sola hizalar */
+                    padding: 4px; /* Hücrelerin içindeki boşluğu 4px yapar */
+                }
+
+                .risk-table th {
+                    background-color: #f2f2f2; /* Tablo başlık hücrelerinin arka plan rengini belirler */
+                }
+
+                .footer {
+                    display: flex; /* Footer öğelerini yatayda hizalar */
+                    justify-content: space-between; /* Footer öğeleri arasında boşluk bırakır */
+                    align-items: center; /* Footer öğelerini dikeyde ortalar */
+                    margin-top: 10px; /* Footer'ın üstüne 10px boşluk ekler */
+                    padding: 10px 20px; /* İç boşlukları belirler */
+                    background-color: #f1f1f1; /* Footer'ın arka plan rengini belirler */
+                }
+                .footer img {
+                    display: block; /* Resmi blok eleman olarak gösterir, böylece margin ayarları doğru şekilde uygulanır */
+                    margin: 0; /* Resmin marginlerini sıfırlar */
+                }
+                .footer p {
+                    margin: 0; /* Footer içindeki paragrafların marginlerini sıfırlar */
+                }
+
+                /* Sağ üst köşede yer alan resim için stil */
+                .top-right-image {
+                    position: absolute; /* Resmi sayfanın köşesine yerleştirir */
+                    top: 0;
+                    right: 0;
+                    width: 100px; /* Resmin genişliğini ayarlar */
+                    height: auto; /* Yüksekliği otomatik ayarlar */
+                    margin: 10px; /* Resme biraz boşluk bırakır */
+                }
+                
+                /* Konteynerin konumunu belirlemek için */
+                .container {
+                    position: relative; /* Konteynerin göreceli konumunu belirler */
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container"> <!-- Ana içerik kapsayıcısı -->
+                <img src="images/customer.png" alt="Açıklama" class="top-right-image"> <!-- Sağ üst köşede yer alan resim -->
+                <p>Risk analysis for assessing the risk for structures<br>according to IEC 62305-2:2010-12</p> <!-- Açıklama metni -->
+            </div>
+
+            <div class="section"> <!-- Bölüm -->
+                <h2>4. Project data</h2> <!-- Bölüm başlığı -->
+
+                <div class="subsection"> <!-- Alt bölüm -->
+                    <h3>4.1 Selection of risks to be considered</h3> <!-- Alt bölüm başlığı -->
+                    <p>Due to the type and use of the structure, object , the following risks were selected and considered:</p>
+                    <table class="risk-table"> <!-- Risk tablosu -->
+                        <tr>
+                            <th>Risk</th>
+                            <th>Description</th>
+                            <th>RT</th>
+                        </tr>
+                        <tr>
+                            <td>Risk R<sub>1</sub></td>
+                            <td>Risk of losses of human life</td>
+                            <td>1,00E-05</td>
+                        </tr>
+                        <tr>
+                            <td>Risk R<sub>2</sub></td>
+                            <td>Risk of loss of service to the public</td>
+                            <td>1,00E-03</td>
+                        </tr>
+                        <tr>
+                            <td>Risk R<sub>3</sub></td>
+                            <td>Risk of loss of cultural heritage</td>
+                            <td>1,00E-04</td>
+                        </tr>
+                        <tr>
+                            <td>Risk R<sub>4</sub></td>
+                            <td>Risk of loss of economic value</td>
+                            <td>1,00E-03</td>
+                        </tr>
+                    </table>
+                    <p>The tolerable risks RT were defined by selecting the risks.</p>
+                    <p>The standard specifies the tolerable risk for the risks R<sub>1</sub>, R<sub>2</sub> and R<sub>3</sub>. No tolerable risk is defined for risk R<sub>4</sub>. To this end, it is considered whether the protection measures make economical sense with regard to the value of the structure.</p>
+                    <p>The aim of a risk analysis is to reduce the risk to an acceptable level RT by an economically sound selection of protection measures.</p>
+                </div>
+
+                <div class="subsection"> <!-- Alt bölüm -->
+                    <h3>4.2 Geographic and building parameters</h3> <!-- Alt bölüm başlığı -->
+                    <p>The ground flash density Ng is the basis for a risk analysis according to IEC 62305-2:2010-12. It defines the number of direct lightning strikes in 1 year / km². A value of 5.0 lightning strikes / year / km² was determined for the location of the object  by means of the ground flash density map. As a result, there is a calculated number of 50.0 of thunderstorm days per year for the location of the project.</p>
+                    <p>The dimensions of the building are decisive for the risk of a direct strike. The collection areas for direct / indirect lightning strikes are determined based on these dimensions. The structure  has the following dimensions:</p>
+                    <p>L<sub>b</sub> Length: 5.0</p>
+                    <p>W<sub>b</sub> Width: 5.0</p>
+                </div>
+            </div>
+
+            <div class="footer"> <!-- Footer bölümü -->
+                <img src="images/logo.png" alt="Radsan Logo" width="80" height="35"> <!-- Footer'da yer alan logo resmi -->
+                <p>Radsan Risk Tools-2024-08-12</p> <!-- Footer'da yer alan metin -->
+                <p>Page 7 of 19</p> <!-- Footer'da yer alan sayfa numarası -->
+            </div>
+        </body>
+        </html>
+
+        
