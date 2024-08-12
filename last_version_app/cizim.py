@@ -74,7 +74,7 @@ class MplCanvas(FigureCanvas):
             self.categories_1 = ['RA', 'RB', 'RC', 'RM', 'RU', 'RV', 'RW', 'RZ']
             self.values_1 = [self.R_A_1, self.R_B_1, self.R_C_1,self.R_M_1,self.R_U_1,self.R_V_1,self.R_W_1,self.R_Z_1]
         elif self.R1_value == "Hayır":
-            self.categories_1 = ['RA', 'RB', 'RC','RU' 'RV']
+            self.categories_1 = ['RA', 'RB','RU' 'RV']
             self.values_1 = [self.R_A_1, self.R_B_1,self.R_U_1,self.R_V_1]               
         self.categories_2 = ['RB', 'RC', 'RM', 'RV', 'RW', 'RZ']
         self.values_2 = [self.R_B_2, self.R_C_2,self.R_M_2,self.R_V_2,self.R_W_2,self.R_Z_2]
