@@ -45,13 +45,13 @@ Düşük panik seviyesi (örneğin, yapının iki katla sınırlı olması, insa
 Korunma tedbirleri yok
 False
 False
-
+deneme
 2.0
 2.0
 2.0
-m
-m
-m
-m
+Kenan Batur
+Radsan
+rocket tower
+14159265
 Evet
 Hayır
