@@ -79,8 +79,10 @@ class MplCanvas(FigureCanvas):
         self.categories_2 = ['RB', 'RC', 'RM', 'RV', 'RW', 'RZ']
         self.values_2 = [self.R_B_2, self.R_C_2,self.R_M_2,self.R_V_2,self.R_W_2,self.R_Z_2]
 
+        self.categories_3 = ['RB', 'RV']a
 
         if self.R4_value =="Evet":
+            self.categories_4 = ["RA",'RB', 'RC', 'RM', "RU",'RV', 'RW', 'RZ'] 
             self.values_4 = [self.R_A_4,self.R_B_4, self.R_C_4,self.R_M_4,self.R_U_4,self.R_V_4,self.R_W_4,self.R_Z_4]
         elif self.R4_value == "Hayır":
             self.categories_4 = ['RB', 'RC', 'RM','RV', 'RW', 'RZ']
